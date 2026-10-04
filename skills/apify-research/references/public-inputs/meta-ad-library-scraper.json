@@ -4,5 +4,7 @@
     "US"
   ],
   "maxResults": 5,
-  "enrichAds": false
+  "enrichAds": false,
+  "providerFallbackEnabled": false,
+  "adType": "ALL"
 }

@@ -6,5 +6,8 @@
   ],
   "maxPagesPerDomain": 2,
   "maxDepth": 1,
-  "maxResults": 5
+  "maxResults": 5,
+  "proxyConfig": {
+    "useApifyProxy": false
+  }
 }

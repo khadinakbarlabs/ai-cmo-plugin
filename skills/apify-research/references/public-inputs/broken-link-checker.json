@@ -4,5 +4,8 @@
     "https://example.com"
   ],
   "maxLinksToCheck": 5,
-  "maxConcurrency": 1
+  "maxConcurrency": 1,
+  "proxyConfiguration": {
+    "useApifyProxy": false
+  }
 }

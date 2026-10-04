@@ -1,45 +1,31 @@
 {
   "$schema": "https://apify.com/schemas/v1/input.ide.json",
-  "title": "Instagram Profile Stats Scraper Input",
   "type": "object",
-  "schemaVersion": 1,
   "properties": {
     "usernames": {
-      "title": "Instagram usernames or profile URLs",
       "type": "array",
-      "description": "Look up public Instagram stats for these profiles. Accepts bare usernames (natgeo), @handles (@nasa), or full profile URLs (https://www.instagram.com/instagram/). Each value becomes one dataset row.",
-      "editor": "stringList",
-      "prefill": [
-        "natgeo",
-        "@nasa",
-        "https://www.instagram.com/instagram/"
-      ]
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
     },
     "deduplicate": {
-      "title": "Deduplicate usernames",
       "type": "boolean",
-      "description": "Collapse repeated handles to a single request after normalization. Keep this on for CRM lists that repeat the same creator.",
       "default": true
     },
     "maxItems": {
-      "title": "Max input items",
       "type": "integer",
-      "description": "Process at most this many input tokens, in list order, before stopping. Use it as the run-wide cost ceiling for a bulk roster.",
       "default": 500,
       "minimum": 1
     },
     "maxRequestRetries": {
-      "title": "Max request retries",
       "type": "integer",
-      "description": "Extra attempts per profile when Instagram returns a transient empty or challenge response. Default 2 keeps bulk runs moving.",
       "default": 2,
       "minimum": 0,
       "maximum": 10
     },
     "requestTimeoutSecs": {
-      "title": "Request timeout (seconds)",
       "type": "integer",
-      "description": "Seconds allowed for one profile stats request before the next retry. Default 30 is enough for the public web profile endpoint.",
       "default": 30,
       "minimum": 10,
       "maximum": 120
@@ -47,5 +33,9 @@
   },
   "required": [
     "usernames"
-  ]
+  ],
+  "additionalProperties": false,
+  "title": "instagram-profile-stats-scraper: supported public research inputs",
+  "description": "Constrained plugin input projection, not the complete upstream Actor schema. Consult execution_profile before any launch.",
+  "x-ai-cmo-profile": "public-research-projection-v1"
 }

@@ -1,57 +1,28 @@
 {
-  "title": "Instagram Profile Scraper input",
   "type": "object",
-  "schemaVersion": 1,
   "properties": {
     "usernames": {
-      "title": "Instagram usernames or profile URLs",
       "type": "array",
-      "description": "One or more Instagram accounts to scrape. Accepts bare usernames ('natgeo'), @-handles ('@nasa'), or full profile URLs ('https://instagram.com/nike'). Returns one record per profile; private accounts return metadata only (no posts). NOT for hashtags or post URLs \u2014 use a hashtag/post scraper for those.",
-      "editor": "stringList",
-      "prefill": [
-        "humansofny",
-        "natgeo"
-      ],
-      "example": [
-        "nasa",
-        "https://www.instagram.com/nike/"
-      ]
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
     },
     "scrapeRecentPosts": {
-      "title": "Include recent posts",
       "type": "boolean",
-      "description": "Whether to include the profile's most recent posts (up to 12) in each record, with caption, like and comment counts, media type, thumbnail, and timestamp. Defaults to true. Set to false for lighter, profile-only records when you only need follower and contact data.",
       "default": true
     },
     "maxRecentPosts": {
-      "title": "Max recent posts per profile",
       "type": "integer",
-      "description": "Maximum recent posts to include per profile. Instagram's public profile endpoint returns at most 12 per request, so larger values are automatically capped at 12 (no error). Set 0, or turn off 'Include recent posts', for none. Defaults to 12.",
-      "editor": "number",
       "default": 12,
-      "minimum": 0,
-      "prefill": 12
-    },
-    "proxyConfiguration": {
-      "title": "Proxy configuration",
-      "type": "object",
-      "description": "Proxy settings used to reach Instagram. Residential proxies are strongly recommended \u2014 Instagram blocks datacenter IPs. Defaults to Apify Proxy with the RESIDENTIAL group. Leave as default unless you have a specific proxy requirement.",
-      "editor": "proxy",
-      "default": {
-        "useApifyProxy": true,
-        "apifyProxyGroups": [
-          "RESIDENTIAL"
-        ]
-      },
-      "prefill": {
-        "useApifyProxy": true,
-        "apifyProxyGroups": [
-          "RESIDENTIAL"
-        ]
-      }
+      "minimum": 0
     }
   },
   "required": [
     "usernames"
-  ]
+  ],
+  "additionalProperties": false,
+  "title": "instagram-profile-scraper: supported public research inputs",
+  "description": "Constrained plugin input projection, not the complete upstream Actor schema. Consult execution_profile before any launch.",
+  "x-ai-cmo-profile": "public-research-projection-v1"
 }

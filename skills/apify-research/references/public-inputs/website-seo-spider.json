@@ -7,5 +7,9 @@
   "maxPages": 5,
   "maxDepth": 1,
   "maxConcurrency": 1,
-  "respectRobotsTxt": true
+  "respectRobotsTxt": true,
+  "proxyConfiguration": {
+    "useApifyProxy": false
+  },
+  "fetchMode": "direct"
 }

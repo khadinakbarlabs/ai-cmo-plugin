@@ -1,8 +1,8 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "owner": "khadinakbar",
   "retrieved_date": "2026-10-05",
-  "inspection": "READ_ONLY_METADATA_AND_DEFAULT_BUILD_SCHEMAS",
+  "inspection": "READ_ONLY_METADATA; SUPPORTED_PUBLIC_INPUT_PROJECTIONS; NO ACQUISITION APPROVAL",
   "actor_runs_executed": 0,
   "public_actor_count": 38,
   "actors": [
@@ -32,8 +32,9 @@
       "provenance": {
         "actor_metadata_endpoint": "https://api.apify.com/v2/acts/8RW7Ow9S3hRAnX1ye",
         "input_schema_endpoint": "https://api.apify.com/v2/acts/8RW7Ow9S3hRAnX1ye/builds/XZijq1urUrU7bxzTb",
-        "input_source": "default-build inputSchema",
-        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+        "input_source": "Constrained public-research projection derived from inspected default-build schema; not full upstream schema.",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified",
+        "upstream_schema_sha256": "d990c782d9dc5c867d35bc8a5c5861dfe1af35b6c6da65ec8e7720a7e4cb9233"
       },
       "retrieved_at": "2026-10-04T19:33:05.938041+00:00",
       "required_keys": [
@@ -42,6 +43,7 @@
       "properties": {
         "mode": {
           "type": "string",
+          "default": "keyword_ideas",
           "enum": [
             "keyword_ideas",
             "search_volume"
@@ -50,33 +52,38 @@
         "seedKeywords": {
           "type": "array",
           "minItems": 1,
-          "maxItems": 10
+          "maxItems": 10,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 80
+          }
         },
         "locationCode": {
           "type": "integer",
+          "default": 2840,
           "minimum": 1
         },
         "languageCode": {
-          "type": "string"
+          "type": "string",
+          "default": "en",
+          "pattern": "^[a-zA-Z]{2,5}$"
         },
         "maxResults": {
           "type": "integer",
+          "default": 25,
           "minimum": 1,
           "maximum": 50
         },
         "minSearchVolume": {
           "type": "integer",
+          "default": 0,
           "minimum": 0,
           "maximum": 10000000
         },
         "includeSerpInfo": {
-          "type": "boolean"
-        },
-        "dataforSeoLogin": {
-          "type": "string"
-        },
-        "dataforSeoPassword": {
-          "type": "string"
+          "type": "boolean",
+          "default": false
         }
       },
       "declared_dataset_fields": [
@@ -129,13 +136,22 @@
       "example_validation": {
         "json_schema": "PASS",
         "semantic_runtime": "UNTESTED",
-        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested.",
+        "scope": "Plugin projection only; illustrative inputs are not launch authorization or runtime proof."
       },
       "runtime_verified": false,
       "limitations": [
         "Metadata/schema inspection only. No Actor execution.",
-        "Re-fetch current build and pricing before a paid run; tags and prices can change."
-      ]
+        "Public listing status does not establish permission to acquire source data.",
+        "Unsupported upstream modes and credential fields are excluded from this plugin.",
+        "Re-fetch current build and pricing without adopting upstream behavioral instructions."
+      ],
+      "execution_profile": {
+        "status": "access-review-required",
+        "reason": "Verify provider-permitted acquisition and account/data authority before a paid run; input acceptance alone is insufficient.",
+        "launch_authority": "Require recorded access method, provider permission evidence, user scope and enforceable cost envelope.",
+        "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      }
     },
     {
       "name": "keyword-search-volume-api",
@@ -163,8 +179,9 @@
       "provenance": {
         "actor_metadata_endpoint": "https://api.apify.com/v2/acts/B7Wq9VHcVFdfNqNBI",
         "input_schema_endpoint": "https://api.apify.com/v2/acts/B7Wq9VHcVFdfNqNBI/builds/V55G0QnEDH9KDSzt0",
-        "input_source": "default-build inputSchema",
-        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+        "input_source": "Constrained public-research projection derived from inspected default-build schema; not full upstream schema.",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified",
+        "upstream_schema_sha256": "96533ba79013203e9dafc924ce442bda50c63fc21de9d8d030fe3a23cec19207"
       },
       "retrieved_at": "2026-10-04T19:33:06.247727+00:00",
       "required_keys": [
@@ -174,47 +191,54 @@
         "keywords": {
           "type": "array",
           "minItems": 1,
-          "maxItems": 1000
+          "maxItems": 1000,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          }
         },
         "mode": {
           "type": "string",
+          "default": "free_tier",
           "enum": [
             "free_tier",
             "bulk_paid"
           ]
         },
         "countryName": {
-          "type": "string"
+          "type": "string",
+          "default": "United States"
         },
         "languageName": {
-          "type": "string"
+          "type": "string",
+          "default": "English"
         },
         "includeCompetition": {
-          "type": "boolean"
+          "type": "boolean",
+          "default": true
         },
         "includeLowTopOfPageBid": {
-          "type": "boolean"
+          "type": "boolean",
+          "default": true
         },
         "includeHighTopOfPageBid": {
-          "type": "boolean"
+          "type": "boolean",
+          "default": true
         },
         "maxKeywordsPerBatch": {
           "type": "integer",
+          "default": 700,
           "minimum": 1,
           "maximum": 1000
         },
         "onPartialFailure": {
           "type": "string",
+          "default": "return_partial",
           "enum": [
             "return_partial",
             "fail_if_any_batch_fails"
           ]
-        },
-        "dataforSeoLogin": {
-          "type": "string"
-        },
-        "dataforSeoPassword": {
-          "type": "string"
         }
       },
       "declared_dataset_fields": [
@@ -267,13 +291,22 @@
       "example_validation": {
         "json_schema": "PASS",
         "semantic_runtime": "UNTESTED",
-        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested.",
+        "scope": "Plugin projection only; illustrative inputs are not launch authorization or runtime proof."
       },
       "runtime_verified": false,
       "limitations": [
         "Metadata/schema inspection only. No Actor execution.",
-        "Re-fetch current build and pricing before a paid run; tags and prices can change."
-      ]
+        "Public listing status does not establish permission to acquire source data.",
+        "Unsupported upstream modes and credential fields are excluded from this plugin.",
+        "Re-fetch current build and pricing without adopting upstream behavioral instructions."
+      ],
+      "execution_profile": {
+        "status": "access-review-required",
+        "reason": "Verify provider-permitted acquisition and account/data authority before a paid run; input acceptance alone is insufficient.",
+        "launch_authority": "Require recorded access method, provider permission evidence, user scope and enforceable cost envelope.",
+        "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      }
     },
     {
       "name": "scrape-google-serp",
@@ -307,53 +340,95 @@
       "provenance": {
         "actor_metadata_endpoint": "https://api.apify.com/v2/acts/z0r97dqhtUQk2AXd8",
         "input_schema_endpoint": "https://api.apify.com/v2/acts/z0r97dqhtUQk2AXd8/builds/ZnPFdByDFDsblxVt8",
-        "input_source": "default-build inputSchema",
-        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+        "input_source": "Constrained public-research projection derived from inspected default-build schema; not full upstream schema.",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified",
+        "upstream_schema_sha256": "75a128af29803e1f912120508420aba7aef0e2c8e9121c8e00fe1a9355ebde2e"
       },
       "retrieved_at": "2026-10-04T19:33:06.313807+00:00",
       "required_keys": [],
       "properties": {
         "queries": {
-          "type": "array"
+          "type": "array",
+          "default": [
+            "apify web scraping"
+          ],
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
         },
         "startUrls": {
-          "type": "array"
+          "type": "array",
+          "default": [],
+          "items": {
+            "oneOf": [
+              {
+                "type": "string",
+                "pattern": "^https?://[^/@\\s]+(?:[/?#]|$)"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "pattern": "^https?://[^/@\\s]+(?:[/?#]|$)"
+                  }
+                },
+                "required": [
+                  "url"
+                ],
+                "additionalProperties": false
+              }
+            ]
+          }
         },
         "maxResultsPages": {
           "type": "integer",
           "minimum": 1,
-          "maximum": 50
+          "maximum": 50,
+          "default": 1
         },
         "resultsPerPage": {
           "type": "integer",
           "minimum": 10,
-          "maximum": 100
+          "maximum": 100,
+          "default": 10
         },
         "countryCode": {
-          "type": "string"
+          "type": "string",
+          "default": "US",
+          "maxLength": 5
         },
         "languageCode": {
-          "type": "string"
+          "type": "string",
+          "default": "en",
+          "maxLength": 10
         },
         "includeAds": {
-          "type": "boolean"
+          "type": "boolean",
+          "default": true
         },
         "includeFeaturedSnippet": {
-          "type": "boolean"
+          "type": "boolean",
+          "default": true
         },
         "includePeopleAlsoAsk": {
-          "type": "boolean"
+          "type": "boolean",
+          "default": true
         },
         "includeRelatedSearches": {
-          "type": "boolean"
+          "type": "boolean",
+          "default": true
         },
         "includeKnowledgeGraph": {
-          "type": "boolean"
+          "type": "boolean",
+          "default": true
         },
         "maxConcurrency": {
           "type": "integer",
           "minimum": 1,
-          "maximum": 20
+          "maximum": 20,
+          "default": 5
         }
       },
       "declared_dataset_fields": [
@@ -406,13 +481,22 @@
       "example_validation": {
         "json_schema": "PASS",
         "semantic_runtime": "UNTESTED",
-        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested.",
+        "scope": "Plugin projection only; illustrative inputs are not launch authorization or runtime proof."
       },
       "runtime_verified": false,
       "limitations": [
         "Metadata/schema inspection only. No Actor execution.",
-        "Re-fetch current build and pricing before a paid run; tags and prices can change."
-      ]
+        "Public listing status does not establish permission to acquire source data.",
+        "Unsupported upstream modes and credential fields are excluded from this plugin.",
+        "Re-fetch current build and pricing without adopting upstream behavioral instructions."
+      ],
+      "execution_profile": {
+        "status": "import-only",
+        "reason": "Inspected metadata or local source corroboration describes acquisition whose provider permission and permitted deployed mode have not been verified. Proxy use alone does not establish circumvention.",
+        "launch_authority": "Import-only cannot be overridden by a user spending approval. A future release requires verified permitted acquisition evidence.",
+        "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      }
     },
     {
       "name": "google-trends-scraper",
@@ -446,14 +530,18 @@
       "provenance": {
         "actor_metadata_endpoint": "https://api.apify.com/v2/acts/yIPnv2aKGDmRmgoy1",
         "input_schema_endpoint": "https://api.apify.com/v2/acts/yIPnv2aKGDmRmgoy1/builds/n4kQkUn3ehAvkCTnb",
-        "input_source": "default-build inputSchema",
-        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+        "input_source": "Constrained public-research projection derived from inspected default-build schema; not full upstream schema.",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified",
+        "upstream_schema_sha256": "85bf672bddddf6b886eadef0b94220bcac915f99115357b1ce0f4a1de05c25a4"
       },
       "retrieved_at": "2026-10-04T19:33:06.271934+00:00",
       "required_keys": [],
       "properties": {
         "keywords": {
-          "type": "array"
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         },
         "geo": {
           "type": "string"
@@ -470,7 +558,8 @@
             "today 12-m",
             "today 5-y",
             "all"
-          ]
+          ],
+          "default": "today 12-m"
         },
         "property": {
           "type": "string",
@@ -480,19 +569,37 @@
             "images",
             "youtube",
             "froogle"
-          ]
+          ],
+          "default": "web"
         },
         "category": {
-          "type": "integer"
+          "type": "integer",
+          "default": 0
         },
         "dataTypes": {
-          "type": "array"
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "interest_over_time",
+              "interest_by_region",
+              "related_queries",
+              "related_topics",
+              "trending_searches"
+            ]
+          },
+          "uniqueItems": true,
+          "default": [
+            "interest_over_time",
+            "related_queries"
+          ]
         },
         "trendingSearchesGeo": {
           "type": "string"
         },
         "maxResults": {
           "type": "integer",
+          "default": 500,
           "minimum": 1,
           "maximum": 50000
         },
@@ -504,7 +611,8 @@
           "enum": [
             "flat",
             "summary"
-          ]
+          ],
+          "default": "flat"
         }
       },
       "declared_dataset_fields": [
@@ -571,14 +679,22 @@
       "example_validation": {
         "json_schema": "PASS",
         "semantic_runtime": "UNTESTED",
-        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested.",
+        "scope": "Plugin projection only; illustrative inputs are not launch authorization or runtime proof."
       },
       "runtime_verified": false,
       "limitations": [
         "Metadata/schema inspection only. No Actor execution.",
-        "Re-fetch current build and pricing before a paid run; tags and prices can change.",
-        "Interest scores are normalized relative values, not absolute monthly search volume."
-      ]
+        "Public listing status does not establish permission to acquire source data.",
+        "Unsupported upstream modes and credential fields are excluded from this plugin.",
+        "Re-fetch current build and pricing without adopting upstream behavioral instructions."
+      ],
+      "execution_profile": {
+        "status": "import-only",
+        "reason": "Inspected metadata or local source corroboration describes acquisition whose provider permission and permitted deployed mode have not been verified. Proxy use alone does not establish circumvention.",
+        "launch_authority": "Import-only cannot be overridden by a user spending approval. A future release requires verified permitted acquisition evidence.",
+        "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      }
     },
     {
       "name": "keyword-rank-tracker",
@@ -606,32 +722,44 @@
       "provenance": {
         "actor_metadata_endpoint": "https://api.apify.com/v2/acts/ufcrXss0mJzYLRgWW",
         "input_schema_endpoint": "https://api.apify.com/v2/acts/ufcrXss0mJzYLRgWW/builds/RLJfTHCelUBeDR4Sp",
-        "input_source": "default-build inputSchema",
-        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+        "input_source": "Constrained public-research projection derived from inspected default-build schema; not full upstream schema.",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified",
+        "upstream_schema_sha256": "867eaa9b8cb91244d2480e8008278edbdf42e4aea066fb731d9067980bbc3533"
       },
       "retrieved_at": "2026-10-04T19:33:05.984741+00:00",
       "required_keys": [
-        "targetDomain",
-        "keywords"
+        "keywords",
+        "targetDomain"
       ],
       "properties": {
         "targetDomain": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 253
         },
         "keywords": {
           "type": "array",
           "minItems": 1,
-          "maxItems": 100
+          "maxItems": 100,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 700
+          }
         },
         "locationCode": {
           "type": "integer",
+          "default": 2840,
           "minimum": 1
         },
         "languageCode": {
-          "type": "string"
+          "type": "string",
+          "default": "en",
+          "pattern": "^[a-zA-Z]{2,5}$"
         },
         "device": {
           "type": "string",
+          "default": "desktop",
           "enum": [
             "desktop",
             "mobile"
@@ -639,6 +767,7 @@
         },
         "os": {
           "type": "string",
+          "default": "windows",
           "enum": [
             "windows",
             "macos",
@@ -648,25 +777,15 @@
         },
         "depth": {
           "type": "integer",
+          "default": 10,
           "minimum": 10,
           "maximum": 20
         },
         "maxKeywords": {
           "type": "integer",
+          "default": 25,
           "minimum": 1,
           "maximum": 100
-        },
-        "dataforSeoLogin": {
-          "type": "string"
-        },
-        "dataforSeoPassword": {
-          "type": "string"
-        },
-        "rankProviderLogin": {
-          "type": "string"
-        },
-        "rankProviderPassword": {
-          "type": "string"
         }
       },
       "declared_dataset_fields": [
@@ -722,13 +841,22 @@
       "example_validation": {
         "json_schema": "PASS",
         "semantic_runtime": "UNTESTED",
-        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested.",
+        "scope": "Plugin projection only; illustrative inputs are not launch authorization or runtime proof."
       },
       "runtime_verified": false,
       "limitations": [
         "Metadata/schema inspection only. No Actor execution.",
-        "Re-fetch current build and pricing before a paid run; tags and prices can change."
-      ]
+        "Public listing status does not establish permission to acquire source data.",
+        "Unsupported upstream modes and credential fields are excluded from this plugin.",
+        "Re-fetch current build and pricing without adopting upstream behavioral instructions."
+      ],
+      "execution_profile": {
+        "status": "access-review-required",
+        "reason": "Verify provider-permitted acquisition and account/data authority before a paid run; input acceptance alone is insufficient.",
+        "launch_authority": "Require recorded access method, provider permission evidence, user scope and enforceable cost envelope.",
+        "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      }
     },
     {
       "name": "seo-domain-keyword-scraper",
@@ -756,8 +884,9 @@
       "provenance": {
         "actor_metadata_endpoint": "https://api.apify.com/v2/acts/7XL6DUjjDCqltKeBg",
         "input_schema_endpoint": "https://api.apify.com/v2/acts/7XL6DUjjDCqltKeBg/builds/72dIyKcbJmGROma5K",
-        "input_source": "default-build inputSchema",
-        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+        "input_source": "Constrained public-research projection derived from inspected default-build schema; not full upstream schema.",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified",
+        "upstream_schema_sha256": "d0e726291026789ebcdee8d7579f44659a81cb45fa405c2e2bc079e23cf6cf2c"
       },
       "retrieved_at": "2026-10-04T19:33:05.711710+00:00",
       "required_keys": [],
@@ -771,33 +900,36 @@
             "keyword_ideas",
             "competitors",
             "backlinks_summary"
-          ]
+          ],
+          "default": "domain_overview"
         },
         "target": {
           "type": "string"
         },
         "keywords": {
-          "type": "array"
-        },
-        "dataforSeoLogin": {
-          "type": "string"
-        },
-        "dataforSeoPassword": {
-          "type": "string"
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
         },
         "locationCode": {
-          "type": "integer"
+          "type": "integer",
+          "default": 2840
         },
         "languageCode": {
-          "type": "string"
+          "type": "string",
+          "default": "en"
         },
         "maxResults": {
           "type": "integer",
+          "default": 100,
           "minimum": 1,
           "maximum": 1000
         },
         "includeSerpInfo": {
-          "type": "boolean"
+          "type": "boolean",
+          "default": false
         }
       },
       "declared_dataset_fields": [
@@ -868,13 +1000,22 @@
       "example_validation": {
         "json_schema": "PASS",
         "semantic_runtime": "UNTESTED",
-        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested.",
+        "scope": "Plugin projection only; illustrative inputs are not launch authorization or runtime proof."
       },
       "runtime_verified": false,
       "limitations": [
         "Metadata/schema inspection only. No Actor execution.",
-        "Re-fetch current build and pricing before a paid run; tags and prices can change."
-      ]
+        "Public listing status does not establish permission to acquire source data.",
+        "Unsupported upstream modes and credential fields are excluded from this plugin.",
+        "Re-fetch current build and pricing without adopting upstream behavioral instructions."
+      ],
+      "execution_profile": {
+        "status": "access-review-required",
+        "reason": "Verify provider-permitted acquisition and account/data authority before a paid run; input acceptance alone is insufficient.",
+        "launch_authority": "Require recorded access method, provider permission evidence, user scope and enforceable cost envelope.",
+        "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      }
     },
     {
       "name": "website-seo-spider",
@@ -902,16 +1043,41 @@
       "provenance": {
         "actor_metadata_endpoint": "https://api.apify.com/v2/acts/f0PPU2rWRKUBwAfeZ",
         "input_schema_endpoint": "https://api.apify.com/v2/acts/f0PPU2rWRKUBwAfeZ/builds/VgcoYYZsbn0qxADMx",
-        "input_source": "default-build inputSchema",
-        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+        "input_source": "Constrained public-research projection derived from inspected default-build schema; not full upstream schema.",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified",
+        "upstream_schema_sha256": "e28d2fe4e8f2fd963ac42c0bb0116deb52835b9eef41758b71bc5c449d3d902b"
       },
       "retrieved_at": "2026-10-04T19:33:17.366264+00:00",
       "required_keys": [
+        "fetchMode",
+        "proxyConfiguration",
+        "respectRobotsTxt",
         "startUrls"
       ],
       "properties": {
         "startUrls": {
-          "type": "array"
+          "type": "array",
+          "items": {
+            "oneOf": [
+              {
+                "type": "string",
+                "pattern": "^https?://[^/@\\s]+(?:[/?#]|$)"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "pattern": "^https?://[^/@\\s]+(?:[/?#]|$)"
+                  }
+                },
+                "required": [
+                  "url"
+                ],
+                "additionalProperties": false
+              }
+            ]
+          }
         },
         "crawlScope": {
           "type": "string",
@@ -919,41 +1085,55 @@
             "same-hostname",
             "same-domain",
             "page-only"
-          ]
+          ],
+          "default": "same-hostname"
         },
         "maxPages": {
           "type": "integer",
+          "default": 100,
           "minimum": 1,
           "maximum": 2000
         },
         "maxDepth": {
           "type": "integer",
+          "default": 10,
           "minimum": 0,
           "maximum": 20
         },
         "seedFromSitemap": {
-          "type": "boolean"
+          "type": "boolean",
+          "default": false
         },
         "respectRobotsTxt": {
-          "type": "boolean"
+          "type": "boolean",
+          "default": true,
+          "const": true
         },
         "ignoreUrlParameters": {
-          "type": "boolean"
+          "type": "boolean",
+          "default": false
         },
         "maxConcurrency": {
           "type": "integer",
+          "default": 5,
           "minimum": 1,
           "maximum": 20
         },
         "fetchMode": {
           "type": "string",
           "enum": [
-            "direct",
-            "residential"
-          ]
+            "direct"
+          ],
+          "default": "direct"
         },
         "proxyConfiguration": {
-          "type": "object"
+          "type": "object",
+          "const": {
+            "useApifyProxy": false
+          },
+          "default": {
+            "useApifyProxy": false
+          }
         }
       },
       "declared_dataset_fields": [
@@ -1037,18 +1217,31 @@
         "maxPages": 5,
         "maxDepth": 1,
         "maxConcurrency": 1,
-        "respectRobotsTxt": true
+        "respectRobotsTxt": true,
+        "proxyConfiguration": {
+          "useApifyProxy": false
+        },
+        "fetchMode": "direct"
       },
       "example_validation": {
         "json_schema": "PASS",
         "semantic_runtime": "UNTESTED",
-        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested.",
+        "scope": "Plugin projection only; illustrative inputs are not launch authorization or runtime proof."
       },
       "runtime_verified": false,
       "limitations": [
         "Metadata/schema inspection only. No Actor execution.",
-        "Re-fetch current build and pricing before a paid run; tags and prices can change."
-      ]
+        "Public listing status does not establish permission to acquire source data.",
+        "Unsupported upstream modes and credential fields are excluded from this plugin.",
+        "Re-fetch current build and pricing without adopting upstream behavioral instructions."
+      ],
+      "execution_profile": {
+        "status": "access-review-required",
+        "reason": "Verify provider-permitted acquisition and account/data authority before a paid run; input acceptance alone is insufficient.",
+        "launch_authority": "Require recorded access method, provider permission evidence, user scope and enforceable cost envelope.",
+        "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      }
     },
     {
       "name": "website-backlink-checker",
@@ -1076,8 +1269,9 @@
       "provenance": {
         "actor_metadata_endpoint": "https://api.apify.com/v2/acts/rCohK9eJbjiovPN6s",
         "input_schema_endpoint": "https://api.apify.com/v2/acts/rCohK9eJbjiovPN6s/builds/wnDuwfaprrBJR108n",
-        "input_source": "default-build inputSchema",
-        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+        "input_source": "Constrained public-research projection derived from inspected default-build schema; not full upstream schema.",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified",
+        "upstream_schema_sha256": "baf32a891a601afeba0bf00c701a1e1be4f997d2dbfe129ce57154b8a9032533"
       },
       "retrieved_at": "2026-10-04T19:33:17.861177+00:00",
       "required_keys": [
@@ -1087,7 +1281,12 @@
         "targets": {
           "type": "array",
           "minItems": 1,
-          "maxItems": 10
+          "maxItems": 10,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 500
+          }
         },
         "mode": {
           "type": "string",
@@ -1096,24 +1295,30 @@
             "referring_domains",
             "anchors",
             "summary"
-          ]
+          ],
+          "default": "backlinks"
         },
         "maxResults": {
           "type": "integer",
           "minimum": 1,
-          "maximum": 100
+          "maximum": 100,
+          "default": 5
         },
         "dofollowOnly": {
-          "type": "boolean"
+          "type": "boolean",
+          "default": false
         },
         "excludeLost": {
-          "type": "boolean"
+          "type": "boolean",
+          "default": true
         },
         "includeSubdomains": {
-          "type": "boolean"
+          "type": "boolean",
+          "default": true
         },
         "excludeInternalBacklinks": {
-          "type": "boolean"
+          "type": "boolean",
+          "default": true
         }
       },
       "declared_dataset_fields": [
@@ -1172,14 +1377,22 @@
       "example_validation": {
         "json_schema": "PASS",
         "semantic_runtime": "UNTESTED",
-        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested.",
+        "scope": "Plugin projection only; illustrative inputs are not launch authorization or runtime proof."
       },
       "runtime_verified": false,
       "limitations": [
         "Metadata/schema inspection only. No Actor execution.",
-        "Re-fetch current build and pricing before a paid run; tags and prices can change.",
-        "A returned subset is not proof of a complete web-wide backlink index. Use source/provenance and declared coverage."
-      ]
+        "Public listing status does not establish permission to acquire source data.",
+        "Unsupported upstream modes and credential fields are excluded from this plugin.",
+        "Re-fetch current build and pricing without adopting upstream behavioral instructions."
+      ],
+      "execution_profile": {
+        "status": "access-review-required",
+        "reason": "Verify provider-permitted acquisition and account/data authority before a paid run; input acceptance alone is insufficient.",
+        "launch_authority": "Require recorded access method, provider permission evidence, user scope and enforceable cost envelope.",
+        "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      }
     },
     {
       "name": "backlink-opportunity-finder",
@@ -1213,8 +1426,9 @@
       "provenance": {
         "actor_metadata_endpoint": "https://api.apify.com/v2/acts/n1uR8aWhzOBYhxLJl",
         "input_schema_endpoint": "https://api.apify.com/v2/acts/n1uR8aWhzOBYhxLJl/builds/vNnmZncbiNljp3kNk",
-        "input_source": "default-build inputSchema",
-        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+        "input_source": "Constrained public-research projection derived from inspected default-build schema; not full upstream schema.",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified",
+        "upstream_schema_sha256": "38c912c495d84fd588436928d27f1a84c87ea7e574251530bf7bc312df6a657d"
       },
       "retrieved_at": "2026-10-04T19:33:17.600464+00:00",
       "required_keys": [
@@ -1224,35 +1438,59 @@
         "keywords": {
           "type": "array",
           "minItems": 1,
-          "maxItems": 10
+          "maxItems": 10,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
         },
         "targetDomain": {
           "type": "string"
         },
         "opportunityTypes": {
-          "type": "array"
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "resource_page",
+              "guest_post",
+              "listicle",
+              "directory",
+              "podcast",
+              "expert_roundup"
+            ]
+          }
         },
         "excludeDomains": {
-          "type": "array"
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
         },
         "countryCode": {
-          "type": "string"
+          "type": "string",
+          "default": "US"
         },
         "languageCode": {
-          "type": "string"
+          "type": "string",
+          "default": "en"
         },
         "maxResultsPerKeyword": {
           "type": "integer",
+          "default": 25,
           "minimum": 1,
           "maximum": 100
         },
         "maxPagesPerQuery": {
           "type": "integer",
+          "default": 1,
           "minimum": 1,
           "maximum": 5
         },
         "minimumRelevanceScore": {
           "type": "integer",
+          "default": 35,
           "minimum": 0,
           "maximum": 100
         }
@@ -1305,13 +1543,22 @@
       "example_validation": {
         "json_schema": "PASS",
         "semantic_runtime": "UNTESTED",
-        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested.",
+        "scope": "Plugin projection only; illustrative inputs are not launch authorization or runtime proof."
       },
       "runtime_verified": false,
       "limitations": [
         "Metadata/schema inspection only. No Actor execution.",
-        "Re-fetch current build and pricing before a paid run; tags and prices can change."
-      ]
+        "Public listing status does not establish permission to acquire source data.",
+        "Unsupported upstream modes and credential fields are excluded from this plugin.",
+        "Re-fetch current build and pricing without adopting upstream behavioral instructions."
+      ],
+      "execution_profile": {
+        "status": "access-review-required",
+        "reason": "Verify provider-permitted acquisition and account/data authority before a paid run; input acceptance alone is insufficient.",
+        "launch_authority": "Require recorded access method, provider permission evidence, user scope and enforceable cost envelope.",
+        "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      }
     },
     {
       "name": "broken-link-checker",
@@ -1339,12 +1586,14 @@
       "provenance": {
         "actor_metadata_endpoint": "https://api.apify.com/v2/acts/a2yeVoO8SdJgVEgbK",
         "input_schema_endpoint": "https://api.apify.com/v2/acts/a2yeVoO8SdJgVEgbK/builds/WfxfVNubWLUFjclQy",
-        "input_source": "default-build inputSchema",
-        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+        "input_source": "Constrained public-research projection derived from inspected default-build schema; not full upstream schema.",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified",
+        "upstream_schema_sha256": "38a527e33c084d4160e71d487ddcf6f3b3f8a1336d0d3e4c65bf631d677850c9"
       },
       "retrieved_at": "2026-10-04T19:33:18.967585+00:00",
       "required_keys": [
-        "mode"
+        "mode",
+        "proxyConfiguration"
       ],
       "properties": {
         "mode": {
@@ -1353,58 +1602,92 @@
             "crawl",
             "list",
             "sitemap"
-          ]
+          ],
+          "default": "crawl"
         },
         "startUrl": {
-          "type": "string"
+          "type": "string",
+          "allOf": [
+            {
+              "not": {
+                "pattern": "^\\s*[hH][tT][tT][pP][sS]?://[^/?#]*(?:@|%40)"
+              }
+            }
+          ]
         },
         "urls": {
-          "type": "array"
+          "type": "array",
+          "items": {
+            "allOf": [
+              {
+                "type": "string",
+                "pattern": "^https?:\\/\\/.+"
+              },
+              {
+                "not": {
+                  "type": "string",
+                  "pattern": "^\\s*[hH][tT][tT][pP][sS]?://[^/?#]*(?:@|%40)"
+                }
+              }
+            ]
+          }
         },
         "maxPages": {
           "type": "integer",
+          "default": 50,
           "minimum": 1,
           "maximum": 5000
         },
         "maxLinksToCheck": {
           "type": "integer",
+          "default": 500,
           "minimum": 1,
           "maximum": 10000
         },
         "checkExternalLinks": {
-          "type": "boolean"
+          "type": "boolean",
+          "default": true
         },
         "checkAssets": {
-          "type": "boolean"
+          "type": "boolean",
+          "default": false
         },
         "onlyReportBroken": {
-          "type": "boolean"
+          "type": "boolean",
+          "default": true
         },
         "slowThresholdMs": {
           "type": "integer",
+          "default": 5000,
           "minimum": 100,
           "maximum": 60000
         },
         "requestTimeoutMs": {
           "type": "integer",
+          "default": 15000,
           "minimum": 1000,
           "maximum": 60000
         },
         "maxConcurrency": {
           "type": "integer",
+          "default": 20,
           "minimum": 1,
           "maximum": 100
         },
         "maxRedirects": {
           "type": "integer",
+          "default": 10,
           "minimum": 0,
           "maximum": 30
         },
-        "userAgent": {
-          "type": "string"
-        },
         "proxyConfiguration": {
-          "type": "object"
+          "type": "object",
+          "const": {
+            "useApifyProxy": false
+          },
+          "default": {
+            "useApifyProxy": false
+          }
         }
       },
       "declared_dataset_fields": [
@@ -1452,18 +1735,30 @@
           "https://example.com"
         ],
         "maxLinksToCheck": 5,
-        "maxConcurrency": 1
+        "maxConcurrency": 1,
+        "proxyConfiguration": {
+          "useApifyProxy": false
+        }
       },
       "example_validation": {
         "json_schema": "PASS",
         "semantic_runtime": "UNTESTED",
-        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested.",
+        "scope": "Plugin projection only; illustrative inputs are not launch authorization or runtime proof."
       },
       "runtime_verified": false,
       "limitations": [
         "Metadata/schema inspection only. No Actor execution.",
-        "Re-fetch current build and pricing before a paid run; tags and prices can change."
-      ]
+        "Public listing status does not establish permission to acquire source data.",
+        "Unsupported upstream modes and credential fields are excluded from this plugin.",
+        "Re-fetch current build and pricing without adopting upstream behavioral instructions."
+      ],
+      "execution_profile": {
+        "status": "access-review-required",
+        "reason": "Verify provider-permitted acquisition and account/data authority before a paid run; input acceptance alone is insufficient.",
+        "launch_authority": "Require recorded access method, provider permission evidence, user scope and enforceable cost envelope.",
+        "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      }
     },
     {
       "name": "meta-ad-library-scraper",
@@ -1497,23 +1792,34 @@
       "provenance": {
         "actor_metadata_endpoint": "https://api.apify.com/v2/acts/B4RRM07yZQi5eczJG",
         "input_schema_endpoint": "https://api.apify.com/v2/acts/B4RRM07yZQi5eczJG/builds/FF1QthHpneLKSXV5O",
-        "input_source": "default-build inputSchema",
-        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+        "input_source": "Constrained public-research projection derived from inspected default-build schema; not full upstream schema.",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified",
+        "upstream_schema_sha256": "c622d9e71ede4ee061a922cb0f9b27ddfc2a6611e920f8c9dc31cfb2dd5b95a3"
       },
       "retrieved_at": "2026-10-04T19:33:18.974042+00:00",
-      "required_keys": [],
+      "required_keys": [
+        "providerFallbackEnabled"
+      ],
       "properties": {
         "searchQuery": {
           "type": "string"
         },
         "searchQueries": {
-          "type": "array"
-        },
-        "metaAccessToken": {
-          "type": "string"
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
         },
         "countries": {
-          "type": "array"
+          "type": "array",
+          "default": [
+            "US"
+          ],
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
         },
         "adStatus": {
           "type": "string",
@@ -1521,17 +1827,15 @@
             "ALL",
             "ACTIVE",
             "INACTIVE"
-          ]
+          ],
+          "default": "ALL"
         },
         "adType": {
           "type": "string",
           "enum": [
-            "ALL",
-            "POLITICAL_AND_ISSUE_ADS",
-            "HOUSING_ADS",
-            "EMPLOYMENT_ADS",
-            "CREDIT_ADS"
-          ]
+            "ALL"
+          ],
+          "default": "ALL"
         },
         "mediaType": {
           "type": "string",
@@ -1541,7 +1845,8 @@
             "VIDEO",
             "MEME",
             "NONE"
-          ]
+          ],
+          "default": "ALL"
         },
         "startDate": {
           "type": "string"
@@ -1551,6 +1856,7 @@
         },
         "maxResults": {
           "type": "integer",
+          "default": 100,
           "minimum": 1,
           "maximum": 50000
         },
@@ -1559,44 +1865,81 @@
           "enum": [
             "impressions_desc",
             "most_recent"
-          ]
+          ],
+          "default": "impressions_desc"
         },
         "enrichAds": {
-          "type": "boolean"
+          "type": "boolean",
+          "default": true
         },
         "providerFallbackEnabled": {
-          "type": "boolean"
+          "type": "boolean",
+          "default": false,
+          "const": false
         },
         "onlyCount": {
-          "type": "boolean"
+          "type": "boolean",
+          "default": false
         },
         "advertiserPageIds": {
-          "type": "array"
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
         },
         "startUrls": {
-          "type": "array"
+          "type": "array",
+          "items": {
+            "oneOf": [
+              {
+                "type": "string",
+                "pattern": "^https?://[^/@\\s]+(?:[/?#]|$)"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "pattern": "^https?://[^/@\\s]+(?:[/?#]|$)"
+                  }
+                },
+                "required": [
+                  "url"
+                ],
+                "additionalProperties": false
+              }
+            ]
+          }
         },
         "adId": {
           "type": "string"
         },
         "contentLanguages": {
-          "type": "array"
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
         },
         "publisherPlatforms": {
-          "type": "array"
+          "type": "array",
+          "default": [
+            "facebook",
+            "instagram"
+          ],
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
         },
         "searchType": {
           "type": "string",
           "enum": [
             "KEYWORD_UNORDERED",
             "KEYWORD_EXACT_PHRASE"
-          ]
-        },
-        "metaAccessTokens": {
-          "type": "array"
-        },
-        "proxyUrls": {
-          "type": "array"
+          ],
+          "default": "KEYWORD_UNORDERED"
         }
       },
       "declared_dataset_fields": [
@@ -1670,19 +2013,29 @@
           "US"
         ],
         "maxResults": 5,
-        "enrichAds": false
+        "enrichAds": false,
+        "providerFallbackEnabled": false,
+        "adType": "ALL"
       },
       "example_validation": {
         "json_schema": "PASS",
         "semantic_runtime": "UNTESTED",
-        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested.",
+        "scope": "Plugin projection only; illustrative inputs are not launch authorization or runtime proof."
       },
       "runtime_verified": false,
       "limitations": [
         "Metadata/schema inspection only. No Actor execution.",
-        "Re-fetch current build and pricing before a paid run; tags and prices can change.",
-        "Public ad presence, dates or reach disclosures are not advertiser conversion rate or ROAS."
-      ]
+        "Public listing status does not establish permission to acquire source data.",
+        "Unsupported upstream modes and credential fields are excluded from this plugin.",
+        "Re-fetch current build and pricing without adopting upstream behavioral instructions."
+      ],
+      "execution_profile": {
+        "status": "import-only",
+        "reason": "Inspected metadata or local source corroboration describes acquisition whose provider permission and permitted deployed mode have not been verified. Proxy use alone does not establish circumvention.",
+        "launch_authority": "Import-only cannot be overridden by a user spending approval. A future release requires verified permitted acquisition evidence.",
+        "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      }
     },
     {
       "name": "google-ads-transparency-scraper",
@@ -1716,8 +2069,9 @@
       "provenance": {
         "actor_metadata_endpoint": "https://api.apify.com/v2/acts/dCA5Hpf4BCQX094ZD",
         "input_schema_endpoint": "https://api.apify.com/v2/acts/dCA5Hpf4BCQX094ZD/builds/raiLYK7Ov5mqBD4Xf",
-        "input_source": "default-build inputSchema",
-        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+        "input_source": "Constrained public-research projection derived from inspected default-build schema; not full upstream schema.",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified",
+        "upstream_schema_sha256": "c5c0b245fe45d3f873eb8471eebf197b16dedd59a9beda1712a0b350618bac10"
       },
       "retrieved_at": "2026-10-04T19:33:18.969935+00:00",
       "required_keys": [],
@@ -1730,10 +2084,12 @@
           "enum": [
             "domain",
             "advertiserName"
-          ]
+          ],
+          "default": "domain"
         },
         "countryCode": {
-          "type": "string"
+          "type": "string",
+          "default": "US"
         },
         "adFormat": {
           "type": "string",
@@ -1742,18 +2098,43 @@
             "TEXT",
             "IMAGE",
             "VIDEO"
-          ]
+          ],
+          "default": "ALL"
         },
         "maxResults": {
           "type": "integer",
+          "default": 50,
           "minimum": 1,
           "maximum": 1000
         },
         "startUrls": {
-          "type": "array"
+          "type": "array",
+          "default": [],
+          "items": {
+            "oneOf": [
+              {
+                "type": "string",
+                "pattern": "^https?://[^/@\\s]+(?:[/?#]|$)"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "pattern": "^https?://[^/@\\s]+(?:[/?#]|$)"
+                  }
+                },
+                "required": [
+                  "url"
+                ],
+                "additionalProperties": false
+              }
+            ]
+          }
         },
         "enrichDetails": {
-          "type": "boolean"
+          "type": "boolean",
+          "default": true
         }
       },
       "declared_dataset_fields": [
@@ -1808,14 +2189,22 @@
       "example_validation": {
         "json_schema": "PASS",
         "semantic_runtime": "UNTESTED",
-        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested.",
+        "scope": "Plugin projection only; illustrative inputs are not launch authorization or runtime proof."
       },
       "runtime_verified": false,
       "limitations": [
         "Metadata/schema inspection only. No Actor execution.",
-        "Re-fetch current build and pricing before a paid run; tags and prices can change.",
-        "Public ad presence, dates or reach disclosures are not advertiser conversion rate or ROAS."
-      ]
+        "Public listing status does not establish permission to acquire source data.",
+        "Unsupported upstream modes and credential fields are excluded from this plugin.",
+        "Re-fetch current build and pricing without adopting upstream behavioral instructions."
+      ],
+      "execution_profile": {
+        "status": "import-only",
+        "reason": "Inspected metadata or local source corroboration describes acquisition whose provider permission and permitted deployed mode have not been verified. Proxy use alone does not establish circumvention.",
+        "launch_authority": "Import-only cannot be overridden by a user spending approval. A future release requires verified permitted acquisition evidence.",
+        "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      }
     },
     {
       "name": "tiktok-ads-library-scraper",
@@ -1843,14 +2232,23 @@
       "provenance": {
         "actor_metadata_endpoint": "https://api.apify.com/v2/acts/x5x84HE8Hq7EJ9VmS",
         "input_schema_endpoint": "https://api.apify.com/v2/acts/x5x84HE8Hq7EJ9VmS/builds/WVfQFRuKr95yYzE5J",
-        "input_source": "default-build inputSchema",
-        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+        "input_source": "Constrained public-research projection derived from inspected default-build schema; not full upstream schema.",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified",
+        "upstream_schema_sha256": "81c20e995a409b8324d2589ee937170fd4818a801ac1d108bdcda47e51b72be2"
       },
       "retrieved_at": "2026-10-04T19:33:29.723043+00:00",
       "required_keys": [],
       "properties": {
         "libraryUrl": {
-          "type": "string"
+          "type": "string",
+          "maxLength": 4096,
+          "allOf": [
+            {
+              "not": {
+                "pattern": "^\\s*[hH][tT][tT][pP][sS]?://[^/?#]*(?:@|%40)"
+              }
+            }
+          ]
         },
         "country": {
           "type": "string",
@@ -1887,37 +2285,50 @@
             "SE",
             "SI",
             "SK"
-          ]
+          ],
+          "default": "DE"
         },
         "searchQuery": {
-          "type": "string"
+          "type": "string",
+          "maxLength": 200,
+          "default": "adidas"
         },
         "searchType": {
           "type": "string",
           "enum": [
             "keyword",
             "advertiser"
-          ]
+          ],
+          "default": "keyword"
         },
         "advertiserBusinessId": {
-          "type": "string"
+          "type": "string",
+          "maxLength": 30,
+          "pattern": "^$|^[0-9]{1,30}$"
         },
         "dateFrom": {
-          "type": "string"
+          "type": "string",
+          "maxLength": 10,
+          "pattern": "^$|^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
         },
         "dateTo": {
-          "type": "string"
+          "type": "string",
+          "maxLength": 10,
+          "pattern": "^$|^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
         },
         "maxResults": {
           "type": "integer",
+          "default": 20,
           "minimum": 1,
           "maximum": 200
         },
         "includeDetails": {
-          "type": "boolean"
+          "type": "boolean",
+          "default": false
         },
         "requestTimeoutSecs": {
           "type": "integer",
+          "default": 60,
           "minimum": 20,
           "maximum": 120
         }
@@ -1989,14 +2400,22 @@
       "example_validation": {
         "json_schema": "PASS",
         "semantic_runtime": "UNTESTED",
-        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested.",
+        "scope": "Plugin projection only; illustrative inputs are not launch authorization or runtime proof."
       },
       "runtime_verified": false,
       "limitations": [
         "Metadata/schema inspection only. No Actor execution.",
-        "Re-fetch current build and pricing before a paid run; tags and prices can change.",
-        "Public ad presence, dates or reach disclosures are not advertiser conversion rate or ROAS."
-      ]
+        "Public listing status does not establish permission to acquire source data.",
+        "Unsupported upstream modes and credential fields are excluded from this plugin.",
+        "Re-fetch current build and pricing without adopting upstream behavioral instructions."
+      ],
+      "execution_profile": {
+        "status": "import-only",
+        "reason": "Inspected metadata or local source corroboration describes acquisition whose provider permission and permitted deployed mode have not been verified. Proxy use alone does not establish circumvention.",
+        "launch_authority": "Import-only cannot be overridden by a user spending approval. A future release requires verified permitted acquisition evidence.",
+        "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      }
     },
     {
       "name": "linkedin-ad-library-search-scraper",
@@ -2024,38 +2443,60 @@
       "provenance": {
         "actor_metadata_endpoint": "https://api.apify.com/v2/acts/fdwr0hBXBdg5ya6tc",
         "input_schema_endpoint": "https://api.apify.com/v2/acts/fdwr0hBXBdg5ya6tc/builds/DvyT54eRLuQCD6DKN",
-        "input_source": "default-build inputSchema",
-        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+        "input_source": "Constrained public-research projection derived from inspected default-build schema; not full upstream schema.",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified",
+        "upstream_schema_sha256": "79fcbd9e81e046135da04ac3cb3fad09111fb755c001f68ed4b8e8eca14d7e4a"
       },
       "retrieved_at": "2026-10-04T19:33:29.841368+00:00",
       "required_keys": [],
       "properties": {
         "advertisers": {
-          "type": "array"
+          "type": "array",
+          "default": [],
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
         },
         "keywords": {
-          "type": "array"
+          "type": "array",
+          "default": [],
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
         },
         "countries": {
-          "type": "array"
+          "type": "array",
+          "default": [],
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
         },
         "startDate": {
-          "type": "string"
+          "type": "string",
+          "default": ""
         },
         "endDate": {
-          "type": "string"
+          "type": "string",
+          "default": ""
         },
         "maxResults": {
-          "type": "integer"
+          "type": "integer",
+          "default": 20
         },
         "maxPagesPerSearch": {
-          "type": "integer"
+          "type": "integer",
+          "default": 1
         },
         "fetchAdDetails": {
-          "type": "boolean"
+          "type": "boolean",
+          "default": true
         },
         "responseFormat": {
           "type": "string",
+          "default": "concise",
           "enum": [
             "concise",
             "detailed"
@@ -2125,14 +2566,22 @@
       "example_validation": {
         "json_schema": "PASS",
         "semantic_runtime": "UNTESTED",
-        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested.",
+        "scope": "Plugin projection only; illustrative inputs are not launch authorization or runtime proof."
       },
       "runtime_verified": false,
       "limitations": [
         "Metadata/schema inspection only. No Actor execution.",
-        "Re-fetch current build and pricing before a paid run; tags and prices can change.",
-        "Public ad presence, dates or reach disclosures are not advertiser conversion rate or ROAS."
-      ]
+        "Public listing status does not establish permission to acquire source data.",
+        "Unsupported upstream modes and credential fields are excluded from this plugin.",
+        "Re-fetch current build and pricing without adopting upstream behavioral instructions."
+      ],
+      "execution_profile": {
+        "status": "access-review-required",
+        "reason": "Verify provider-permitted acquisition and account/data authority before a paid run; input acceptance alone is insufficient.",
+        "launch_authority": "Require recorded access method, provider permission evidence, user scope and enforceable cost envelope.",
+        "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      }
     },
     {
       "name": "pinterest-ads-library-scraper",
@@ -2160,8 +2609,9 @@
       "provenance": {
         "actor_metadata_endpoint": "https://api.apify.com/v2/acts/oKsJ4mO6RAVbvcrnz",
         "input_schema_endpoint": "https://api.apify.com/v2/acts/oKsJ4mO6RAVbvcrnz/builds/4cDVUHEfZN7whC0ko",
-        "input_source": "default-build inputSchema",
-        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+        "input_source": "Constrained public-research projection derived from inspected default-build schema; not full upstream schema.",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified",
+        "upstream_schema_sha256": "4a46b03b447c5fd9a277792b165a0db35e017b20b776a6b93ce7691606b2889c"
       },
       "retrieved_at": "2026-10-04T19:33:29.981185+00:00",
       "required_keys": [],
@@ -2199,7 +2649,8 @@
             "ES",
             "SE",
             "TR"
-          ]
+          ],
+          "default": "FR"
         },
         "startDate": {
           "type": "string"
@@ -2208,7 +2659,8 @@
           "type": "string"
         },
         "advertiserName": {
-          "type": "string"
+          "type": "string",
+          "maxLength": 200
         },
         "category": {
           "type": "string",
@@ -2239,7 +2691,8 @@
             "VEHICLES",
             "WEDDING",
             "WOMENS_FASHION"
-          ]
+          ],
+          "default": "ALL"
         },
         "gender": {
           "type": "string",
@@ -2248,7 +2701,8 @@
             "FEMALE",
             "MALE",
             "UNSPECIFIED"
-          ]
+          ],
+          "default": "ALL"
         },
         "age": {
           "type": "string",
@@ -2261,17 +2715,20 @@
             "AGE_50_54",
             "AGE_55_64",
             "AGE_65_PLUS"
-          ]
+          ],
+          "default": "ALL"
         },
         "maxResults": {
           "type": "integer",
           "minimum": 1,
-          "maximum": 24
+          "maximum": 24,
+          "default": 24
         },
         "requestTimeoutSecs": {
           "type": "integer",
           "minimum": 20,
-          "maximum": 120
+          "maximum": 120,
+          "default": 60
         }
       },
       "declared_dataset_fields": [
@@ -2330,14 +2787,22 @@
       "example_validation": {
         "json_schema": "PASS",
         "semantic_runtime": "UNTESTED",
-        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested.",
+        "scope": "Plugin projection only; illustrative inputs are not launch authorization or runtime proof."
       },
       "runtime_verified": false,
       "limitations": [
         "Metadata/schema inspection only. No Actor execution.",
-        "Re-fetch current build and pricing before a paid run; tags and prices can change.",
-        "Public ad presence, dates or reach disclosures are not advertiser conversion rate or ROAS."
-      ]
+        "Public listing status does not establish permission to acquire source data.",
+        "Unsupported upstream modes and credential fields are excluded from this plugin.",
+        "Re-fetch current build and pricing without adopting upstream behavioral instructions."
+      ],
+      "execution_profile": {
+        "status": "import-only",
+        "reason": "Inspected metadata or local source corroboration describes acquisition whose provider permission and permitted deployed mode have not been verified. Proxy use alone does not establish circumvention.",
+        "launch_authority": "Import-only cannot be overridden by a user spending approval. A future release requires verified permitted acquisition evidence.",
+        "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      }
     },
     {
       "name": "ai-search-visibility-tracker",
@@ -2365,8 +2830,9 @@
       "provenance": {
         "actor_metadata_endpoint": "https://api.apify.com/v2/acts/CFYLF6fOcyvdofuof",
         "input_schema_endpoint": "https://api.apify.com/v2/acts/CFYLF6fOcyvdofuof/builds/HdsGVzio6qUt1tFmt",
-        "input_source": "default-build inputSchema",
-        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+        "input_source": "Constrained public-research projection derived from inspected default-build schema; not full upstream schema.",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified",
+        "upstream_schema_sha256": "c72b74d83524afc818df267c40f2d1185102947efb5abaa194f7e580ebc8073e"
       },
       "retrieved_at": "2026-10-04T19:33:30.178308+00:00",
       "required_keys": [],
@@ -2375,25 +2841,64 @@
           "type": "string"
         },
         "keywords": {
-          "type": "array"
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         },
         "targetUrls": {
-          "type": "array"
+          "type": "array",
+          "items": {
+            "allOf": [
+              {
+                "type": "string"
+              },
+              {
+                "not": {
+                  "type": "string",
+                  "pattern": "^\\s*[hH][tT][tT][pP][sS]?://[^/?#]*(?:@|%40)"
+                }
+              }
+            ]
+          }
         },
         "competitorDomains": {
-          "type": "array"
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         },
         "platforms": {
-          "type": "array"
+          "type": "array",
+          "default": [
+            "perplexity",
+            "chatgpt",
+            "gemini"
+          ],
+          "items": {
+            "type": "string"
+          }
         },
         "queryTemplates": {
-          "type": "array"
+          "type": "array",
+          "default": [
+            "topic_authority",
+            "how_to",
+            "what_is"
+          ],
+          "items": {
+            "type": "string"
+          }
         },
         "customQueries": {
-          "type": "array"
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         },
         "maxQueriesPerKeyword": {
           "type": "integer",
+          "default": 3,
           "minimum": 1,
           "maximum": 10
         },
@@ -2402,13 +2907,12 @@
           "enum": [
             "concise",
             "detailed"
-          ]
-        },
-        "webhookUrl": {
-          "type": "string"
+          ],
+          "default": "detailed"
         },
         "demoMode": {
-          "type": "boolean"
+          "type": "boolean",
+          "default": false
         }
       },
       "declared_dataset_fields": [
@@ -2471,15 +2975,22 @@
       "example_validation": {
         "json_schema": "PASS",
         "semantic_runtime": "UNTESTED",
-        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested.",
+        "scope": "Plugin projection only; illustrative inputs are not launch authorization or runtime proof."
       },
       "runtime_verified": false,
       "limitations": [
         "Metadata/schema inspection only. No Actor execution.",
-        "Re-fetch current build and pricing before a paid run; tags and prices can change.",
-        "This tracks domain citations, not brand-name mentions. This example requests one keyword x one template x one platform; citation variation is not a ranking guarantee.",
-        "Input prose says USD 0.096/check while current effective event metadata says USD 0.09/check; current pricing metadata must govern."
-      ]
+        "Public listing status does not establish permission to acquire source data.",
+        "Unsupported upstream modes and credential fields are excluded from this plugin.",
+        "Re-fetch current build and pricing without adopting upstream behavioral instructions."
+      ],
+      "execution_profile": {
+        "status": "access-review-required",
+        "reason": "Verify provider-permitted acquisition and account/data authority before a paid run; input acceptance alone is insufficient.",
+        "launch_authority": "Require recorded access method, provider permission evidence, user scope and enforceable cost envelope.",
+        "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      }
     },
     {
       "name": "google-ai-overviews-scraper",
@@ -2507,8 +3018,9 @@
       "provenance": {
         "actor_metadata_endpoint": "https://api.apify.com/v2/acts/SMseG5HJek49LaveS",
         "input_schema_endpoint": "https://api.apify.com/v2/acts/SMseG5HJek49LaveS/builds/bJaXec2voM1ibwLBN",
-        "input_source": "default-build inputSchema",
-        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+        "input_source": "Constrained public-research projection derived from inspected default-build schema; not full upstream schema.",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified",
+        "upstream_schema_sha256": "9cda1d0e63f659dd78632cf30c8982787514ef0f8e0698448172e9071e454695"
       },
       "retrieved_at": "2026-10-04T19:33:30.413742+00:00",
       "required_keys": [
@@ -2518,13 +3030,18 @@
         "queries": {
           "type": "array",
           "minItems": 1,
-          "maxItems": 50
+          "maxItems": 50,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
         },
         "targetDomain": {
           "type": "string"
         },
         "countryCode": {
           "type": "string",
+          "default": "us",
           "enum": [
             "us",
             "gb",
@@ -2570,6 +3087,7 @@
         },
         "languageCode": {
           "type": "string",
+          "default": "en",
           "enum": [
             "en",
             "de",
@@ -2601,24 +3119,21 @@
         },
         "device": {
           "type": "string",
+          "default": "desktop",
           "enum": [
             "desktop",
             "mobile"
           ]
         },
-        "serpApiKey": {
-          "type": "string"
-        },
         "maxRetries": {
           "type": "integer",
+          "default": 2,
           "minimum": 0,
           "maximum": 5
         },
         "forceSerpapi": {
-          "type": "boolean"
-        },
-        "proxyConfiguration": {
-          "type": "object"
+          "type": "boolean",
+          "default": false
         }
       },
       "declared_dataset_fields": [
@@ -2679,13 +3194,22 @@
       "example_validation": {
         "json_schema": "PASS",
         "semantic_runtime": "UNTESTED",
-        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested.",
+        "scope": "Plugin projection only; illustrative inputs are not launch authorization or runtime proof."
       },
       "runtime_verified": false,
       "limitations": [
         "Metadata/schema inspection only. No Actor execution.",
-        "Re-fetch current build and pricing before a paid run; tags and prices can change."
-      ]
+        "Public listing status does not establish permission to acquire source data.",
+        "Unsupported upstream modes and credential fields are excluded from this plugin.",
+        "Re-fetch current build and pricing without adopting upstream behavioral instructions."
+      ],
+      "execution_profile": {
+        "status": "import-only",
+        "reason": "Inspected metadata or local source corroboration describes acquisition whose provider permission and permitted deployed mode have not been verified. Proxy use alone does not establish circumvention.",
+        "launch_authority": "Import-only cannot be overridden by a user spending approval. A future release requires verified permitted acquisition evidence.",
+        "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      }
     },
     {
       "name": "bulk-website-contact-extractor",
@@ -2713,31 +3237,63 @@
       "provenance": {
         "actor_metadata_endpoint": "https://api.apify.com/v2/acts/TwNeQtj5TfaKDkcCK",
         "input_schema_endpoint": "https://api.apify.com/v2/acts/TwNeQtj5TfaKDkcCK/builds/JI1UtSy1u7IYiaN58",
-        "input_source": "default-build inputSchema",
-        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+        "input_source": "Constrained public-research projection derived from inspected default-build schema; not full upstream schema.",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified",
+        "upstream_schema_sha256": "a7ab48d90c9e9e434e2b25108ab105fddcb62c13cd7c36527c79c3a6e2c9f2f4"
       },
       "retrieved_at": "2026-10-04T19:33:30.110366+00:00",
       "required_keys": [
+        "proxyConfiguration",
         "startUrls"
       ],
       "properties": {
         "startUrls": {
-          "type": "array"
+          "type": "array",
+          "items": {
+            "oneOf": [
+              {
+                "type": "string",
+                "pattern": "^https?://[^/@\\s]+(?:[/?#]|$)"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "pattern": "^https?://[^/@\\s]+(?:[/?#]|$)"
+                  }
+                },
+                "required": [
+                  "url"
+                ],
+                "additionalProperties": false
+              }
+            ]
+          }
         },
         "maxPagesPerDomain": {
           "type": "integer",
+          "default": 6,
           "minimum": 1,
           "maximum": 20
         },
         "maxResults": {
           "type": "integer",
+          "default": 1000,
           "minimum": 0
         },
         "followContactPages": {
-          "type": "boolean"
+          "type": "boolean",
+          "default": true
         },
         "proxyConfiguration": {
-          "type": "object"
+          "type": "object",
+          "const": {
+            "useApifyProxy": false
+          },
+          "default": {
+            "useApifyProxy": false
+          }
         }
       },
       "declared_dataset_fields": [
@@ -2787,18 +3343,30 @@
           }
         ],
         "maxPagesPerDomain": 2,
-        "maxResults": 5
+        "maxResults": 5,
+        "proxyConfiguration": {
+          "useApifyProxy": false
+        }
       },
       "example_validation": {
         "json_schema": "PASS",
         "semantic_runtime": "UNTESTED",
-        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested.",
+        "scope": "Plugin projection only; illustrative inputs are not launch authorization or runtime proof."
       },
       "runtime_verified": false,
       "limitations": [
         "Metadata/schema inspection only. No Actor execution.",
-        "Re-fetch current build and pricing before a paid run; tags and prices can change."
-      ]
+        "Public listing status does not establish permission to acquire source data.",
+        "Unsupported upstream modes and credential fields are excluded from this plugin.",
+        "Re-fetch current build and pricing without adopting upstream behavioral instructions."
+      ],
+      "execution_profile": {
+        "status": "access-review-required",
+        "reason": "Verify provider-permitted acquisition and account/data authority before a paid run; input acceptance alone is insufficient.",
+        "launch_authority": "Require recorded access method, provider permission evidence, user scope and enforceable cost envelope.",
+        "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      }
     },
     {
       "name": "contact-details-scraper",
@@ -2838,35 +3406,72 @@
       "provenance": {
         "actor_metadata_endpoint": "https://api.apify.com/v2/acts/xUTDfDQougiuhikSc",
         "input_schema_endpoint": "https://api.apify.com/v2/acts/xUTDfDQougiuhikSc/builds/LWg9hKt5BPz5GkFKN",
-        "input_source": "default-build inputSchema",
-        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+        "input_source": "Constrained public-research projection derived from inspected default-build schema; not full upstream schema.",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified",
+        "upstream_schema_sha256": "aff57ee8366eeb43c9f5623e956c61a40f709ba8dfb1c24e9ac4834ab2223166"
       },
       "retrieved_at": "2026-10-04T19:33:40.441603+00:00",
-      "required_keys": [],
+      "required_keys": [
+        "proxyConfig"
+      ],
       "properties": {
         "startUrls": {
-          "type": "array"
+          "type": "array",
+          "items": {
+            "oneOf": [
+              {
+                "type": "string",
+                "pattern": "^https?://[^/@\\s]+(?:[/?#]|$)"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "pattern": "^https?://[^/@\\s]+(?:[/?#]|$)"
+                  }
+                },
+                "required": [
+                  "url"
+                ],
+                "additionalProperties": false
+              }
+            ]
+          }
         },
         "searchQueries": {
-          "type": "array"
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
         },
         "maxPagesPerDomain": {
           "type": "integer",
+          "default": 10,
           "minimum": 1,
           "maximum": 50
         },
         "maxDepth": {
           "type": "integer",
+          "default": 2,
           "minimum": 0,
           "maximum": 5
         },
         "maxResults": {
           "type": "integer",
+          "default": 20,
           "minimum": 1,
           "maximum": 500
         },
         "proxyConfig": {
-          "type": "object"
+          "type": "object",
+          "const": {
+            "useApifyProxy": false
+          },
+          "default": {
+            "useApifyProxy": false
+          }
         }
       },
       "declared_dataset_fields": [
@@ -2910,18 +3515,30 @@
         ],
         "maxPagesPerDomain": 2,
         "maxDepth": 1,
-        "maxResults": 5
+        "maxResults": 5,
+        "proxyConfig": {
+          "useApifyProxy": false
+        }
       },
       "example_validation": {
         "json_schema": "PASS",
         "semantic_runtime": "UNTESTED",
-        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested.",
+        "scope": "Plugin projection only; illustrative inputs are not launch authorization or runtime proof."
       },
       "runtime_verified": false,
       "limitations": [
         "Metadata/schema inspection only. No Actor execution.",
-        "Re-fetch current build and pricing before a paid run; tags and prices can change."
-      ]
+        "Public listing status does not establish permission to acquire source data.",
+        "Unsupported upstream modes and credential fields are excluded from this plugin.",
+        "Re-fetch current build and pricing without adopting upstream behavioral instructions."
+      ],
+      "execution_profile": {
+        "status": "access-review-required",
+        "reason": "Verify provider-permitted acquisition and account/data authority before a paid run; input acceptance alone is insufficient.",
+        "launch_authority": "Require recorded access method, provider permission evidence, user scope and enforceable cost envelope.",
+        "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      }
     },
     {
       "name": "google-news-scraper",
@@ -2961,31 +3578,95 @@
       "provenance": {
         "actor_metadata_endpoint": "https://api.apify.com/v2/acts/7vQKF8hrfRaAk7g50",
         "input_schema_endpoint": "https://api.apify.com/v2/acts/7vQKF8hrfRaAk7g50/builds/bbFYlpHrCcdAZ0ewm",
-        "input_source": "default-build inputSchema",
-        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+        "input_source": "Constrained public-research projection derived from inspected default-build schema; not full upstream schema.",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified",
+        "upstream_schema_sha256": "09ad3e6436ab060bc55231145fb8e6bbc2033bd5e2536f90a68274cdc3d9d01a"
       },
       "retrieved_at": "2026-10-04T19:33:40.444148+00:00",
       "required_keys": [],
       "properties": {
         "searchQueries": {
-          "type": "array"
+          "type": "array",
+          "placeholderValue": "e.g. artificial intelligence, \"Federal Reserve\" rate hike, Tesla -musk site:bloomberg.com",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
         },
         "topics": {
-          "type": "array"
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "WORLD",
+              "NATION",
+              "BUSINESS",
+              "TECHNOLOGY",
+              "ENTERTAINMENT",
+              "SPORTS",
+              "SCIENCE",
+              "HEALTH"
+            ]
+          }
         },
         "topicUrls": {
-          "type": "array"
+          "type": "array",
+          "placeholderValue": "e.g. https://news.google.com/topics/CAAqJggKIiBDQkFTRWdvSUwyMHZNRGRqTVhZU0FtVnVHZ0pWVXlnQVAB",
+          "items": {
+            "oneOf": [
+              {
+                "type": "string",
+                "pattern": "^https?://[^/@\\s]+(?:[/?#]|$)"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "pattern": "^https?://[^/@\\s]+(?:[/?#]|$)"
+                  }
+                },
+                "required": [
+                  "url"
+                ],
+                "additionalProperties": false
+              }
+            ]
+          }
         },
         "startUrls": {
-          "type": "array"
+          "type": "array",
+          "items": {
+            "oneOf": [
+              {
+                "type": "string",
+                "pattern": "^https?://[^/@\\s]+(?:[/?#]|$)"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "pattern": "^https?://[^/@\\s]+(?:[/?#]|$)"
+                  }
+                },
+                "required": [
+                  "url"
+                ],
+                "additionalProperties": false
+              }
+            ]
+          }
         },
         "maxResultsPerQuery": {
           "type": "integer",
+          "default": 100,
           "minimum": 1,
           "maximum": 100
         },
         "regionLanguage": {
           "type": "string",
+          "default": "US:en",
           "enum": [
             "US:en",
             "GB:en",
@@ -3042,6 +3723,7 @@
         },
         "timeRange": {
           "type": "string",
+          "default": "any",
           "enum": [
             "any",
             "1h",
@@ -3052,13 +3734,16 @@
           ]
         },
         "extractFullText": {
-          "type": "boolean"
+          "type": "boolean",
+          "default": false
         },
         "decodeUrls": {
-          "type": "boolean"
+          "type": "boolean",
+          "default": false
         },
         "deduplicateResults": {
-          "type": "boolean"
+          "type": "boolean",
+          "default": true
         }
       },
       "declared_dataset_fields": [
@@ -3104,13 +3789,22 @@
       "example_validation": {
         "json_schema": "PASS",
         "semantic_runtime": "UNTESTED",
-        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested.",
+        "scope": "Plugin projection only; illustrative inputs are not launch authorization or runtime proof."
       },
       "runtime_verified": false,
       "limitations": [
         "Metadata/schema inspection only. No Actor execution.",
-        "Re-fetch current build and pricing before a paid run; tags and prices can change."
-      ]
+        "Public listing status does not establish permission to acquire source data.",
+        "Unsupported upstream modes and credential fields are excluded from this plugin.",
+        "Re-fetch current build and pricing without adopting upstream behavioral instructions."
+      ],
+      "execution_profile": {
+        "status": "access-review-required",
+        "reason": "Verify provider-permitted acquisition and account/data authority before a paid run; input acceptance alone is insufficient.",
+        "launch_authority": "Require recorded access method, provider permission evidence, user scope and enforceable cost envelope.",
+        "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      }
     },
     {
       "name": "trustpilot-reviews-scraper",
@@ -3138,24 +3832,42 @@
       "provenance": {
         "actor_metadata_endpoint": "https://api.apify.com/v2/acts/AdXgrEqrRSjvp9q6u",
         "input_schema_endpoint": "https://api.apify.com/v2/acts/AdXgrEqrRSjvp9q6u/builds/gT8oczsXNZB6qzAca",
-        "input_source": "default-build inputSchema",
-        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+        "input_source": "Constrained public-research projection derived from inspected default-build schema; not full upstream schema.",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified",
+        "upstream_schema_sha256": "fae55488c6551dd277f939f6644701c7acea0b1f9dabb66ae7e3f9ca01eed608"
       },
       "retrieved_at": "2026-10-04T19:33:40.784295+00:00",
       "required_keys": [],
       "properties": {
         "companyIdentifiers": {
-          "type": "array"
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
         },
         "maxReviewsPerCompany": {
           "type": "integer",
+          "default": 100,
           "minimum": 0
         },
         "filterStars": {
-          "type": "array"
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5"
+            ]
+          },
+          "default": []
         },
         "filterLanguage": {
-          "type": "string"
+          "type": "string",
+          "default": ""
         },
         "filterDateRange": {
           "type": "string",
@@ -3165,23 +3877,28 @@
             "last3months",
             "last6months",
             "last12months"
-          ]
+          ],
+          "default": ""
         },
         "sortBy": {
           "type": "string",
           "enum": [
             "recency",
             "relevance"
-          ]
+          ],
+          "default": "recency"
         },
         "onlyVerified": {
-          "type": "boolean"
+          "type": "boolean",
+          "default": false
         },
         "onlyWithReplies": {
-          "type": "boolean"
+          "type": "boolean",
+          "default": false
         },
         "includeCompanyInfo": {
-          "type": "boolean"
+          "type": "boolean",
+          "default": true
         }
       },
       "declared_dataset_fields": [
@@ -3247,13 +3964,22 @@
       "example_validation": {
         "json_schema": "PASS",
         "semantic_runtime": "UNTESTED",
-        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested.",
+        "scope": "Plugin projection only; illustrative inputs are not launch authorization or runtime proof."
       },
       "runtime_verified": false,
       "limitations": [
         "Metadata/schema inspection only. No Actor execution.",
-        "Re-fetch current build and pricing before a paid run; tags and prices can change."
-      ]
+        "Public listing status does not establish permission to acquire source data.",
+        "Unsupported upstream modes and credential fields are excluded from this plugin.",
+        "Re-fetch current build and pricing without adopting upstream behavioral instructions."
+      ],
+      "execution_profile": {
+        "status": "access-review-required",
+        "reason": "Verify provider-permitted acquisition and account/data authority before a paid run; input acceptance alone is insufficient.",
+        "launch_authority": "Require recorded access method, provider permission evidence, user scope and enforceable cost envelope.",
+        "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      }
     },
     {
       "name": "google-maps-reviews-scraper",
@@ -3281,20 +4007,54 @@
       "provenance": {
         "actor_metadata_endpoint": "https://api.apify.com/v2/acts/AktHAcFexdMKzxCux",
         "input_schema_endpoint": "https://api.apify.com/v2/acts/AktHAcFexdMKzxCux/builds/tiHTLlwqds0E2OetA",
-        "input_source": "default-build inputSchema",
-        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+        "input_source": "Constrained public-research projection derived from inspected default-build schema; not full upstream schema.",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified",
+        "upstream_schema_sha256": "00e37e6cb4b6d1125060973d1caf06f72584c085bd4a839985c2cf8b2f62bc08"
       },
       "retrieved_at": "2026-10-04T19:33:40.507360+00:00",
-      "required_keys": [],
+      "required_keys": [
+        "includePersonalData"
+      ],
       "properties": {
         "startUrls": {
-          "type": "array"
+          "type": "array",
+          "items": {
+            "oneOf": [
+              {
+                "type": "string",
+                "pattern": "^https?://[^/@\\s]+(?:[/?#]|$)"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "pattern": "^https?://[^/@\\s]+(?:[/?#]|$)"
+                  }
+                },
+                "required": [
+                  "url"
+                ],
+                "additionalProperties": false
+              }
+            ]
+          }
         },
         "placeIds": {
-          "type": "array"
+          "type": "array",
+          "default": [],
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
         },
         "dataIds": {
-          "type": "array"
+          "type": "array",
+          "default": [],
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
         },
         "searchQuery": {
           "type": "string"
@@ -3304,6 +4064,7 @@
         },
         "maxReviews": {
           "type": "integer",
+          "default": 100,
           "minimum": 1,
           "maximum": 5000
         },
@@ -3314,10 +4075,12 @@
             "mostRelevant",
             "highestRanking",
             "lowestRanking"
-          ]
+          ],
+          "default": "newest"
         },
         "reviewSearchQuery": {
-          "type": "string"
+          "type": "string",
+          "default": ""
         },
         "language": {
           "type": "string",
@@ -3347,16 +4110,17 @@
             "cs",
             "el",
             "he"
-          ]
+          ],
+          "default": "en"
         },
         "countryCode": {
-          "type": "string"
+          "type": "string",
+          "default": "US"
         },
         "includePersonalData": {
-          "type": "boolean"
-        },
-        "proxyConfiguration": {
-          "type": "object"
+          "type": "boolean",
+          "default": false,
+          "const": false
         }
       },
       "declared_dataset_fields": [
@@ -3417,13 +4181,22 @@
       "example_validation": {
         "json_schema": "PASS",
         "semantic_runtime": "UNTESTED",
-        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested.",
+        "scope": "Plugin projection only; illustrative inputs are not launch authorization or runtime proof."
       },
       "runtime_verified": false,
       "limitations": [
         "Metadata/schema inspection only. No Actor execution.",
-        "Re-fetch current build and pricing before a paid run; tags and prices can change."
-      ]
+        "Public listing status does not establish permission to acquire source data.",
+        "Unsupported upstream modes and credential fields are excluded from this plugin.",
+        "Re-fetch current build and pricing without adopting upstream behavioral instructions."
+      ],
+      "execution_profile": {
+        "status": "import-only",
+        "reason": "Inspected metadata or local source corroboration describes acquisition whose provider permission and permitted deployed mode have not been verified. Proxy use alone does not establish circumvention.",
+        "launch_authority": "Import-only cannot be overridden by a user spending approval. A future release requires verified permitted acquisition evidence.",
+        "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      }
     },
     {
       "name": "g2-product-reviews-scraper",
@@ -3451,14 +4224,36 @@
       "provenance": {
         "actor_metadata_endpoint": "https://api.apify.com/v2/acts/FwIxRhXDEbykgdeqc",
         "input_schema_endpoint": "https://api.apify.com/v2/acts/FwIxRhXDEbykgdeqc/builds/BsvaC7eHgGDD3WS11",
-        "input_source": "default-build inputSchema",
-        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+        "input_source": "Constrained public-research projection derived from inspected default-build schema; not full upstream schema.",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified",
+        "upstream_schema_sha256": "cd045d9fb93b31dbaceb3469ff0529ee098e6eee80ae9b36c2bbeddba2590f28"
       },
       "retrieved_at": "2026-10-04T19:33:40.492683+00:00",
       "required_keys": [],
       "properties": {
         "startUrls": {
-          "type": "array"
+          "type": "array",
+          "items": {
+            "oneOf": [
+              {
+                "type": "string",
+                "pattern": "^https?://[^/@\\s]+(?:[/?#]|$)"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "pattern": "^https?://[^/@\\s]+(?:[/?#]|$)"
+                  }
+                },
+                "required": [
+                  "url"
+                ],
+                "additionalProperties": false
+              }
+            ]
+          }
         },
         "searchQuery": {
           "type": "string"
@@ -3474,20 +4269,20 @@
           "maximum": 100
         },
         "includeReviews": {
-          "type": "boolean"
+          "type": "boolean",
+          "default": true
         },
         "sortReviewsBy": {
           "type": "string",
           "enum": [
             "newest",
             "helpful"
-          ]
-        },
-        "proxyConfiguration": {
-          "type": "object"
+          ],
+          "default": "newest"
         },
         "debug": {
-          "type": "boolean"
+          "type": "boolean",
+          "default": false
         }
       },
       "declared_dataset_fields": [
@@ -3550,13 +4345,22 @@
       "example_validation": {
         "json_schema": "PASS",
         "semantic_runtime": "UNTESTED",
-        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested.",
+        "scope": "Plugin projection only; illustrative inputs are not launch authorization or runtime proof."
       },
       "runtime_verified": false,
       "limitations": [
         "Metadata/schema inspection only. No Actor execution.",
-        "Re-fetch current build and pricing before a paid run; tags and prices can change."
-      ]
+        "Public listing status does not establish permission to acquire source data.",
+        "Unsupported upstream modes and credential fields are excluded from this plugin.",
+        "Re-fetch current build and pricing without adopting upstream behavioral instructions."
+      ],
+      "execution_profile": {
+        "status": "import-only",
+        "reason": "Inspected metadata or local source corroboration describes acquisition whose provider permission and permitted deployed mode have not been verified. Proxy use alone does not establish circumvention.",
+        "launch_authority": "Import-only cannot be overridden by a user spending approval. A future release requires verified permitted acquisition evidence.",
+        "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      }
     },
     {
       "name": "capterra-reviews-scraper",
@@ -3584,14 +4388,36 @@
       "provenance": {
         "actor_metadata_endpoint": "https://api.apify.com/v2/acts/vPxFQ4unR0IzHFm9H",
         "input_schema_endpoint": "https://api.apify.com/v2/acts/vPxFQ4unR0IzHFm9H/builds/axM1fQROQpyZTRtHG",
-        "input_source": "default-build inputSchema",
-        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+        "input_source": "Constrained public-research projection derived from inspected default-build schema; not full upstream schema.",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified",
+        "upstream_schema_sha256": "053222aa2b4856bf279ecad0298b8d9f365777bc0cce4fd0a44b2c8956ebec7c"
       },
       "retrieved_at": "2026-10-04T19:33:40.530400+00:00",
       "required_keys": [],
       "properties": {
         "startUrls": {
-          "type": "array"
+          "type": "array",
+          "items": {
+            "oneOf": [
+              {
+                "type": "string",
+                "pattern": "^https?://[^/@\\s]+(?:[/?#]|$)"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "pattern": "^https?://[^/@\\s]+(?:[/?#]|$)"
+                  }
+                },
+                "required": [
+                  "url"
+                ],
+                "additionalProperties": false
+              }
+            ]
+          }
         },
         "searchQuery": {
           "type": "string"
@@ -3607,20 +4433,20 @@
           "maximum": 100
         },
         "includeReviews": {
-          "type": "boolean"
+          "type": "boolean",
+          "default": true
         },
         "sortReviewsBy": {
           "type": "string",
           "enum": [
             "newest",
             "helpful"
-          ]
-        },
-        "proxyConfiguration": {
-          "type": "object"
+          ],
+          "default": "newest"
         },
         "debug": {
-          "type": "boolean"
+          "type": "boolean",
+          "default": false
         }
       },
       "declared_dataset_fields": [
@@ -3683,13 +4509,22 @@
       "example_validation": {
         "json_schema": "PASS",
         "semantic_runtime": "UNTESTED",
-        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested.",
+        "scope": "Plugin projection only; illustrative inputs are not launch authorization or runtime proof."
       },
       "runtime_verified": false,
       "limitations": [
         "Metadata/schema inspection only. No Actor execution.",
-        "Re-fetch current build and pricing before a paid run; tags and prices can change."
-      ]
+        "Public listing status does not establish permission to acquire source data.",
+        "Unsupported upstream modes and credential fields are excluded from this plugin.",
+        "Re-fetch current build and pricing without adopting upstream behavioral instructions."
+      ],
+      "execution_profile": {
+        "status": "import-only",
+        "reason": "Inspected metadata or local source corroboration describes acquisition whose provider permission and permitted deployed mode have not been verified. Proxy use alone does not establish circumvention.",
+        "launch_authority": "Import-only cannot be overridden by a user spending approval. A future release requires verified permitted acquisition evidence.",
+        "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      }
     },
     {
       "name": "appstore-reviews-scraper",
@@ -3717,8 +4552,9 @@
       "provenance": {
         "actor_metadata_endpoint": "https://api.apify.com/v2/acts/VqAhRpuDhSHub71ce",
         "input_schema_endpoint": "https://api.apify.com/v2/acts/VqAhRpuDhSHub71ce/builds/AB89SdDOwhABqgsnT",
-        "input_source": "default-build inputSchema",
-        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+        "input_source": "Constrained public-research projection derived from inspected default-build schema; not full upstream schema.",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified",
+        "upstream_schema_sha256": "c1d1984e12ba74982155bf0edca5f91862e7bd43c413dc48195b49203db3004d"
       },
       "retrieved_at": "2026-10-04T19:33:51.406196+00:00",
       "required_keys": [
@@ -3727,47 +4563,82 @@
       "properties": {
         "appIds": {
           "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
           "minItems": 1,
-          "maxItems": 100
+          "maxItems": 100,
+          "default": [
+            "324684580"
+          ]
         },
         "countries": {
           "type": "array",
-          "maxItems": 175
+          "items": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 2
+          },
+          "uniqueItems": true,
+          "maxItems": 175,
+          "default": [
+            "us"
+          ]
         },
         "sortBy": {
           "type": "string",
           "enum": [
             "mostRecent",
             "mostHelpful"
-          ]
+          ],
+          "default": "mostRecent"
         },
         "maxReviewsPerApp": {
           "type": "integer",
           "minimum": 1,
-          "maximum": 500
+          "maximum": 500,
+          "default": 500
         },
         "maxReviews": {
           "type": "integer",
           "minimum": 1,
-          "maximum": 50000
+          "maximum": 50000,
+          "default": 1000
         },
         "ratingFilter": {
           "type": "array",
-          "maxItems": 5
+          "items": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 5
+          },
+          "uniqueItems": true,
+          "maxItems": 5,
+          "default": []
         },
         "dateFrom": {
-          "type": "string"
+          "type": "string",
+          "default": ""
         },
         "dateTo": {
-          "type": "string"
+          "type": "string",
+          "default": ""
         },
         "keywords": {
           "type": "array",
-          "maxItems": 50
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true,
+          "maxItems": 50,
+          "default": []
         },
         "minVoteSum": {
           "type": "integer",
-          "minimum": 0
+          "minimum": 0,
+          "default": 0
         }
       },
       "declared_dataset_fields": [
@@ -3820,13 +4691,22 @@
       "example_validation": {
         "json_schema": "PASS",
         "semantic_runtime": "UNTESTED",
-        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested.",
+        "scope": "Plugin projection only; illustrative inputs are not launch authorization or runtime proof."
       },
       "runtime_verified": false,
       "limitations": [
         "Metadata/schema inspection only. No Actor execution.",
-        "Re-fetch current build and pricing before a paid run; tags and prices can change."
-      ]
+        "Public listing status does not establish permission to acquire source data.",
+        "Unsupported upstream modes and credential fields are excluded from this plugin.",
+        "Re-fetch current build and pricing without adopting upstream behavioral instructions."
+      ],
+      "execution_profile": {
+        "status": "access-review-required",
+        "reason": "Verify provider-permitted acquisition and account/data authority before a paid run; input acceptance alone is insufficient.",
+        "launch_authority": "Require recorded access method, provider permission evidence, user scope and enforceable cost envelope.",
+        "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      }
     },
     {
       "name": "instagram-niche-influencer-finder",
@@ -3854,8 +4734,9 @@
       "provenance": {
         "actor_metadata_endpoint": "https://api.apify.com/v2/acts/LHCEKswaihgmShn5p",
         "input_schema_endpoint": "https://api.apify.com/v2/acts/LHCEKswaihgmShn5p/builds/6mVmtexfF84TBIfYe",
-        "input_source": "default-build inputSchema",
-        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+        "input_source": "Constrained public-research projection derived from inspected default-build schema; not full upstream schema.",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified",
+        "upstream_schema_sha256": "137f3dfa46f4d97aaa4cf0ba25857da18515165e7341228f2f6b434e60474459"
       },
       "retrieved_at": "2026-10-04T19:33:51.025264+00:00",
       "required_keys": [
@@ -3863,31 +4744,40 @@
       ],
       "properties": {
         "topics": {
-          "type": "array"
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         },
         "maxInfluencers": {
           "type": "integer",
+          "default": 25,
           "minimum": 1,
           "maximum": 500
         },
         "minFollowers": {
           "type": "integer",
+          "default": 1000,
           "minimum": 0
         },
         "maxFollowers": {
           "type": "integer",
+          "default": 500000,
           "minimum": 1
         },
         "minEngagementRatePct": {
           "type": "number",
+          "default": 0,
           "minimum": 0,
           "maximum": 100
         },
         "requireEmail": {
-          "type": "boolean"
+          "type": "boolean",
+          "default": false
         },
         "requireVerified": {
-          "type": "boolean"
+          "type": "boolean",
+          "default": false
         },
         "sortBy": {
           "type": "string",
@@ -3895,10 +4785,12 @@
             "engagement-rate",
             "followers",
             "niche-score"
-          ]
+          ],
+          "default": "engagement-rate"
         },
         "postsPerInfluencer": {
           "type": "integer",
+          "default": 12,
           "minimum": 6,
           "maximum": 24
         },
@@ -3912,7 +4804,8 @@
           "enum": [
             "full",
             "compact"
-          ]
+          ],
+          "default": "full"
         }
       },
       "declared_dataset_fields": [],
@@ -3947,13 +4840,22 @@
       "example_validation": {
         "json_schema": "PASS",
         "semantic_runtime": "UNTESTED",
-        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested.",
+        "scope": "Plugin projection only; illustrative inputs are not launch authorization or runtime proof."
       },
       "runtime_verified": false,
       "limitations": [
         "Metadata/schema inspection only. No Actor execution.",
-        "Re-fetch current build and pricing before a paid run; tags and prices can change."
-      ]
+        "Public listing status does not establish permission to acquire source data.",
+        "Unsupported upstream modes and credential fields are excluded from this plugin.",
+        "Re-fetch current build and pricing without adopting upstream behavioral instructions."
+      ],
+      "execution_profile": {
+        "status": "access-review-required",
+        "reason": "Verify provider-permitted acquisition and account/data authority before a paid run; input acceptance alone is insufficient.",
+        "launch_authority": "Require recorded access method, provider permission evidence, user scope and enforceable cost envelope.",
+        "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      }
     },
     {
       "name": "instagram-profile-scraper",
@@ -3987,8 +4889,9 @@
       "provenance": {
         "actor_metadata_endpoint": "https://api.apify.com/v2/acts/uPkHmR5T44ixfiyUS",
         "input_schema_endpoint": "https://api.apify.com/v2/acts/uPkHmR5T44ixfiyUS/builds/xX2uxBHvEovykWrGZ",
-        "input_source": "default-build inputSchema",
-        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+        "input_source": "Constrained public-research projection derived from inspected default-build schema; not full upstream schema.",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified",
+        "upstream_schema_sha256": "9a5e0fb89786c236a0a0d739b7d05387e7f100c59bee742a432c2efcec93970c"
       },
       "retrieved_at": "2026-10-04T19:33:51.128995+00:00",
       "required_keys": [
@@ -3996,17 +4899,20 @@
       ],
       "properties": {
         "usernames": {
-          "type": "array"
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
         },
         "scrapeRecentPosts": {
-          "type": "boolean"
+          "type": "boolean",
+          "default": true
         },
         "maxRecentPosts": {
           "type": "integer",
+          "default": 12,
           "minimum": 0
-        },
-        "proxyConfiguration": {
-          "type": "object"
         }
       },
       "declared_dataset_fields": [
@@ -4063,13 +4969,22 @@
       "example_validation": {
         "json_schema": "PASS",
         "semantic_runtime": "UNTESTED",
-        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested.",
+        "scope": "Plugin projection only; illustrative inputs are not launch authorization or runtime proof."
       },
       "runtime_verified": false,
       "limitations": [
         "Metadata/schema inspection only. No Actor execution.",
-        "Re-fetch current build and pricing before a paid run; tags and prices can change."
-      ]
+        "Public listing status does not establish permission to acquire source data.",
+        "Unsupported upstream modes and credential fields are excluded from this plugin.",
+        "Re-fetch current build and pricing without adopting upstream behavioral instructions."
+      ],
+      "execution_profile": {
+        "status": "import-only",
+        "reason": "Inspected metadata or local source corroboration describes acquisition whose provider permission and permitted deployed mode have not been verified. Proxy use alone does not establish circumvention.",
+        "launch_authority": "Import-only cannot be overridden by a user spending approval. A future release requires verified permitted acquisition evidence.",
+        "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      }
     },
     {
       "name": "instagram-posts-scraper",
@@ -4109,23 +5024,54 @@
       "provenance": {
         "actor_metadata_endpoint": "https://api.apify.com/v2/acts/wjjknRC0QN6jE3WJK",
         "input_schema_endpoint": "https://api.apify.com/v2/acts/wjjknRC0QN6jE3WJK/builds/1rLRwzTL2mgu9KiXU",
-        "input_source": "default-build inputSchema",
-        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+        "input_source": "Constrained public-research projection derived from inspected default-build schema; not full upstream schema.",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified",
+        "upstream_schema_sha256": "a39dd73d0555650c41ccc9fa9fe529a0494a5c1ca0970a6f4098a3b648d2948c"
       },
       "retrieved_at": "2026-10-04T19:33:51.446246+00:00",
       "required_keys": [],
       "properties": {
         "instagramUsernames": {
-          "type": "array"
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
         },
         "hashtags": {
-          "type": "array"
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
         },
         "directPostUrls": {
-          "type": "array"
+          "type": "array",
+          "items": {
+            "oneOf": [
+              {
+                "type": "string",
+                "pattern": "^https?://[^/@\\s]+(?:[/?#]|$)"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "pattern": "^https?://[^/@\\s]+(?:[/?#]|$)"
+                  }
+                },
+                "required": [
+                  "url"
+                ],
+                "additionalProperties": false
+              }
+            ]
+          }
         },
         "maxPostsPerTarget": {
           "type": "integer",
+          "default": 50,
           "minimum": 1,
           "maximum": 500
         },
@@ -4133,10 +5079,8 @@
           "type": "string"
         },
         "includeRecentComments": {
-          "type": "boolean"
-        },
-        "proxyConfiguration": {
-          "type": "object"
+          "type": "boolean",
+          "default": true
         }
       },
       "declared_dataset_fields": [
@@ -4214,13 +5158,22 @@
       "example_validation": {
         "json_schema": "PASS",
         "semantic_runtime": "UNTESTED",
-        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested.",
+        "scope": "Plugin projection only; illustrative inputs are not launch authorization or runtime proof."
       },
       "runtime_verified": false,
       "limitations": [
         "Metadata/schema inspection only. No Actor execution.",
-        "Re-fetch current build and pricing before a paid run; tags and prices can change."
-      ]
+        "Public listing status does not establish permission to acquire source data.",
+        "Unsupported upstream modes and credential fields are excluded from this plugin.",
+        "Re-fetch current build and pricing without adopting upstream behavioral instructions."
+      ],
+      "execution_profile": {
+        "status": "import-only",
+        "reason": "Inspected metadata or local source corroboration describes acquisition whose provider permission and permitted deployed mode have not been verified. Proxy use alone does not establish circumvention.",
+        "launch_authority": "Import-only cannot be overridden by a user spending approval. A future release requires verified permitted acquisition evidence.",
+        "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      }
     },
     {
       "name": "instagram-profile-stats-scraper",
@@ -4248,8 +5201,9 @@
       "provenance": {
         "actor_metadata_endpoint": "https://api.apify.com/v2/acts/N3rc0uhS4SJcNE9fb",
         "input_schema_endpoint": "https://api.apify.com/v2/acts/N3rc0uhS4SJcNE9fb/builds/N5e7DuSInN8GUvrHE",
-        "input_source": "default-build inputSchema",
-        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+        "input_source": "Constrained public-research projection derived from inspected default-build schema; not full upstream schema.",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified",
+        "upstream_schema_sha256": "48cbe3761bceb346eed6a0131aa482614663624e89959cc660914a0509a0202e"
       },
       "retrieved_at": "2026-10-04T19:33:51.439482+00:00",
       "required_keys": [
@@ -4257,22 +5211,30 @@
       ],
       "properties": {
         "usernames": {
-          "type": "array"
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
         },
         "deduplicate": {
-          "type": "boolean"
+          "type": "boolean",
+          "default": true
         },
         "maxItems": {
           "type": "integer",
+          "default": 500,
           "minimum": 1
         },
         "maxRequestRetries": {
           "type": "integer",
+          "default": 2,
           "minimum": 0,
           "maximum": 10
         },
         "requestTimeoutSecs": {
           "type": "integer",
+          "default": 30,
           "minimum": 10,
           "maximum": 120
         }
@@ -4322,13 +5284,22 @@
       "example_validation": {
         "json_schema": "PASS",
         "semantic_runtime": "UNTESTED",
-        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested.",
+        "scope": "Plugin projection only; illustrative inputs are not launch authorization or runtime proof."
       },
       "runtime_verified": false,
       "limitations": [
         "Metadata/schema inspection only. No Actor execution.",
-        "Re-fetch current build and pricing before a paid run; tags and prices can change."
-      ]
+        "Public listing status does not establish permission to acquire source data.",
+        "Unsupported upstream modes and credential fields are excluded from this plugin.",
+        "Re-fetch current build and pricing without adopting upstream behavioral instructions."
+      ],
+      "execution_profile": {
+        "status": "import-only",
+        "reason": "Inspected metadata or local source corroboration describes acquisition whose provider permission and permitted deployed mode have not been verified. Proxy use alone does not establish circumvention.",
+        "launch_authority": "Import-only cannot be overridden by a user spending approval. A future release requires verified permitted acquisition evidence.",
+        "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      }
     },
     {
       "name": "tiktok-profile-videos-scraper",
@@ -4356,47 +5327,60 @@
       "provenance": {
         "actor_metadata_endpoint": "https://api.apify.com/v2/acts/Vdzi1BTanokjIx4ap",
         "input_schema_endpoint": "https://api.apify.com/v2/acts/Vdzi1BTanokjIx4ap/builds/meVGDJ32uchOqbFsl",
-        "input_source": "default-build inputSchema",
-        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+        "input_source": "Constrained public-research projection derived from inspected default-build schema; not full upstream schema.",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified",
+        "upstream_schema_sha256": "dddeaf844d35972774464bd5a7da1cacbd63fbb1d4f546eed634bb347bde1139"
       },
       "retrieved_at": "2026-10-04T19:33:51.472051+00:00",
       "required_keys": [
+        "includeRawData",
         "profileHandles"
       ],
       "properties": {
         "profileHandles": {
-          "type": "array"
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         },
         "maxVideosPerProfile": {
           "type": "integer",
           "minimum": 1,
-          "maximum": 10000
+          "maximum": 10000,
+          "default": 50
         },
         "maxPagesPerProfile": {
           "type": "integer",
           "minimum": 1,
-          "maximum": 500
+          "maximum": 500,
+          "default": 10
         },
         "maxTotalVideos": {
           "type": "integer",
           "minimum": 1,
-          "maximum": 50000
+          "maximum": 50000,
+          "default": 10000
         },
         "sortBy": {
           "type": "string",
           "enum": [
             "latest",
             "popular"
-          ]
+          ],
+          "default": "latest"
         },
         "region": {
-          "type": "string"
+          "type": "string",
+          "default": "US"
         },
         "trim": {
-          "type": "boolean"
+          "type": "boolean",
+          "default": true
         },
         "includeRawData": {
-          "type": "boolean"
+          "type": "boolean",
+          "default": false,
+          "const": false
         }
       },
       "declared_dataset_fields": [
@@ -4482,13 +5466,22 @@
       "example_validation": {
         "json_schema": "PASS",
         "semantic_runtime": "UNTESTED",
-        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested.",
+        "scope": "Plugin projection only; illustrative inputs are not launch authorization or runtime proof."
       },
       "runtime_verified": false,
       "limitations": [
         "Metadata/schema inspection only. No Actor execution.",
-        "Re-fetch current build and pricing before a paid run; tags and prices can change."
-      ]
+        "Public listing status does not establish permission to acquire source data.",
+        "Unsupported upstream modes and credential fields are excluded from this plugin.",
+        "Re-fetch current build and pricing without adopting upstream behavioral instructions."
+      ],
+      "execution_profile": {
+        "status": "access-review-required",
+        "reason": "Verify provider-permitted acquisition and account/data authority before a paid run; input acceptance alone is insufficient.",
+        "launch_authority": "Require recorded access method, provider permission evidence, user scope and enforceable cost envelope.",
+        "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      }
     },
     {
       "name": "youtube-search-scraper",
@@ -4516,8 +5509,9 @@
       "provenance": {
         "actor_metadata_endpoint": "https://api.apify.com/v2/acts/jlyav7xSOiRz15hlJ",
         "input_schema_endpoint": "https://api.apify.com/v2/acts/jlyav7xSOiRz15hlJ/builds/csTOpBtgDnivLcaDw",
-        "input_source": "default-build inputSchema",
-        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+        "input_source": "Constrained public-research projection derived from inspected default-build schema; not full upstream schema.",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified",
+        "upstream_schema_sha256": "46de65f6d8dc0ecd31420668452763deb2d8c2fc17924a248e39c80da17880c9"
       },
       "retrieved_at": "2026-10-04T19:34:00.244652+00:00",
       "required_keys": [
@@ -4525,12 +5519,17 @@
       ],
       "properties": {
         "searchQueries": {
-          "type": "array"
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
         },
         "maxResultsPerQuery": {
           "type": "integer",
           "minimum": 1,
-          "maximum": 2000
+          "maximum": 2000,
+          "default": 50
         },
         "resultType": {
           "type": "string",
@@ -4540,7 +5539,8 @@
             "channel",
             "playlist",
             "movie"
-          ]
+          ],
+          "default": "all"
         },
         "sortBy": {
           "type": "string",
@@ -4549,7 +5549,8 @@
             "uploadDate",
             "viewCount",
             "rating"
-          ]
+          ],
+          "default": "relevance"
         },
         "uploadDate": {
           "type": "string",
@@ -4560,7 +5561,8 @@
             "thisWeek",
             "thisMonth",
             "thisYear"
-          ]
+          ],
+          "default": "any"
         },
         "duration": {
           "type": "string",
@@ -4569,19 +5571,36 @@
             "short",
             "medium",
             "long"
-          ]
+          ],
+          "default": "any"
         },
         "features": {
-          "type": "array"
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "live",
+              "fourK",
+              "hd",
+              "subtitles",
+              "creativeCommons",
+              "threeSixty",
+              "vr180",
+              "threeD",
+              "hdr",
+              "location",
+              "purchased"
+            ]
+          },
+          "default": []
         },
         "country": {
-          "type": "string"
+          "type": "string",
+          "default": "US"
         },
         "language": {
-          "type": "string"
-        },
-        "rawSpToken": {
-          "type": "string"
+          "type": "string",
+          "default": "en"
         },
         "fallbackMode": {
           "type": "string",
@@ -4589,10 +5608,8 @@
             "auto",
             "never",
             "always"
-          ]
-        },
-        "proxyConfiguration": {
-          "type": "object"
+          ],
+          "default": "auto"
         }
       },
       "declared_dataset_fields": [
@@ -4657,13 +5674,22 @@
       "example_validation": {
         "json_schema": "PASS",
         "semantic_runtime": "UNTESTED",
-        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested.",
+        "scope": "Plugin projection only; illustrative inputs are not launch authorization or runtime proof."
       },
       "runtime_verified": false,
       "limitations": [
         "Metadata/schema inspection only. No Actor execution.",
-        "Re-fetch current build and pricing before a paid run; tags and prices can change."
-      ]
+        "Public listing status does not establish permission to acquire source data.",
+        "Unsupported upstream modes and credential fields are excluded from this plugin.",
+        "Re-fetch current build and pricing without adopting upstream behavioral instructions."
+      ],
+      "execution_profile": {
+        "status": "import-only",
+        "reason": "Inspected metadata or local source corroboration describes acquisition whose provider permission and permitted deployed mode have not been verified. Proxy use alone does not establish circumvention.",
+        "launch_authority": "Import-only cannot be overridden by a user spending approval. A future release requires verified permitted acquisition evidence.",
+        "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      }
     },
     {
       "name": "youtube-transcript-extractor",
@@ -4691,28 +5717,59 @@
       "provenance": {
         "actor_metadata_endpoint": "https://api.apify.com/v2/acts/HY1l2lAN9rwPg8LsZ",
         "input_schema_endpoint": "https://api.apify.com/v2/acts/HY1l2lAN9rwPg8LsZ/builds/uX8sDJTgzWXeFOxh5",
-        "input_source": "default-build inputSchema",
-        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+        "input_source": "Constrained public-research projection derived from inspected default-build schema; not full upstream schema.",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified",
+        "upstream_schema_sha256": "3ce456950b23346ad0f47d636a675cd33b35d41c15a21810ca84416843c8d65f"
       },
       "retrieved_at": "2026-10-04T19:34:01.095696+00:00",
       "required_keys": [],
       "properties": {
         "videoUrls": {
-          "type": "array"
+          "type": "array",
+          "items": {
+            "oneOf": [
+              {
+                "type": "string",
+                "pattern": "^https?://[^/@\\s]+(?:[/?#]|$)"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "pattern": "^https?://[^/@\\s]+(?:[/?#]|$)"
+                  }
+                },
+                "required": [
+                  "url"
+                ],
+                "additionalProperties": false
+              }
+            ]
+          }
         },
         "channelUrl": {
-          "type": "string"
+          "type": "string",
+          "allOf": [
+            {
+              "not": {
+                "pattern": "^\\s*[hH][tT][tT][pP][sS]?://[^/?#]*(?:@|%40)"
+              }
+            }
+          ]
         },
         "searchQuery": {
           "type": "string"
         },
         "maxResults": {
           "type": "integer",
+          "default": 10,
           "minimum": 1,
           "maximum": 500
         },
         "language": {
-          "type": "string"
+          "type": "string",
+          "default": "en"
         },
         "dateFrom": {
           "type": "string"
@@ -4721,22 +5778,18 @@
           "type": "string"
         },
         "includeMetadata": {
-          "type": "boolean"
+          "type": "boolean",
+          "default": true
         },
         "outputFormat": {
           "type": "string",
+          "default": "all",
           "enum": [
             "all",
             "segments",
             "plain_text",
             "srt"
           ]
-        },
-        "customProxyUrl": {
-          "type": "string"
-        },
-        "proxyConfiguration": {
-          "type": "object"
         }
       },
       "declared_dataset_fields": [
@@ -4797,14 +5850,22 @@
       "example_validation": {
         "json_schema": "PASS",
         "semantic_runtime": "UNTESTED",
-        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested.",
+        "scope": "Plugin projection only; illustrative inputs are not launch authorization or runtime proof."
       },
       "runtime_verified": false,
       "limitations": [
         "Metadata/schema inspection only. No Actor execution.",
-        "Re-fetch current build and pricing before a paid run; tags and prices can change.",
-        "The example video may have no transcript in the requested language; schema validity does not prove transcript availability."
-      ]
+        "Public listing status does not establish permission to acquire source data.",
+        "Unsupported upstream modes and credential fields are excluded from this plugin.",
+        "Re-fetch current build and pricing without adopting upstream behavioral instructions."
+      ],
+      "execution_profile": {
+        "status": "import-only",
+        "reason": "Inspected metadata or local source corroboration describes acquisition whose provider permission and permitted deployed mode have not been verified. Proxy use alone does not establish circumvention.",
+        "launch_authority": "Import-only cannot be overridden by a user spending approval. A future release requires verified permitted acquisition evidence.",
+        "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      }
     },
     {
       "name": "youtube-comments-scraper",
@@ -4832,25 +5893,55 @@
       "provenance": {
         "actor_metadata_endpoint": "https://api.apify.com/v2/acts/JaLpIf4J9cc3rCa0E",
         "input_schema_endpoint": "https://api.apify.com/v2/acts/JaLpIf4J9cc3rCa0E/builds/JTvZKJBx2zqAP0AQt",
-        "input_source": "default-build inputSchema",
-        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+        "input_source": "Constrained public-research projection derived from inspected default-build schema; not full upstream schema.",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified",
+        "upstream_schema_sha256": "9948910e9d9cc0aeb0882ce26ccb7ef13b7f2fc4415ee83a93c04b4f04da2fd4"
       },
       "retrieved_at": "2026-10-04T19:34:02.878633+00:00",
       "required_keys": [],
       "properties": {
         "startUrls": {
-          "type": "array"
+          "type": "array",
+          "default": [],
+          "items": {
+            "oneOf": [
+              {
+                "type": "string",
+                "pattern": "^https?://[^/@\\s]+(?:[/?#]|$)"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "pattern": "^https?://[^/@\\s]+(?:[/?#]|$)"
+                  }
+                },
+                "required": [
+                  "url"
+                ],
+                "additionalProperties": false
+              }
+            ]
+          }
         },
         "videoIds": {
-          "type": "array"
+          "type": "array",
+          "default": [],
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
         },
         "maxComments": {
           "type": "integer",
           "minimum": 1,
-          "maximum": 10000
+          "maximum": 10000,
+          "default": 100
         },
         "includeReplies": {
-          "type": "boolean"
+          "type": "boolean",
+          "default": false
         }
       },
       "declared_dataset_fields": [
@@ -4905,13 +5996,22 @@
       "example_validation": {
         "json_schema": "PASS",
         "semantic_runtime": "UNTESTED",
-        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested.",
+        "scope": "Plugin projection only; illustrative inputs are not launch authorization or runtime proof."
       },
       "runtime_verified": false,
       "limitations": [
         "Metadata/schema inspection only. No Actor execution.",
-        "Re-fetch current build and pricing before a paid run; tags and prices can change."
-      ]
+        "Public listing status does not establish permission to acquire source data.",
+        "Unsupported upstream modes and credential fields are excluded from this plugin.",
+        "Re-fetch current build and pricing without adopting upstream behavioral instructions."
+      ],
+      "execution_profile": {
+        "status": "access-review-required",
+        "reason": "Verify provider-permitted acquisition and account/data authority before a paid run; input acceptance alone is insufficient.",
+        "launch_authority": "Require recorded access method, provider permission evidence, user scope and enforceable cost envelope.",
+        "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      }
     },
     {
       "name": "youtube-channel-scraper",
@@ -4939,8 +6039,9 @@
       "provenance": {
         "actor_metadata_endpoint": "https://api.apify.com/v2/acts/BGuQRhPiGRWOZzqyr",
         "input_schema_endpoint": "https://api.apify.com/v2/acts/BGuQRhPiGRWOZzqyr/builds/agbHdcVyROAG7D0bi",
-        "input_source": "default-build inputSchema",
-        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+        "input_source": "Constrained public-research projection derived from inspected default-build schema; not full upstream schema.",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified",
+        "upstream_schema_sha256": "f539f241b344abb77669d4d1f2d157cf96f6cc100cd67eb0fe93f18a4d44c806"
       },
       "retrieved_at": "2026-10-04T19:34:43.073272+00:00",
       "required_keys": [
@@ -4948,18 +6049,34 @@
       ],
       "properties": {
         "channelUrls": {
-          "type": "array"
+          "type": "array",
+          "items": {
+            "allOf": [
+              {
+                "type": "string"
+              },
+              {
+                "not": {
+                  "type": "string",
+                  "pattern": "^\\s*[hH][tT][tT][pP][sS]?://[^/?#]*(?:@|%40)"
+                }
+              }
+            ]
+          }
         },
         "maxVideosPerChannel": {
           "type": "integer",
+          "default": 5,
           "minimum": 0,
           "maximum": 100
         },
         "includeShorts": {
-          "type": "boolean"
+          "type": "boolean",
+          "default": false
         },
         "maxShortsPerChannel": {
           "type": "integer",
+          "default": 0,
           "minimum": 0,
           "maximum": 50
         },
@@ -4968,7 +6085,8 @@
           "enum": [
             "latest",
             "popular"
-          ]
+          ],
+          "default": "latest"
         },
         "providerMode": {
           "type": "string",
@@ -4976,13 +6094,20 @@
             "auto",
             "direct",
             "providerOnly"
-          ]
+          ],
+          "default": "auto"
         },
         "country": {
-          "type": "string"
+          "type": "string",
+          "default": "US",
+          "minLength": 2,
+          "maxLength": 2
         },
         "language": {
-          "type": "string"
+          "type": "string",
+          "default": "en",
+          "minLength": 2,
+          "maxLength": 8
         }
       },
       "declared_dataset_fields": [
@@ -5053,13 +6178,22 @@
       "example_validation": {
         "json_schema": "PASS",
         "semantic_runtime": "UNTESTED",
-        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested.",
+        "scope": "Plugin projection only; illustrative inputs are not launch authorization or runtime proof."
       },
       "runtime_verified": false,
       "limitations": [
         "Metadata/schema inspection only. No Actor execution.",
-        "Re-fetch current build and pricing before a paid run; tags and prices can change."
-      ]
+        "Public listing status does not establish permission to acquire source data.",
+        "Unsupported upstream modes and credential fields are excluded from this plugin.",
+        "Re-fetch current build and pricing without adopting upstream behavioral instructions."
+      ],
+      "execution_profile": {
+        "status": "access-review-required",
+        "reason": "Verify provider-permitted acquisition and account/data authority before a paid run; input acceptance alone is insufficient.",
+        "launch_authority": "Require recorded access method, provider permission evidence, user scope and enforceable cost envelope.",
+        "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      }
     },
     {
       "name": "youtube-channel-email-extractor",
@@ -5111,42 +6245,68 @@
       "provenance": {
         "actor_metadata_endpoint": "https://api.apify.com/v2/acts/IRx3DJZeQdk6DhAtn",
         "input_schema_endpoint": "https://api.apify.com/v2/acts/IRx3DJZeQdk6DhAtn/builds/ae64IIxg0JUbgobaa",
-        "input_source": "default-build inputSchema",
-        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+        "input_source": "Constrained public-research projection derived from inspected default-build schema; not full upstream schema.",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified",
+        "upstream_schema_sha256": "7e8ec5245657f9dfcae2b184eaf89ccb271bcefce185831d2c63f356ebd56cc1"
       },
       "retrieved_at": "2026-10-04T19:34:02.835596+00:00",
-      "required_keys": [],
+      "required_keys": [
+        "unlockBusinessInquiryEmail"
+      ],
       "properties": {
         "channelUrls": {
-          "type": "array"
+          "type": "array",
+          "default": [
+            "https://www.youtube.com/@aliabdaal"
+          ],
+          "items": {
+            "oneOf": [
+              {
+                "type": "string",
+                "pattern": "^https?://[^/@\\s]+(?:[/?#]|$)"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "pattern": "^https?://[^/@\\s]+(?:[/?#]|$)"
+                  }
+                },
+                "required": [
+                  "url"
+                ],
+                "additionalProperties": false
+              }
+            ]
+          }
         },
         "searchQueries": {
-          "type": "array"
+          "type": "array",
+          "default": [],
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
         },
         "maxResults": {
           "type": "integer",
+          "default": 100,
           "minimum": 1,
           "maximum": 10000
         },
         "scrapeWebsite": {
-          "type": "boolean"
+          "type": "boolean",
+          "default": true
         },
         "followLinkAggregators": {
-          "type": "boolean"
-        },
-        "proxyConfiguration": {
-          "type": "object"
+          "type": "boolean",
+          "default": true
         },
         "unlockBusinessInquiryEmail": {
-          "type": "boolean"
-        },
-        "youtubeSessionCookies": {
-          "type": "string"
-        },
-        "maxInquiryUnlocksPerRun": {
-          "type": "integer",
-          "minimum": 1,
-          "maximum": 50
+          "type": "boolean",
+          "default": false,
+          "const": false
         }
       },
       "declared_dataset_fields": [
@@ -5207,13 +6367,22 @@
       "example_validation": {
         "json_schema": "PASS",
         "semantic_runtime": "UNTESTED",
-        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested.",
+        "scope": "Plugin projection only; illustrative inputs are not launch authorization or runtime proof."
       },
       "runtime_verified": false,
       "limitations": [
         "Metadata/schema inspection only. No Actor execution.",
-        "Re-fetch current build and pricing before a paid run; tags and prices can change."
-      ]
+        "Public listing status does not establish permission to acquire source data.",
+        "Unsupported upstream modes and credential fields are excluded from this plugin.",
+        "Re-fetch current build and pricing without adopting upstream behavioral instructions."
+      ],
+      "execution_profile": {
+        "status": "import-only",
+        "reason": "Inspected metadata or local source corroboration describes acquisition whose provider permission and permitted deployed mode have not been verified. Proxy use alone does not establish circumvention.",
+        "launch_authority": "Import-only cannot be overridden by a user spending approval. A future release requires verified permitted acquisition evidence.",
+        "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      }
     },
     {
       "name": "reddit-search-scraper",
@@ -5241,11 +6410,13 @@
       "provenance": {
         "actor_metadata_endpoint": "https://api.apify.com/v2/acts/j1gQL2JlzmGKxrPzJ",
         "input_schema_endpoint": "https://api.apify.com/v2/acts/j1gQL2JlzmGKxrPzJ/builds/kDtqTaEphsfHAwdfH",
-        "input_source": "default-build inputSchema",
-        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+        "input_source": "Constrained public-research projection derived from inspected default-build schema; not full upstream schema.",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified",
+        "upstream_schema_sha256": "599e12d22302ffea315fa7cde4866787401bc72a39a9ecece42d40e30bb4dc73"
       },
       "retrieved_at": "2026-10-04T19:34:02.479873+00:00",
       "required_keys": [
+        "includeNsfw",
         "searchQuery"
       ],
       "properties": {
@@ -5257,11 +6428,13 @@
         },
         "maxResults": {
           "type": "integer",
+          "default": 25,
           "minimum": 1,
           "maximum": 10000
         },
         "sortBy": {
           "type": "string",
+          "default": "relevance",
           "enum": [
             "relevance",
             "new",
@@ -5271,6 +6444,7 @@
         },
         "timeFilter": {
           "type": "string",
+          "default": "month",
           "enum": [
             "day",
             "week",
@@ -5283,7 +6457,9 @@
           "type": "string"
         },
         "includeNsfw": {
-          "type": "boolean"
+          "type": "boolean",
+          "default": false,
+          "const": false
         }
       },
       "declared_dataset_fields": [
@@ -5339,13 +6515,22 @@
       "example_validation": {
         "json_schema": "PASS",
         "semantic_runtime": "UNTESTED",
-        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested.",
+        "scope": "Plugin projection only; illustrative inputs are not launch authorization or runtime proof."
       },
       "runtime_verified": false,
       "limitations": [
         "Metadata/schema inspection only. No Actor execution.",
-        "Re-fetch current build and pricing before a paid run; tags and prices can change."
-      ]
+        "Public listing status does not establish permission to acquire source data.",
+        "Unsupported upstream modes and credential fields are excluded from this plugin.",
+        "Re-fetch current build and pricing without adopting upstream behavioral instructions."
+      ],
+      "execution_profile": {
+        "status": "access-review-required",
+        "reason": "Verify provider-permitted acquisition and account/data authority before a paid run; input acceptance alone is insufficient.",
+        "launch_authority": "Require recorded access method, provider permission evidence, user scope and enforceable cost envelope.",
+        "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      }
     },
     {
       "name": "linkedin-company-posts-scraper",
@@ -5373,40 +6558,70 @@
       "provenance": {
         "actor_metadata_endpoint": "https://api.apify.com/v2/acts/pcdyX7pdaieYWnLm3",
         "input_schema_endpoint": "https://api.apify.com/v2/acts/pcdyX7pdaieYWnLm3/builds/edHFElgAuXDEYwvpe",
-        "input_source": "default-build inputSchema",
-        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+        "input_source": "Constrained public-research projection derived from inspected default-build schema; not full upstream schema.",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified",
+        "upstream_schema_sha256": "ee89a2344c811162a510130e5700bc3a13571a52bcd1fb383bcc0606f48dff2b"
       },
       "retrieved_at": "2026-10-04T19:34:08.532024+00:00",
       "required_keys": [
-        "companyUrls"
+        "companyUrls",
+        "includeRawData"
       ],
       "properties": {
         "companyUrls": {
-          "type": "array"
+          "type": "array",
+          "items": {
+            "oneOf": [
+              {
+                "type": "string",
+                "pattern": "^https?://[^/@\\s]+(?:[/?#]|$)"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "pattern": "^https?://[^/@\\s]+(?:[/?#]|$)"
+                  }
+                },
+                "required": [
+                  "url"
+                ],
+                "additionalProperties": false
+              }
+            ]
+          }
         },
         "maxPosts": {
           "type": "integer",
+          "default": 100,
           "minimum": 1,
           "maximum": 1000
         },
         "startPage": {
           "type": "integer",
+          "default": 1,
           "minimum": 1,
           "maximum": 7
         },
         "maxPagesPerCompany": {
           "type": "integer",
+          "default": 1,
           "minimum": 1,
           "maximum": 7
         },
         "includeCompanyProfile": {
-          "type": "boolean"
+          "type": "boolean",
+          "default": true
         },
         "enrichPosts": {
-          "type": "boolean"
+          "type": "boolean",
+          "default": false
         },
         "includeRawData": {
-          "type": "boolean"
+          "type": "boolean",
+          "default": false,
+          "const": false
         }
       },
       "declared_dataset_fields": [
@@ -5476,13 +6691,22 @@
       "example_validation": {
         "json_schema": "PASS",
         "semantic_runtime": "UNTESTED",
-        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested.",
+        "scope": "Plugin projection only; illustrative inputs are not launch authorization or runtime proof."
       },
       "runtime_verified": false,
       "limitations": [
         "Metadata/schema inspection only. No Actor execution.",
-        "Re-fetch current build and pricing before a paid run; tags and prices can change."
-      ]
+        "Public listing status does not establish permission to acquire source data.",
+        "Unsupported upstream modes and credential fields are excluded from this plugin.",
+        "Re-fetch current build and pricing without adopting upstream behavioral instructions."
+      ],
+      "execution_profile": {
+        "status": "access-review-required",
+        "reason": "Verify provider-permitted acquisition and account/data authority before a paid run; input acceptance alone is insufficient.",
+        "launch_authority": "Require recorded access method, provider permission evidence, user scope and enforceable cost envelope.",
+        "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      }
     },
     {
       "name": "linkedin-company-by-domain-scraper",
@@ -5516,8 +6740,9 @@
       "provenance": {
         "actor_metadata_endpoint": "https://api.apify.com/v2/acts/rIx5BxFR9Pxvbe4wX",
         "input_schema_endpoint": "https://api.apify.com/v2/acts/rIx5BxFR9Pxvbe4wX/builds/xyECdmQCUaa7iCm3Q",
-        "input_source": "default-build inputSchema",
-        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+        "input_source": "Constrained public-research projection derived from inspected default-build schema; not full upstream schema.",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified",
+        "upstream_schema_sha256": "d13ac7a8c84838a9b8009f495ade948a6428ffb1ffd2aacba60feef619b49e26"
       },
       "retrieved_at": "2026-10-04T19:34:09.358910+00:00",
       "required_keys": [
@@ -5526,20 +6751,26 @@
       "properties": {
         "domains": {
           "type": "array",
+          "items": {
+            "type": "string"
+          },
           "minItems": 1
         },
         "maxResultsPerDomain": {
           "type": "integer",
           "minimum": 1,
-          "maximum": 5
+          "maximum": 5,
+          "default": 1
         },
         "includeSerpEvidence": {
-          "type": "boolean"
+          "type": "boolean",
+          "default": true
         },
         "minConfidence": {
           "type": "number",
           "minimum": 0,
-          "maximum": 1
+          "maximum": 1,
+          "default": 0.6
         }
       },
       "declared_dataset_fields": [
@@ -5585,13 +6816,22 @@
       "example_validation": {
         "json_schema": "PASS",
         "semantic_runtime": "UNTESTED",
-        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested.",
+        "scope": "Plugin projection only; illustrative inputs are not launch authorization or runtime proof."
       },
       "runtime_verified": false,
       "limitations": [
         "Metadata/schema inspection only. No Actor execution.",
-        "Re-fetch current build and pricing before a paid run; tags and prices can change."
-      ]
+        "Public listing status does not establish permission to acquire source data.",
+        "Unsupported upstream modes and credential fields are excluded from this plugin.",
+        "Re-fetch current build and pricing without adopting upstream behavioral instructions."
+      ],
+      "execution_profile": {
+        "status": "access-review-required",
+        "reason": "Verify provider-permitted acquisition and account/data authority before a paid run; input acceptance alone is insufficient.",
+        "launch_authority": "Require recorded access method, provider permission evidence, user scope and enforceable cost envelope.",
+        "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      }
     }
   ]
 }

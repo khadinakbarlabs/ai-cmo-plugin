@@ -1,15 +1,9 @@
 {
   "$schema": "https://apify.com/schemas/v1/input.ide.json",
-  "title": "App Store Reviews Scraper Input",
-  "description": "Scrape Apple App Store customer reviews for one or many iOS/macOS apps across one or many country storefronts in a single run. Accepts numeric App Store IDs or full apps.apple.com URLs. Apply rating, date-range, keyword, and helpful-vote filters that skip non-matching reviews before billing. No login, no cookies, no external API keys required.",
   "type": "object",
-  "schemaVersion": 1,
   "properties": {
     "appIds": {
-      "title": "App Store apps",
-      "description": "Add one or more Apple App Store apps per line. Accept numeric App IDs (e.g. 324684580) or full app URLs (e.g. https://apps.apple.com/us/app/spotify/id324684580). URL ids and numeric ids are both reduced to the numeric ID. Duplicate apps are processed once. Apple caps each app at 500 reviews per country storefront.",
       "type": "array",
-      "editor": "stringList",
       "items": {
         "type": "string",
         "minLength": 1
@@ -18,16 +12,10 @@
       "maxItems": 100,
       "default": [
         "324684580"
-      ],
-      "prefill": [
-        "324684580"
       ]
     },
     "countries": {
-      "title": "Country storefronts",
-      "description": "One or more lowercase two-letter App Store storefront codes (e.g. us, gb, de, jp, fr). Reviews are fetched from every selected country in a single run; identical reviews across storefronts are deduplicated. Apple returns at most 500 reviews per app per country. Defaults to United States.",
       "type": "array",
-      "editor": "stringList",
       "items": {
         "type": "string",
         "minLength": 2,
@@ -37,50 +25,30 @@
       "maxItems": 175,
       "default": [
         "us"
-      ],
-      "prefill": [
-        "us"
       ]
     },
     "sortBy": {
-      "title": "Review order",
-      "description": "Controls the order Apple returns reviews. Most recent prioritizes fresh feedback for monitoring. Most helpful prioritizes reviews with more helpfulness votes for signal extraction.",
       "type": "string",
-      "editor": "select",
       "enum": [
         "mostRecent",
         "mostHelpful"
       ],
-      "enumTitles": [
-        "Most recent",
-        "Most helpful"
-      ],
-      "default": "mostRecent",
-      "prefill": "mostRecent"
+      "default": "mostRecent"
     },
     "maxReviewsPerApp": {
-      "title": "Maximum reviews per app per country",
-      "description": "Caps paid review rows for each app within each country storefront. Apple's RSS feed itself returns at most 500 reviews per app per country, so 1-500 is the effective range. Lower this for lightweight monitoring.",
       "type": "integer",
       "minimum": 1,
       "maximum": 500,
-      "default": 500,
-      "prefill": 1
+      "default": 500
     },
     "maxReviews": {
-      "title": "Maximum reviews for the run",
-      "description": "Sets the hard billing and output cap across all apps and countries. The Actor checks this limit before every paid dataset write. The default of 1000 costs at most $0.50 in review events.",
       "type": "integer",
       "minimum": 1,
       "maximum": 50000,
-      "default": 1000,
-      "prefill": 1
+      "default": 1000
     },
     "ratingFilter": {
-      "title": "Star ratings",
-      "description": "Optionally list exact star ratings to include, such as [1] for one-star alerts or [4, 5] for testimonials. Leave the array empty to include every rating. Values must be unique integers from 1 through 5. Filtering happens before billing so non-matching reviews are not charged.",
       "type": "array",
-      "editor": "json",
       "items": {
         "type": "integer",
         "minimum": 1,
@@ -88,49 +56,37 @@
       },
       "uniqueItems": true,
       "maxItems": 5,
-      "default": [],
-      "prefill": []
+      "default": []
     },
     "dateFrom": {
-      "title": "Date from",
-      "description": "Optionally keep only reviews dated on or after this ISO 8601 date (e.g. 2026-01-01). Used for release-impact tracking and regression alerting. Filtering happens before billing. Leave empty for no lower bound.",
       "type": "string",
-      "editor": "textfield",
-      "default": "",
-      "prefill": ""
+      "default": ""
     },
     "dateTo": {
-      "title": "Date to",
-      "description": "Optionally keep only reviews dated on or before this ISO 8601 date (e.g. 2026-12-31). Filtering happens before billing. Leave empty for no upper bound.",
       "type": "string",
-      "editor": "textfield",
-      "default": "",
-      "prefill": ""
+      "default": ""
     },
     "keywords": {
-      "title": "Keywords",
-      "description": "Optionally keep only reviews whose title or body contains at least one of these case-insensitive substrings (e.g. crash, login, \u8ab2\u91d1). Useful for surfacing bug reports and feature requests. Filtering happens before billing. Leave the array empty to disable keyword filtering.",
       "type": "array",
-      "editor": "stringList",
       "items": {
         "type": "string",
         "minLength": 1
       },
       "uniqueItems": true,
       "maxItems": 50,
-      "default": [],
-      "prefill": []
+      "default": []
     },
     "minVoteSum": {
-      "title": "Minimum helpful vote sum",
-      "description": "Optionally keep only reviews whose Apple helpfulness vote sum is at least this integer. Use to surface the most widely-endorsed feedback. Filtering happens before billing. Set to 0 (default) to disable.",
       "type": "integer",
       "minimum": 0,
-      "default": 0,
-      "prefill": 0
+      "default": 0
     }
   },
   "required": [
     "appIds"
-  ]
+  ],
+  "additionalProperties": false,
+  "title": "appstore-reviews-scraper: supported public research inputs",
+  "description": "Constrained plugin input projection, not the complete upstream Actor schema. Consult execution_profile before any launch.",
+  "x-ai-cmo-profile": "public-research-projection-v1"
 }

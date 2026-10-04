@@ -1,32 +1,17 @@
 {
-  "title": "Google Trends Scraper",
   "type": "object",
-  "schemaVersion": 1,
   "properties": {
     "keywords": {
-      "title": "Keywords",
       "type": "array",
-      "description": "List of 1\u20135 search terms to analyze on Google Trends. Use this when the user provides specific keywords, topics, or brand names to compare (e.g. ['ChatGPT', 'Gemini', 'Copilot']). Required when requesting interest_over_time / interest_by_region / related_queries / related_topics. Not required when only fetching trending_searches. Maximum 5 keywords \u2014 Google enforces this limit on comparison.",
-      "editor": "stringList",
-      "prefill": [
-        "ChatGPT"
-      ],
       "items": {
         "type": "string"
       }
     },
     "geo": {
-      "title": "Geographic Region",
-      "type": "string",
-      "description": "ISO 3166-1 alpha-2 country code to filter trends by location (e.g. 'US', 'GB', 'IN', 'DE'). Use '' (empty string) for worldwide. This also picks the residential proxy country, which is critical for reliability \u2014 Google blocks mismatched IP/geo pairs.",
-      "editor": "textfield",
-      "prefill": "US"
+      "type": "string"
     },
     "timeframe": {
-      "title": "Timeframe",
       "type": "string",
-      "description": "Date range for trend data. Past month / 3 months / 12 months are the most reliable; 'all' (since 2004) is the slowest. Overridden by customTimeRange if provided.",
-      "editor": "select",
       "enum": [
         "now 1-H",
         "now 4-H",
@@ -38,24 +23,10 @@
         "today 5-y",
         "all"
       ],
-      "enumTitles": [
-        "Past hour",
-        "Past 4 hours",
-        "Past day",
-        "Past 7 days",
-        "Past month",
-        "Past 3 months",
-        "Past 12 months (default)",
-        "Past 5 years",
-        "2004\u2013present (all time)"
-      ],
       "default": "today 12-m"
     },
     "property": {
-      "title": "Property / Search Type",
       "type": "string",
-      "description": "Which Google property to analyze. 'web' is normal Google Search (default and most reliable). Other properties return narrower data \u2014 for instance YouTube returns YouTube-specific interest curves, which differ from web search.",
-      "editor": "select",
       "enum": [
         "web",
         "news",
@@ -63,26 +34,14 @@
         "youtube",
         "froogle"
       ],
-      "enumTitles": [
-        "Web Search (default)",
-        "Google News",
-        "Google Images",
-        "YouTube Search",
-        "Google Shopping"
-      ],
       "default": "web"
     },
     "category": {
-      "title": "Category ID",
       "type": "integer",
-      "description": "Google Trends category to filter results. Use 0 for all categories (default). Full list at trends.google.com/trends/api/explore (categories list).",
       "default": 0
     },
     "dataTypes": {
-      "title": "Data Types to Extract",
       "type": "array",
-      "description": "Which Google Trends data types to fetch in one run. interest_over_time = temporal curve (0\u2013100 relative). interest_by_region = geographic breakdown. related_queries = top/rising search terms. related_topics = top/rising Knowledge Graph topics. trending_searches = daily top searches by country (does not need keywords). Pick as many as you need \u2014 they share one session, so adding more is cheap.",
-      "editor": "select",
       "items": {
         "type": "string",
         "enum": [
@@ -91,61 +50,38 @@
           "related_queries",
           "related_topics",
           "trending_searches"
-        ],
-        "enumTitles": [
-          "Interest over time",
-          "Interest by region",
-          "Related queries",
-          "Related topics",
-          "Trending searches (daily, by country)"
         ]
       },
       "uniqueItems": true,
-      "prefill": [
-        "trending_searches"
-      ],
       "default": [
         "interest_over_time",
         "related_queries"
       ]
     },
     "trendingSearchesGeo": {
-      "title": "Trending Searches Country",
-      "type": "string",
-      "description": "ISO 3166-1 alpha-2 country code for daily trending searches (only used when 'trending_searches' is in dataTypes). Example: 'US', 'GB', 'IN'. Defaults to the value of geo. Trending searches are not available for every country \u2014 US/GB/IN/JP/DE are the most reliable.",
-      "editor": "textfield",
-      "prefill": "US"
+      "type": "string"
     },
     "maxResults": {
-      "title": "Max Results",
       "type": "integer",
-      "description": "Maximum total number of records to return across all dataTypes. The actor stops + charges once this limit is hit. Default 500 covers typical use; raise it for full multi-keyword exports.",
       "default": 500,
-      "prefill": 1,
       "minimum": 1,
       "maximum": 50000
     },
     "customTimeRange": {
-      "title": "Custom Date Range",
-      "type": "string",
-      "description": "Override 'timeframe' with a specific date range. Format: 'YYYY-MM-DD YYYY-MM-DD' (e.g. '2023-01-01 2024-01-01'). Leave empty to use the timeframe enum. NOT a single date \u2014 must be two dates separated by a space.",
-      "editor": "textfield"
+      "type": "string"
     },
     "outputFormat": {
-      "title": "Output Format",
       "type": "string",
-      "description": "How to structure output. 'flat' = one record per data point (default \u2014 best for CSV exports and AI/LLM pipelines). 'summary' = same flat structure today (reserved for future grouped output).",
-      "editor": "select",
       "enum": [
         "flat",
         "summary"
       ],
-      "enumTitles": [
-        "Flat \u2014 one record per data point (default, best for AI/CSV)",
-        "Summary \u2014 one record per keyword with nested arrays"
-      ],
       "default": "flat"
     }
   },
-  "required": []
+  "required": [],
+  "additionalProperties": false,
+  "title": "google-trends-scraper: supported public research inputs",
+  "description": "Constrained plugin input projection, not the complete upstream Actor schema. Consult execution_profile before any launch.",
+  "x-ai-cmo-profile": "public-research-projection-v1"
 }

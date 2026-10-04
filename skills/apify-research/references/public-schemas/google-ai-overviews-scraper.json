@@ -1,38 +1,21 @@
 {
   "$schema": "https://apify.com/schemas/v1/input.ide.json",
-  "title": "Google AI Overviews Scraper",
-  "description": "Scrape Google AI Overview (AIO) for any query. Returns AI answer text, cited sources, citation positions, and optional brand-match detection per query.",
   "type": "object",
-  "schemaVersion": 1,
   "properties": {
     "queries": {
-      "title": "Search queries",
       "type": "array",
-      "description": "List of Google search queries to check for AI Overviews (e.g., ['best CRM software 2026', 'how to scrape Google AI Overviews']). One record per query is returned. Max 50 queries per run. NOT a list of full Google URLs \u2014 pass plain text queries; the actor builds the SERP URL with countryCode/languageCode.",
-      "editor": "stringList",
-      "prefill": [
-        "best project management software for small teams"
-      ],
       "minItems": 1,
       "maxItems": 50,
-      "example": [
-        "best CRM for startups",
-        "what is generative AI",
-        "top SEO tools 2026"
-      ]
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
     },
     "targetDomain": {
-      "title": "Brand domain to detect (optional)",
-      "type": "string",
-      "description": "Your brand domain to match against AIO source citations (e.g., 'apify.com', or comma-separated 'apify.com,docs.apify.com'). When set, output includes brandMatch.matched, position, citedUrl, matchCount. Leave empty to skip brand matching. NOT a full URL \u2014 pass bare domains only.",
-      "editor": "textfield",
-      "example": "apify.com"
+      "type": "string"
     },
     "countryCode": {
-      "title": "Country code",
       "type": "string",
-      "description": "Two-letter ISO 3166-1 alpha-2 country code for geo-targeting Google SERP (e.g., 'us', 'gb', 'de'). Affects which results and which AIO variant Google returns. Defaults to 'us'. NOT a country name \u2014 use ISO codes only.",
-      "editor": "select",
       "default": "us",
       "enum": [
         "us",
@@ -78,10 +61,7 @@
       ]
     },
     "languageCode": {
-      "title": "Language code",
       "type": "string",
-      "description": "Two-letter ISO 639-1 language code for Google interface language (e.g., 'en', 'de', 'es'). Sets the hl= URL param. Defaults to 'en'. NOT a locale string like 'en-US' \u2014 use the bare language code.",
-      "editor": "select",
       "default": "en",
       "enum": [
         "en",
@@ -113,60 +93,29 @@
       ]
     },
     "device": {
-      "title": "Device emulation",
       "type": "string",
-      "description": "Browser viewport to emulate when fetching the SERP. Google sometimes shows different AIO content for mobile vs desktop. Defaults to 'desktop'. NOT a specific phone model \u2014 only 'desktop' or 'mobile' accepted.",
-      "editor": "select",
       "default": "desktop",
       "enum": [
         "desktop",
         "mobile"
       ]
     },
-    "serpApiKey": {
-      "title": "SerpApi key (BYOK fallback, optional)",
-      "type": "string",
-      "description": "Optional SerpApi.com key for hybrid fallback when the Camoufox scrape is blocked. Get one free at serpapi.com (100/mo free). When provided, failed queries are retried via SerpApi automatically. Leave empty to use Camoufox-only \u2014 most queries succeed. NOT a Google API key \u2014 must be a SerpApi.com key.",
-      "editor": "textfield",
-      "isSecret": true
-    },
     "maxRetries": {
-      "title": "Max retries per query",
       "type": "integer",
-      "description": "How many times to retry a query that fails to load AIO or returns no answer container. Helps with intermittent rendering. Defaults to 2 (3 attempts total). NOT a global cap \u2014 applies per query.",
-      "editor": "number",
       "default": 2,
       "minimum": 0,
       "maximum": 5
     },
     "forceSerpapi": {
-      "title": "Skip Camoufox, use SerpApi directly",
       "type": "boolean",
-      "description": "Skip the Camoufox scrape attempt entirely and go straight to SerpApi (managed if you don't bring a key, BYOK otherwise). Saves ~7 seconds per query when you already know Google residential blocks. Defaults to false. NOT recommended for normal use \u2014 automatic circuit breaker handles persistent blocking.",
-      "editor": "checkbox",
-      "default": false,
-      "prefill": true
-    },
-    "proxyConfiguration": {
-      "title": "Proxy configuration",
-      "type": "object",
-      "description": "Proxy setup. Defaults to Apify residential (mandatory for Google scraping). Override only if you know what you're doing \u2014 datacenter proxies get blocked instantly by Google. NOT optional in practice.",
-      "editor": "proxy",
-      "prefill": {
-        "useApifyProxy": true,
-        "apifyProxyGroups": [
-          "RESIDENTIAL"
-        ]
-      },
-      "default": {
-        "useApifyProxy": true,
-        "apifyProxyGroups": [
-          "RESIDENTIAL"
-        ]
-      }
+      "default": false
     }
   },
   "required": [
     "queries"
-  ]
+  ],
+  "additionalProperties": false,
+  "title": "google-ai-overviews-scraper: supported public research inputs",
+  "description": "Constrained plugin input projection, not the complete upstream Actor schema. Consult execution_profile before any launch.",
+  "x-ai-cmo-profile": "public-research-projection-v1"
 }

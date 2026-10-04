@@ -1,49 +1,53 @@
 {
-  "title": "YouTube Comments Scraper",
-  "description": "Extract YouTube comments by providing video URLs or video IDs. Use startUrls when you have direct YouTube video links. Use videoIds when you have bare video IDs (11-character strings like 'dQw4w9WgXcQ'). You can provide both at the same time.",
   "type": "object",
-  "schemaVersion": 1,
   "properties": {
     "startUrls": {
-      "title": "YouTube Video URLs",
       "type": "array",
-      "description": "Use this field when the user provides full YouTube video URLs (e.g. https://youtube.com/watch?v=dQw4w9WgXcQ, youtu.be/dQw4w9WgXcQ, or YouTube Shorts URLs). Do NOT use this when the user only provides a bare video ID \u2014 use videoIds instead. You can add multiple URLs to scrape several videos in one run.",
-      "editor": "requestListSources",
-      "prefill": [
-        {
-          "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-        }
-      ],
       "default": [],
-      "sectionCaption": "Input \u2014 Video Selection",
-      "sectionDescription": "Provide one or more YouTube videos to scrape comments from. You can use full URLs, short links, or bare video IDs."
+      "items": {
+        "oneOf": [
+          {
+            "type": "string",
+            "pattern": "^https?://[^/@\\s]+(?:[/?#]|$)"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "url": {
+                "type": "string",
+                "pattern": "^https?://[^/@\\s]+(?:[/?#]|$)"
+              }
+            },
+            "required": [
+              "url"
+            ],
+            "additionalProperties": false
+          }
+        ]
+      }
     },
     "videoIds": {
-      "title": "Video IDs",
       "type": "array",
-      "description": "Use this field when the user provides bare YouTube video IDs (the 11-character alphanumeric strings, e.g. 'dQw4w9WgXcQ'). Do NOT use this for full URLs \u2014 use startUrls instead. One ID per line.",
-      "editor": "stringList",
-      "prefill": [],
-      "default": []
+      "default": [],
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
     },
     "maxComments": {
-      "title": "Max Comments per Video",
       "type": "integer",
-      "description": "Maximum number of comments to scrape per video. Includes reply comments if 'Include Replies' is enabled. Set to a higher number for comprehensive analysis. Each comment costs $0.002.",
       "minimum": 1,
       "maximum": 10000,
-      "default": 100,
-      "prefill": 1,
-      "sectionCaption": "Scraping Settings",
-      "sectionDescription": "Control how many comments to collect and whether to include reply threads."
+      "default": 100
     },
     "includeReplies": {
-      "title": "Include Replies",
       "type": "boolean",
-      "description": "When enabled, also scrapes reply comments nested under top-level comments. Replies count toward the maxComments limit. Each reply is also charged at $0.002. Disable for faster runs focused only on top-level comments.",
-      "default": false,
-      "prefill": false
+      "default": false
     }
   },
-  "required": []
+  "required": [],
+  "additionalProperties": false,
+  "title": "youtube-comments-scraper: supported public research inputs",
+  "description": "Constrained plugin input projection, not the complete upstream Actor schema. Consult execution_profile before any launch.",
+  "x-ai-cmo-profile": "public-research-projection-v1"
 }

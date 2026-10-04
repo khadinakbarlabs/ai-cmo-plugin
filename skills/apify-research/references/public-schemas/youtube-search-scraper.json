@@ -1,36 +1,21 @@
 {
-  "title": "YouTube Search Scraper input",
   "type": "object",
-  "schemaVersion": 1,
   "properties": {
     "searchQueries": {
-      "title": "Search queries",
       "type": "array",
-      "description": "One or more free-text YouTube search terms, exactly as you would type them into the YouTube search bar (e.g. 'how to bake sourdough'). Each query is scraped independently and results are merged into one dataset. Defaults to a single example query. This is NOT a YouTube URL or video ID \u2014 for a specific video's comments or transcript use the dedicated youtube-comments-scraper or youtube-transcript-extractor actors.",
-      "editor": "stringList",
-      "prefill": [
-        "how to bake sourdough"
-      ],
-      "example": [
-        "lofi hip hop",
-        "react tutorial 2025"
-      ]
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
     },
     "maxResultsPerQuery": {
-      "title": "Max results per query",
       "type": "integer",
-      "description": "Maximum number of results to return for each search query, across pagination. The actor stops paginating once this many items are collected. Defaults to 50; set higher for deep scrapes (each result is billed). NOT a global cap across all queries \u2014 it applies per individual query.",
-      "editor": "number",
-      "prefill": 50,
       "minimum": 1,
       "maximum": 2000,
       "default": 50
     },
     "resultType": {
-      "title": "Result type filter",
       "type": "string",
-      "description": "Restrict results to a single content type on YouTube. 'all' returns the natural mix YouTube serves (videos, channels, playlists). Choose 'video', 'channel', 'playlist', or 'movie' to narrow the search. Defaults to 'all'.",
-      "editor": "select",
       "enum": [
         "all",
         "video",
@@ -38,39 +23,20 @@
         "playlist",
         "movie"
       ],
-      "enumTitles": [
-        "All types",
-        "Videos only",
-        "Channels only",
-        "Playlists only",
-        "Movies only"
-      ],
       "default": "all"
     },
     "sortBy": {
-      "title": "Sort by",
       "type": "string",
-      "description": "Ordering of the search results, mirroring YouTube's own sort options. 'relevance' is YouTube's default ranking; the others sort by upload recency, total view count, or rating. Defaults to 'relevance'. Note YouTube only sorts the first page reliably \u2014 deep pagination reverts toward relevance.",
-      "editor": "select",
       "enum": [
         "relevance",
         "uploadDate",
         "viewCount",
         "rating"
       ],
-      "enumTitles": [
-        "Relevance",
-        "Upload date (newest)",
-        "View count",
-        "Rating"
-      ],
       "default": "relevance"
     },
     "uploadDate": {
-      "title": "Upload date filter",
       "type": "string",
-      "description": "Restrict to videos uploaded within a recent time window, matching YouTube's 'Upload date' filter chips. 'any' applies no time filter. Only meaningful when results include videos. Defaults to 'any'.",
-      "editor": "select",
       "enum": [
         "any",
         "lastHour",
@@ -79,40 +45,20 @@
         "thisMonth",
         "thisYear"
       ],
-      "enumTitles": [
-        "Any time",
-        "Last hour",
-        "Today",
-        "This week",
-        "This month",
-        "This year"
-      ],
       "default": "any"
     },
     "duration": {
-      "title": "Video duration filter",
       "type": "string",
-      "description": "Restrict videos by length, matching YouTube's 'Duration' filter. 'short' is under 4 minutes, 'medium' is 4\u201320 minutes, 'long' is over 20 minutes. 'any' applies no duration filter and is the default.",
-      "editor": "select",
       "enum": [
         "any",
         "short",
         "medium",
         "long"
       ],
-      "enumTitles": [
-        "Any duration",
-        "Under 4 minutes",
-        "4\u201320 minutes",
-        "Over 20 minutes"
-      ],
       "default": "any"
     },
     "features": {
-      "title": "Feature filters",
       "type": "array",
-      "description": "Optional YouTube feature filters, applied together (e.g. ['hd','subtitles']). Mirrors YouTube's 'Features' filter chips such as Live, 4K, HD, Subtitles/CC, Creative Commons, 360\u00b0, VR180, 3D, HDR, Location, Purchased. Leave empty for no feature filtering (default). Combining many feature filters can sharply reduce result counts.",
-      "editor": "select",
       "items": {
         "type": "string",
         "enum": [
@@ -127,76 +73,33 @@
           "hdr",
           "location",
           "purchased"
-        ],
-        "enumTitles": [
-          "Live",
-          "4K",
-          "HD",
-          "Subtitles/CC",
-          "Creative Commons",
-          "360\u00b0",
-          "VR180",
-          "3D",
-          "HDR",
-          "Location",
-          "Purchased"
         ]
       },
       "default": []
     },
     "country": {
-      "title": "Country (gl)",
       "type": "string",
-      "description": "Two-letter ISO country code used as YouTube's geo context (gl parameter), affecting which regional results and trending content appear (e.g. 'US', 'GB', 'DE'). Also used as the residential proxy country. Defaults to 'US'. NOT a language code \u2014 see 'language' for that.",
-      "editor": "textfield",
-      "prefill": "US",
       "default": "US"
     },
     "language": {
-      "title": "Language (hl)",
       "type": "string",
-      "description": "Two-letter ISO language code used as YouTube's interface/content language (hl parameter), affecting titles of localized metadata and relative date strings (e.g. 'en', 'es', 'de'). Defaults to 'en'. NOT a country code \u2014 see 'country' for that.",
-      "editor": "textfield",
-      "prefill": "en",
       "default": "en"
     },
-    "rawSpToken": {
-      "title": "Raw filter token (advanced)",
-      "type": "string",
-      "description": "Advanced override: a raw YouTube 'sp' filter token (the value after sp= in a filtered YouTube search URL). When set, it overrides the resultType/sortBy/uploadDate/duration/features fields entirely. Leave blank to let the actor build the token for you. Only for power users who copied a token from a complex YouTube filter URL.",
-      "editor": "textfield"
-    },
     "fallbackMode": {
-      "title": "Managed fallback mode",
       "type": "string",
-      "description": "Controls when the managed fallback engages. 'auto' (default) uses direct HTTP + residential proxy first and only uses managed fallback after all retries are exhausted. 'never' disables the fallback entirely (run fails honestly if YouTube blocks). 'always' skips direct scraping and uses managed fallback for every query (highest reliability, higher cost).",
-      "editor": "select",
       "enum": [
         "auto",
         "never",
         "always"
       ],
-      "enumTitles": [
-        "Auto (direct first, managed fallback last resort)",
-        "Never (direct only)",
-        "Always (managed fallback only)"
-      ],
       "default": "auto"
-    },
-    "proxyConfiguration": {
-      "title": "Proxy configuration",
-      "type": "object",
-      "description": "Proxy settings for the direct HTTP scrape. Residential proxies are strongly recommended and enabled by default \u2014 datacenter IPs are reliably blocked by YouTube. The country is auto-aligned to the 'country' field when not overridden here.",
-      "editor": "proxy",
-      "default": {
-        "useApifyProxy": true,
-        "apifyProxyGroups": [
-          "RESIDENTIAL"
-        ]
-      }
     }
   },
   "required": [
     "searchQueries"
-  ]
+  ],
+  "additionalProperties": false,
+  "title": "youtube-search-scraper: supported public research inputs",
+  "description": "Constrained plugin input projection, not the complete upstream Actor schema. Consult execution_profile before any launch.",
+  "x-ai-cmo-profile": "public-research-projection-v1"
 }
