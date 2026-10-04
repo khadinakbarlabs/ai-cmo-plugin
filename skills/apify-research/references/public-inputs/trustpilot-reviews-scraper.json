@@ -1,0 +1,7 @@
+{
+  "companyIdentifiers": [
+    "example.com"
+  ],
+  "maxReviewsPerCompany": 5,
+  "includeCompanyInfo": true
+}

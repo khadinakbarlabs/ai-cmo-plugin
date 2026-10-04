@@ -1,0 +1,11 @@
+{
+  "startUrls": [
+    {
+      "url": "https://example.com"
+    }
+  ],
+  "maxPages": 5,
+  "maxDepth": 1,
+  "maxConcurrency": 1,
+  "respectRobotsTxt": true
+}

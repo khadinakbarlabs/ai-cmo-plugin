@@ -1,0 +1,88 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "business_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "session_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "feedback_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "deliverable": {
+      "type": "string",
+      "minLength": 1
+    },
+    "observed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "category": {
+      "enum": [
+        "accuracy",
+        "strategy-fit",
+        "brand-voice",
+        "usability",
+        "integration",
+        "report",
+        "missing-workflow",
+        "outcome"
+      ]
+    },
+    "verdict": {
+      "enum": [
+        "useful",
+        "needs-changes",
+        "off-target",
+        "declined"
+      ]
+    },
+    "summary": {
+      "type": "string",
+      "maxLength": 1000
+    },
+    "severity": {
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "status": {
+      "enum": [
+        "open",
+        "resolved",
+        "declined"
+      ]
+    },
+    "resolution": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "required": [
+    "schema_version",
+    "business_id",
+    "session_id",
+    "feedback_id",
+    "deliverable",
+    "observed_at",
+    "category",
+    "verdict",
+    "summary",
+    "severity",
+    "status",
+    "resolution"
+  ],
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

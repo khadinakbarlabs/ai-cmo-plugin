@@ -1,0 +1,7 @@
+{
+  "usernames": [
+    "apify"
+  ],
+  "scrapeRecentPosts": false,
+  "maxRecentPosts": 1
+}

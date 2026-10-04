@@ -1,0 +1,9 @@
+{
+  "startUrls": [
+    {
+      "url": "https://example.com"
+    }
+  ],
+  "maxPagesPerDomain": 2,
+  "maxResults": 5
+}

@@ -1,0 +1,11 @@
+# Privacy
+
+AI CMO has no bundled server, telemetry collector or credential store. Its instructions run through the host you choose; that host's data policies apply. The host may read selected business materials, create local files and invoke external tools when the task requires them.
+
+Business briefs, research, assets and aggregate metrics remain in your selected workspace unless a requested operation sends them to a provider. Apify receives configured research inputs; Postiz and destination networks receive authorized content/media; other selected CLIs send the inputs required by their services. Resend receives authorized recipient/content data, WordPress receives site content, Agent Media receives generation scripts/assets, and a requested Humanizer PRO rewrite sends selected text through that service to Rephrasy, consumes words and saves private service history. Those providers have their own storage, privacy and billing policies.
+
+Keep secrets in the external CLI's supported authentication store/environment. Do not put credentials or unnecessary customer records in shared marketing context. Retain only needed contact evidence, aggregate metrics and action identifiers. Inspect, export or delete local workspace files yourself; delete provider-held data through the provider. Removing the plugin does not delete external accounts, posted content, remote runs or workspace files.
+
+Specialist delegation sends a minimized business/task packet and selected source/asset material to the active model host. Do not include credentials, full CRM exports, private donor/beneficiary/patient records or unnecessary contact data. The CMO stores shared campaign state in a user-selected workspace; native agents do not create a hosted memory service.
+
+Context facts, preferences, session handoffs and optional feedback records stay in the selected workspace under host policies. No automatic publisher telemetry or cross-user learning is included. Store concise summaries and aggregate metrics, not raw conversations or customer records. You can request corrections, export and scoped removal of local learning records; external provider history and scheduled jobs need separate provider controls. A registered recurring review executes under that host's policies and capabilities. The standalone report template makes no network requests.

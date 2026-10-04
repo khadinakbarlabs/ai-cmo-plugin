@@ -1,0 +1,71 @@
+{
+  "title": "Instagram Posts Scraper Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "description": "Scrape Instagram posts from profiles, hashtags, or direct post URLs. Provide at least one of the input types below.",
+  "properties": {
+    "instagramUsernames": {
+      "title": "\ud83d\udc64 Instagram Usernames or Profile URLs",
+      "description": "Use this field when the user provides Instagram usernames (e.g. 'natgeo', 'nasa') or profile URLs (e.g. 'https://instagram.com/natgeo'). Do NOT use this when the user provides hashtags or post URLs \u2014 use the dedicated fields instead. One username or URL per line.",
+      "type": "array",
+      "editor": "stringList",
+      "prefill": [
+        "natgeo"
+      ],
+      "sectionCaption": "\ud83d\udce5 Input Targets",
+      "sectionDescription": "Choose which Instagram content to scrape. Provide at least one input type."
+    },
+    "hashtags": {
+      "title": "#\ufe0f\u20e3 Hashtags",
+      "description": "Use this field when the user provides hashtags (with or without the # symbol). Scrapes recent public posts tagged with each hashtag. Do NOT use for usernames or post URLs.",
+      "type": "array",
+      "editor": "stringList",
+      "prefill": []
+    },
+    "directPostUrls": {
+      "title": "\ud83d\udd17 Direct Post or Reel URLs",
+      "description": "Use this field when the user provides specific Instagram post, reel, or carousel URLs (e.g. 'https://instagram.com/p/ABC123/'). Scrapes exactly those posts.",
+      "type": "array",
+      "editor": "stringList",
+      "prefill": []
+    },
+    "maxPostsPerTarget": {
+      "title": "\ud83d\udcaf Max Posts Per Target",
+      "description": "Maximum number of posts to scrape per profile or hashtag. For direct post URLs, each URL counts as one post regardless of this limit.",
+      "type": "integer",
+      "default": 50,
+      "minimum": 1,
+      "maximum": 500,
+      "prefill": 3,
+      "sectionCaption": "\u2699\ufe0f Scraping Options",
+      "sectionDescription": "Control how many posts to collect and filter by date."
+    },
+    "onlyPostsNewerThan": {
+      "title": "\ud83d\udcc5 Only Posts Newer Than",
+      "description": "Skip posts older than this date. Accepts absolute dates (YYYY-MM-DD) or relative dates (e.g. '7 days', '2 months', '1 year').",
+      "type": "string",
+      "editor": "textfield"
+    },
+    "includeRecentComments": {
+      "title": "\ud83d\udcac Include Recent Comments",
+      "description": "When enabled, includes up to 5 recent comments per post in the output. Slightly increases scraping time.",
+      "type": "boolean",
+      "prefill": false,
+      "default": true
+    },
+    "proxyConfiguration": {
+      "title": "\ud83c\udf10 Proxy Configuration",
+      "description": "Proxy settings. Residential proxies are recommended for Instagram \u2014 datacenter IPs are often blocked. Leave as default to use Apify's residential proxy pool.",
+      "type": "object",
+      "editor": "proxy",
+      "default": {
+        "useApifyProxy": true,
+        "apifyProxyGroups": [
+          "RESIDENTIAL"
+        ]
+      },
+      "sectionCaption": "\ud83d\udd27 Advanced Settings",
+      "sectionDescription": "Proxy and performance configuration."
+    }
+  }
+}

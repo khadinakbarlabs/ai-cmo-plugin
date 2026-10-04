@@ -1,0 +1,6 @@
+{
+  "domains": [
+    "example.com"
+  ],
+  "maxResultsPerDomain": 1
+}

@@ -1,0 +1,9 @@
+{
+  "profileHandles": [
+    "tiktok"
+  ],
+  "maxVideosPerProfile": 5,
+  "maxPagesPerProfile": 1,
+  "maxTotalVideos": 5,
+  "includeRawData": false
+}

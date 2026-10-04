@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "business_id": "fictional-pumps",
+  "schedule_id": "SCH01",
+  "purpose": "Synthetic draft weekly priorities and data-gap report",
+  "cadence": "Weekly Monday at 09:00",
+  "timezone": "UTC",
+  "status": "draft",
+  "scope": {
+    "workspace": "/workspace/fictional-pumps",
+    "allowed_effects": [
+      "read-data",
+      "write-local-report"
+    ],
+    "sources": [
+      "User-supplied aggregate export if available"
+    ],
+    "report_destination": "/workspace/fictional-pumps/.ai-cmo/reports",
+    "authority_reference": null
+  },
+  "limits": {
+    "max_run_minutes": 15,
+    "cost_limit_usd": null,
+    "review_at": "2026-11-02T09:00:00Z"
+  },
+  "notification": "agreed-report",
+  "next_run_at": null,
+  "receipt": null
+}

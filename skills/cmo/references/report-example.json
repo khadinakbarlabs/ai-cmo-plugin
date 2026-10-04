@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "business_id": "fictional-pumps",
+  "report_id": "R01",
+  "period": "Synthetic setup session, not campaign performance",
+  "timezone": "UTC",
+  "observed_at": "2026-10-05T09:00:00Z",
+  "goal": "Prepare one claim-safe RFQ landing draft",
+  "status": "data-unavailable",
+  "headline": "Sample report: no campaign metrics supplied",
+  "metrics": [
+    {
+      "id": "qualified-rfqs",
+      "label": "Qualified RFQs",
+      "value": null,
+      "unit": "count",
+      "state": "unknown",
+      "definition": "Qualified requests meeting the agreed procurement criteria",
+      "source": null,
+      "numerator": null,
+      "denominator": null,
+      "comparison_value": null,
+      "comparison_period": null,
+      "calculation": "direct"
+    }
+  ],
+  "completed_outputs": [],
+  "blockers": [
+    "Sample only: no actual assets or account data supplied"
+  ],
+  "feedback_summary": "Synthetic example; no real feedback collected",
+  "next_action": "Review supplied draft and define qualification criteria",
+  "review_at": "2026-10-12T09:00:00Z",
+  "limits": [
+    "Fictional template data only; not an observed business result",
+    "No recurrence enabled"
+  ]
+}

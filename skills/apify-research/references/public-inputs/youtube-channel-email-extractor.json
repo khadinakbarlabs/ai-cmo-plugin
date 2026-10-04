@@ -1,0 +1,8 @@
+{
+  "channelUrls": [
+    "https://www.youtube.com/@Apify"
+  ],
+  "maxResults": 1,
+  "scrapeWebsite": false,
+  "unlockBusinessInquiryEmail": false
+}

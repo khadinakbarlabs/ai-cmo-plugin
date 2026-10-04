@@ -1,0 +1,8 @@
+{
+  "mode": "list",
+  "urls": [
+    "https://example.com"
+  ],
+  "maxLinksToCheck": 5,
+  "maxConcurrency": 1
+}

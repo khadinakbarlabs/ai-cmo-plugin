@@ -1,0 +1,7 @@
+{
+  "searchQuery": "example.com",
+  "searchType": "domain",
+  "countryCode": "US",
+  "maxResults": 5,
+  "enrichDetails": false
+}

@@ -1,0 +1,7 @@
+{
+  "searchQueries": [
+    "project management"
+  ],
+  "maxResultsPerQuery": 5,
+  "extractFullText": false
+}

@@ -1,0 +1,141 @@
+workflow_id,department_id,department,workflow_family,status,skill
+W001,D01,Strategy and brand,Business discovery,authored-instructions; behavioral verification separate,business-context
+W002,D01,Strategy and brand,Ideal customer profile,authored-instructions; behavioral verification separate,brand-strategy
+W003,D01,Strategy and brand,Positioning and differentiation,authored-instructions; behavioral verification separate,brand-strategy
+W004,D01,Strategy and brand,Offer and pricing strategy,authored-instructions; behavioral verification separate,brand-strategy
+W005,D01,Strategy and brand,Brand voice and messaging,authored-instructions; behavioral verification separate,brand-strategy
+W006,D01,Strategy and brand,Channel prioritization,authored-instructions; behavioral verification separate,cmo
+W007,D01,Strategy and brand,Budget allocation,authored-instructions; behavioral verification separate,cmo
+W008,D01,Strategy and brand,Growth roadmap,authored-instructions; behavioral verification separate,cmo
+W009,D02,Market intelligence,Competitor landscape,authored-instructions; behavioral verification separate,market-research
+W010,D02,Market intelligence,Customer review analysis,authored-instructions; behavioral verification separate,customer-research
+W011,D02,Market intelligence,Voice of customer research,authored-instructions; behavioral verification separate,customer-research
+W012,D02,Market intelligence,Demand and trend research,authored-instructions; behavioral verification separate,market-research
+W013,D02,Market intelligence,Social listening,authored-instructions; behavioral verification separate,community-growth
+W014,D02,Market intelligence,Competitor website analysis,authored-instructions; behavioral verification separate,market-research
+W015,D02,Market intelligence,Competitor messaging comparison,authored-instructions; behavioral verification separate,market-research
+W016,D02,Market intelligence,Opportunity synthesis,authored-instructions; behavioral verification separate,market-research
+W017,D03,Search growth,Keyword research,authored-instructions; behavioral verification separate,keyword-research
+W018,D03,Search growth,Search intent classification,authored-instructions; behavioral verification separate,keyword-research
+W019,D03,Search growth,Keyword clustering and page mapping,authored-instructions; behavioral verification separate,keyword-research
+W020,D03,Search growth,Content gap analysis,authored-instructions; behavioral verification separate,content-seo
+W021,D03,Search growth,Technical SEO audit,authored-instructions; behavioral verification separate,technical-seo
+W022,D03,Search growth,Structured data and schema,authored-instructions; behavioral verification separate,technical-seo
+W023,D03,Search growth,Internal linking and sitemaps,authored-instructions; behavioral verification separate,content-seo
+W024,D03,Search growth,Local SEO,authored-instructions; behavioral verification separate,local-seo
+W025,D03,Search growth,Ecommerce SEO,authored-instructions; behavioral verification separate,technical-seo
+W026,D03,Search growth,International SEO and localization,authored-instructions; behavioral verification separate,international-seo
+W027,D03,Search growth,GEO and answer engine visibility,authored-instructions; behavioral verification separate,geo-visibility
+W028,D03,Search growth,App store optimization,authored-instructions; behavioral verification separate,app-marketing
+W029,D04,Authority and links,Backlink profile and gap analysis,authored-instructions; behavioral verification separate,link-building
+W030,D04,Authority and links,Link prospect qualification,authored-instructions; behavioral verification separate,link-building
+W031,D04,Authority and links,Broken link opportunities,authored-instructions; behavioral verification separate,link-building
+W032,D04,Authority and links,Unlinked brand mentions,authored-instructions; behavioral verification separate,link-building
+W033,D04,Authority and links,Resource page outreach,authored-instructions; behavioral verification separate,link-building
+W034,D04,Authority and links,Linkable asset planning,authored-instructions; behavioral verification separate,digital-pr
+W035,D04,Authority and links,Digital PR and expert interviews,authored-instructions; behavioral verification separate,digital-pr
+W036,D04,Authority and links,Outreach drafting and follow-up tracking,authored-instructions; behavioral verification separate,link-building
+W037,D05,Paid media,Competitor ad library research,authored-instructions; behavioral verification separate,ad-research
+W038,D05,Paid media,Audience and targeting strategy,authored-instructions; behavioral verification separate,paid-media
+W039,D05,Paid media,Campaign structure,authored-instructions; behavioral verification separate,paid-media
+W040,D05,Paid media,Budget and bidding planning,authored-instructions; behavioral verification separate,paid-media
+W041,D05,Paid media,Account audit and delivery diagnosis,authored-instructions; behavioral verification separate,paid-media
+W042,D05,Paid media,Paid search campaign preparation,authored-instructions; behavioral verification separate,paid-media
+W043,D05,Paid media,Paid social campaign preparation,authored-instructions; behavioral verification separate,paid-media
+W044,D05,Paid media,Retargeting strategy,authored-instructions; behavioral verification separate,paid-media
+W045,D05,Paid media,Campaign optimization and reporting,authored-instructions; behavioral verification separate,paid-media
+W046,D06,Creative production,Ad angle and hook ideation,authored-instructions; behavioral verification separate,ad-creation
+W047,D06,Creative production,Ad copy variants,authored-instructions; behavioral verification separate,ad-creation
+W048,D06,Creative production,Landing page copy,authored-instructions; behavioral verification separate,copywriting
+W049,D06,Creative production,Static ad design briefs,authored-instructions; behavioral verification separate,creative-production
+W050,D06,Creative production,Image asset generation,authored-instructions; behavioral verification separate,creative-production
+W051,D06,Creative production,Video ad scripts,authored-instructions; behavioral verification separate,creative-production
+W052,D06,Creative production,Video asset generation,authored-instructions; behavioral verification separate,creative-production
+W053,D06,Creative production,UGC and creator briefs,authored-instructions; behavioral verification separate,creative-production
+W054,D06,Creative production,Creative testing matrix,authored-instructions; behavioral verification separate,ad-creation
+W055,D06,Creative production,Brand and creative review,authored-instructions; behavioral verification separate,brand-strategy
+W056,D07,Content and editorial,Editorial strategy and calendar,authored-instructions; behavioral verification separate,content-planning
+W057,D07,Content and editorial,SEO content briefs,authored-instructions; behavioral verification separate,content-seo
+W058,D07,Content and editorial,Long-form article production,authored-instructions; behavioral verification separate,content-production
+W059,D07,Content and editorial,Content refresh and decay analysis,authored-instructions; behavioral verification separate,content-seo
+W060,D07,Content and editorial,Comparison and use-case pages,authored-instructions; behavioral verification separate,content-production
+W061,D07,Content and editorial,Lead magnets and free tools,authored-instructions; behavioral verification separate,sales-enablement
+W062,D07,Content and editorial,Newsletter editorial production,authored-instructions; behavioral verification separate,newsletter-editorial
+W063,D07,Content and editorial,Content repurposing,authored-instructions; behavioral verification separate,content-production
+W064,D08,Social and creators,LinkedIn content and growth,authored-instructions; behavioral verification separate,social-strategy
+W065,D08,Social and creators,Instagram posts and carousels,authored-instructions; behavioral verification separate,social-strategy
+W066,D08,Social and creators,TikTok and short-video planning,authored-instructions; behavioral verification separate,social-strategy
+W067,D08,Social and creators,YouTube SEO and packaging,authored-instructions; behavioral verification separate,social-strategy
+W068,D08,Social and creators,Community participation strategy,authored-instructions; behavioral verification separate,community-growth
+W069,D08,Social and creators,Influencer discovery and qualification,authored-instructions; behavioral verification separate,influencer-marketing
+W070,D08,Social and creators,Creator partnership outreach drafts,authored-instructions; behavioral verification separate,influencer-marketing
+W071,D08,Social and creators,Social scheduling through Postiz,authored-instructions; behavioral verification separate,social-publishing
+W072,D08,Social and creators,Social analytics and engagement review,authored-instructions; behavioral verification separate,marketing-analytics
+W073,D08,Social and creators,Regional channels and social localization,authored-instructions; behavioral verification separate,international-seo
+W074,D09,Lifecycle and CRM,Lifecycle segmentation,authored-instructions; behavioral verification separate,lifecycle-marketing
+W075,D09,Lifecycle and CRM,Welcome and nurture sequences,authored-instructions; behavioral verification separate,lifecycle-marketing
+W076,D09,Lifecycle and CRM,Onboarding and activation email,authored-instructions; behavioral verification separate,lifecycle-marketing
+W077,D09,Lifecycle and CRM,Abandoned cart recovery,authored-instructions; behavioral verification separate,lifecycle-marketing
+W078,D09,Lifecycle and CRM,Retention and winback,authored-instructions; behavioral verification separate,lifecycle-marketing
+W079,D09,Lifecycle and CRM,Deliverability audit,authored-instructions; behavioral verification separate,email-marketing
+W080,D09,Lifecycle and CRM,Email and SMS campaign production,authored-instructions; behavioral verification separate,email-marketing
+W081,D09,Lifecycle and CRM,CRM workflow and handoff design,authored-instructions; behavioral verification separate,lifecycle-marketing
+W082,D10,Conversion and experiments,Landing page CRO,authored-instructions; behavioral verification separate,conversion-audit
+W083,D10,Conversion and experiments,Signup and form optimization,authored-instructions; behavioral verification separate,conversion-audit
+W084,D10,Conversion and experiments,Onboarding conversion,authored-instructions; behavioral verification separate,conversion-audit
+W085,D10,Conversion and experiments,Checkout conversion,authored-instructions; behavioral verification separate,conversion-audit
+W086,D10,Conversion and experiments,Paywall and upgrade experience,authored-instructions; behavioral verification separate,conversion-audit
+W087,D10,Conversion and experiments,Popup and lead capture optimization,authored-instructions; behavioral verification separate,conversion-audit
+W088,D10,Conversion and experiments,Experiment hypothesis and design,authored-instructions; behavioral verification separate,experiment-design
+W089,D10,Conversion and experiments,Experiment evaluation,authored-instructions; behavioral verification separate,experiment-design
+W090,D10,Conversion and experiments,Funnel diagnosis,authored-instructions; behavioral verification separate,conversion-audit
+W091,D11,Partnerships and launches,Product launch planning,authored-instructions; behavioral verification separate,launch-planning
+W092,D11,Partnerships and launches,Affiliate program design,authored-instructions; behavioral verification separate,partnerships
+W093,D11,Partnerships and launches,Referral program design,authored-instructions; behavioral verification separate,partnerships
+W094,D11,Partnerships and launches,Partner and co-marketing research,authored-instructions; behavioral verification separate,partnerships
+W095,D11,Partnerships and launches,Directory and marketplace listing,authored-instructions; behavioral verification separate,launch-planning
+W096,D11,Partnerships and launches,Webinar and event campaigns,authored-instructions; behavioral verification separate,launch-planning
+W097,D11,Partnerships and launches,Customer advocacy and case studies,authored-instructions; behavioral verification separate,sales-enablement
+W098,D11,Partnerships and launches,Sales enablement and lead handoff,authored-instructions; behavioral verification separate,sales-enablement
+W099,D11,Partnerships and launches,Podcast and guest appearance planning,authored-instructions; behavioral verification separate,digital-pr
+W100,D11,Partnerships and launches,App and product launch extensions,authored-instructions; behavioral verification separate,app-marketing
+W101,D12,Measurement and operations,Marketing baseline and KPI design,authored-instructions; behavioral verification separate,marketing-analytics
+W102,D12,Measurement and operations,Analytics instrumentation plan,authored-instructions; behavioral verification separate,marketing-operations
+W103,D12,Measurement and operations,Conversion tracking validation,authored-instructions; behavioral verification separate,marketing-analytics
+W104,D12,Measurement and operations,UTM governance,authored-instructions; behavioral verification separate,marketing-operations
+W105,D12,Measurement and operations,Attribution and cohort analysis,authored-instructions; behavioral verification separate,marketing-analytics
+W106,D12,Measurement and operations,Marketing performance reports,authored-instructions; behavioral verification separate,marketing-analytics
+W107,D12,Measurement and operations,Experiment register,authored-instructions; behavioral verification separate,experiment-design
+W108,D12,Measurement and operations,Tool and account capability checks,authored-instructions; behavioral verification separate,cli-integrations
+W109,D12,Measurement and operations,Campaign asset and decision management,authored-instructions; behavioral verification separate,marketing-operations
+W110,D12,Measurement and operations,Weekly CMO review and prioritization,authored-instructions; behavioral verification separate,performance-review
+W111,D01,Strategy and brand,Business-model and sector adaptation,authored-instructions; behavioral verification separate,business-model-strategy
+W112,D01,Strategy and brand,Hybrid and unfamiliar-model adaptation,authored-instructions; behavioral verification separate,business-model-strategy
+W113,D01,Strategy and brand,Buying-role and purchase-cycle mapping,authored-instructions; behavioral verification separate,business-model-strategy
+W114,D01,Strategy and brand,Business-specific conversion and repeat-value goals,authored-instructions; behavioral verification separate,business-model-strategy
+W115,D11,Pipeline and partnerships,Lead qualification and source selection,authored-instructions; behavioral verification separate,sales-enablement
+W116,D11,Pipeline and partnerships,Lead scoring deduplication and routing,authored-instructions; behavioral verification separate,sales-enablement
+W117,D11,Pipeline and partnerships,Capture offers and form-to-sales handoff,authored-instructions; behavioral verification separate,sales-enablement
+W118,D07,Content and inbound,Inbound journey and demand generation,authored-instructions; behavioral verification separate,content-planning
+W119,D07,Content and inbound,Demand creation versus capture,authored-instructions; behavioral verification separate,content-planning
+W120,D07,Content and inbound,Inbound capture and nurture orchestration,authored-instructions; behavioral verification separate,content-planning
+W121,D11,Pipeline and partnerships,Targeted outbound research and sequences,authored-instructions; behavioral verification separate,sales-enablement
+W122,D11,Pipeline and partnerships,Suppression and multichannel contact caps,authored-instructions; behavioral verification separate,sales-enablement
+W123,D11,Pipeline and partnerships,Outbound reply to opportunity review,authored-instructions; behavioral verification separate,sales-enablement
+W124,D11,Pipeline and partnerships,Account tiers and buying committees,authored-instructions; behavioral verification separate,sales-enablement
+W125,D11,Pipeline and partnerships,Account-based campaign orchestration,authored-instructions; behavioral verification separate,sales-enablement
+W126,D11,Pipeline and partnerships,Account pipeline and stage progression,authored-instructions; behavioral verification separate,sales-enablement
+W127,D10,Growth and experiments,Growth bottleneck and loop design,authored-instructions; behavioral verification separate,experiment-design
+W128,D10,Growth and experiments,Product-led and unconventional acquisition experiments,authored-instructions; behavioral verification separate,experiment-design
+W129,D10,Growth and experiments,Scale iterate stop and rollback decisions,authored-instructions; behavioral verification separate,experiment-design
+W130,D08,Social and virality,Share-object and recipient-value design,authored-instructions; behavioral verification separate,partnerships
+W131,D08,Social and virality,Referral cohort K and cycle-time measurement,authored-instructions; behavioral verification separate,partnerships
+W132,D08,Social and virality,Viral creative distribution and quality guardrails,authored-instructions; behavioral verification separate,partnerships
+W133,D12,AI and operations,AI marketing workflow and input-boundary design,authored-instructions; behavioral verification separate,marketing-operations
+W134,D12,AI and operations,AI prompt and pilot asset evaluation,authored-instructions; behavioral verification separate,marketing-operations
+W135,D12,AI and operations,AI-assisted versus AI-search marketing,authored-instructions; behavioral verification separate,marketing-operations
+W136,D11,Field and events,Offline and field acquisition planning,authored-instructions; behavioral verification separate,launch-planning
+W137,D11,Field and events,Trade-show and exhibition campaign packs,authored-instructions; behavioral verification separate,launch-planning
+W138,D11,Field and events,Retail experiential and local activations,authored-instructions; behavioral verification separate,launch-planning
+W139,D11,Field and events,Direct-mail print and traditional-media briefs,authored-instructions; behavioral verification separate,launch-planning
+W140,D11,Field and events,Offline-to-digital attribution and follow-up,authored-instructions; behavioral verification separate,launch-planning

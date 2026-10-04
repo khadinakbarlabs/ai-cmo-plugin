@@ -1,0 +1,8 @@
+{
+  "queries": [
+    "project management software"
+  ],
+  "maxResultsPages": 1,
+  "resultsPerPage": 10,
+  "maxConcurrency": 1
+}

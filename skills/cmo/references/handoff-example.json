@@ -1,0 +1,37 @@
+{
+  "task_id": "T01",
+  "business_id": "fictional-industrial",
+  "campaign_id": "rfq-pilot",
+  "role": "campaign-producer",
+  "objective": "Draft an RFQ-focused landing page using only supplied product facts.",
+  "plugin_root": "/workspace/plugins/ai-cmo",
+  "resource_paths": [
+    "/workspace/plugins/ai-cmo/skills/copywriting/SKILL.md",
+    "/workspace/plugins/ai-cmo/skills/cmo/references/role-campaign-producer.md"
+  ],
+  "input_sources": [
+    "/workspace/marketing/business.md",
+    "/workspace/marketing/brand.md"
+  ],
+  "output_paths": [
+    "/workspace/marketing/campaigns/rfq-pilot/assets/landing.md"
+  ],
+  "acceptance": [
+    "Complete draft with confirmed RFQ CTA",
+    "No invented certifications, performance or lead times"
+  ],
+  "authority": {
+    "allowed_effects": [
+      "read-supplied",
+      "local-draft"
+    ],
+    "source": "Fictional user request for local drafts; no external effect authorized",
+    "cost_limit_usd": null
+  },
+  "limits": {
+    "max_turns": 8,
+    "write_scope": [
+      "/workspace/marketing/campaigns/rfq-pilot/assets/landing.md"
+    ]
+  }
+}

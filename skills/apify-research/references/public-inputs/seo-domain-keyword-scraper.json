@@ -1,0 +1,6 @@
+{
+  "mode": "ranked_keywords",
+  "target": "example.com",
+  "maxResults": 10,
+  "includeSerpInfo": false
+}

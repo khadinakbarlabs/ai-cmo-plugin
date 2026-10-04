@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "business_id": "fictional-pumps",
+  "updated_at": "2026-10-05T09:00:00Z",
+  "goal": "Create a reviewed RFQ landing draft",
+  "depth_mode": "campaign",
+  "facts": [
+    {
+      "id": "F01",
+      "key": "offer",
+      "value": "Industrial pumps for procurement teams",
+      "status": "confirmed",
+      "source": {
+        "type": "user",
+        "reference": "fictional session S01",
+        "scope": "Supplied brief; not independently verified"
+      },
+      "observed_at": "2026-10-05T09:00:00Z",
+      "refresh_after": "2026-11-04T09:00:00Z"
+    }
+  ],
+  "preferences": [
+    {
+      "id": "P01",
+      "key": "voice",
+      "value": "Direct and factual",
+      "source": "fictional user preference",
+      "updated_at": "2026-10-05T09:00:00Z"
+    }
+  ],
+  "constraints": [
+    "Synthetic example only; no publication or paid research authorized",
+    "Eight hours per week; 6\u20139 month sales cycle"
+  ],
+  "next_action": "Review supplied RFQ draft without adding unsupported claims"
+}

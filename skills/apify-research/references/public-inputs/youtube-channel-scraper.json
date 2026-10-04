@@ -1,0 +1,8 @@
+{
+  "channelUrls": [
+    "https://www.youtube.com/@Apify"
+  ],
+  "maxVideosPerChannel": 5,
+  "includeShorts": false,
+  "maxShortsPerChannel": 1
+}

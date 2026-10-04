@@ -1,0 +1,7 @@
+{
+  "instagramUsernames": [
+    "apify"
+  ],
+  "maxPostsPerTarget": 5,
+  "includeRecentComments": false
+}

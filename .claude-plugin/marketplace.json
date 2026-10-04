@@ -1,0 +1,41 @@
+{
+  "name": "ai-cmo-marketplace",
+  "owner": {
+    "name": "Khadin Akbar"
+  },
+  "plugins": [
+    {
+      "name": "ai-cmo",
+      "source": "./",
+      "version": "0.4.1",
+      "description": "Your marketing team for context-aware strategy, reviewed assets, feedback, visual reporting and host-scheduled reviews using your own tools.",
+      "author": {
+        "name": "Khadin Akbar",
+        "url": "https://github.com/khadinakbarlabs"
+      },
+      "license": "MIT",
+      "keywords": [
+        "marketing",
+        "growth",
+        "seo",
+        "keywords",
+        "link-building",
+        "advertising",
+        "content",
+        "social",
+        "email",
+        "apify",
+        "cli",
+        "lead-generation",
+        "inbound",
+        "outbound",
+        "virality",
+        "ai-marketing",
+        "enterprise"
+      ]
+    }
+  ],
+  "metadata": {
+    "description": "AI CMO marketing skills and bounded specialist agents by Khadin Akbar."
+  }
+}

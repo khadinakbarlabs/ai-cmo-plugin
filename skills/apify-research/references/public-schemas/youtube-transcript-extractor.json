@@ -1,0 +1,107 @@
+{
+  "title": "YouTube Transcript Scraper",
+  "description": "Extract transcripts from YouTube videos, channels, or search results. Pick one input mode below.",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "videoUrls": {
+      "title": "Video URLs",
+      "type": "array",
+      "description": "One or more YouTube video URLs. Supports youtube.com/watch, youtu.be, Shorts, and embed links.",
+      "editor": "stringList",
+      "prefill": [
+        "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+      ],
+      "sectionCaption": "Pick ONE input mode",
+      "sectionDescription": "Enter Video URLs, a Channel URL, OR a Search Query. If multiple are filled, priority is: URLs > Channel > Search."
+    },
+    "channelUrl": {
+      "title": "Channel URL or @handle",
+      "type": "string",
+      "description": "A YouTube channel URL or @handle (e.g. @mkbhd). Extracts transcripts from the channel's videos.",
+      "editor": "textfield",
+      "prefill": "https://www.youtube.com/@mkbhd"
+    },
+    "searchQuery": {
+      "title": "Search Query",
+      "type": "string",
+      "description": "Search YouTube by keyword and extract transcripts from the top results.",
+      "editor": "textfield",
+      "prefill": "how to use ChatGPT for business"
+    },
+    "maxResults": {
+      "title": "Max videos",
+      "type": "integer",
+      "description": "Maximum number of videos to process. Default 10.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 500,
+      "editor": "number",
+      "sectionCaption": "Limits & Filters",
+      "sectionDescription": "Control how many videos to process and optionally filter by date."
+    },
+    "language": {
+      "title": "Transcript language",
+      "type": "string",
+      "description": "Preferred transcript language (ISO 639-1 code, e.g. 'en', 'es', 'fr'). Falls back to English if unavailable.",
+      "default": "en",
+      "editor": "textfield",
+      "prefill": "en"
+    },
+    "dateFrom": {
+      "title": "Published after",
+      "type": "string",
+      "description": "Only include videos published on or after this date (YYYY-MM-DD). Channel and search modes only.",
+      "editor": "datepicker"
+    },
+    "dateTo": {
+      "title": "Published before",
+      "type": "string",
+      "description": "Only include videos published on or before this date (YYYY-MM-DD). Channel and search modes only.",
+      "editor": "datepicker"
+    },
+    "includeMetadata": {
+      "title": "Include video metadata",
+      "type": "boolean",
+      "description": "Fetch title, views, likes, channel info, tags, and thumbnail. Disable for faster runs if you only need transcript text.",
+      "default": true,
+      "sectionCaption": "Output",
+      "sectionDescription": "Choose what data to include in results."
+    },
+    "outputFormat": {
+      "title": "Transcript format",
+      "type": "string",
+      "description": "Which transcript formats to return: 'all' (segments + plain text + SRT + LLM context), 'segments' (timestamped only), 'plain_text' (text + LLM context), or 'srt' (subtitle format).",
+      "default": "all",
+      "enum": [
+        "all",
+        "segments",
+        "plain_text",
+        "srt"
+      ],
+      "editor": "select"
+    },
+    "customProxyUrl": {
+      "title": "Custom proxy URL",
+      "type": "string",
+      "description": "Optional rotating residential proxy (e.g. http://user:pass@host:port). Overrides Apify proxy if set.",
+      "editor": "textfield",
+      "isSecret": true,
+      "sectionCaption": "Proxy",
+      "sectionDescription": "YouTube requires residential proxies. Apify residential proxy is used by default."
+    },
+    "proxyConfiguration": {
+      "title": "Apify proxy",
+      "type": "object",
+      "description": "Apify proxy settings. Residential proxy is required \u2014 datacenter IPs are blocked by YouTube.",
+      "editor": "proxy",
+      "default": {
+        "useApifyProxy": true,
+        "apifyProxyGroups": [
+          "RESIDENTIAL"
+        ]
+      }
+    }
+  },
+  "required": []
+}

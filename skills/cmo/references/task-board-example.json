@@ -1,0 +1,53 @@
+{
+  "business_id": "fictional-industrial",
+  "campaign_id": "rfq-pilot",
+  "goal": "Draft an evidence-grounded RFQ acquisition pack",
+  "tasks": [
+    {
+      "id": "T01",
+      "owner": "market-intelligence",
+      "goal": "Summarize supplied buyer evidence",
+      "dependencies": [],
+      "status": "ready",
+      "acceptance": [
+        "Source-linked observations; no fabricated intent"
+      ],
+      "artifacts": [],
+      "evidence": [
+        "business.md"
+      ],
+      "next_action": "Read supplied material"
+    },
+    {
+      "id": "T02",
+      "owner": "campaign-producer",
+      "goal": "Draft the RFQ landing page",
+      "dependencies": [
+        "T01"
+      ],
+      "status": "queued",
+      "acceptance": [
+        "Actual draft; confirmed product facts and CTA"
+      ],
+      "artifacts": [],
+      "evidence": [],
+      "next_action": "Wait for T01"
+    },
+    {
+      "id": "T03",
+      "owner": "campaign-reviewer",
+      "goal": "Review claims and completeness",
+      "dependencies": [
+        "T02"
+      ],
+      "status": "queued",
+      "acceptance": [
+        "Exact findings and pass/revise/blocked"
+      ],
+      "artifacts": [],
+      "evidence": [],
+      "next_action": "Wait for T02"
+    }
+  ],
+  "next_decision": "Review confirmed evidence before production; publication not authorized"
+}

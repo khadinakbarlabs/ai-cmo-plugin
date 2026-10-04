@@ -1,0 +1,11 @@
+{
+  "keywords": [
+    "project management"
+  ],
+  "targetDomain": "example.com",
+  "opportunityTypes": [
+    "resource_page"
+  ],
+  "maxResultsPerKeyword": 5,
+  "maxPagesPerQuery": 1
+}

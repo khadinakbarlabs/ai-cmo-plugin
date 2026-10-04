@@ -1,0 +1,99 @@
+{
+  "version": "0.4.1",
+  "audience": "Businesses and organizations across models, sectors, stages and sizes",
+  "skills": 39,
+  "workflow_families": 140,
+  "business_profiles": [
+    "B2B enterprise/software",
+    "Self-service SaaS/product-led",
+    "Consumer apps/subscriptions",
+    "DTC/ecommerce",
+    "Retail/CPG/wholesale",
+    "Marketplaces/platforms",
+    "Local/appointment businesses",
+    "Professional services/agencies",
+    "Industrial/manufacturing/distribution",
+    "Healthcare/wellness",
+    "Education/courses/coaching",
+    "Finance/insurance/fintech",
+    "Real estate/construction",
+    "Hospitality/travel/venues",
+    "Restaurants/food/beverage",
+    "Media/creators/personal brands",
+    "Nonprofit/social enterprise",
+    "Franchises/multi-location",
+    "Events/entertainment/sports",
+    "Institutional/B2G/public-service suppliers"
+  ],
+  "custom_model_adaptation": true,
+  "disciplines": [
+    "Strategy, brand and research",
+    "Content and inbound demand",
+    "Paid ads and performance",
+    "Lead generation, outbound and ABM",
+    "Search, SEO and AI discovery",
+    "Social, community, creators and virality",
+    "Growth hacking, PLG and experiments",
+    "Email, retention and CRM journeys",
+    "Partners, referrals, affiliates and PR",
+    "Field, offline, events and trade",
+    "AI-assisted production and operations",
+    "Measurement and execution support"
+  ],
+  "new_skills": [
+    "business-model-strategy"
+  ],
+  "limits": "Instruction coverage, not universal sector expertise or verified execution on every platform.",
+  "reference_workflows": [
+    {
+      "name": "lead-generation",
+      "owner": "sales-enablement",
+      "guide": "skills/sales-enablement/references/lead-generation.md"
+    },
+    {
+      "name": "outbound-marketing",
+      "owner": "sales-enablement",
+      "guide": "skills/sales-enablement/references/outbound-marketing.md"
+    },
+    {
+      "name": "account-based-marketing",
+      "owner": "sales-enablement",
+      "guide": "skills/sales-enablement/references/account-based-marketing.md"
+    },
+    {
+      "name": "inbound-marketing",
+      "owner": "content-planning",
+      "guide": "skills/content-planning/references/inbound-marketing.md"
+    },
+    {
+      "name": "growth-experiments",
+      "owner": "experiment-design",
+      "guide": "skills/experiment-design/references/growth-experiments.md"
+    },
+    {
+      "name": "viral-marketing",
+      "owner": "partnerships",
+      "guide": "skills/partnerships/references/viral-marketing.md"
+    },
+    {
+      "name": "ai-marketing",
+      "owner": "marketing-operations",
+      "guide": "skills/marketing-operations/references/ai-marketing.md"
+    },
+    {
+      "name": "field-marketing",
+      "owner": "launch-planning",
+      "guide": "skills/launch-planning/references/field-marketing.md"
+    }
+  ],
+  "component_budget": {
+    "skills": 39,
+    "commands": 8,
+    "agents": 9,
+    "skills_plus_commands": 39,
+    "policy": "local release profile, not a vendor maximum"
+  },
+  "agentic_roles": 6,
+  "claude_native_agents": 6,
+  "openai_native_agents": 0
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "business_id": "fictional-pumps",
+  "session_id": "S01",
+  "feedback_id": "FB01",
+  "deliverable": "/workspace/fictional-pumps/.ai-cmo/assets/rfq-draft.md",
+  "observed_at": "2026-10-05T09:00:00Z",
+  "category": "brand-voice",
+  "verdict": "needs-changes",
+  "summary": "Fictional feedback: use shorter direct sentences",
+  "severity": "low",
+  "status": "open",
+  "resolution": null
+}

@@ -1,0 +1,65 @@
+# Verified owned Actor catalog
+
+38 public Actors owned by khadinakbar. Default-build input schemas and declarative dataset fields were read on October 5, 2026 (timestamps are UTC). No Actor was executed for this package. [Machine-readable contracts](actor-catalog.json) include IDs, schemas, build provenance, bounded example inputs and observed pricing. Refresh current schemas/build/pricing before use.
+
+## Search and keywords
+
+- **[dataforseo-keyword-research](https://apify.com/khadinakbar/dataforseo-keyword-research)** — ID `8RW7Ow9S3hRAnX1ye`, inspected build `1.0.13`. Required input keys: `seedKeywords`. [Schema](public-schemas/dataforseo-keyword-research.json), [bounded input](public-inputs/dataforseo-keyword-research.json).
+- **[keyword-search-volume-api](https://apify.com/khadinakbar/keyword-search-volume-api)** — ID `B7Wq9VHcVFdfNqNBI`, inspected build `0.1.7`. Required input keys: `keywords`. [Schema](public-schemas/keyword-search-volume-api.json), [bounded input](public-inputs/keyword-search-volume-api.json).
+- **[scrape-google-serp](https://apify.com/khadinakbar/scrape-google-serp)** — ID `z0r97dqhtUQk2AXd8`, inspected build `1.0.21`. Required input keys: none declared. [Schema](public-schemas/scrape-google-serp.json), [bounded input](public-inputs/scrape-google-serp.json).
+- **[google-trends-scraper](https://apify.com/khadinakbar/google-trends-scraper)** — ID `yIPnv2aKGDmRmgoy1`, inspected build `1.6.6`. Required input keys: none declared. [Schema](public-schemas/google-trends-scraper.json), [bounded input](public-inputs/google-trends-scraper.json).
+- **[keyword-rank-tracker](https://apify.com/khadinakbar/keyword-rank-tracker)** — ID `ufcrXss0mJzYLRgWW`, inspected build `1.1.5`. Required input keys: `targetDomain`, `keywords`. [Schema](public-schemas/keyword-rank-tracker.json), [bounded input](public-inputs/keyword-rank-tracker.json).
+- **[seo-domain-keyword-scraper](https://apify.com/khadinakbar/seo-domain-keyword-scraper)** — ID `7XL6DUjjDCqltKeBg`, inspected build `1.0.8`. Required input keys: none declared. [Schema](public-schemas/seo-domain-keyword-scraper.json), [bounded input](public-inputs/seo-domain-keyword-scraper.json).
+- **[website-seo-spider](https://apify.com/khadinakbar/website-seo-spider)** — ID `f0PPU2rWRKUBwAfeZ`, inspected build `0.2.5`. Required input keys: `startUrls`. [Schema](public-schemas/website-seo-spider.json), [bounded input](public-inputs/website-seo-spider.json).
+
+## Links and authority
+
+- **[website-backlink-checker](https://apify.com/khadinakbar/website-backlink-checker)** — ID `rCohK9eJbjiovPN6s`, inspected build `0.1.2`. Required input keys: `targets`. [Schema](public-schemas/website-backlink-checker.json), [bounded input](public-inputs/website-backlink-checker.json).
+- **[backlink-opportunity-finder](https://apify.com/khadinakbar/backlink-opportunity-finder)** — ID `n1uR8aWhzOBYhxLJl`, inspected build `1.0.14`. Required input keys: `keywords`. [Schema](public-schemas/backlink-opportunity-finder.json), [bounded input](public-inputs/backlink-opportunity-finder.json).
+- **[broken-link-checker](https://apify.com/khadinakbar/broken-link-checker)** — ID `a2yeVoO8SdJgVEgbK`, inspected build `1.2.5`. Required input keys: `mode`. [Schema](public-schemas/broken-link-checker.json), [bounded input](public-inputs/broken-link-checker.json).
+- **[bulk-website-contact-extractor](https://apify.com/khadinakbar/bulk-website-contact-extractor)** — ID `TwNeQtj5TfaKDkcCK`, inspected build `1.2.3`. Required input keys: `startUrls`. [Schema](public-schemas/bulk-website-contact-extractor.json), [bounded input](public-inputs/bulk-website-contact-extractor.json).
+- **[contact-details-scraper](https://apify.com/khadinakbar/contact-details-scraper)** — ID `xUTDfDQougiuhikSc`, inspected build `1.2.9`. Required input keys: none declared. [Schema](public-schemas/contact-details-scraper.json), [bounded input](public-inputs/contact-details-scraper.json).
+
+## Ad intelligence
+
+- **[meta-ad-library-scraper](https://apify.com/khadinakbar/meta-ad-library-scraper)** — ID `B4RRM07yZQi5eczJG`, inspected build `1.3.4`. Required input keys: none declared. [Schema](public-schemas/meta-ad-library-scraper.json), [bounded input](public-inputs/meta-ad-library-scraper.json).
+- **[google-ads-transparency-scraper](https://apify.com/khadinakbar/google-ads-transparency-scraper)** — ID `dCA5Hpf4BCQX094ZD`, inspected build `1.5.7`. Required input keys: none declared. [Schema](public-schemas/google-ads-transparency-scraper.json), [bounded input](public-inputs/google-ads-transparency-scraper.json).
+- **[tiktok-ads-library-scraper](https://apify.com/khadinakbar/tiktok-ads-library-scraper)** — ID `x5x84HE8Hq7EJ9VmS`, inspected build `1.1.6`. Required input keys: none declared. [Schema](public-schemas/tiktok-ads-library-scraper.json), [bounded input](public-inputs/tiktok-ads-library-scraper.json).
+- **[linkedin-ad-library-search-scraper](https://apify.com/khadinakbar/linkedin-ad-library-search-scraper)** — ID `fdwr0hBXBdg5ya6tc`, inspected build `1.1.3`. Required input keys: none declared. [Schema](public-schemas/linkedin-ad-library-search-scraper.json), [bounded input](public-inputs/linkedin-ad-library-search-scraper.json).
+- **[pinterest-ads-library-scraper](https://apify.com/khadinakbar/pinterest-ads-library-scraper)** — ID `oKsJ4mO6RAVbvcrnz`, inspected build `1.0.3`. Required input keys: none declared. [Schema](public-schemas/pinterest-ads-library-scraper.json), [bounded input](public-inputs/pinterest-ads-library-scraper.json).
+
+## AI search discovery
+
+- **[ai-search-visibility-tracker](https://apify.com/khadinakbar/ai-search-visibility-tracker)** — ID `CFYLF6fOcyvdofuof`, inspected build `1.0.23`. Required input keys: none declared. [Schema](public-schemas/ai-search-visibility-tracker.json), [bounded input](public-inputs/ai-search-visibility-tracker.json).
+- **[google-ai-overviews-scraper](https://apify.com/khadinakbar/google-ai-overviews-scraper)** — ID `SMseG5HJek49LaveS`, inspected build `0.1.27`. Required input keys: `queries`. [Schema](public-schemas/google-ai-overviews-scraper.json), [bounded input](public-inputs/google-ai-overviews-scraper.json).
+
+## Voice of customer and news
+
+- **[google-news-scraper](https://apify.com/khadinakbar/google-news-scraper)** — ID `7vQKF8hrfRaAk7g50`, inspected build `0.2.2`. Required input keys: none declared. [Schema](public-schemas/google-news-scraper.json), [bounded input](public-inputs/google-news-scraper.json).
+- **[trustpilot-reviews-scraper](https://apify.com/khadinakbar/trustpilot-reviews-scraper)** — ID `AdXgrEqrRSjvp9q6u`, inspected build `1.0.22`. Required input keys: none declared. [Schema](public-schemas/trustpilot-reviews-scraper.json), [bounded input](public-inputs/trustpilot-reviews-scraper.json).
+- **[google-maps-reviews-scraper](https://apify.com/khadinakbar/google-maps-reviews-scraper)** — ID `AktHAcFexdMKzxCux`, inspected build `0.4.10`. Required input keys: none declared. [Schema](public-schemas/google-maps-reviews-scraper.json), [bounded input](public-inputs/google-maps-reviews-scraper.json).
+- **[g2-product-reviews-scraper](https://apify.com/khadinakbar/g2-product-reviews-scraper)** — ID `FwIxRhXDEbykgdeqc`, inspected build `1.2.2`. Required input keys: none declared. [Schema](public-schemas/g2-product-reviews-scraper.json), [bounded input](public-inputs/g2-product-reviews-scraper.json).
+- **[capterra-reviews-scraper](https://apify.com/khadinakbar/capterra-reviews-scraper)** — ID `vPxFQ4unR0IzHFm9H`, inspected build `1.1.9`. Required input keys: none declared. [Schema](public-schemas/capterra-reviews-scraper.json), [bounded input](public-inputs/capterra-reviews-scraper.json).
+- **[appstore-reviews-scraper](https://apify.com/khadinakbar/appstore-reviews-scraper)** — ID `VqAhRpuDhSHub71ce`, inspected build `1.0.13`. Required input keys: `appIds`. [Schema](public-schemas/appstore-reviews-scraper.json), [bounded input](public-inputs/appstore-reviews-scraper.json).
+- **[reddit-search-scraper](https://apify.com/khadinakbar/reddit-search-scraper)** — ID `j1gQL2JlzmGKxrPzJ`, inspected build `1.0.5`. Required input keys: `searchQuery`. [Schema](public-schemas/reddit-search-scraper.json), [bounded input](public-inputs/reddit-search-scraper.json).
+
+## Social and creator research
+
+- **[instagram-niche-influencer-finder](https://apify.com/khadinakbar/instagram-niche-influencer-finder)** — ID `LHCEKswaihgmShn5p`, inspected build `1.0.6`. Required input keys: `topics`. [Schema](public-schemas/instagram-niche-influencer-finder.json), [bounded input](public-inputs/instagram-niche-influencer-finder.json).
+- **[instagram-profile-scraper](https://apify.com/khadinakbar/instagram-profile-scraper)** — ID `uPkHmR5T44ixfiyUS`, inspected build `1.0.12`. Required input keys: `usernames`. [Schema](public-schemas/instagram-profile-scraper.json), [bounded input](public-inputs/instagram-profile-scraper.json).
+- **[instagram-posts-scraper](https://apify.com/khadinakbar/instagram-posts-scraper)** — ID `wjjknRC0QN6jE3WJK`, inspected build `1.2.10`. Required input keys: none declared. [Schema](public-schemas/instagram-posts-scraper.json), [bounded input](public-inputs/instagram-posts-scraper.json).
+- **[instagram-profile-stats-scraper](https://apify.com/khadinakbar/instagram-profile-stats-scraper)** — ID `N3rc0uhS4SJcNE9fb`, inspected build `0.0.3`. Required input keys: `usernames`. [Schema](public-schemas/instagram-profile-stats-scraper.json), [bounded input](public-inputs/instagram-profile-stats-scraper.json).
+- **[tiktok-profile-videos-scraper](https://apify.com/khadinakbar/tiktok-profile-videos-scraper)** — ID `Vdzi1BTanokjIx4ap`, inspected build `0.3.5`. Required input keys: `profileHandles`. [Schema](public-schemas/tiktok-profile-videos-scraper.json), [bounded input](public-inputs/tiktok-profile-videos-scraper.json).
+- **[youtube-search-scraper](https://apify.com/khadinakbar/youtube-search-scraper)** — ID `jlyav7xSOiRz15hlJ`, inspected build `0.2.4`. Required input keys: `searchQueries`. [Schema](public-schemas/youtube-search-scraper.json), [bounded input](public-inputs/youtube-search-scraper.json).
+- **[youtube-transcript-extractor](https://apify.com/khadinakbar/youtube-transcript-extractor)** — ID `HY1l2lAN9rwPg8LsZ`, inspected build `1.0.43`. Required input keys: none declared. [Schema](public-schemas/youtube-transcript-extractor.json), [bounded input](public-inputs/youtube-transcript-extractor.json).
+- **[youtube-comments-scraper](https://apify.com/khadinakbar/youtube-comments-scraper)** — ID `JaLpIf4J9cc3rCa0E`, inspected build `1.2.3`. Required input keys: none declared. [Schema](public-schemas/youtube-comments-scraper.json), [bounded input](public-inputs/youtube-comments-scraper.json).
+- **[youtube-channel-scraper](https://apify.com/khadinakbar/youtube-channel-scraper)** — ID `BGuQRhPiGRWOZzqyr`, inspected build `0.1.9`. Required input keys: `channelUrls`. [Schema](public-schemas/youtube-channel-scraper.json), [bounded input](public-inputs/youtube-channel-scraper.json).
+- **[youtube-channel-email-extractor](https://apify.com/khadinakbar/youtube-channel-email-extractor)** — ID `IRx3DJZeQdk6DhAtn`, inspected build `1.2.4`. Required input keys: none declared. [Schema](public-schemas/youtube-channel-email-extractor.json), [bounded input](public-inputs/youtube-channel-email-extractor.json).
+- **[linkedin-company-posts-scraper](https://apify.com/khadinakbar/linkedin-company-posts-scraper)** — ID `pcdyX7pdaieYWnLm3`, inspected build `0.1.10`. Required input keys: `companyUrls`. [Schema](public-schemas/linkedin-company-posts-scraper.json), [bounded input](public-inputs/linkedin-company-posts-scraper.json).
+- **[linkedin-company-by-domain-scraper](https://apify.com/khadinakbar/linkedin-company-by-domain-scraper)** — ID `rIx5BxFR9Pxvbe4wX`, inspected build `0.1.9`. Required input keys: `domains`. [Schema](public-schemas/linkedin-company-by-domain-scraper.json), [bounded input](public-inputs/linkedin-company-by-domain-scraper.json).
+
+## Interpretation and protection
+
+Examples pass the declared JSON Schema, not an actual run. Replace illustrative targets with the user-authorized business. Schema acceptance does not guarantee provider access, useful results or runtime semantics. Optional external credentials must use an appropriate secure tool path and should not be saved in the workspace. Prices are dated evidence: verify current PPE meters, start events, usage pass-through and provider costs before estimating a run. Caps are per run, may conflict with minimum charges, and termination may lag. Use item/time bounds as well.
+
+Never print or persist unfiltered Actor metadata or build definitions: they can contain deployment keys or environment values. Filter metadata inside the CLI/tool process before returning it to model context; save only identity, tagged build, schema and pricing allowlists. Do not include private Actors as distributable defaults. No private Actor contract is bundled.

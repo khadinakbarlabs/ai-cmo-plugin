@@ -1,0 +1,13 @@
+{
+  "targetDomain": "example.com",
+  "keywords": [
+    "project management"
+  ],
+  "platforms": [
+    "perplexity"
+  ],
+  "queryTemplates": [
+    "topic_authority"
+  ],
+  "maxQueriesPerKeyword": 1
+}

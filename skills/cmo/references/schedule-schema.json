@@ -1,0 +1,175 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "business_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "schedule_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "purpose": {
+      "type": "string",
+      "minLength": 1
+    },
+    "cadence": {
+      "type": "string",
+      "minLength": 1
+    },
+    "timezone": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "registered",
+        "paused",
+        "unknown",
+        "error"
+      ]
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "workspace": {
+          "type": "string",
+          "pattern": "^/"
+        },
+        "allowed_effects": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "read-data",
+              "write-local-report",
+              "paid-research",
+              "publish",
+              "send",
+              "change-spend"
+            ]
+          }
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "report_destination": {
+          "type": "string",
+          "pattern": "^/"
+        },
+        "authority_reference": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "workspace",
+        "allowed_effects",
+        "sources",
+        "report_destination",
+        "authority_reference"
+      ]
+    },
+    "limits": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "max_run_minutes": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 60
+        },
+        "cost_limit_usd": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "review_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "max_run_minutes",
+        "cost_limit_usd",
+        "review_at"
+      ]
+    },
+    "notification": {
+      "enum": [
+        "agreed-report",
+        "meaningful-changes",
+        "failures-only"
+      ]
+    },
+    "next_run_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "receipt": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "provider": {
+              "type": "string",
+              "minLength": 1
+            },
+            "job_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "observed_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "verified": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "provider",
+            "job_id",
+            "observed_at",
+            "verified"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "schema_version",
+    "business_id",
+    "schedule_id",
+    "purpose",
+    "cadence",
+    "timezone",
+    "status",
+    "scope",
+    "limits",
+    "notification",
+    "next_run_at",
+    "receipt"
+  ],
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

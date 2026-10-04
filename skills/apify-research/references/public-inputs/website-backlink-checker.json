@@ -1,0 +1,7 @@
+{
+  "targets": [
+    "example.com"
+  ],
+  "mode": "backlinks",
+  "maxResults": 5
+}

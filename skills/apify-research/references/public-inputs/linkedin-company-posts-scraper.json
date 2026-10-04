@@ -1,0 +1,9 @@
+{
+  "companyUrls": [
+    "https://www.linkedin.com/company/apify"
+  ],
+  "maxPosts": 5,
+  "maxPagesPerCompany": 1,
+  "enrichPosts": false,
+  "includeRawData": false
+}

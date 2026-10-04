@@ -1,0 +1,5597 @@
+{
+  "schema_version": 1,
+  "owner": "khadinakbar",
+  "retrieved_date": "2026-10-05",
+  "inspection": "READ_ONLY_METADATA_AND_DEFAULT_BUILD_SCHEMAS",
+  "actor_runs_executed": 0,
+  "public_actor_count": 38,
+  "actors": [
+    {
+      "name": "dataforseo-keyword-research",
+      "id": "8RW7Ow9S3hRAnX1ye",
+      "owner": "khadinakbar",
+      "url": "https://apify.com/khadinakbar/dataforseo-keyword-research",
+      "public": true,
+      "group": "Search and keywords",
+      "title": "Keyword Search Volume Finder \u2014 Ahrefs Alternative",
+      "build": {
+        "id": "XZijq1urUrU7bxzTb",
+        "number": "1.0.13",
+        "status": "SUCCEEDED",
+        "finished_at": "2026-10-04T15:15:33.182Z",
+        "default_tag": "latest",
+        "tagged_builds": {
+          "latest": {
+            "buildId": "XZijq1urUrU7bxzTb",
+            "finishedAt": "2026-10-04T15:15:33.182Z",
+            "buildNumberInt": 10000013,
+            "buildNumber": "1.0.13"
+          }
+        }
+      },
+      "provenance": {
+        "actor_metadata_endpoint": "https://api.apify.com/v2/acts/8RW7Ow9S3hRAnX1ye",
+        "input_schema_endpoint": "https://api.apify.com/v2/acts/8RW7Ow9S3hRAnX1ye/builds/XZijq1urUrU7bxzTb",
+        "input_source": "default-build inputSchema",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+      },
+      "retrieved_at": "2026-10-04T19:33:05.938041+00:00",
+      "required_keys": [
+        "seedKeywords"
+      ],
+      "properties": {
+        "mode": {
+          "type": "string",
+          "enum": [
+            "keyword_ideas",
+            "search_volume"
+          ]
+        },
+        "seedKeywords": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 10
+        },
+        "locationCode": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "languageCode": {
+          "type": "string"
+        },
+        "maxResults": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 50
+        },
+        "minSearchVolume": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 10000000
+        },
+        "includeSerpInfo": {
+          "type": "boolean"
+        },
+        "dataforSeoLogin": {
+          "type": "string"
+        },
+        "dataforSeoPassword": {
+          "type": "string"
+        }
+      },
+      "declared_dataset_fields": [
+        "runId",
+        "mode",
+        "keyword",
+        "seedKeywords",
+        "searchVolume",
+        "monthlySearches",
+        "cpcUsd",
+        "competition",
+        "competitionLevel",
+        "keywordDifficulty",
+        "searchIntent",
+        "serpFeatures",
+        "locationCode",
+        "languageCode",
+        "providerTaskId",
+        "retrievedAt",
+        "provenance"
+      ],
+      "pricing": {
+        "effective_record": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-09-10T13:10:01.769Z",
+          "events": {
+            "apify-actor-start": {
+              "eventTitle": "Actor Start",
+              "eventPriceUsd": 5e-05,
+              "isOneTimeEvent": true
+            },
+            "keyword-research-result": {
+              "eventTitle": "Keyword research result",
+              "eventPriceUsd": 0.01,
+              "isPrimaryEvent": true
+            }
+          }
+        },
+        "usage_pass_through_last_explicit": true,
+        "effective_pricing_requires_live_recheck": true
+      },
+      "example_input": {
+        "seedKeywords": [
+          "project management"
+        ],
+        "mode": "keyword_ideas",
+        "maxResults": 10,
+        "includeSerpInfo": false
+      },
+      "example_validation": {
+        "json_schema": "PASS",
+        "semantic_runtime": "UNTESTED",
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+      },
+      "runtime_verified": false,
+      "limitations": [
+        "Metadata/schema inspection only. No Actor execution.",
+        "Re-fetch current build and pricing before a paid run; tags and prices can change."
+      ]
+    },
+    {
+      "name": "keyword-search-volume-api",
+      "id": "B7Wq9VHcVFdfNqNBI",
+      "owner": "khadinakbar",
+      "url": "https://apify.com/khadinakbar/keyword-search-volume-api",
+      "public": true,
+      "group": "Search and keywords",
+      "title": "Keyword Search Volume API \u2014 Bulk Google Volume + CPC",
+      "build": {
+        "id": "V55G0QnEDH9KDSzt0",
+        "number": "0.1.7",
+        "status": "SUCCEEDED",
+        "finished_at": "2026-10-04T14:46:17.210Z",
+        "default_tag": "latest",
+        "tagged_builds": {
+          "latest": {
+            "buildId": "V55G0QnEDH9KDSzt0",
+            "finishedAt": "2026-10-04T14:46:17.210Z",
+            "buildNumberInt": 100007,
+            "buildNumber": "0.1.7"
+          }
+        }
+      },
+      "provenance": {
+        "actor_metadata_endpoint": "https://api.apify.com/v2/acts/B7Wq9VHcVFdfNqNBI",
+        "input_schema_endpoint": "https://api.apify.com/v2/acts/B7Wq9VHcVFdfNqNBI/builds/V55G0QnEDH9KDSzt0",
+        "input_source": "default-build inputSchema",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+      },
+      "retrieved_at": "2026-10-04T19:33:06.247727+00:00",
+      "required_keys": [
+        "keywords"
+      ],
+      "properties": {
+        "keywords": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1000
+        },
+        "mode": {
+          "type": "string",
+          "enum": [
+            "free_tier",
+            "bulk_paid"
+          ]
+        },
+        "countryName": {
+          "type": "string"
+        },
+        "languageName": {
+          "type": "string"
+        },
+        "includeCompetition": {
+          "type": "boolean"
+        },
+        "includeLowTopOfPageBid": {
+          "type": "boolean"
+        },
+        "includeHighTopOfPageBid": {
+          "type": "boolean"
+        },
+        "maxKeywordsPerBatch": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1000
+        },
+        "onPartialFailure": {
+          "type": "string",
+          "enum": [
+            "return_partial",
+            "fail_if_any_batch_fails"
+          ]
+        },
+        "dataforSeoLogin": {
+          "type": "string"
+        },
+        "dataforSeoPassword": {
+          "type": "string"
+        }
+      },
+      "declared_dataset_fields": [
+        "keyword",
+        "normalizedKeyword",
+        "countryName",
+        "languageName",
+        "searchVolume",
+        "cpcUsd",
+        "competition",
+        "competitionLevel",
+        "lowTopOfPageBidUsd",
+        "highTopOfPageBidUsd",
+        "monthlySearches",
+        "source",
+        "fetchedAt",
+        "status",
+        "providerTaskId"
+      ],
+      "pricing": {
+        "effective_record": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-09-10T13:08:15.953Z",
+          "events": {
+            "apify-actor-start": {
+              "eventTitle": "Actor Start",
+              "eventPriceUsd": 5e-05
+            },
+            "dataforseo-volume-request": {
+              "eventTitle": "DataForSEO volume request",
+              "eventPriceUsd": 0.3
+            },
+            "keyword-metric": {
+              "eventTitle": "Keyword metric row",
+              "eventPriceUsd": 0.004,
+              "isPrimaryEvent": true
+            }
+          }
+        },
+        "usage_pass_through_last_explicit": true,
+        "effective_pricing_requires_live_recheck": true
+      },
+      "example_input": {
+        "keywords": [
+          "project management"
+        ],
+        "mode": "free_tier",
+        "maxKeywordsPerBatch": 1
+      },
+      "example_validation": {
+        "json_schema": "PASS",
+        "semantic_runtime": "UNTESTED",
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+      },
+      "runtime_verified": false,
+      "limitations": [
+        "Metadata/schema inspection only. No Actor execution.",
+        "Re-fetch current build and pricing before a paid run; tags and prices can change."
+      ]
+    },
+    {
+      "name": "scrape-google-serp",
+      "id": "z0r97dqhtUQk2AXd8",
+      "owner": "khadinakbar",
+      "url": "https://apify.com/khadinakbar/scrape-google-serp",
+      "public": true,
+      "group": "Search and keywords",
+      "title": "Google SERP Scraper \u2014 Search Results & SERP API",
+      "build": {
+        "id": "ZnPFdByDFDsblxVt8",
+        "number": "1.0.21",
+        "status": "SUCCEEDED",
+        "finished_at": "2026-10-04T15:17:21.325Z",
+        "default_tag": "latest",
+        "tagged_builds": {
+          "latest": {
+            "buildId": "ZnPFdByDFDsblxVt8",
+            "finishedAt": "2026-10-04T15:17:21.325Z",
+            "buildNumberInt": 10000021,
+            "buildNumber": "1.0.21"
+          },
+          "health-fix": {
+            "buildId": "bmf6z90CIdLiRGCLl",
+            "finishedAt": "2026-10-01T02:20:06.009Z",
+            "buildNumberInt": 10000018,
+            "buildNumber": "1.0.18"
+          }
+        }
+      },
+      "provenance": {
+        "actor_metadata_endpoint": "https://api.apify.com/v2/acts/z0r97dqhtUQk2AXd8",
+        "input_schema_endpoint": "https://api.apify.com/v2/acts/z0r97dqhtUQk2AXd8/builds/ZnPFdByDFDsblxVt8",
+        "input_source": "default-build inputSchema",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+      },
+      "retrieved_at": "2026-10-04T19:33:06.313807+00:00",
+      "required_keys": [],
+      "properties": {
+        "queries": {
+          "type": "array"
+        },
+        "startUrls": {
+          "type": "array"
+        },
+        "maxResultsPages": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 50
+        },
+        "resultsPerPage": {
+          "type": "integer",
+          "minimum": 10,
+          "maximum": 100
+        },
+        "countryCode": {
+          "type": "string"
+        },
+        "languageCode": {
+          "type": "string"
+        },
+        "includeAds": {
+          "type": "boolean"
+        },
+        "includeFeaturedSnippet": {
+          "type": "boolean"
+        },
+        "includePeopleAlsoAsk": {
+          "type": "boolean"
+        },
+        "includeRelatedSearches": {
+          "type": "boolean"
+        },
+        "includeKnowledgeGraph": {
+          "type": "boolean"
+        },
+        "maxConcurrency": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 20
+        }
+      },
+      "declared_dataset_fields": [
+        "search_query",
+        "results_page",
+        "total_results_count",
+        "country_code",
+        "language_code",
+        "organic_results",
+        "featured_snippet",
+        "people_also_ask",
+        "related_searches",
+        "knowledge_graph",
+        "ad_results",
+        "search_type",
+        "scraped_at",
+        "source_url"
+      ],
+      "pricing": {
+        "effective_record": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-08-04T20:29:34.070Z",
+          "isPPEPlatformUsagePaidByUser": true,
+          "minimalMaxTotalChargeUsd": null,
+          "events": {
+            "scraped-serp-page": {
+              "eventTitle": "page",
+              "eventPriceUsd": 0.0018,
+              "isOneTimeEvent": false,
+              "isPrimaryEvent": true
+            },
+            "apify-actor-start": {
+              "eventTitle": "Actor Start",
+              "eventPriceUsd": 5e-05,
+              "isOneTimeEvent": true
+            }
+          }
+        },
+        "usage_pass_through_last_explicit": true,
+        "effective_pricing_requires_live_recheck": true
+      },
+      "example_input": {
+        "queries": [
+          "project management software"
+        ],
+        "maxResultsPages": 1,
+        "resultsPerPage": 10,
+        "maxConcurrency": 1
+      },
+      "example_validation": {
+        "json_schema": "PASS",
+        "semantic_runtime": "UNTESTED",
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+      },
+      "runtime_verified": false,
+      "limitations": [
+        "Metadata/schema inspection only. No Actor execution.",
+        "Re-fetch current build and pricing before a paid run; tags and prices can change."
+      ]
+    },
+    {
+      "name": "google-trends-scraper",
+      "id": "yIPnv2aKGDmRmgoy1",
+      "owner": "khadinakbar",
+      "url": "https://apify.com/khadinakbar/google-trends-scraper",
+      "public": true,
+      "group": "Search and keywords",
+      "title": "Google Trends Scraper \u2014 Interest, Regions & Queries",
+      "build": {
+        "id": "n4kQkUn3ehAvkCTnb",
+        "number": "1.6.6",
+        "status": "SUCCEEDED",
+        "finished_at": "2026-09-29T22:16:43.874Z",
+        "default_tag": "latest",
+        "tagged_builds": {
+          "latest": {
+            "buildId": "n4kQkUn3ehAvkCTnb",
+            "finishedAt": "2026-09-29T22:16:43.874Z",
+            "buildNumberInt": 10600006,
+            "buildNumber": "1.6.6"
+          },
+          "sr90-sept09": {
+            "buildId": "duA0VJpqpI4L95ooB",
+            "finishedAt": "2026-09-09T08:58:33.985Z",
+            "buildNumberInt": 10600004,
+            "buildNumber": "1.6.4"
+          }
+        }
+      },
+      "provenance": {
+        "actor_metadata_endpoint": "https://api.apify.com/v2/acts/yIPnv2aKGDmRmgoy1",
+        "input_schema_endpoint": "https://api.apify.com/v2/acts/yIPnv2aKGDmRmgoy1/builds/n4kQkUn3ehAvkCTnb",
+        "input_source": "default-build inputSchema",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+      },
+      "retrieved_at": "2026-10-04T19:33:06.271934+00:00",
+      "required_keys": [],
+      "properties": {
+        "keywords": {
+          "type": "array"
+        },
+        "geo": {
+          "type": "string"
+        },
+        "timeframe": {
+          "type": "string",
+          "enum": [
+            "now 1-H",
+            "now 4-H",
+            "now 1-d",
+            "now 7-d",
+            "today 1-m",
+            "today 3-m",
+            "today 12-m",
+            "today 5-y",
+            "all"
+          ]
+        },
+        "property": {
+          "type": "string",
+          "enum": [
+            "web",
+            "news",
+            "images",
+            "youtube",
+            "froogle"
+          ]
+        },
+        "category": {
+          "type": "integer"
+        },
+        "dataTypes": {
+          "type": "array"
+        },
+        "trendingSearchesGeo": {
+          "type": "string"
+        },
+        "maxResults": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 50000
+        },
+        "customTimeRange": {
+          "type": "string"
+        },
+        "outputFormat": {
+          "type": "string",
+          "enum": [
+            "flat",
+            "summary"
+          ]
+        }
+      },
+      "declared_dataset_fields": [
+        "type",
+        "keyword",
+        "geo",
+        "timeframe",
+        "date",
+        "period",
+        "value",
+        "is_partial",
+        "geo_code",
+        "geo_name",
+        "parent_geo",
+        "related_query",
+        "formatted_value",
+        "is_rising",
+        "topic_title",
+        "topic_type",
+        "topic_mid",
+        "title",
+        "traffic",
+        "traffic_value",
+        "related_queries",
+        "articles",
+        "image_url",
+        "scraped_at",
+        "source_url"
+      ],
+      "pricing": {
+        "effective_record": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-07-21T20:29:25.273Z",
+          "isPPEPlatformUsagePaidByUser": true,
+          "minimalMaxTotalChargeUsd": null,
+          "events": {
+            "result-item": {
+              "eventTitle": "Result item",
+              "eventPriceUsd": 0.005,
+              "isOneTimeEvent": false,
+              "isPrimaryEvent": true
+            },
+            "apify-actor-start": {
+              "eventTitle": "Actor Start",
+              "eventPriceUsd": 5e-05,
+              "isOneTimeEvent": true
+            }
+          }
+        },
+        "usage_pass_through_last_explicit": true,
+        "effective_pricing_requires_live_recheck": true
+      },
+      "example_input": {
+        "keywords": [
+          "project management"
+        ],
+        "geo": "US",
+        "timeframe": "today 3-m",
+        "dataTypes": [
+          "interest_over_time"
+        ],
+        "maxResults": 10
+      },
+      "example_validation": {
+        "json_schema": "PASS",
+        "semantic_runtime": "UNTESTED",
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+      },
+      "runtime_verified": false,
+      "limitations": [
+        "Metadata/schema inspection only. No Actor execution.",
+        "Re-fetch current build and pricing before a paid run; tags and prices can change.",
+        "Interest scores are normalized relative values, not absolute monthly search volume."
+      ]
+    },
+    {
+      "name": "keyword-rank-tracker",
+      "id": "ufcrXss0mJzYLRgWW",
+      "owner": "khadinakbar",
+      "url": "https://apify.com/khadinakbar/keyword-rank-tracker",
+      "public": true,
+      "group": "Search and keywords",
+      "title": "Keyword Rank Tracker \u2014 Google SERP Positions",
+      "build": {
+        "id": "RLJfTHCelUBeDR4Sp",
+        "number": "1.1.5",
+        "status": "SUCCEEDED",
+        "finished_at": "2026-10-04T16:14:13.145Z",
+        "default_tag": "latest",
+        "tagged_builds": {
+          "latest": {
+            "buildId": "RLJfTHCelUBeDR4Sp",
+            "finishedAt": "2026-10-04T16:14:13.145Z",
+            "buildNumberInt": 10100005,
+            "buildNumber": "1.1.5"
+          }
+        }
+      },
+      "provenance": {
+        "actor_metadata_endpoint": "https://api.apify.com/v2/acts/ufcrXss0mJzYLRgWW",
+        "input_schema_endpoint": "https://api.apify.com/v2/acts/ufcrXss0mJzYLRgWW/builds/RLJfTHCelUBeDR4Sp",
+        "input_source": "default-build inputSchema",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+      },
+      "retrieved_at": "2026-10-04T19:33:05.984741+00:00",
+      "required_keys": [
+        "targetDomain",
+        "keywords"
+      ],
+      "properties": {
+        "targetDomain": {
+          "type": "string"
+        },
+        "keywords": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 100
+        },
+        "locationCode": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "languageCode": {
+          "type": "string"
+        },
+        "device": {
+          "type": "string",
+          "enum": [
+            "desktop",
+            "mobile"
+          ]
+        },
+        "os": {
+          "type": "string",
+          "enum": [
+            "windows",
+            "macos",
+            "android",
+            "ios"
+          ]
+        },
+        "depth": {
+          "type": "integer",
+          "minimum": 10,
+          "maximum": 20
+        },
+        "maxKeywords": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 100
+        },
+        "dataforSeoLogin": {
+          "type": "string"
+        },
+        "dataforSeoPassword": {
+          "type": "string"
+        },
+        "rankProviderLogin": {
+          "type": "string"
+        },
+        "rankProviderPassword": {
+          "type": "string"
+        }
+      },
+      "declared_dataset_fields": [
+        "runId",
+        "keyword",
+        "targetDomain",
+        "found",
+        "targetRank",
+        "targetRankAbsolute",
+        "rankingUrl",
+        "rankingTitle",
+        "rankingSnippet",
+        "resultsChecked",
+        "topResults",
+        "searchEngine",
+        "locationCode",
+        "languageCode",
+        "device",
+        "os",
+        "depth",
+        "checkUrl",
+        "checkedAt",
+        "providerTaskId"
+      ],
+      "pricing": {
+        "effective_record": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-09-10T12:54:37.760Z",
+          "events": {
+            "apify-actor-start": {
+              "eventTitle": "Actor Start",
+              "eventPriceUsd": 5e-05,
+              "isOneTimeEvent": true
+            },
+            "keyword-rank": {
+              "eventTitle": "Keyword rank check",
+              "eventPriceUsd": 0.05,
+              "isPrimaryEvent": true
+            }
+          }
+        },
+        "usage_pass_through_last_explicit": true,
+        "effective_pricing_requires_live_recheck": true
+      },
+      "example_input": {
+        "targetDomain": "example.com",
+        "keywords": [
+          "project management software"
+        ],
+        "depth": 10,
+        "maxKeywords": 1
+      },
+      "example_validation": {
+        "json_schema": "PASS",
+        "semantic_runtime": "UNTESTED",
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+      },
+      "runtime_verified": false,
+      "limitations": [
+        "Metadata/schema inspection only. No Actor execution.",
+        "Re-fetch current build and pricing before a paid run; tags and prices can change."
+      ]
+    },
+    {
+      "name": "seo-domain-keyword-scraper",
+      "id": "7XL6DUjjDCqltKeBg",
+      "owner": "khadinakbar",
+      "url": "https://apify.com/khadinakbar/seo-domain-keyword-scraper",
+      "public": true,
+      "group": "Search and keywords",
+      "title": "Domain Keyword Analyzer \u2014 Semrush Alternative",
+      "build": {
+        "id": "72dIyKcbJmGROma5K",
+        "number": "1.0.8",
+        "status": "SUCCEEDED",
+        "finished_at": "2026-10-04T16:28:29.114Z",
+        "default_tag": "latest",
+        "tagged_builds": {
+          "latest": {
+            "buildId": "72dIyKcbJmGROma5K",
+            "finishedAt": "2026-10-04T16:28:29.114Z",
+            "buildNumberInt": 10000008,
+            "buildNumber": "1.0.8"
+          }
+        }
+      },
+      "provenance": {
+        "actor_metadata_endpoint": "https://api.apify.com/v2/acts/7XL6DUjjDCqltKeBg",
+        "input_schema_endpoint": "https://api.apify.com/v2/acts/7XL6DUjjDCqltKeBg/builds/72dIyKcbJmGROma5K",
+        "input_source": "default-build inputSchema",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+      },
+      "retrieved_at": "2026-10-04T19:33:05.711710+00:00",
+      "required_keys": [],
+      "properties": {
+        "mode": {
+          "type": "string",
+          "enum": [
+            "domain_overview",
+            "ranked_keywords",
+            "keyword_overview",
+            "keyword_ideas",
+            "competitors",
+            "backlinks_summary"
+          ]
+        },
+        "target": {
+          "type": "string"
+        },
+        "keywords": {
+          "type": "array"
+        },
+        "dataforSeoLogin": {
+          "type": "string"
+        },
+        "dataforSeoPassword": {
+          "type": "string"
+        },
+        "locationCode": {
+          "type": "integer"
+        },
+        "languageCode": {
+          "type": "string"
+        },
+        "maxResults": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1000
+        },
+        "includeSerpInfo": {
+          "type": "boolean"
+        }
+      },
+      "declared_dataset_fields": [
+        "mode",
+        "target",
+        "keyword",
+        "searchVolume",
+        "cpc",
+        "competition",
+        "competitionLevel",
+        "keywordDifficulty",
+        "mainIntent",
+        "position",
+        "positionAbsolute",
+        "serpType",
+        "rankedUrl",
+        "etv",
+        "estimatedTrafficCostUsd",
+        "organicKeywords",
+        "organicEtv",
+        "organicTrafficCostUsd",
+        "paidKeywords",
+        "competitorDomain",
+        "avgPosition",
+        "intersections",
+        "competitorOrganicKeywords",
+        "competitorOrganicEtv",
+        "rank",
+        "backlinks",
+        "referringDomains",
+        "referringMainDomains",
+        "brokenBacklinks"
+      ],
+      "pricing": {
+        "effective_record": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-08-04T20:29:34.070Z",
+          "isPPEPlatformUsagePaidByUser": true,
+          "minimalMaxTotalChargeUsd": null,
+          "events": {
+            "result": {
+              "eventTitle": "Result row",
+              "eventPriceUsd": 0.005,
+              "isOneTimeEvent": false,
+              "isPrimaryEvent": true
+            },
+            "report": {
+              "eventTitle": "Domain/backlink report",
+              "eventPriceUsd": 0.02,
+              "isOneTimeEvent": false
+            },
+            "apify-actor-start": {
+              "eventTitle": "Actor Start",
+              "eventPriceUsd": 5e-05,
+              "isOneTimeEvent": true
+            }
+          }
+        },
+        "usage_pass_through_last_explicit": true,
+        "effective_pricing_requires_live_recheck": true
+      },
+      "example_input": {
+        "mode": "ranked_keywords",
+        "target": "example.com",
+        "maxResults": 10,
+        "includeSerpInfo": false
+      },
+      "example_validation": {
+        "json_schema": "PASS",
+        "semantic_runtime": "UNTESTED",
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+      },
+      "runtime_verified": false,
+      "limitations": [
+        "Metadata/schema inspection only. No Actor execution.",
+        "Re-fetch current build and pricing before a paid run; tags and prices can change."
+      ]
+    },
+    {
+      "name": "website-seo-spider",
+      "id": "f0PPU2rWRKUBwAfeZ",
+      "owner": "khadinakbar",
+      "url": "https://apify.com/khadinakbar/website-seo-spider",
+      "public": true,
+      "group": "Search and keywords",
+      "title": "Website SEO Crawler \u2014 Screaming Frog Alternative",
+      "build": {
+        "id": "VgcoYYZsbn0qxADMx",
+        "number": "0.2.5",
+        "status": "SUCCEEDED",
+        "finished_at": "2026-10-04T15:52:35.966Z",
+        "default_tag": "latest",
+        "tagged_builds": {
+          "latest": {
+            "buildId": "VgcoYYZsbn0qxADMx",
+            "finishedAt": "2026-10-04T15:52:35.966Z",
+            "buildNumberInt": 200005,
+            "buildNumber": "0.2.5"
+          }
+        }
+      },
+      "provenance": {
+        "actor_metadata_endpoint": "https://api.apify.com/v2/acts/f0PPU2rWRKUBwAfeZ",
+        "input_schema_endpoint": "https://api.apify.com/v2/acts/f0PPU2rWRKUBwAfeZ/builds/VgcoYYZsbn0qxADMx",
+        "input_source": "default-build inputSchema",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+      },
+      "retrieved_at": "2026-10-04T19:33:17.366264+00:00",
+      "required_keys": [
+        "startUrls"
+      ],
+      "properties": {
+        "startUrls": {
+          "type": "array"
+        },
+        "crawlScope": {
+          "type": "string",
+          "enum": [
+            "same-hostname",
+            "same-domain",
+            "page-only"
+          ]
+        },
+        "maxPages": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 2000
+        },
+        "maxDepth": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 20
+        },
+        "seedFromSitemap": {
+          "type": "boolean"
+        },
+        "respectRobotsTxt": {
+          "type": "boolean"
+        },
+        "ignoreUrlParameters": {
+          "type": "boolean"
+        },
+        "maxConcurrency": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 20
+        },
+        "fetchMode": {
+          "type": "string",
+          "enum": [
+            "direct",
+            "residential"
+          ]
+        },
+        "proxyConfiguration": {
+          "type": "object"
+        }
+      },
+      "declared_dataset_fields": [
+        "url",
+        "requestedUrl",
+        "statusCode",
+        "statusText",
+        "contentType",
+        "indexability",
+        "indexabilityStatus",
+        "title",
+        "titleLength",
+        "metaDescription",
+        "metaDescriptionLength",
+        "metaKeywords",
+        "metaRobots",
+        "xRobotsTag",
+        "canonicalUrl",
+        "h1",
+        "h1Secondary",
+        "h1Count",
+        "h2",
+        "h2Count",
+        "htmlLang",
+        "wordCount",
+        "textRatioPct",
+        "sizeBytes",
+        "responseTimeMs",
+        "crawlDepth",
+        "inlinks",
+        "uniqueInlinks",
+        "outlinks",
+        "uniqueOutlinks",
+        "internalOutlinks",
+        "externalOutlinks",
+        "imageCount",
+        "imagesMissingAlt",
+        "redirectUrl",
+        "redirectChain",
+        "schemaTypes",
+        "ogTitle",
+        "ogDescription",
+        "twitterCard",
+        "hreflangCount",
+        "viewport",
+        "charset",
+        "contentHash",
+        "issueFlags",
+        "issueCount",
+        "startUrl",
+        "crawlScope",
+        "scrapedAt"
+      ],
+      "pricing": {
+        "effective_record": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-09-10T13:01:23.138Z",
+          "events": {
+            "apify-actor-start": {
+              "eventTitle": "Actor Start",
+              "eventPriceUsd": 5e-05,
+              "isOneTimeEvent": true,
+              "isPrimaryEvent": false
+            },
+            "page-crawled": {
+              "eventTitle": "Page crawled",
+              "eventPriceUsd": 0.01,
+              "isPrimaryEvent": true
+            }
+          }
+        },
+        "usage_pass_through_last_explicit": true,
+        "effective_pricing_requires_live_recheck": true
+      },
+      "example_input": {
+        "startUrls": [
+          {
+            "url": "https://example.com"
+          }
+        ],
+        "maxPages": 5,
+        "maxDepth": 1,
+        "maxConcurrency": 1,
+        "respectRobotsTxt": true
+      },
+      "example_validation": {
+        "json_schema": "PASS",
+        "semantic_runtime": "UNTESTED",
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+      },
+      "runtime_verified": false,
+      "limitations": [
+        "Metadata/schema inspection only. No Actor execution.",
+        "Re-fetch current build and pricing before a paid run; tags and prices can change."
+      ]
+    },
+    {
+      "name": "website-backlink-checker",
+      "id": "rCohK9eJbjiovPN6s",
+      "owner": "khadinakbar",
+      "url": "https://apify.com/khadinakbar/website-backlink-checker",
+      "public": true,
+      "group": "Links and authority",
+      "title": "Website Backlink Checker",
+      "build": {
+        "id": "wnDuwfaprrBJR108n",
+        "number": "0.1.2",
+        "status": "SUCCEEDED",
+        "finished_at": "2026-10-04T16:36:16.662Z",
+        "default_tag": "latest",
+        "tagged_builds": {
+          "latest": {
+            "buildId": "wnDuwfaprrBJR108n",
+            "finishedAt": "2026-10-04T16:36:16.662Z",
+            "buildNumberInt": 100002,
+            "buildNumber": "0.1.2"
+          }
+        }
+      },
+      "provenance": {
+        "actor_metadata_endpoint": "https://api.apify.com/v2/acts/rCohK9eJbjiovPN6s",
+        "input_schema_endpoint": "https://api.apify.com/v2/acts/rCohK9eJbjiovPN6s/builds/wnDuwfaprrBJR108n",
+        "input_source": "default-build inputSchema",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+      },
+      "retrieved_at": "2026-10-04T19:33:17.861177+00:00",
+      "required_keys": [
+        "targets"
+      ],
+      "properties": {
+        "targets": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 10
+        },
+        "mode": {
+          "type": "string",
+          "enum": [
+            "backlinks",
+            "referring_domains",
+            "anchors",
+            "summary"
+          ]
+        },
+        "maxResults": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 100
+        },
+        "dofollowOnly": {
+          "type": "boolean"
+        },
+        "excludeLost": {
+          "type": "boolean"
+        },
+        "includeSubdomains": {
+          "type": "boolean"
+        },
+        "excludeInternalBacklinks": {
+          "type": "boolean"
+        }
+      },
+      "declared_dataset_fields": [
+        "recordType",
+        "mode",
+        "target",
+        "sourceUrl",
+        "sourceDomain",
+        "targetUrl",
+        "anchorText",
+        "isDofollow",
+        "domainRank",
+        "pageRank",
+        "spamScore",
+        "firstSeen",
+        "lastSeen",
+        "lostDate",
+        "backlinks",
+        "referringDomains",
+        "source",
+        "fetchedAt",
+        "status",
+        "providerTaskId"
+      ],
+      "pricing": {
+        "effective_record": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-09-10T14:01:27.611Z",
+          "isPPEPlatformUsagePaidByUser": true,
+          "events": {
+            "apify-actor-start": {
+              "eventTitle": "Actor Start",
+              "eventPriceUsd": 5e-05
+            },
+            "backlink-api-request": {
+              "eventTitle": "Backlink API request",
+              "eventPriceUsd": 0.05
+            },
+            "backlink-found": {
+              "eventTitle": "Backlink found",
+              "eventPriceUsd": 0.01,
+              "isPrimaryEvent": true
+            }
+          }
+        },
+        "usage_pass_through_last_explicit": true,
+        "effective_pricing_requires_live_recheck": true
+      },
+      "example_input": {
+        "targets": [
+          "example.com"
+        ],
+        "mode": "backlinks",
+        "maxResults": 5
+      },
+      "example_validation": {
+        "json_schema": "PASS",
+        "semantic_runtime": "UNTESTED",
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+      },
+      "runtime_verified": false,
+      "limitations": [
+        "Metadata/schema inspection only. No Actor execution.",
+        "Re-fetch current build and pricing before a paid run; tags and prices can change.",
+        "A returned subset is not proof of a complete web-wide backlink index. Use source/provenance and declared coverage."
+      ]
+    },
+    {
+      "name": "backlink-opportunity-finder",
+      "id": "n1uR8aWhzOBYhxLJl",
+      "owner": "khadinakbar",
+      "url": "https://apify.com/khadinakbar/backlink-opportunity-finder",
+      "public": true,
+      "group": "Links and authority",
+      "title": "Backlink Opportunity Finder",
+      "build": {
+        "id": "vNnmZncbiNljp3kNk",
+        "number": "1.0.14",
+        "status": "SUCCEEDED",
+        "finished_at": "2026-10-02T14:45:57.152Z",
+        "default_tag": "latest",
+        "tagged_builds": {
+          "latest": {
+            "buildId": "vNnmZncbiNljp3kNk",
+            "finishedAt": "2026-10-02T14:45:57.152Z",
+            "buildNumberInt": 10000014,
+            "buildNumber": "1.0.14"
+          },
+          "health-fix": {
+            "buildId": "XJASI0Dlcr3mRnnrr",
+            "finishedAt": "2026-10-02T14:39:42.160Z",
+            "buildNumberInt": 10000013,
+            "buildNumber": "1.0.13"
+          }
+        }
+      },
+      "provenance": {
+        "actor_metadata_endpoint": "https://api.apify.com/v2/acts/n1uR8aWhzOBYhxLJl",
+        "input_schema_endpoint": "https://api.apify.com/v2/acts/n1uR8aWhzOBYhxLJl/builds/vNnmZncbiNljp3kNk",
+        "input_source": "default-build inputSchema",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+      },
+      "retrieved_at": "2026-10-04T19:33:17.600464+00:00",
+      "required_keys": [
+        "keywords"
+      ],
+      "properties": {
+        "keywords": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 10
+        },
+        "targetDomain": {
+          "type": "string"
+        },
+        "opportunityTypes": {
+          "type": "array"
+        },
+        "excludeDomains": {
+          "type": "array"
+        },
+        "countryCode": {
+          "type": "string"
+        },
+        "languageCode": {
+          "type": "string"
+        },
+        "maxResultsPerKeyword": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 100
+        },
+        "maxPagesPerQuery": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 5
+        },
+        "minimumRelevanceScore": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        }
+      },
+      "declared_dataset_fields": [
+        "keyword",
+        "opportunityType",
+        "title",
+        "url",
+        "prospectDomain",
+        "snippet",
+        "sourceQuery",
+        "resultPosition",
+        "relevanceScore",
+        "discoveryMethod",
+        "countryCode",
+        "languageCode",
+        "discoveredAt"
+      ],
+      "pricing": {
+        "effective_record": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-09-10T13:10:29.477Z",
+          "events": {
+            "apify-actor-start": {
+              "eventTitle": "Actor Start",
+              "eventPriceUsd": 5e-05
+            },
+            "apify-default-dataset-item": {
+              "eventTitle": "Backlink prospect found",
+              "eventPriceUsd": 0.006,
+              "isPrimaryEvent": true
+            }
+          }
+        },
+        "usage_pass_through_last_explicit": true,
+        "effective_pricing_requires_live_recheck": true
+      },
+      "example_input": {
+        "keywords": [
+          "project management"
+        ],
+        "targetDomain": "example.com",
+        "opportunityTypes": [
+          "resource_page"
+        ],
+        "maxResultsPerKeyword": 5,
+        "maxPagesPerQuery": 1
+      },
+      "example_validation": {
+        "json_schema": "PASS",
+        "semantic_runtime": "UNTESTED",
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+      },
+      "runtime_verified": false,
+      "limitations": [
+        "Metadata/schema inspection only. No Actor execution.",
+        "Re-fetch current build and pricing before a paid run; tags and prices can change."
+      ]
+    },
+    {
+      "name": "broken-link-checker",
+      "id": "a2yeVoO8SdJgVEgbK",
+      "owner": "khadinakbar",
+      "url": "https://apify.com/khadinakbar/broken-link-checker",
+      "public": true,
+      "group": "Links and authority",
+      "title": "Broken Link Checker for Technical SEO Audits",
+      "build": {
+        "id": "WfxfVNubWLUFjclQy",
+        "number": "1.2.5",
+        "status": "SUCCEEDED",
+        "finished_at": "2026-10-04T14:40:56.310Z",
+        "default_tag": "latest",
+        "tagged_builds": {
+          "latest": {
+            "buildId": "WfxfVNubWLUFjclQy",
+            "finishedAt": "2026-10-04T14:40:56.310Z",
+            "buildNumberInt": 10200005,
+            "buildNumber": "1.2.5"
+          }
+        }
+      },
+      "provenance": {
+        "actor_metadata_endpoint": "https://api.apify.com/v2/acts/a2yeVoO8SdJgVEgbK",
+        "input_schema_endpoint": "https://api.apify.com/v2/acts/a2yeVoO8SdJgVEgbK/builds/WfxfVNubWLUFjclQy",
+        "input_source": "default-build inputSchema",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+      },
+      "retrieved_at": "2026-10-04T19:33:18.967585+00:00",
+      "required_keys": [
+        "mode"
+      ],
+      "properties": {
+        "mode": {
+          "type": "string",
+          "enum": [
+            "crawl",
+            "list",
+            "sitemap"
+          ]
+        },
+        "startUrl": {
+          "type": "string"
+        },
+        "urls": {
+          "type": "array"
+        },
+        "maxPages": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 5000
+        },
+        "maxLinksToCheck": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 10000
+        },
+        "checkExternalLinks": {
+          "type": "boolean"
+        },
+        "checkAssets": {
+          "type": "boolean"
+        },
+        "onlyReportBroken": {
+          "type": "boolean"
+        },
+        "slowThresholdMs": {
+          "type": "integer",
+          "minimum": 100,
+          "maximum": 60000
+        },
+        "requestTimeoutMs": {
+          "type": "integer",
+          "minimum": 1000,
+          "maximum": 60000
+        },
+        "maxConcurrency": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 100
+        },
+        "maxRedirects": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 30
+        },
+        "userAgent": {
+          "type": "string"
+        },
+        "proxyConfiguration": {
+          "type": "object"
+        }
+      },
+      "declared_dataset_fields": [
+        "url",
+        "finalUrl",
+        "status",
+        "statusText",
+        "classification",
+        "isBroken",
+        "sourceUrl",
+        "anchorText",
+        "linkType",
+        "allSources",
+        "method",
+        "hops",
+        "redirectChain",
+        "durationMs",
+        "error",
+        "checkedAt"
+      ],
+      "pricing": {
+        "effective_record": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-09-25T10:35:32.682Z",
+          "events": {
+            "apify-actor-start": {
+              "eventTitle": "Actor Start",
+              "eventPriceUsd": 5e-05,
+              "isOneTimeEvent": true
+            },
+            "link-checked": {
+              "eventTitle": "Link checked",
+              "eventPriceUsd": 0.001,
+              "isOneTimeEvent": false,
+              "isPrimaryEvent": true
+            }
+          }
+        },
+        "usage_pass_through_last_explicit": true,
+        "effective_pricing_requires_live_recheck": true
+      },
+      "example_input": {
+        "mode": "list",
+        "urls": [
+          "https://example.com"
+        ],
+        "maxLinksToCheck": 5,
+        "maxConcurrency": 1
+      },
+      "example_validation": {
+        "json_schema": "PASS",
+        "semantic_runtime": "UNTESTED",
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+      },
+      "runtime_verified": false,
+      "limitations": [
+        "Metadata/schema inspection only. No Actor execution.",
+        "Re-fetch current build and pricing before a paid run; tags and prices can change."
+      ]
+    },
+    {
+      "name": "meta-ad-library-scraper",
+      "id": "B4RRM07yZQi5eczJG",
+      "owner": "khadinakbar",
+      "url": "https://apify.com/khadinakbar/meta-ad-library-scraper",
+      "public": true,
+      "group": "Ad intelligence",
+      "title": "Meta Ad Library Scraper \u2014 Ad Creatives, Spend & Targeting",
+      "build": {
+        "id": "FF1QthHpneLKSXV5O",
+        "number": "1.3.4",
+        "status": "SUCCEEDED",
+        "finished_at": "2026-09-09T09:17:16.211Z",
+        "default_tag": "latest",
+        "tagged_builds": {
+          "latest": {
+            "buildId": "FF1QthHpneLKSXV5O",
+            "finishedAt": "2026-09-09T09:17:16.211Z",
+            "buildNumberInt": 10300004,
+            "buildNumber": "1.3.4"
+          },
+          "sr90-sept09": {
+            "buildId": "3OZFNytWb23T3LvkX",
+            "finishedAt": "2026-09-27T07:52:55.733Z",
+            "buildNumberInt": 10300007,
+            "buildNumber": "1.3.7"
+          }
+        }
+      },
+      "provenance": {
+        "actor_metadata_endpoint": "https://api.apify.com/v2/acts/B4RRM07yZQi5eczJG",
+        "input_schema_endpoint": "https://api.apify.com/v2/acts/B4RRM07yZQi5eczJG/builds/FF1QthHpneLKSXV5O",
+        "input_source": "default-build inputSchema",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+      },
+      "retrieved_at": "2026-10-04T19:33:18.974042+00:00",
+      "required_keys": [],
+      "properties": {
+        "searchQuery": {
+          "type": "string"
+        },
+        "searchQueries": {
+          "type": "array"
+        },
+        "metaAccessToken": {
+          "type": "string"
+        },
+        "countries": {
+          "type": "array"
+        },
+        "adStatus": {
+          "type": "string",
+          "enum": [
+            "ALL",
+            "ACTIVE",
+            "INACTIVE"
+          ]
+        },
+        "adType": {
+          "type": "string",
+          "enum": [
+            "ALL",
+            "POLITICAL_AND_ISSUE_ADS",
+            "HOUSING_ADS",
+            "EMPLOYMENT_ADS",
+            "CREDIT_ADS"
+          ]
+        },
+        "mediaType": {
+          "type": "string",
+          "enum": [
+            "ALL",
+            "IMAGE",
+            "VIDEO",
+            "MEME",
+            "NONE"
+          ]
+        },
+        "startDate": {
+          "type": "string"
+        },
+        "endDate": {
+          "type": "string"
+        },
+        "maxResults": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 50000
+        },
+        "sortBy": {
+          "type": "string",
+          "enum": [
+            "impressions_desc",
+            "most_recent"
+          ]
+        },
+        "enrichAds": {
+          "type": "boolean"
+        },
+        "providerFallbackEnabled": {
+          "type": "boolean"
+        },
+        "onlyCount": {
+          "type": "boolean"
+        },
+        "advertiserPageIds": {
+          "type": "array"
+        },
+        "startUrls": {
+          "type": "array"
+        },
+        "adId": {
+          "type": "string"
+        },
+        "contentLanguages": {
+          "type": "array"
+        },
+        "publisherPlatforms": {
+          "type": "array"
+        },
+        "searchType": {
+          "type": "string",
+          "enum": [
+            "KEYWORD_UNORDERED",
+            "KEYWORD_EXACT_PHRASE"
+          ]
+        },
+        "metaAccessTokens": {
+          "type": "array"
+        },
+        "proxyUrls": {
+          "type": "array"
+        }
+      },
+      "declared_dataset_fields": [
+        "ad_id",
+        "page_id",
+        "page_name",
+        "ad_creative_body",
+        "ad_creative_bodies",
+        "ad_creative_link_title",
+        "ad_creative_link_caption",
+        "ad_creative_link_description",
+        "ad_snapshot_url",
+        "landing_page_url",
+        "spend_lower",
+        "spend_upper",
+        "currency",
+        "impressions_lower",
+        "impressions_upper",
+        "eu_total_reach",
+        "delivery_start_date",
+        "delivery_stop_date",
+        "ad_creation_time",
+        "is_active",
+        "publisher_platforms",
+        "languages",
+        "demographic_distribution",
+        "delivery_by_region",
+        "landing_page_domain",
+        "image_urls",
+        "video_urls",
+        "cta_type",
+        "carousel_cards",
+        "search_query",
+        "ad_summary",
+        "detected_cta",
+        "ad_category",
+        "running_days",
+        "word_count",
+        "hashtag_count",
+        "emoji_count",
+        "country_filter",
+        "data_mode",
+        "scraped_at"
+      ],
+      "pricing": {
+        "effective_record": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-08-04T20:29:34.070Z",
+          "isPPEPlatformUsagePaidByUser": true,
+          "minimalMaxTotalChargeUsd": null,
+          "events": {
+            "ad-result": {
+              "eventTitle": "Ad Result",
+              "eventPriceUsd": 0.005,
+              "isOneTimeEvent": false,
+              "isPrimaryEvent": true
+            },
+            "apify-actor-start": {
+              "eventTitle": "Actor Start",
+              "eventPriceUsd": 5e-05,
+              "isOneTimeEvent": true
+            }
+          }
+        },
+        "usage_pass_through_last_explicit": true,
+        "effective_pricing_requires_live_recheck": true
+      },
+      "example_input": {
+        "searchQuery": "project management",
+        "countries": [
+          "US"
+        ],
+        "maxResults": 5,
+        "enrichAds": false
+      },
+      "example_validation": {
+        "json_schema": "PASS",
+        "semantic_runtime": "UNTESTED",
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+      },
+      "runtime_verified": false,
+      "limitations": [
+        "Metadata/schema inspection only. No Actor execution.",
+        "Re-fetch current build and pricing before a paid run; tags and prices can change.",
+        "Public ad presence, dates or reach disclosures are not advertiser conversion rate or ROAS."
+      ]
+    },
+    {
+      "name": "google-ads-transparency-scraper",
+      "id": "dCA5Hpf4BCQX094ZD",
+      "owner": "khadinakbar",
+      "url": "https://apify.com/khadinakbar/google-ads-transparency-scraper",
+      "public": true,
+      "group": "Ad intelligence",
+      "title": "Google Ads Transparency Scraper \u2014 Creatives & Run Dates",
+      "build": {
+        "id": "raiLYK7Ov5mqBD4Xf",
+        "number": "1.5.7",
+        "status": "SUCCEEDED",
+        "finished_at": "2026-10-01T06:20:23.924Z",
+        "default_tag": "latest",
+        "tagged_builds": {
+          "latest": {
+            "buildId": "raiLYK7Ov5mqBD4Xf",
+            "finishedAt": "2026-10-01T06:20:23.924Z",
+            "buildNumberInt": 10500007,
+            "buildNumber": "1.5.7"
+          },
+          "health-fix": {
+            "buildId": "oZgLLc9uWeqzjzTTG",
+            "finishedAt": "2026-10-01T06:09:27.180Z",
+            "buildNumberInt": 10500006,
+            "buildNumber": "1.5.6"
+          }
+        }
+      },
+      "provenance": {
+        "actor_metadata_endpoint": "https://api.apify.com/v2/acts/dCA5Hpf4BCQX094ZD",
+        "input_schema_endpoint": "https://api.apify.com/v2/acts/dCA5Hpf4BCQX094ZD/builds/raiLYK7Ov5mqBD4Xf",
+        "input_source": "default-build inputSchema",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+      },
+      "retrieved_at": "2026-10-04T19:33:18.969935+00:00",
+      "required_keys": [],
+      "properties": {
+        "searchQuery": {
+          "type": "string"
+        },
+        "searchType": {
+          "type": "string",
+          "enum": [
+            "domain",
+            "advertiserName"
+          ]
+        },
+        "countryCode": {
+          "type": "string"
+        },
+        "adFormat": {
+          "type": "string",
+          "enum": [
+            "ALL",
+            "TEXT",
+            "IMAGE",
+            "VIDEO"
+          ]
+        },
+        "maxResults": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1000
+        },
+        "startUrls": {
+          "type": "array"
+        },
+        "enrichDetails": {
+          "type": "boolean"
+        }
+      },
+      "declared_dataset_fields": [
+        "advertiser_name",
+        "advertiser_id",
+        "advertiser_domain",
+        "ad_id",
+        "ad_headline",
+        "ad_text",
+        "ad_format",
+        "ad_image_url",
+        "ad_video_url",
+        "destination_url",
+        "regions_shown",
+        "platforms",
+        "first_shown_date",
+        "last_shown_date",
+        "is_political_ad",
+        "scraped_at",
+        "source_url"
+      ],
+      "pricing": {
+        "effective_record": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-08-04T20:29:34.070Z",
+          "isPPEPlatformUsagePaidByUser": true,
+          "minimalMaxTotalChargeUsd": null,
+          "events": {
+            "apify-actor-start": {
+              "eventTitle": "Actor Start",
+              "eventPriceUsd": 5e-05,
+              "isOneTimeEvent": true
+            },
+            "scraped-ad": {
+              "eventTitle": "Scraped Ad",
+              "eventPriceUsd": 0.003,
+              "isOneTimeEvent": false,
+              "isPrimaryEvent": true
+            }
+          }
+        },
+        "usage_pass_through_last_explicit": true,
+        "effective_pricing_requires_live_recheck": true
+      },
+      "example_input": {
+        "searchQuery": "example.com",
+        "searchType": "domain",
+        "countryCode": "US",
+        "maxResults": 5,
+        "enrichDetails": false
+      },
+      "example_validation": {
+        "json_schema": "PASS",
+        "semantic_runtime": "UNTESTED",
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+      },
+      "runtime_verified": false,
+      "limitations": [
+        "Metadata/schema inspection only. No Actor execution.",
+        "Re-fetch current build and pricing before a paid run; tags and prices can change.",
+        "Public ad presence, dates or reach disclosures are not advertiser conversion rate or ROAS."
+      ]
+    },
+    {
+      "name": "tiktok-ads-library-scraper",
+      "id": "x5x84HE8Hq7EJ9VmS",
+      "owner": "khadinakbar",
+      "url": "https://apify.com/khadinakbar/tiktok-ads-library-scraper",
+      "public": true,
+      "group": "Ad intelligence",
+      "title": "TikTok Ads Library Scraper",
+      "build": {
+        "id": "WVfQFRuKr95yYzE5J",
+        "number": "1.1.6",
+        "status": "SUCCEEDED",
+        "finished_at": "2026-10-04T16:34:06.143Z",
+        "default_tag": "latest",
+        "tagged_builds": {
+          "latest": {
+            "buildId": "WVfQFRuKr95yYzE5J",
+            "finishedAt": "2026-10-04T16:34:06.143Z",
+            "buildNumberInt": 10100006,
+            "buildNumber": "1.1.6"
+          }
+        }
+      },
+      "provenance": {
+        "actor_metadata_endpoint": "https://api.apify.com/v2/acts/x5x84HE8Hq7EJ9VmS",
+        "input_schema_endpoint": "https://api.apify.com/v2/acts/x5x84HE8Hq7EJ9VmS/builds/WVfQFRuKr95yYzE5J",
+        "input_source": "default-build inputSchema",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+      },
+      "retrieved_at": "2026-10-04T19:33:29.723043+00:00",
+      "required_keys": [],
+      "properties": {
+        "libraryUrl": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string",
+          "enum": [
+            "AT",
+            "BE",
+            "BG",
+            "CH",
+            "CY",
+            "CZ",
+            "DE",
+            "DK",
+            "EE",
+            "ES",
+            "FI",
+            "FR",
+            "GB",
+            "GR",
+            "HR",
+            "HU",
+            "IE",
+            "IS",
+            "IT",
+            "LI",
+            "LT",
+            "LU",
+            "LV",
+            "MT",
+            "NL",
+            "NO",
+            "PL",
+            "PT",
+            "RO",
+            "SE",
+            "SI",
+            "SK"
+          ]
+        },
+        "searchQuery": {
+          "type": "string"
+        },
+        "searchType": {
+          "type": "string",
+          "enum": [
+            "keyword",
+            "advertiser"
+          ]
+        },
+        "advertiserBusinessId": {
+          "type": "string"
+        },
+        "dateFrom": {
+          "type": "string"
+        },
+        "dateTo": {
+          "type": "string"
+        },
+        "maxResults": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 200
+        },
+        "includeDetails": {
+          "type": "boolean"
+        },
+        "requestTimeoutSecs": {
+          "type": "integer",
+          "minimum": 20,
+          "maximum": 120
+        }
+      },
+      "declared_dataset_fields": [
+        "adId",
+        "adDetailUrl",
+        "libraryUrl",
+        "country",
+        "searchQuery",
+        "advertiserName",
+        "advertiserBusinessId",
+        "advertiserRegistryLocation",
+        "sponsor",
+        "auditStatus",
+        "adType",
+        "title",
+        "callToAction",
+        "landingPageUrl",
+        "advertisingObjective",
+        "firstShownAt",
+        "lastShownAt",
+        "estimatedAudience",
+        "spend",
+        "impressions",
+        "creativeType",
+        "videoUrls",
+        "imageUrls",
+        "coverImageUrls",
+        "targetCountries",
+        "targetAudienceSize",
+        "targetAgeRanges",
+        "targetGender",
+        "targetInterests",
+        "audienceByRegion",
+        "detailEnriched",
+        "source",
+        "scrapedAt"
+      ],
+      "pricing": {
+        "effective_record": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-09-25T18:30:59.244Z",
+          "events": {
+            "apify-actor-start": {
+              "eventTitle": "Actor Start",
+              "eventPriceUsd": 5e-05,
+              "isOneTimeEvent": true
+            },
+            "ad-scraped": {
+              "eventTitle": "TikTok ad scraped",
+              "eventPriceUsd": 0.006,
+              "isPrimaryEvent": true
+            },
+            "detail-enriched": {
+              "eventTitle": "Ad details enriched",
+              "eventPriceUsd": 0.002
+            }
+          }
+        },
+        "usage_pass_through_last_explicit": true,
+        "effective_pricing_requires_live_recheck": true
+      },
+      "example_input": {
+        "searchQuery": "project management",
+        "maxResults": 5,
+        "includeDetails": false
+      },
+      "example_validation": {
+        "json_schema": "PASS",
+        "semantic_runtime": "UNTESTED",
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+      },
+      "runtime_verified": false,
+      "limitations": [
+        "Metadata/schema inspection only. No Actor execution.",
+        "Re-fetch current build and pricing before a paid run; tags and prices can change.",
+        "Public ad presence, dates or reach disclosures are not advertiser conversion rate or ROAS."
+      ]
+    },
+    {
+      "name": "linkedin-ad-library-search-scraper",
+      "id": "fdwr0hBXBdg5ya6tc",
+      "owner": "khadinakbar",
+      "url": "https://apify.com/khadinakbar/linkedin-ad-library-search-scraper",
+      "public": true,
+      "group": "Ad intelligence",
+      "title": "LinkedIn Ad Library Search Scraper",
+      "build": {
+        "id": "DvyT54eRLuQCD6DKN",
+        "number": "1.1.3",
+        "status": "SUCCEEDED",
+        "finished_at": "2026-10-04T15:37:09.436Z",
+        "default_tag": "latest",
+        "tagged_builds": {
+          "latest": {
+            "buildId": "DvyT54eRLuQCD6DKN",
+            "finishedAt": "2026-10-04T15:37:09.436Z",
+            "buildNumberInt": 10100003,
+            "buildNumber": "1.1.3"
+          }
+        }
+      },
+      "provenance": {
+        "actor_metadata_endpoint": "https://api.apify.com/v2/acts/fdwr0hBXBdg5ya6tc",
+        "input_schema_endpoint": "https://api.apify.com/v2/acts/fdwr0hBXBdg5ya6tc/builds/DvyT54eRLuQCD6DKN",
+        "input_source": "default-build inputSchema",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+      },
+      "retrieved_at": "2026-10-04T19:33:29.841368+00:00",
+      "required_keys": [],
+      "properties": {
+        "advertisers": {
+          "type": "array"
+        },
+        "keywords": {
+          "type": "array"
+        },
+        "countries": {
+          "type": "array"
+        },
+        "startDate": {
+          "type": "string"
+        },
+        "endDate": {
+          "type": "string"
+        },
+        "maxResults": {
+          "type": "integer"
+        },
+        "maxPagesPerSearch": {
+          "type": "integer"
+        },
+        "fetchAdDetails": {
+          "type": "boolean"
+        },
+        "responseFormat": {
+          "type": "string",
+          "enum": [
+            "concise",
+            "detailed"
+          ]
+        }
+      },
+      "declared_dataset_fields": [
+        "adId",
+        "adUrl",
+        "advertiserName",
+        "advertiserLinkedInUrl",
+        "headline",
+        "description",
+        "adType",
+        "cta",
+        "destinationUrl",
+        "imageUrl",
+        "videoUrl",
+        "carouselImageUrls",
+        "adRunStart",
+        "adRunEnd",
+        "estimatedImpressions",
+        "impressionCountries",
+        "targetingSummary",
+        "searchType",
+        "searchTerm",
+        "searchCountries",
+        "sourceProvider",
+        "detailProvider",
+        "detailsFetched",
+        "scrapedAt"
+      ],
+      "pricing": {
+        "effective_record": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-08-04T20:29:34.070Z",
+          "isPPEPlatformUsagePaidByUser": true,
+          "minimalMaxTotalChargeUsd": null,
+          "events": {
+            "apify-actor-start": {
+              "eventTitle": "Actor Start",
+              "eventPriceUsd": 5e-05,
+              "isOneTimeEvent": true
+            },
+            "ad-recorded": {
+              "eventTitle": "Ad record",
+              "eventPriceUsd": 0.006,
+              "isPrimaryEvent": true
+            },
+            "ad-detail-enriched": {
+              "eventTitle": "Ad detail enrichment",
+              "eventPriceUsd": 0.004
+            }
+          }
+        },
+        "usage_pass_through_last_explicit": true,
+        "effective_pricing_requires_live_recheck": true
+      },
+      "example_input": {
+        "keywords": [
+          "project management"
+        ],
+        "maxResults": 5,
+        "maxPagesPerSearch": 1,
+        "fetchAdDetails": false
+      },
+      "example_validation": {
+        "json_schema": "PASS",
+        "semantic_runtime": "UNTESTED",
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+      },
+      "runtime_verified": false,
+      "limitations": [
+        "Metadata/schema inspection only. No Actor execution.",
+        "Re-fetch current build and pricing before a paid run; tags and prices can change.",
+        "Public ad presence, dates or reach disclosures are not advertiser conversion rate or ROAS."
+      ]
+    },
+    {
+      "name": "pinterest-ads-library-scraper",
+      "id": "oKsJ4mO6RAVbvcrnz",
+      "owner": "khadinakbar",
+      "url": "https://apify.com/khadinakbar/pinterest-ads-library-scraper",
+      "public": true,
+      "group": "Ad intelligence",
+      "title": "Pinterest Ads Library Scraper",
+      "build": {
+        "id": "4cDVUHEfZN7whC0ko",
+        "number": "1.0.3",
+        "status": "SUCCEEDED",
+        "finished_at": "2026-10-04T15:43:16.884Z",
+        "default_tag": "latest",
+        "tagged_builds": {
+          "latest": {
+            "buildId": "4cDVUHEfZN7whC0ko",
+            "finishedAt": "2026-10-04T15:43:16.884Z",
+            "buildNumberInt": 10000003,
+            "buildNumber": "1.0.3"
+          }
+        }
+      },
+      "provenance": {
+        "actor_metadata_endpoint": "https://api.apify.com/v2/acts/oKsJ4mO6RAVbvcrnz",
+        "input_schema_endpoint": "https://api.apify.com/v2/acts/oKsJ4mO6RAVbvcrnz/builds/4cDVUHEfZN7whC0ko",
+        "input_source": "default-build inputSchema",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+      },
+      "retrieved_at": "2026-10-04T19:33:29.981185+00:00",
+      "required_keys": [],
+      "properties": {
+        "country": {
+          "type": "string",
+          "enum": [
+            "AT",
+            "BE",
+            "BG",
+            "BR",
+            "HR",
+            "CY",
+            "CZ",
+            "DK",
+            "EE",
+            "FI",
+            "FR",
+            "DE",
+            "GR",
+            "HU",
+            "IE",
+            "IT",
+            "LV",
+            "LT",
+            "LU",
+            "MT",
+            "NL",
+            "NO",
+            "PL",
+            "PT",
+            "RO",
+            "SK",
+            "SI",
+            "ES",
+            "SE",
+            "TR"
+          ]
+        },
+        "startDate": {
+          "type": "string"
+        },
+        "endDate": {
+          "type": "string"
+        },
+        "advertiserName": {
+          "type": "string"
+        },
+        "category": {
+          "type": "string",
+          "enum": [
+            "ALL",
+            "ANIMALS",
+            "ARCHITECTURE",
+            "ART",
+            "BEAUTY",
+            "CHILDRENS_FASHION",
+            "DESIGN",
+            "DIY_AND_CRAFTS",
+            "EDUCATION",
+            "ELECTRONICS",
+            "ENTERTAINMENT",
+            "EVENT_PLANNING",
+            "FINANCE",
+            "FOOD_AND_DRINKS",
+            "GARDENING",
+            "HEALTH",
+            "HOME_DECOR",
+            "MENS_FASHION",
+            "OTHER",
+            "PARENTING",
+            "QUOTES",
+            "SPORT",
+            "TRAVEL",
+            "VEHICLES",
+            "WEDDING",
+            "WOMENS_FASHION"
+          ]
+        },
+        "gender": {
+          "type": "string",
+          "enum": [
+            "ALL",
+            "FEMALE",
+            "MALE",
+            "UNSPECIFIED"
+          ]
+        },
+        "age": {
+          "type": "string",
+          "enum": [
+            "ALL",
+            "AGE_18_24",
+            "AGE_25_34",
+            "AGE_35_44",
+            "AGE_45_49",
+            "AGE_50_54",
+            "AGE_55_64",
+            "AGE_65_PLUS"
+          ]
+        },
+        "maxResults": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 24
+        },
+        "requestTimeoutSecs": {
+          "type": "integer",
+          "minimum": 20,
+          "maximum": 120
+        }
+      },
+      "declared_dataset_fields": [
+        "adId",
+        "repositoryUrl",
+        "country",
+        "advertiserName",
+        "title",
+        "creativeText",
+        "imageUrl",
+        "videoUrl",
+        "startDate",
+        "endDate",
+        "targetCountries",
+        "targetAgeBuckets",
+        "targetGenders",
+        "targetRegions",
+        "targetMetros",
+        "interests",
+        "audienceReachEu",
+        "audienceReachByCountry",
+        "keywordsUsed",
+        "negativeKeywordsUsed",
+        "contentCommercial",
+        "source",
+        "scrapedAt"
+      ],
+      "pricing": {
+        "effective_record": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-08-24T18:00:29.865Z",
+          "isPPEPlatformUsagePaidByUser": true,
+          "minimalMaxTotalChargeUsd": 0.00605,
+          "events": {
+            "apify-actor-start": {
+              "eventTitle": "Actor Start",
+              "eventPriceUsd": 5e-05,
+              "isOneTimeEvent": true
+            },
+            "ad-scraped": {
+              "eventTitle": "Pinterest ad scraped",
+              "eventPriceUsd": 0.006,
+              "isOneTimeEvent": false,
+              "isPrimaryEvent": true
+            }
+          }
+        },
+        "usage_pass_through_last_explicit": true,
+        "effective_pricing_requires_live_recheck": true
+      },
+      "example_input": {
+        "country": "FR",
+        "advertiserName": "Example",
+        "maxResults": 5
+      },
+      "example_validation": {
+        "json_schema": "PASS",
+        "semantic_runtime": "UNTESTED",
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+      },
+      "runtime_verified": false,
+      "limitations": [
+        "Metadata/schema inspection only. No Actor execution.",
+        "Re-fetch current build and pricing before a paid run; tags and prices can change.",
+        "Public ad presence, dates or reach disclosures are not advertiser conversion rate or ROAS."
+      ]
+    },
+    {
+      "name": "ai-search-visibility-tracker",
+      "id": "CFYLF6fOcyvdofuof",
+      "owner": "khadinakbar",
+      "url": "https://apify.com/khadinakbar/ai-search-visibility-tracker",
+      "public": true,
+      "group": "AI search discovery",
+      "title": "AI Search Visibility Tracker \u2014 AEO & Citation Audit",
+      "build": {
+        "id": "HdsGVzio6qUt1tFmt",
+        "number": "1.0.23",
+        "status": "SUCCEEDED",
+        "finished_at": "2026-10-04T14:46:31.789Z",
+        "default_tag": "latest",
+        "tagged_builds": {
+          "latest": {
+            "buildId": "HdsGVzio6qUt1tFmt",
+            "finishedAt": "2026-10-04T14:46:31.789Z",
+            "buildNumberInt": 10000023,
+            "buildNumber": "1.0.23"
+          }
+        }
+      },
+      "provenance": {
+        "actor_metadata_endpoint": "https://api.apify.com/v2/acts/CFYLF6fOcyvdofuof",
+        "input_schema_endpoint": "https://api.apify.com/v2/acts/CFYLF6fOcyvdofuof/builds/HdsGVzio6qUt1tFmt",
+        "input_source": "default-build inputSchema",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+      },
+      "retrieved_at": "2026-10-04T19:33:30.178308+00:00",
+      "required_keys": [],
+      "properties": {
+        "targetDomain": {
+          "type": "string"
+        },
+        "keywords": {
+          "type": "array"
+        },
+        "targetUrls": {
+          "type": "array"
+        },
+        "competitorDomains": {
+          "type": "array"
+        },
+        "platforms": {
+          "type": "array"
+        },
+        "queryTemplates": {
+          "type": "array"
+        },
+        "customQueries": {
+          "type": "array"
+        },
+        "maxQueriesPerKeyword": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 10
+        },
+        "responseFormat": {
+          "type": "string",
+          "enum": [
+            "concise",
+            "detailed"
+          ]
+        },
+        "webhookUrl": {
+          "type": "string"
+        },
+        "demoMode": {
+          "type": "boolean"
+        }
+      },
+      "declared_dataset_fields": [
+        "run_id",
+        "platform",
+        "keyword",
+        "query",
+        "query_template",
+        "target_domain",
+        "domain_cited",
+        "citation_rank",
+        "domain_citation_count",
+        "cited_page_url",
+        "cited_pages",
+        "page_from_targets_cited",
+        "content_gap",
+        "total_sources_cited",
+        "ai_coverage_ratio",
+        "competing_domains",
+        "ai_answer_excerpt",
+        "model_used",
+        "checked_at"
+      ],
+      "pricing": {
+        "effective_record": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-07-21T20:31:23.527Z",
+          "isPPEPlatformUsagePaidByUser": true,
+          "minimalMaxTotalChargeUsd": null,
+          "events": {
+            "keyword-visibility-checked": {
+              "eventTitle": "Keyword visibility check",
+              "eventPriceUsd": 0.09,
+              "isOneTimeEvent": false,
+              "isPrimaryEvent": true
+            },
+            "apify-actor-start": {
+              "eventTitle": "Actor Start",
+              "eventPriceUsd": 5e-05,
+              "isOneTimeEvent": true
+            }
+          }
+        },
+        "usage_pass_through_last_explicit": true,
+        "effective_pricing_requires_live_recheck": true
+      },
+      "example_input": {
+        "targetDomain": "example.com",
+        "keywords": [
+          "project management"
+        ],
+        "platforms": [
+          "perplexity"
+        ],
+        "queryTemplates": [
+          "topic_authority"
+        ],
+        "maxQueriesPerKeyword": 1
+      },
+      "example_validation": {
+        "json_schema": "PASS",
+        "semantic_runtime": "UNTESTED",
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+      },
+      "runtime_verified": false,
+      "limitations": [
+        "Metadata/schema inspection only. No Actor execution.",
+        "Re-fetch current build and pricing before a paid run; tags and prices can change.",
+        "This tracks domain citations, not brand-name mentions. This example requests one keyword x one template x one platform; citation variation is not a ranking guarantee.",
+        "Input prose says USD 0.096/check while current effective event metadata says USD 0.09/check; current pricing metadata must govern."
+      ]
+    },
+    {
+      "name": "google-ai-overviews-scraper",
+      "id": "SMseG5HJek49LaveS",
+      "owner": "khadinakbar",
+      "url": "https://apify.com/khadinakbar/google-ai-overviews-scraper",
+      "public": true,
+      "group": "AI search discovery",
+      "title": "Google AI Overviews Scraper",
+      "build": {
+        "id": "bJaXec2voM1ibwLBN",
+        "number": "0.1.27",
+        "status": "SUCCEEDED",
+        "finished_at": "2026-10-04T15:21:14.459Z",
+        "default_tag": "latest",
+        "tagged_builds": {
+          "latest": {
+            "buildId": "bJaXec2voM1ibwLBN",
+            "finishedAt": "2026-10-04T15:21:14.459Z",
+            "buildNumberInt": 100027,
+            "buildNumber": "0.1.27"
+          }
+        }
+      },
+      "provenance": {
+        "actor_metadata_endpoint": "https://api.apify.com/v2/acts/SMseG5HJek49LaveS",
+        "input_schema_endpoint": "https://api.apify.com/v2/acts/SMseG5HJek49LaveS/builds/bJaXec2voM1ibwLBN",
+        "input_source": "default-build inputSchema",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+      },
+      "retrieved_at": "2026-10-04T19:33:30.413742+00:00",
+      "required_keys": [
+        "queries"
+      ],
+      "properties": {
+        "queries": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 50
+        },
+        "targetDomain": {
+          "type": "string"
+        },
+        "countryCode": {
+          "type": "string",
+          "enum": [
+            "us",
+            "gb",
+            "de",
+            "fr",
+            "es",
+            "it",
+            "nl",
+            "br",
+            "in",
+            "au",
+            "ca",
+            "jp",
+            "kr",
+            "mx",
+            "ar",
+            "co",
+            "pl",
+            "ru",
+            "tr",
+            "ae",
+            "sa",
+            "za",
+            "se",
+            "no",
+            "fi",
+            "dk",
+            "ch",
+            "at",
+            "be",
+            "ie",
+            "nz",
+            "sg",
+            "hk",
+            "tw",
+            "th",
+            "id",
+            "vn",
+            "ph",
+            "my",
+            "il"
+          ]
+        },
+        "languageCode": {
+          "type": "string",
+          "enum": [
+            "en",
+            "de",
+            "es",
+            "fr",
+            "it",
+            "nl",
+            "pt",
+            "ru",
+            "ja",
+            "ko",
+            "zh",
+            "ar",
+            "hi",
+            "tr",
+            "pl",
+            "sv",
+            "no",
+            "fi",
+            "da",
+            "el",
+            "he",
+            "th",
+            "vi",
+            "id",
+            "ms",
+            "cs"
+          ]
+        },
+        "device": {
+          "type": "string",
+          "enum": [
+            "desktop",
+            "mobile"
+          ]
+        },
+        "serpApiKey": {
+          "type": "string"
+        },
+        "maxRetries": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 5
+        },
+        "forceSerpapi": {
+          "type": "boolean"
+        },
+        "proxyConfiguration": {
+          "type": "object"
+        }
+      },
+      "declared_dataset_fields": [
+        "query",
+        "countryCode",
+        "languageCode",
+        "device",
+        "serpUrl",
+        "aioPresent",
+        "aioText",
+        "aioTextBlocks",
+        "sources",
+        "sourceCount",
+        "uniqueDomainCount",
+        "brandMatch",
+        "source",
+        "scrapedAt",
+        "warnings"
+      ],
+      "pricing": {
+        "effective_record": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-09-10T13:12:44.123Z",
+          "events": {
+            "apify-actor-start": {
+              "eventTitle": "Actor Start",
+              "eventPriceUsd": 5e-05,
+              "isOneTimeEvent": true
+            },
+            "ai-overview-query": {
+              "eventTitle": "AI Overview query checked",
+              "eventPriceUsd": 0.015,
+              "isOneTimeEvent": false,
+              "isPrimaryEvent": true
+            },
+            "brand-match-detected": {
+              "eventTitle": "Brand match detected",
+              "eventPriceUsd": 0.005,
+              "isOneTimeEvent": false
+            },
+            "ai-overview-query-serpapi": {
+              "eventTitle": "AI Overview query (managed SerpApi fallback)",
+              "eventPriceUsd": 0.1,
+              "isOneTimeEvent": false
+            }
+          }
+        },
+        "usage_pass_through_last_explicit": true,
+        "effective_pricing_requires_live_recheck": true
+      },
+      "example_input": {
+        "queries": [
+          "project management software"
+        ],
+        "targetDomain": "example.com",
+        "maxRetries": 0
+      },
+      "example_validation": {
+        "json_schema": "PASS",
+        "semantic_runtime": "UNTESTED",
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+      },
+      "runtime_verified": false,
+      "limitations": [
+        "Metadata/schema inspection only. No Actor execution.",
+        "Re-fetch current build and pricing before a paid run; tags and prices can change."
+      ]
+    },
+    {
+      "name": "bulk-website-contact-extractor",
+      "id": "TwNeQtj5TfaKDkcCK",
+      "owner": "khadinakbar",
+      "url": "https://apify.com/khadinakbar/bulk-website-contact-extractor",
+      "public": true,
+      "group": "Links and authority",
+      "title": "Bulk Website Contact Extractor \u2013 Emails, Phones & Socials",
+      "build": {
+        "id": "JI1UtSy1u7IYiaN58",
+        "number": "1.2.3",
+        "status": "SUCCEEDED",
+        "finished_at": "2026-10-04T14:49:02.145Z",
+        "default_tag": "latest",
+        "tagged_builds": {
+          "latest": {
+            "buildId": "JI1UtSy1u7IYiaN58",
+            "finishedAt": "2026-10-04T14:49:02.145Z",
+            "buildNumberInt": 10200003,
+            "buildNumber": "1.2.3"
+          }
+        }
+      },
+      "provenance": {
+        "actor_metadata_endpoint": "https://api.apify.com/v2/acts/TwNeQtj5TfaKDkcCK",
+        "input_schema_endpoint": "https://api.apify.com/v2/acts/TwNeQtj5TfaKDkcCK/builds/JI1UtSy1u7IYiaN58",
+        "input_source": "default-build inputSchema",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+      },
+      "retrieved_at": "2026-10-04T19:33:30.110366+00:00",
+      "required_keys": [
+        "startUrls"
+      ],
+      "properties": {
+        "startUrls": {
+          "type": "array"
+        },
+        "maxPagesPerDomain": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 20
+        },
+        "maxResults": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "followContactPages": {
+          "type": "boolean"
+        },
+        "proxyConfiguration": {
+          "type": "object"
+        }
+      },
+      "declared_dataset_fields": [
+        "source_url",
+        "domain",
+        "company_name",
+        "page_title",
+        "emails",
+        "emails_personal",
+        "emails_generic",
+        "phones",
+        "address",
+        "social_links",
+        "whatsapp_links",
+        "lead_score",
+        "contact_page_url",
+        "pages_crawled",
+        "scraped_at"
+      ],
+      "pricing": {
+        "effective_record": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-08-04T20:29:34.070Z",
+          "isPPEPlatformUsagePaidByUser": true,
+          "minimalMaxTotalChargeUsd": null,
+          "events": {
+            "apify-actor-start": {
+              "eventTitle": "Actor Start",
+              "eventPriceUsd": 5e-05,
+              "isOneTimeEvent": true
+            },
+            "result-found": {
+              "eventTitle": "Result found",
+              "eventPriceUsd": 0.005,
+              "isOneTimeEvent": false,
+              "isPrimaryEvent": true
+            }
+          }
+        },
+        "usage_pass_through_last_explicit": true,
+        "effective_pricing_requires_live_recheck": true
+      },
+      "example_input": {
+        "startUrls": [
+          {
+            "url": "https://example.com"
+          }
+        ],
+        "maxPagesPerDomain": 2,
+        "maxResults": 5
+      },
+      "example_validation": {
+        "json_schema": "PASS",
+        "semantic_runtime": "UNTESTED",
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+      },
+      "runtime_verified": false,
+      "limitations": [
+        "Metadata/schema inspection only. No Actor execution.",
+        "Re-fetch current build and pricing before a paid run; tags and prices can change."
+      ]
+    },
+    {
+      "name": "contact-details-scraper",
+      "id": "xUTDfDQougiuhikSc",
+      "owner": "khadinakbar",
+      "url": "https://apify.com/khadinakbar/contact-details-scraper",
+      "public": true,
+      "group": "Links and authority",
+      "title": "Contact Details Scraper \u2013 (Emails, Phones & Socials)",
+      "build": {
+        "id": "LWg9hKt5BPz5GkFKN",
+        "number": "1.2.9",
+        "status": "SUCCEEDED",
+        "finished_at": "2026-10-01T03:41:37.292Z",
+        "default_tag": "latest",
+        "tagged_builds": {
+          "latest": {
+            "buildId": "LWg9hKt5BPz5GkFKN",
+            "finishedAt": "2026-10-01T03:41:37.292Z",
+            "buildNumberInt": 10200009,
+            "buildNumber": "1.2.9"
+          },
+          "health-fix": {
+            "buildId": "0XfhsfiZM899LYpq8",
+            "finishedAt": "2026-10-01T03:30:22.885Z",
+            "buildNumberInt": 10200008,
+            "buildNumber": "1.2.8"
+          },
+          "margin-pilot": {
+            "buildId": "33cjjfnqu5HumwdrI",
+            "finishedAt": "2026-10-02T14:45:49.611Z",
+            "buildNumberInt": 10200010,
+            "buildNumber": "1.2.10"
+          }
+        }
+      },
+      "provenance": {
+        "actor_metadata_endpoint": "https://api.apify.com/v2/acts/xUTDfDQougiuhikSc",
+        "input_schema_endpoint": "https://api.apify.com/v2/acts/xUTDfDQougiuhikSc/builds/LWg9hKt5BPz5GkFKN",
+        "input_source": "default-build inputSchema",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+      },
+      "retrieved_at": "2026-10-04T19:33:40.441603+00:00",
+      "required_keys": [],
+      "properties": {
+        "startUrls": {
+          "type": "array"
+        },
+        "searchQueries": {
+          "type": "array"
+        },
+        "maxPagesPerDomain": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 50
+        },
+        "maxDepth": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 5
+        },
+        "maxResults": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 500
+        },
+        "proxyConfig": {
+          "type": "object"
+        }
+      },
+      "declared_dataset_fields": [
+        "domain",
+        "company_name",
+        "emails",
+        "phones",
+        "whatsapp",
+        "social_links",
+        "addresses",
+        "pages_scraped",
+        "source_url",
+        "scraped_at"
+      ],
+      "pricing": {
+        "effective_record": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-09-26T04:53:58.136Z",
+          "events": {
+            "apify-actor-start": {
+              "eventTitle": "Actor Start",
+              "eventPriceUsd": 5e-05,
+              "isOneTimeEvent": true
+            },
+            "domain-result": {
+              "eventTitle": "Per domain scraped",
+              "eventPriceUsd": 0.003,
+              "isOneTimeEvent": false,
+              "isPrimaryEvent": true
+            }
+          }
+        },
+        "usage_pass_through_last_explicit": true,
+        "effective_pricing_requires_live_recheck": true
+      },
+      "example_input": {
+        "startUrls": [
+          {
+            "url": "https://example.com"
+          }
+        ],
+        "maxPagesPerDomain": 2,
+        "maxDepth": 1,
+        "maxResults": 5
+      },
+      "example_validation": {
+        "json_schema": "PASS",
+        "semantic_runtime": "UNTESTED",
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+      },
+      "runtime_verified": false,
+      "limitations": [
+        "Metadata/schema inspection only. No Actor execution.",
+        "Re-fetch current build and pricing before a paid run; tags and prices can change."
+      ]
+    },
+    {
+      "name": "google-news-scraper",
+      "id": "7vQKF8hrfRaAk7g50",
+      "owner": "khadinakbar",
+      "url": "https://apify.com/khadinakbar/google-news-scraper",
+      "public": true,
+      "group": "Voice of customer and news",
+      "title": "Google News Scraper \u2014 Articles & Sources",
+      "build": {
+        "id": "bbFYlpHrCcdAZ0ewm",
+        "number": "0.2.2",
+        "status": "SUCCEEDED",
+        "finished_at": "2026-10-02T16:11:24.104Z",
+        "default_tag": "latest",
+        "tagged_builds": {
+          "latest": {
+            "buildId": "bbFYlpHrCcdAZ0ewm",
+            "finishedAt": "2026-10-02T16:11:24.104Z",
+            "buildNumberInt": 200002,
+            "buildNumber": "0.2.2"
+          },
+          "health-fix": {
+            "buildId": "2f9CPQQsNYPgoO7nH",
+            "finishedAt": "2026-10-01T05:31:09.436Z",
+            "buildNumberInt": 100023,
+            "buildNumber": "0.1.23"
+          },
+          "phase1-oct02": {
+            "buildId": "bbFYlpHrCcdAZ0ewm",
+            "finishedAt": "2026-10-02T16:11:24.104Z",
+            "buildNumberInt": 200002,
+            "buildNumber": "0.2.2"
+          }
+        }
+      },
+      "provenance": {
+        "actor_metadata_endpoint": "https://api.apify.com/v2/acts/7vQKF8hrfRaAk7g50",
+        "input_schema_endpoint": "https://api.apify.com/v2/acts/7vQKF8hrfRaAk7g50/builds/bbFYlpHrCcdAZ0ewm",
+        "input_source": "default-build inputSchema",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+      },
+      "retrieved_at": "2026-10-04T19:33:40.444148+00:00",
+      "required_keys": [],
+      "properties": {
+        "searchQueries": {
+          "type": "array"
+        },
+        "topics": {
+          "type": "array"
+        },
+        "topicUrls": {
+          "type": "array"
+        },
+        "startUrls": {
+          "type": "array"
+        },
+        "maxResultsPerQuery": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 100
+        },
+        "regionLanguage": {
+          "type": "string",
+          "enum": [
+            "US:en",
+            "GB:en",
+            "AU:en",
+            "CA:en",
+            "IN:en",
+            "DE:de",
+            "AT:de",
+            "CH:de",
+            "FR:fr",
+            "BE:fr",
+            "CH:fr",
+            "ES:es",
+            "MX:es",
+            "AR:es",
+            "CO:es",
+            "IT:it",
+            "PT:pt",
+            "BR:pt",
+            "NL:nl",
+            "PL:pl",
+            "RU:ru",
+            "JP:ja",
+            "CN:zh-Hans",
+            "TW:zh-Hant",
+            "KR:ko",
+            "SA:ar",
+            "EG:ar",
+            "TR:tr",
+            "IL:he",
+            "SE:sv",
+            "NO:no",
+            "DK:da",
+            "FI:fi",
+            "CZ:cs",
+            "HU:hu",
+            "RO:ro",
+            "GR:el",
+            "UA:uk",
+            "ID:id",
+            "TH:th",
+            "VN:vi",
+            "NG:en",
+            "ZA:en",
+            "KE:en",
+            "GH:en",
+            "PK:en",
+            "BD:en",
+            "PH:en",
+            "SG:en",
+            "NZ:en",
+            "IE:en"
+          ]
+        },
+        "timeRange": {
+          "type": "string",
+          "enum": [
+            "any",
+            "1h",
+            "1d",
+            "7d",
+            "30d",
+            "1y"
+          ]
+        },
+        "extractFullText": {
+          "type": "boolean"
+        },
+        "decodeUrls": {
+          "type": "boolean"
+        },
+        "deduplicateResults": {
+          "type": "boolean"
+        }
+      },
+      "declared_dataset_fields": [
+        "url",
+        "title",
+        "name",
+        "status",
+        "scrapedAt"
+      ],
+      "pricing": {
+        "effective_record": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-09-10T13:14:22.806Z",
+          "events": {
+            "apify-actor-start": {
+              "eventTitle": "Actor Start",
+              "eventPriceUsd": 5e-05,
+              "isOneTimeEvent": true
+            },
+            "article-scraped": {
+              "eventTitle": "Article Scraped",
+              "eventPriceUsd": 0.003,
+              "isOneTimeEvent": false,
+              "isPrimaryEvent": true
+            },
+            "article-full-text": {
+              "eventTitle": "Article Full Text",
+              "eventPriceUsd": 0.005,
+              "isOneTimeEvent": false
+            }
+          }
+        },
+        "usage_pass_through_last_explicit": true,
+        "effective_pricing_requires_live_recheck": true
+      },
+      "example_input": {
+        "searchQueries": [
+          "project management"
+        ],
+        "maxResultsPerQuery": 5,
+        "extractFullText": false
+      },
+      "example_validation": {
+        "json_schema": "PASS",
+        "semantic_runtime": "UNTESTED",
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+      },
+      "runtime_verified": false,
+      "limitations": [
+        "Metadata/schema inspection only. No Actor execution.",
+        "Re-fetch current build and pricing before a paid run; tags and prices can change."
+      ]
+    },
+    {
+      "name": "trustpilot-reviews-scraper",
+      "id": "AdXgrEqrRSjvp9q6u",
+      "owner": "khadinakbar",
+      "url": "https://apify.com/khadinakbar/trustpilot-reviews-scraper",
+      "public": true,
+      "group": "Voice of customer and news",
+      "title": "Trustpilot Reviews Scraper \u2014 Ratings, Replies & Sentiment",
+      "build": {
+        "id": "gT8oczsXNZB6qzAca",
+        "number": "1.0.22",
+        "status": "SUCCEEDED",
+        "finished_at": "2026-10-04T15:50:40.927Z",
+        "default_tag": "latest",
+        "tagged_builds": {
+          "latest": {
+            "buildId": "gT8oczsXNZB6qzAca",
+            "finishedAt": "2026-10-04T15:50:40.927Z",
+            "buildNumberInt": 10000022,
+            "buildNumber": "1.0.22"
+          }
+        }
+      },
+      "provenance": {
+        "actor_metadata_endpoint": "https://api.apify.com/v2/acts/AdXgrEqrRSjvp9q6u",
+        "input_schema_endpoint": "https://api.apify.com/v2/acts/AdXgrEqrRSjvp9q6u/builds/gT8oczsXNZB6qzAca",
+        "input_source": "default-build inputSchema",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+      },
+      "retrieved_at": "2026-10-04T19:33:40.784295+00:00",
+      "required_keys": [],
+      "properties": {
+        "companyIdentifiers": {
+          "type": "array"
+        },
+        "maxReviewsPerCompany": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "filterStars": {
+          "type": "array"
+        },
+        "filterLanguage": {
+          "type": "string"
+        },
+        "filterDateRange": {
+          "type": "string",
+          "enum": [
+            "",
+            "last30days",
+            "last3months",
+            "last6months",
+            "last12months"
+          ]
+        },
+        "sortBy": {
+          "type": "string",
+          "enum": [
+            "recency",
+            "relevance"
+          ]
+        },
+        "onlyVerified": {
+          "type": "boolean"
+        },
+        "onlyWithReplies": {
+          "type": "boolean"
+        },
+        "includeCompanyInfo": {
+          "type": "boolean"
+        }
+      },
+      "declared_dataset_fields": [
+        "reviewId",
+        "reviewUrl",
+        "title",
+        "text",
+        "rating",
+        "publishedAt",
+        "updatedAt",
+        "experienceDate",
+        "language",
+        "isVerified",
+        "verificationLevel",
+        "reviewSource",
+        "usefulVotes",
+        "reviewerDisplayName",
+        "reviewerCountry",
+        "reviewerTotalReviews",
+        "reviewerAvatarUrl",
+        "reviewerId",
+        "hasCompanyReply",
+        "companyReplyText",
+        "companyReplyDate",
+        "companyName",
+        "companyDomain",
+        "companyTrustScore",
+        "companyTotalReviews",
+        "companyCategories",
+        "companyUrl",
+        "sentimentLabel",
+        "scraped_at",
+        "source_url"
+      ],
+      "pricing": {
+        "effective_record": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-09-26T04:54:55.450Z",
+          "events": {
+            "apify-actor-start": {
+              "eventTitle": "Actor Start",
+              "eventPriceUsd": 5e-05,
+              "isOneTimeEvent": true
+            },
+            "review-scraped": {
+              "eventTitle": "Review Scraped",
+              "eventPriceUsd": 0.0025,
+              "isOneTimeEvent": false,
+              "isPrimaryEvent": true
+            }
+          }
+        },
+        "usage_pass_through_last_explicit": true,
+        "effective_pricing_requires_live_recheck": true
+      },
+      "example_input": {
+        "companyIdentifiers": [
+          "example.com"
+        ],
+        "maxReviewsPerCompany": 5,
+        "includeCompanyInfo": true
+      },
+      "example_validation": {
+        "json_schema": "PASS",
+        "semantic_runtime": "UNTESTED",
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+      },
+      "runtime_verified": false,
+      "limitations": [
+        "Metadata/schema inspection only. No Actor execution.",
+        "Re-fetch current build and pricing before a paid run; tags and prices can change."
+      ]
+    },
+    {
+      "name": "google-maps-reviews-scraper",
+      "id": "AktHAcFexdMKzxCux",
+      "owner": "khadinakbar",
+      "url": "https://apify.com/khadinakbar/google-maps-reviews-scraper",
+      "public": true,
+      "group": "Voice of customer and news",
+      "title": "Google Maps Reviews Scraper",
+      "build": {
+        "id": "tiHTLlwqds0E2OetA",
+        "number": "0.4.10",
+        "status": "SUCCEEDED",
+        "finished_at": "2026-10-04T14:55:31.398Z",
+        "default_tag": "latest",
+        "tagged_builds": {
+          "latest": {
+            "buildId": "tiHTLlwqds0E2OetA",
+            "finishedAt": "2026-10-04T14:55:31.398Z",
+            "buildNumberInt": 400010,
+            "buildNumber": "0.4.10"
+          }
+        }
+      },
+      "provenance": {
+        "actor_metadata_endpoint": "https://api.apify.com/v2/acts/AktHAcFexdMKzxCux",
+        "input_schema_endpoint": "https://api.apify.com/v2/acts/AktHAcFexdMKzxCux/builds/tiHTLlwqds0E2OetA",
+        "input_source": "default-build inputSchema",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+      },
+      "retrieved_at": "2026-10-04T19:33:40.507360+00:00",
+      "required_keys": [],
+      "properties": {
+        "startUrls": {
+          "type": "array"
+        },
+        "placeIds": {
+          "type": "array"
+        },
+        "dataIds": {
+          "type": "array"
+        },
+        "searchQuery": {
+          "type": "string"
+        },
+        "location": {
+          "type": "string"
+        },
+        "maxReviews": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 5000
+        },
+        "reviewsSort": {
+          "type": "string",
+          "enum": [
+            "newest",
+            "mostRelevant",
+            "highestRanking",
+            "lowestRanking"
+          ]
+        },
+        "reviewSearchQuery": {
+          "type": "string"
+        },
+        "language": {
+          "type": "string",
+          "enum": [
+            "en",
+            "es",
+            "fr",
+            "de",
+            "it",
+            "pt",
+            "nl",
+            "pl",
+            "ru",
+            "ja",
+            "ko",
+            "zh-CN",
+            "ar",
+            "tr",
+            "hi",
+            "id",
+            "vi",
+            "th",
+            "sv",
+            "no",
+            "da",
+            "fi",
+            "cs",
+            "el",
+            "he"
+          ]
+        },
+        "countryCode": {
+          "type": "string"
+        },
+        "includePersonalData": {
+          "type": "boolean"
+        },
+        "proxyConfiguration": {
+          "type": "object"
+        }
+      },
+      "declared_dataset_fields": [
+        "reviewId",
+        "placeName",
+        "placeUrl",
+        "placeDataId",
+        "placeAddress",
+        "placeRating",
+        "placeReviewCount",
+        "reviewerName",
+        "reviewerUrl",
+        "reviewerPhotoUrl",
+        "reviewerHash",
+        "reviewerReviewCount",
+        "rating",
+        "text",
+        "language",
+        "publishedAtText",
+        "publishedAt",
+        "ownerResponse",
+        "ownerResponseAt",
+        "likesCount",
+        "photos",
+        "sentimentHint",
+        "reviewUrl",
+        "scrapedAt",
+        "extractionSource"
+      ],
+      "pricing": {
+        "effective_record": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-08-04T20:29:34.070Z",
+          "isPPEPlatformUsagePaidByUser": true,
+          "minimalMaxTotalChargeUsd": null,
+          "events": {
+            "apify-actor-start": {
+              "eventTitle": "Actor Start",
+              "eventPriceUsd": 5e-05,
+              "isOneTimeEvent": true
+            },
+            "review-scraped": {
+              "eventTitle": "Review scraped",
+              "eventPriceUsd": 0.0003,
+              "isOneTimeEvent": false,
+              "isPrimaryEvent": true
+            }
+          }
+        },
+        "usage_pass_through_last_explicit": true,
+        "effective_pricing_requires_live_recheck": true
+      },
+      "example_input": {
+        "searchQuery": "coffee shops in Austin, Texas",
+        "maxReviews": 5,
+        "includePersonalData": false
+      },
+      "example_validation": {
+        "json_schema": "PASS",
+        "semantic_runtime": "UNTESTED",
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+      },
+      "runtime_verified": false,
+      "limitations": [
+        "Metadata/schema inspection only. No Actor execution.",
+        "Re-fetch current build and pricing before a paid run; tags and prices can change."
+      ]
+    },
+    {
+      "name": "g2-product-reviews-scraper",
+      "id": "FwIxRhXDEbykgdeqc",
+      "owner": "khadinakbar",
+      "url": "https://apify.com/khadinakbar/g2-product-reviews-scraper",
+      "public": true,
+      "group": "Voice of customer and news",
+      "title": "G2 Reviews Scraper \u2014 Ratings, Pros & Cons",
+      "build": {
+        "id": "BsvaC7eHgGDD3WS11",
+        "number": "1.2.2",
+        "status": "SUCCEEDED",
+        "finished_at": "2026-10-04T15:30:58.656Z",
+        "default_tag": "latest",
+        "tagged_builds": {
+          "latest": {
+            "buildId": "BsvaC7eHgGDD3WS11",
+            "finishedAt": "2026-10-04T15:30:58.656Z",
+            "buildNumberInt": 10200002,
+            "buildNumber": "1.2.2"
+          }
+        }
+      },
+      "provenance": {
+        "actor_metadata_endpoint": "https://api.apify.com/v2/acts/FwIxRhXDEbykgdeqc",
+        "input_schema_endpoint": "https://api.apify.com/v2/acts/FwIxRhXDEbykgdeqc/builds/BsvaC7eHgGDD3WS11",
+        "input_source": "default-build inputSchema",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+      },
+      "retrieved_at": "2026-10-04T19:33:40.492683+00:00",
+      "required_keys": [],
+      "properties": {
+        "startUrls": {
+          "type": "array"
+        },
+        "searchQuery": {
+          "type": "string"
+        },
+        "maxReviewsPerProduct": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 5000
+        },
+        "maxProductsPerSearch": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 100
+        },
+        "includeReviews": {
+          "type": "boolean"
+        },
+        "sortReviewsBy": {
+          "type": "string",
+          "enum": [
+            "newest",
+            "helpful"
+          ]
+        },
+        "proxyConfiguration": {
+          "type": "object"
+        },
+        "debug": {
+          "type": "boolean"
+        }
+      },
+      "declared_dataset_fields": [
+        "platform",
+        "recordType",
+        "productName",
+        "productSlug",
+        "productUrl",
+        "productRating",
+        "productReviewCount",
+        "vendor",
+        "category",
+        "rating",
+        "reviewTitle",
+        "reviewBody",
+        "pros",
+        "cons",
+        "subRatings",
+        "reviewer",
+        "reviewDate",
+        "reviewUrl",
+        "helpfulCount",
+        "vendorResponse",
+        "scrapedAt"
+      ],
+      "pricing": {
+        "effective_record": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-08-04T20:29:34.070Z",
+          "isPPEPlatformUsagePaidByUser": true,
+          "minimalMaxTotalChargeUsd": null,
+          "events": {
+            "review-scraped": {
+              "eventTitle": "Review scraped",
+              "eventPriceUsd": 0.007,
+              "isOneTimeEvent": false,
+              "isPrimaryEvent": true
+            },
+            "product-found": {
+              "eventTitle": "Product found",
+              "eventPriceUsd": 0.01,
+              "isOneTimeEvent": false
+            },
+            "apify-actor-start": {
+              "eventTitle": "Actor Start",
+              "eventPriceUsd": 0.005,
+              "isOneTimeEvent": true
+            }
+          }
+        },
+        "usage_pass_through_last_explicit": true,
+        "effective_pricing_requires_live_recheck": true
+      },
+      "example_input": {
+        "searchQuery": "project management",
+        "maxProductsPerSearch": 1,
+        "maxReviewsPerProduct": 5,
+        "includeReviews": true
+      },
+      "example_validation": {
+        "json_schema": "PASS",
+        "semantic_runtime": "UNTESTED",
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+      },
+      "runtime_verified": false,
+      "limitations": [
+        "Metadata/schema inspection only. No Actor execution.",
+        "Re-fetch current build and pricing before a paid run; tags and prices can change."
+      ]
+    },
+    {
+      "name": "capterra-reviews-scraper",
+      "id": "vPxFQ4unR0IzHFm9H",
+      "owner": "khadinakbar",
+      "url": "https://apify.com/khadinakbar/capterra-reviews-scraper",
+      "public": true,
+      "group": "Voice of customer and news",
+      "title": "Capterra Reviews Scraper",
+      "build": {
+        "id": "axM1fQROQpyZTRtHG",
+        "number": "1.1.9",
+        "status": "SUCCEEDED",
+        "finished_at": "2026-10-04T15:28:16.144Z",
+        "default_tag": "latest",
+        "tagged_builds": {
+          "latest": {
+            "buildId": "axM1fQROQpyZTRtHG",
+            "finishedAt": "2026-10-04T15:28:16.144Z",
+            "buildNumberInt": 10100009,
+            "buildNumber": "1.1.9"
+          }
+        }
+      },
+      "provenance": {
+        "actor_metadata_endpoint": "https://api.apify.com/v2/acts/vPxFQ4unR0IzHFm9H",
+        "input_schema_endpoint": "https://api.apify.com/v2/acts/vPxFQ4unR0IzHFm9H/builds/axM1fQROQpyZTRtHG",
+        "input_source": "default-build inputSchema",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+      },
+      "retrieved_at": "2026-10-04T19:33:40.530400+00:00",
+      "required_keys": [],
+      "properties": {
+        "startUrls": {
+          "type": "array"
+        },
+        "searchQuery": {
+          "type": "string"
+        },
+        "maxReviewsPerProduct": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 5000
+        },
+        "maxProductsPerSearch": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 100
+        },
+        "includeReviews": {
+          "type": "boolean"
+        },
+        "sortReviewsBy": {
+          "type": "string",
+          "enum": [
+            "newest",
+            "helpful"
+          ]
+        },
+        "proxyConfiguration": {
+          "type": "object"
+        },
+        "debug": {
+          "type": "boolean"
+        }
+      },
+      "declared_dataset_fields": [
+        "platform",
+        "recordType",
+        "productName",
+        "productSlug",
+        "productUrl",
+        "productRating",
+        "productReviewCount",
+        "vendor",
+        "category",
+        "rating",
+        "reviewTitle",
+        "reviewBody",
+        "pros",
+        "cons",
+        "subRatings",
+        "reviewer",
+        "reviewDate",
+        "reviewUrl",
+        "helpfulCount",
+        "vendorResponse",
+        "scrapedAt"
+      ],
+      "pricing": {
+        "effective_record": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-08-04T20:29:34.070Z",
+          "isPPEPlatformUsagePaidByUser": true,
+          "minimalMaxTotalChargeUsd": null,
+          "events": {
+            "review-scraped": {
+              "eventTitle": "Review scraped",
+              "eventPriceUsd": 0.005,
+              "isOneTimeEvent": false,
+              "isPrimaryEvent": true
+            },
+            "product-found": {
+              "eventTitle": "Product found",
+              "eventPriceUsd": 0.01,
+              "isOneTimeEvent": false
+            },
+            "apify-actor-start": {
+              "eventTitle": "Actor Start",
+              "eventPriceUsd": 0.005,
+              "isOneTimeEvent": true
+            }
+          }
+        },
+        "usage_pass_through_last_explicit": true,
+        "effective_pricing_requires_live_recheck": true
+      },
+      "example_input": {
+        "searchQuery": "project management",
+        "maxProductsPerSearch": 1,
+        "maxReviewsPerProduct": 5,
+        "includeReviews": true
+      },
+      "example_validation": {
+        "json_schema": "PASS",
+        "semantic_runtime": "UNTESTED",
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+      },
+      "runtime_verified": false,
+      "limitations": [
+        "Metadata/schema inspection only. No Actor execution.",
+        "Re-fetch current build and pricing before a paid run; tags and prices can change."
+      ]
+    },
+    {
+      "name": "appstore-reviews-scraper",
+      "id": "VqAhRpuDhSHub71ce",
+      "owner": "khadinakbar",
+      "url": "https://apify.com/khadinakbar/appstore-reviews-scraper",
+      "public": true,
+      "group": "Voice of customer and news",
+      "title": "App Store Reviews Scraper - iOS & macOS Reviews",
+      "build": {
+        "id": "AB89SdDOwhABqgsnT",
+        "number": "1.0.13",
+        "status": "SUCCEEDED",
+        "finished_at": "2026-10-04T15:26:57.283Z",
+        "default_tag": "latest",
+        "tagged_builds": {
+          "latest": {
+            "buildId": "AB89SdDOwhABqgsnT",
+            "finishedAt": "2026-10-04T15:26:57.283Z",
+            "buildNumberInt": 10000013,
+            "buildNumber": "1.0.13"
+          }
+        }
+      },
+      "provenance": {
+        "actor_metadata_endpoint": "https://api.apify.com/v2/acts/VqAhRpuDhSHub71ce",
+        "input_schema_endpoint": "https://api.apify.com/v2/acts/VqAhRpuDhSHub71ce/builds/AB89SdDOwhABqgsnT",
+        "input_source": "default-build inputSchema",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+      },
+      "retrieved_at": "2026-10-04T19:33:51.406196+00:00",
+      "required_keys": [
+        "appIds"
+      ],
+      "properties": {
+        "appIds": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 100
+        },
+        "countries": {
+          "type": "array",
+          "maxItems": 175
+        },
+        "sortBy": {
+          "type": "string",
+          "enum": [
+            "mostRecent",
+            "mostHelpful"
+          ]
+        },
+        "maxReviewsPerApp": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 500
+        },
+        "maxReviews": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 50000
+        },
+        "ratingFilter": {
+          "type": "array",
+          "maxItems": 5
+        },
+        "dateFrom": {
+          "type": "string"
+        },
+        "dateTo": {
+          "type": "string"
+        },
+        "keywords": {
+          "type": "array",
+          "maxItems": 50
+        },
+        "minVoteSum": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "declared_dataset_fields": [
+        "reviewId",
+        "appId",
+        "appName",
+        "country",
+        "rating",
+        "title",
+        "body",
+        "reviewerName",
+        "reviewerUrl",
+        "appVersion",
+        "date",
+        "voteSum",
+        "voteCount",
+        "reviewUrl",
+        "scrapedAt"
+      ],
+      "pricing": {
+        "effective_record": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-08-03T04:02:58.742Z",
+          "isPPEPlatformUsagePaidByUser": true,
+          "events": {
+            "apify-actor-start": {
+              "eventTitle": "Actor Start",
+              "eventPriceUsd": 5e-05
+            },
+            "review-returned": {
+              "eventTitle": "Review returned",
+              "eventPriceUsd": 0.0005,
+              "isPrimaryEvent": true
+            }
+          }
+        },
+        "usage_pass_through_last_explicit": true,
+        "effective_pricing_requires_live_recheck": true
+      },
+      "example_input": {
+        "appIds": [
+          "324684580"
+        ],
+        "countries": [
+          "us"
+        ],
+        "maxReviewsPerApp": 5,
+        "maxReviews": 5
+      },
+      "example_validation": {
+        "json_schema": "PASS",
+        "semantic_runtime": "UNTESTED",
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+      },
+      "runtime_verified": false,
+      "limitations": [
+        "Metadata/schema inspection only. No Actor execution.",
+        "Re-fetch current build and pricing before a paid run; tags and prices can change."
+      ]
+    },
+    {
+      "name": "instagram-niche-influencer-finder",
+      "id": "LHCEKswaihgmShn5p",
+      "owner": "khadinakbar",
+      "url": "https://apify.com/khadinakbar/instagram-niche-influencer-finder",
+      "public": true,
+      "group": "Social and creator research",
+      "title": "Instagram Niche Influencer Finder",
+      "build": {
+        "id": "6mVmtexfF84TBIfYe",
+        "number": "1.0.6",
+        "status": "SUCCEEDED",
+        "finished_at": "2026-10-04T14:41:21.405Z",
+        "default_tag": "latest",
+        "tagged_builds": {
+          "latest": {
+            "buildId": "6mVmtexfF84TBIfYe",
+            "finishedAt": "2026-10-04T14:41:21.405Z",
+            "buildNumberInt": 10000006,
+            "buildNumber": "1.0.6"
+          }
+        }
+      },
+      "provenance": {
+        "actor_metadata_endpoint": "https://api.apify.com/v2/acts/LHCEKswaihgmShn5p",
+        "input_schema_endpoint": "https://api.apify.com/v2/acts/LHCEKswaihgmShn5p/builds/6mVmtexfF84TBIfYe",
+        "input_source": "default-build inputSchema",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+      },
+      "retrieved_at": "2026-10-04T19:33:51.025264+00:00",
+      "required_keys": [
+        "topics"
+      ],
+      "properties": {
+        "topics": {
+          "type": "array"
+        },
+        "maxInfluencers": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 500
+        },
+        "minFollowers": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "maxFollowers": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "minEngagementRatePct": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "requireEmail": {
+          "type": "boolean"
+        },
+        "requireVerified": {
+          "type": "boolean"
+        },
+        "sortBy": {
+          "type": "string",
+          "enum": [
+            "engagement-rate",
+            "followers",
+            "niche-score"
+          ]
+        },
+        "postsPerInfluencer": {
+          "type": "integer",
+          "minimum": 6,
+          "maximum": 24
+        },
+        "maxSearchPagesPerTopic": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 10
+        },
+        "outputMode": {
+          "type": "string",
+          "enum": [
+            "full",
+            "compact"
+          ]
+        }
+      },
+      "declared_dataset_fields": [],
+      "pricing": {
+        "effective_record": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-08-18T07:54:22.840Z",
+          "isPPEPlatformUsagePaidByUser": true,
+          "events": {
+            "apify-actor-start": {
+              "eventTitle": "Actor Start",
+              "eventPriceUsd": 5e-05
+            },
+            "influencer-analyzed": {
+              "eventTitle": "Influencer analyzed",
+              "eventPriceUsd": 0.015,
+              "isPrimaryEvent": true
+            }
+          }
+        },
+        "usage_pass_through_last_explicit": true,
+        "effective_pricing_requires_live_recheck": true
+      },
+      "example_input": {
+        "topics": [
+          "project management"
+        ],
+        "maxInfluencers": 5,
+        "postsPerInfluencer": 6,
+        "maxSearchPagesPerTopic": 1
+      },
+      "example_validation": {
+        "json_schema": "PASS",
+        "semantic_runtime": "UNTESTED",
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+      },
+      "runtime_verified": false,
+      "limitations": [
+        "Metadata/schema inspection only. No Actor execution.",
+        "Re-fetch current build and pricing before a paid run; tags and prices can change."
+      ]
+    },
+    {
+      "name": "instagram-profile-scraper",
+      "id": "uPkHmR5T44ixfiyUS",
+      "owner": "khadinakbar",
+      "url": "https://apify.com/khadinakbar/instagram-profile-scraper",
+      "public": true,
+      "group": "Social and creator research",
+      "title": "Instagram Profile Scraper + Emails & Contacts",
+      "build": {
+        "id": "xX2uxBHvEovykWrGZ",
+        "number": "1.0.12",
+        "status": "SUCCEEDED",
+        "finished_at": "2026-10-01T05:03:13.562Z",
+        "default_tag": "latest",
+        "tagged_builds": {
+          "latest": {
+            "buildId": "xX2uxBHvEovykWrGZ",
+            "finishedAt": "2026-10-01T05:03:13.562Z",
+            "buildNumberInt": 10000012,
+            "buildNumber": "1.0.12"
+          },
+          "health-fix": {
+            "buildId": "kxUMK39sbeUeZBpuX",
+            "finishedAt": "2026-10-01T02:41:42.741Z",
+            "buildNumberInt": 10000010,
+            "buildNumber": "1.0.10"
+          }
+        }
+      },
+      "provenance": {
+        "actor_metadata_endpoint": "https://api.apify.com/v2/acts/uPkHmR5T44ixfiyUS",
+        "input_schema_endpoint": "https://api.apify.com/v2/acts/uPkHmR5T44ixfiyUS/builds/xX2uxBHvEovykWrGZ",
+        "input_source": "default-build inputSchema",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+      },
+      "retrieved_at": "2026-10-04T19:33:51.128995+00:00",
+      "required_keys": [
+        "usernames"
+      ],
+      "properties": {
+        "usernames": {
+          "type": "array"
+        },
+        "scrapeRecentPosts": {
+          "type": "boolean"
+        },
+        "maxRecentPosts": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "proxyConfiguration": {
+          "type": "object"
+        }
+      },
+      "declared_dataset_fields": [
+        "username",
+        "fullName",
+        "userId",
+        "biography",
+        "followersCount",
+        "followingCount",
+        "postsCount",
+        "isVerified",
+        "isPrivate",
+        "isBusinessAccount",
+        "businessCategory",
+        "email",
+        "phone",
+        "externalUrl",
+        "bioLinks",
+        "relatedProfiles",
+        "profilePicUrl",
+        "profilePicUrlHd",
+        "highlightReelCount",
+        "igtvVideoCount",
+        "recentPosts",
+        "profileUrl",
+        "scrapedAt"
+      ],
+      "pricing": {
+        "effective_record": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-09-25T18:15:33.145Z",
+          "events": {
+            "apify-actor-start": {
+              "eventTitle": "Actor Start",
+              "eventPriceUsd": 5e-05
+            },
+            "profile-scraped": {
+              "eventTitle": "Profile scraped",
+              "eventPriceUsd": 0.004,
+              "isPrimaryEvent": true
+            }
+          }
+        },
+        "usage_pass_through_last_explicit": true,
+        "effective_pricing_requires_live_recheck": true
+      },
+      "example_input": {
+        "usernames": [
+          "apify"
+        ],
+        "scrapeRecentPosts": false,
+        "maxRecentPosts": 1
+      },
+      "example_validation": {
+        "json_schema": "PASS",
+        "semantic_runtime": "UNTESTED",
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+      },
+      "runtime_verified": false,
+      "limitations": [
+        "Metadata/schema inspection only. No Actor execution.",
+        "Re-fetch current build and pricing before a paid run; tags and prices can change."
+      ]
+    },
+    {
+      "name": "instagram-posts-scraper",
+      "id": "wjjknRC0QN6jE3WJK",
+      "owner": "khadinakbar",
+      "url": "https://apify.com/khadinakbar/instagram-posts-scraper",
+      "public": true,
+      "group": "Social and creator research",
+      "title": "Instagram Posts Scraper \u2013 Profiles, Hashtags & URLs",
+      "build": {
+        "id": "1rLRwzTL2mgu9KiXU",
+        "number": "1.2.10",
+        "status": "SUCCEEDED",
+        "finished_at": "2026-10-01T11:55:20.679Z",
+        "default_tag": "latest",
+        "tagged_builds": {
+          "latest": {
+            "buildId": "1rLRwzTL2mgu9KiXU",
+            "finishedAt": "2026-10-01T11:55:20.679Z",
+            "buildNumberInt": 10200010,
+            "buildNumber": "1.2.10"
+          },
+          "health-fix": {
+            "buildId": "RfuenwMsZgVrPgvbA",
+            "finishedAt": "2026-10-01T11:43:36.366Z",
+            "buildNumberInt": 10200009,
+            "buildNumber": "1.2.9"
+          },
+          "costguard-20261002": {
+            "buildId": "Oe6o277Z7gEBbO6Nn",
+            "finishedAt": "2026-10-02T20:42:23.736Z",
+            "buildNumberInt": 10300004,
+            "buildNumber": "1.3.4"
+          }
+        }
+      },
+      "provenance": {
+        "actor_metadata_endpoint": "https://api.apify.com/v2/acts/wjjknRC0QN6jE3WJK",
+        "input_schema_endpoint": "https://api.apify.com/v2/acts/wjjknRC0QN6jE3WJK/builds/1rLRwzTL2mgu9KiXU",
+        "input_source": "default-build inputSchema",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+      },
+      "retrieved_at": "2026-10-04T19:33:51.446246+00:00",
+      "required_keys": [],
+      "properties": {
+        "instagramUsernames": {
+          "type": "array"
+        },
+        "hashtags": {
+          "type": "array"
+        },
+        "directPostUrls": {
+          "type": "array"
+        },
+        "maxPostsPerTarget": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 500
+        },
+        "onlyPostsNewerThan": {
+          "type": "string"
+        },
+        "includeRecentComments": {
+          "type": "boolean"
+        },
+        "proxyConfiguration": {
+          "type": "object"
+        }
+      },
+      "declared_dataset_fields": [
+        "id",
+        "shortcode",
+        "url",
+        "post_type",
+        "caption",
+        "hashtags",
+        "mentions",
+        "accessibility_caption",
+        "like_count",
+        "comment_count",
+        "video_view_count",
+        "video_play_count",
+        "video_duration",
+        "thumbnail_url",
+        "display_url",
+        "media_urls",
+        "video_url",
+        "is_video",
+        "owner_username",
+        "owner_full_name",
+        "owner_id",
+        "owner_is_verified",
+        "owner_profile_pic_url",
+        "owner_follower_count",
+        "location_name",
+        "location_id",
+        "tagged_users",
+        "coauthors",
+        "is_pinned",
+        "is_sponsored",
+        "is_reel",
+        "comments_disabled",
+        "timestamp",
+        "scraped_at",
+        "source_url",
+        "recent_comments"
+      ],
+      "pricing": {
+        "effective_record": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-08-04T20:29:34.070Z",
+          "isPPEPlatformUsagePaidByUser": true,
+          "minimalMaxTotalChargeUsd": null,
+          "events": {
+            "apify-actor-start": {
+              "eventTitle": "Actor Start",
+              "eventPriceUsd": 5e-05,
+              "isOneTimeEvent": true
+            },
+            "apify-default-dataset-item": {
+              "eventTitle": "result",
+              "eventPriceUsd": 1e-05
+            },
+            "scraped-post": {
+              "eventTitle": "Scraped post",
+              "eventPriceUsd": 0.0012,
+              "isOneTimeEvent": false,
+              "isPrimaryEvent": true
+            }
+          }
+        },
+        "usage_pass_through_last_explicit": true,
+        "effective_pricing_requires_live_recheck": true
+      },
+      "example_input": {
+        "instagramUsernames": [
+          "apify"
+        ],
+        "maxPostsPerTarget": 5,
+        "includeRecentComments": false
+      },
+      "example_validation": {
+        "json_schema": "PASS",
+        "semantic_runtime": "UNTESTED",
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+      },
+      "runtime_verified": false,
+      "limitations": [
+        "Metadata/schema inspection only. No Actor execution.",
+        "Re-fetch current build and pricing before a paid run; tags and prices can change."
+      ]
+    },
+    {
+      "name": "instagram-profile-stats-scraper",
+      "id": "N3rc0uhS4SJcNE9fb",
+      "owner": "khadinakbar",
+      "url": "https://apify.com/khadinakbar/instagram-profile-stats-scraper",
+      "public": true,
+      "group": "Social and creator research",
+      "title": "Instagram Profile Stats Scraper",
+      "build": {
+        "id": "N5e7DuSInN8GUvrHE",
+        "number": "0.0.3",
+        "status": "SUCCEEDED",
+        "finished_at": "2026-10-04T15:36:20.411Z",
+        "default_tag": "latest",
+        "tagged_builds": {
+          "latest": {
+            "buildId": "N5e7DuSInN8GUvrHE",
+            "finishedAt": "2026-10-04T15:36:20.411Z",
+            "buildNumberInt": 3,
+            "buildNumber": "0.0.3"
+          }
+        }
+      },
+      "provenance": {
+        "actor_metadata_endpoint": "https://api.apify.com/v2/acts/N3rc0uhS4SJcNE9fb",
+        "input_schema_endpoint": "https://api.apify.com/v2/acts/N3rc0uhS4SJcNE9fb/builds/N5e7DuSInN8GUvrHE",
+        "input_source": "default-build inputSchema",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+      },
+      "retrieved_at": "2026-10-04T19:33:51.439482+00:00",
+      "required_keys": [
+        "usernames"
+      ],
+      "properties": {
+        "usernames": {
+          "type": "array"
+        },
+        "deduplicate": {
+          "type": "boolean"
+        },
+        "maxItems": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "maxRequestRetries": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 10
+        },
+        "requestTimeoutSecs": {
+          "type": "integer",
+          "minimum": 10,
+          "maximum": 120
+        }
+      },
+      "declared_dataset_fields": [
+        "input",
+        "username",
+        "profileUrl",
+        "followersCount",
+        "followingCount",
+        "postsCount",
+        "isPrivate",
+        "isVerified",
+        "fullName",
+        "source",
+        "status",
+        "statusMessage",
+        "scrapedAt"
+      ],
+      "pricing": {
+        "effective_record": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-08-18T09:47:13.053Z",
+          "isPPEPlatformUsagePaidByUser": true,
+          "events": {
+            "apify-actor-start": {
+              "eventTitle": "Actor Start",
+              "eventPriceUsd": 5e-05,
+              "isOneTimeEvent": true
+            },
+            "profile-stats-scraped": {
+              "eventTitle": "Profile stats scraped",
+              "eventPriceUsd": 0.0035,
+              "isPrimaryEvent": true
+            }
+          }
+        },
+        "usage_pass_through_last_explicit": true,
+        "effective_pricing_requires_live_recheck": true
+      },
+      "example_input": {
+        "usernames": [
+          "apify"
+        ],
+        "maxItems": 1
+      },
+      "example_validation": {
+        "json_schema": "PASS",
+        "semantic_runtime": "UNTESTED",
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+      },
+      "runtime_verified": false,
+      "limitations": [
+        "Metadata/schema inspection only. No Actor execution.",
+        "Re-fetch current build and pricing before a paid run; tags and prices can change."
+      ]
+    },
+    {
+      "name": "tiktok-profile-videos-scraper",
+      "id": "Vdzi1BTanokjIx4ap",
+      "owner": "khadinakbar",
+      "url": "https://apify.com/khadinakbar/tiktok-profile-videos-scraper",
+      "public": true,
+      "group": "Social and creator research",
+      "title": "TikTok Profile Videos Scraper",
+      "build": {
+        "id": "meVGDJ32uchOqbFsl",
+        "number": "0.3.5",
+        "status": "SUCCEEDED",
+        "finished_at": "2026-10-04T15:22:24.196Z",
+        "default_tag": "latest",
+        "tagged_builds": {
+          "latest": {
+            "buildId": "meVGDJ32uchOqbFsl",
+            "finishedAt": "2026-10-04T15:22:24.196Z",
+            "buildNumberInt": 300005,
+            "buildNumber": "0.3.5"
+          }
+        }
+      },
+      "provenance": {
+        "actor_metadata_endpoint": "https://api.apify.com/v2/acts/Vdzi1BTanokjIx4ap",
+        "input_schema_endpoint": "https://api.apify.com/v2/acts/Vdzi1BTanokjIx4ap/builds/meVGDJ32uchOqbFsl",
+        "input_source": "default-build inputSchema",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+      },
+      "retrieved_at": "2026-10-04T19:33:51.472051+00:00",
+      "required_keys": [
+        "profileHandles"
+      ],
+      "properties": {
+        "profileHandles": {
+          "type": "array"
+        },
+        "maxVideosPerProfile": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 10000
+        },
+        "maxPagesPerProfile": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 500
+        },
+        "maxTotalVideos": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 50000
+        },
+        "sortBy": {
+          "type": "string",
+          "enum": [
+            "latest",
+            "popular"
+          ]
+        },
+        "region": {
+          "type": "string"
+        },
+        "trim": {
+          "type": "boolean"
+        },
+        "includeRawData": {
+          "type": "boolean"
+        }
+      },
+      "declared_dataset_fields": [
+        "recordType",
+        "sourceType",
+        "provider",
+        "input",
+        "profileHandle",
+        "sortBy",
+        "resultPosition",
+        "page",
+        "videoId",
+        "videoUrl",
+        "caption",
+        "createdAt",
+        "authorUsername",
+        "authorNickname",
+        "authorVerified",
+        "authorAvatarUrl",
+        "authorFollowerCount",
+        "region",
+        "language",
+        "durationMs",
+        "width",
+        "height",
+        "coverUrl",
+        "dynamicCoverUrl",
+        "playUrl",
+        "downloadUrl",
+        "noWatermarkUrl",
+        "hasWatermark",
+        "isAd",
+        "isPhotoPost",
+        "imageUrls",
+        "playCount",
+        "likeCount",
+        "commentCount",
+        "shareCount",
+        "collectCount",
+        "downloadCount",
+        "engagementRate",
+        "hashtags",
+        "mentions",
+        "musicId",
+        "musicTitle",
+        "musicAuthor",
+        "musicOriginal",
+        "scrapedAt",
+        "rawResult"
+      ],
+      "pricing": {
+        "effective_record": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-08-04T20:29:34.070Z",
+          "isPPEPlatformUsagePaidByUser": true,
+          "minimalMaxTotalChargeUsd": null,
+          "events": {
+            "video-scraped": {
+              "eventTitle": "Video scraped",
+              "eventPriceUsd": 0.0015,
+              "isOneTimeEvent": false,
+              "isPrimaryEvent": true
+            },
+            "apify-actor-start": {
+              "eventTitle": "Actor Start",
+              "eventPriceUsd": 5e-05,
+              "isOneTimeEvent": true
+            }
+          }
+        },
+        "usage_pass_through_last_explicit": true,
+        "effective_pricing_requires_live_recheck": true
+      },
+      "example_input": {
+        "profileHandles": [
+          "tiktok"
+        ],
+        "maxVideosPerProfile": 5,
+        "maxPagesPerProfile": 1,
+        "maxTotalVideos": 5,
+        "includeRawData": false
+      },
+      "example_validation": {
+        "json_schema": "PASS",
+        "semantic_runtime": "UNTESTED",
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+      },
+      "runtime_verified": false,
+      "limitations": [
+        "Metadata/schema inspection only. No Actor execution.",
+        "Re-fetch current build and pricing before a paid run; tags and prices can change."
+      ]
+    },
+    {
+      "name": "youtube-search-scraper",
+      "id": "jlyav7xSOiRz15hlJ",
+      "owner": "khadinakbar",
+      "url": "https://apify.com/khadinakbar/youtube-search-scraper",
+      "public": true,
+      "group": "Social and creator research",
+      "title": "YouTube Search Scraper \u2014 Videos, Channels & Playlists",
+      "build": {
+        "id": "csTOpBtgDnivLcaDw",
+        "number": "0.2.4",
+        "status": "SUCCEEDED",
+        "finished_at": "2026-10-04T14:36:12.631Z",
+        "default_tag": "latest",
+        "tagged_builds": {
+          "latest": {
+            "buildId": "csTOpBtgDnivLcaDw",
+            "finishedAt": "2026-10-04T14:36:12.631Z",
+            "buildNumberInt": 200004,
+            "buildNumber": "0.2.4"
+          }
+        }
+      },
+      "provenance": {
+        "actor_metadata_endpoint": "https://api.apify.com/v2/acts/jlyav7xSOiRz15hlJ",
+        "input_schema_endpoint": "https://api.apify.com/v2/acts/jlyav7xSOiRz15hlJ/builds/csTOpBtgDnivLcaDw",
+        "input_source": "default-build inputSchema",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+      },
+      "retrieved_at": "2026-10-04T19:34:00.244652+00:00",
+      "required_keys": [
+        "searchQueries"
+      ],
+      "properties": {
+        "searchQueries": {
+          "type": "array"
+        },
+        "maxResultsPerQuery": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 2000
+        },
+        "resultType": {
+          "type": "string",
+          "enum": [
+            "all",
+            "video",
+            "channel",
+            "playlist",
+            "movie"
+          ]
+        },
+        "sortBy": {
+          "type": "string",
+          "enum": [
+            "relevance",
+            "uploadDate",
+            "viewCount",
+            "rating"
+          ]
+        },
+        "uploadDate": {
+          "type": "string",
+          "enum": [
+            "any",
+            "lastHour",
+            "today",
+            "thisWeek",
+            "thisMonth",
+            "thisYear"
+          ]
+        },
+        "duration": {
+          "type": "string",
+          "enum": [
+            "any",
+            "short",
+            "medium",
+            "long"
+          ]
+        },
+        "features": {
+          "type": "array"
+        },
+        "country": {
+          "type": "string"
+        },
+        "language": {
+          "type": "string"
+        },
+        "rawSpToken": {
+          "type": "string"
+        },
+        "fallbackMode": {
+          "type": "string",
+          "enum": [
+            "auto",
+            "never",
+            "always"
+          ]
+        },
+        "proxyConfiguration": {
+          "type": "object"
+        }
+      },
+      "declared_dataset_fields": [
+        "type",
+        "query",
+        "source",
+        "position",
+        "videoId",
+        "playlistId",
+        "channelId",
+        "title",
+        "url",
+        "channelName",
+        "channelUrl",
+        "viewCount",
+        "viewCountText",
+        "publishedTimeText",
+        "durationText",
+        "durationSeconds",
+        "thumbnailUrl",
+        "description",
+        "isLive",
+        "isVerified",
+        "badges",
+        "subscriberCountText",
+        "videoCountText",
+        "playlistVideoCount",
+        "scrapedAt"
+      ],
+      "pricing": {
+        "effective_record": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-09-26T04:46:39.165Z",
+          "events": {
+            "result": {
+              "eventTitle": "Search result",
+              "eventPriceUsd": 0.003,
+              "isOneTimeEvent": false,
+              "isPrimaryEvent": true
+            },
+            "serpapi-fallback-query": {
+              "eventTitle": "Managed fallback query",
+              "eventPriceUsd": 0.01,
+              "isOneTimeEvent": false
+            },
+            "apify-actor-start": {
+              "eventTitle": "Actor Start",
+              "eventPriceUsd": 5e-05,
+              "isOneTimeEvent": true
+            }
+          }
+        },
+        "usage_pass_through_last_explicit": true,
+        "effective_pricing_requires_live_recheck": true
+      },
+      "example_input": {
+        "searchQueries": [
+          "project management"
+        ],
+        "maxResultsPerQuery": 5
+      },
+      "example_validation": {
+        "json_schema": "PASS",
+        "semantic_runtime": "UNTESTED",
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+      },
+      "runtime_verified": false,
+      "limitations": [
+        "Metadata/schema inspection only. No Actor execution.",
+        "Re-fetch current build and pricing before a paid run; tags and prices can change."
+      ]
+    },
+    {
+      "name": "youtube-transcript-extractor",
+      "id": "HY1l2lAN9rwPg8LsZ",
+      "owner": "khadinakbar",
+      "url": "https://apify.com/khadinakbar/youtube-transcript-extractor",
+      "public": true,
+      "group": "Social and creator research",
+      "title": "YouTube Transcript and Subtitle Data Scraper",
+      "build": {
+        "id": "uX8sDJTgzWXeFOxh5",
+        "number": "1.0.43",
+        "status": "SUCCEEDED",
+        "finished_at": "2026-10-04T15:57:07.752Z",
+        "default_tag": "latest",
+        "tagged_builds": {
+          "latest": {
+            "buildId": "uX8sDJTgzWXeFOxh5",
+            "finishedAt": "2026-10-04T15:57:07.752Z",
+            "buildNumberInt": 10000043,
+            "buildNumber": "1.0.43"
+          }
+        }
+      },
+      "provenance": {
+        "actor_metadata_endpoint": "https://api.apify.com/v2/acts/HY1l2lAN9rwPg8LsZ",
+        "input_schema_endpoint": "https://api.apify.com/v2/acts/HY1l2lAN9rwPg8LsZ/builds/uX8sDJTgzWXeFOxh5",
+        "input_source": "default-build inputSchema",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+      },
+      "retrieved_at": "2026-10-04T19:34:01.095696+00:00",
+      "required_keys": [],
+      "properties": {
+        "videoUrls": {
+          "type": "array"
+        },
+        "channelUrl": {
+          "type": "string"
+        },
+        "searchQuery": {
+          "type": "string"
+        },
+        "maxResults": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 500
+        },
+        "language": {
+          "type": "string"
+        },
+        "dateFrom": {
+          "type": "string"
+        },
+        "dateTo": {
+          "type": "string"
+        },
+        "includeMetadata": {
+          "type": "boolean"
+        },
+        "outputFormat": {
+          "type": "string",
+          "enum": [
+            "all",
+            "segments",
+            "plain_text",
+            "srt"
+          ]
+        },
+        "customProxyUrl": {
+          "type": "string"
+        },
+        "proxyConfiguration": {
+          "type": "object"
+        }
+      },
+      "declared_dataset_fields": [
+        "videoId",
+        "videoUrl",
+        "title",
+        "channelName",
+        "channelId",
+        "channelUrl",
+        "description",
+        "publishedAt",
+        "durationSeconds",
+        "viewCount",
+        "likeCount",
+        "commentCount",
+        "thumbnail",
+        "tags",
+        "transcriptSegments",
+        "transcriptText",
+        "transcriptSrt",
+        "llmContext",
+        "tokenEstimate",
+        "wordCount",
+        "languageUsed",
+        "isAutoGenerated",
+        "availableLanguages",
+        "inputMode",
+        "status",
+        "errorMessage",
+        "scrapedAt",
+        "sourceUrl"
+      ],
+      "pricing": {
+        "effective_record": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-08-04T20:21:51.287Z",
+          "isPPEPlatformUsagePaidByUser": true,
+          "minimalMaxTotalChargeUsd": null,
+          "events": {
+            "transcript-extracted": {
+              "eventTitle": "Transcript Extracted",
+              "eventPriceUsd": 0.005,
+              "isOneTimeEvent": false,
+              "isPrimaryEvent": true
+            }
+          }
+        },
+        "usage_pass_through_last_explicit": true,
+        "effective_pricing_requires_live_recheck": true
+      },
+      "example_input": {
+        "videoUrls": [
+          "https://www.youtube.com/watch?v=jNQXAC9IVRw"
+        ],
+        "maxResults": 1,
+        "outputFormat": "plain_text"
+      },
+      "example_validation": {
+        "json_schema": "PASS",
+        "semantic_runtime": "UNTESTED",
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+      },
+      "runtime_verified": false,
+      "limitations": [
+        "Metadata/schema inspection only. No Actor execution.",
+        "Re-fetch current build and pricing before a paid run; tags and prices can change.",
+        "The example video may have no transcript in the requested language; schema validity does not prove transcript availability."
+      ]
+    },
+    {
+      "name": "youtube-comments-scraper",
+      "id": "JaLpIf4J9cc3rCa0E",
+      "owner": "khadinakbar",
+      "url": "https://apify.com/khadinakbar/youtube-comments-scraper",
+      "public": true,
+      "group": "Social and creator research",
+      "title": "YouTube Comments Scraper (with Replies)",
+      "build": {
+        "id": "JTvZKJBx2zqAP0AQt",
+        "number": "1.2.3",
+        "status": "SUCCEEDED",
+        "finished_at": "2026-10-01T04:05:02.439Z",
+        "default_tag": "latest",
+        "tagged_builds": {
+          "latest": {
+            "buildId": "JTvZKJBx2zqAP0AQt",
+            "finishedAt": "2026-10-01T04:05:02.439Z",
+            "buildNumberInt": 10200003,
+            "buildNumber": "1.2.3"
+          }
+        }
+      },
+      "provenance": {
+        "actor_metadata_endpoint": "https://api.apify.com/v2/acts/JaLpIf4J9cc3rCa0E",
+        "input_schema_endpoint": "https://api.apify.com/v2/acts/JaLpIf4J9cc3rCa0E/builds/JTvZKJBx2zqAP0AQt",
+        "input_source": "default-build inputSchema",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+      },
+      "retrieved_at": "2026-10-04T19:34:02.878633+00:00",
+      "required_keys": [],
+      "properties": {
+        "startUrls": {
+          "type": "array"
+        },
+        "videoIds": {
+          "type": "array"
+        },
+        "maxComments": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 10000
+        },
+        "includeReplies": {
+          "type": "boolean"
+        }
+      },
+      "declared_dataset_fields": [
+        "video_id",
+        "video_title",
+        "video_url",
+        "comment_id",
+        "comment_text",
+        "author_name",
+        "author_channel_url",
+        "author_channel_id",
+        "like_count",
+        "reply_count",
+        "is_reply",
+        "parent_comment_id",
+        "published_at",
+        "is_pinned",
+        "is_hearted",
+        "scraped_at",
+        "source_url"
+      ],
+      "pricing": {
+        "effective_record": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-08-04T20:29:34.070Z",
+          "isPPEPlatformUsagePaidByUser": true,
+          "minimalMaxTotalChargeUsd": null,
+          "events": {
+            "apify-actor-start": {
+              "eventTitle": "Actor Start",
+              "eventPriceUsd": 5e-05,
+              "isOneTimeEvent": true
+            },
+            "scraped-comment": {
+              "eventTitle": "Scraped Comment",
+              "eventPriceUsd": 0.002,
+              "isOneTimeEvent": false,
+              "isPrimaryEvent": true
+            }
+          }
+        },
+        "usage_pass_through_last_explicit": true,
+        "effective_pricing_requires_live_recheck": true
+      },
+      "example_input": {
+        "videoIds": [
+          "jNQXAC9IVRw"
+        ],
+        "maxComments": 5,
+        "includeReplies": false
+      },
+      "example_validation": {
+        "json_schema": "PASS",
+        "semantic_runtime": "UNTESTED",
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+      },
+      "runtime_verified": false,
+      "limitations": [
+        "Metadata/schema inspection only. No Actor execution.",
+        "Re-fetch current build and pricing before a paid run; tags and prices can change."
+      ]
+    },
+    {
+      "name": "youtube-channel-scraper",
+      "id": "BGuQRhPiGRWOZzqyr",
+      "owner": "khadinakbar",
+      "url": "https://apify.com/khadinakbar/youtube-channel-scraper",
+      "public": true,
+      "group": "Social and creator research",
+      "title": "YouTube Channel Scraper",
+      "build": {
+        "id": "agbHdcVyROAG7D0bi",
+        "number": "0.1.9",
+        "status": "SUCCEEDED",
+        "finished_at": "2026-10-04T15:24:31.386Z",
+        "default_tag": "latest",
+        "tagged_builds": {
+          "latest": {
+            "buildId": "agbHdcVyROAG7D0bi",
+            "finishedAt": "2026-10-04T15:24:31.386Z",
+            "buildNumberInt": 100009,
+            "buildNumber": "0.1.9"
+          }
+        }
+      },
+      "provenance": {
+        "actor_metadata_endpoint": "https://api.apify.com/v2/acts/BGuQRhPiGRWOZzqyr",
+        "input_schema_endpoint": "https://api.apify.com/v2/acts/BGuQRhPiGRWOZzqyr/builds/agbHdcVyROAG7D0bi",
+        "input_source": "default-build inputSchema",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+      },
+      "retrieved_at": "2026-10-04T19:34:43.073272+00:00",
+      "required_keys": [
+        "channelUrls"
+      ],
+      "properties": {
+        "channelUrls": {
+          "type": "array"
+        },
+        "maxVideosPerChannel": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "includeShorts": {
+          "type": "boolean"
+        },
+        "maxShortsPerChannel": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 50
+        },
+        "sortVideosBy": {
+          "type": "string",
+          "enum": [
+            "latest",
+            "popular"
+          ]
+        },
+        "providerMode": {
+          "type": "string",
+          "enum": [
+            "auto",
+            "direct",
+            "providerOnly"
+          ]
+        },
+        "country": {
+          "type": "string"
+        },
+        "language": {
+          "type": "string"
+        }
+      },
+      "declared_dataset_fields": [
+        "type",
+        "source",
+        "input",
+        "channelId",
+        "handle",
+        "channelName",
+        "channelUrl",
+        "handleUrl",
+        "description",
+        "subscriberCount",
+        "subscriberCountText",
+        "videoCount",
+        "videoCountText",
+        "viewCount",
+        "viewCountText",
+        "joinedDateText",
+        "country",
+        "avatarUrl",
+        "bannerUrl",
+        "rssUrl",
+        "keywords",
+        "externalLinks",
+        "publicEmail",
+        "recentVideos",
+        "videoCountReturned",
+        "warnings",
+        "scrapedAt"
+      ],
+      "pricing": {
+        "effective_record": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-08-04T20:29:34.070Z",
+          "isPPEPlatformUsagePaidByUser": true,
+          "minimalMaxTotalChargeUsd": null,
+          "events": {
+            "apify-actor-start": {
+              "eventTitle": "Actor Start",
+              "eventPriceUsd": 5e-05,
+              "isOneTimeEvent": true
+            },
+            "channel-profile": {
+              "eventTitle": "Channel profile",
+              "eventPriceUsd": 0.006,
+              "isOneTimeEvent": false,
+              "isPrimaryEvent": true
+            },
+            "channel-video": {
+              "eventTitle": "Channel video",
+              "eventPriceUsd": 0.0015,
+              "isOneTimeEvent": false
+            }
+          }
+        },
+        "usage_pass_through_last_explicit": true,
+        "effective_pricing_requires_live_recheck": true
+      },
+      "example_input": {
+        "channelUrls": [
+          "https://www.youtube.com/@Apify"
+        ],
+        "maxVideosPerChannel": 5,
+        "includeShorts": false,
+        "maxShortsPerChannel": 1
+      },
+      "example_validation": {
+        "json_schema": "PASS",
+        "semantic_runtime": "UNTESTED",
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+      },
+      "runtime_verified": false,
+      "limitations": [
+        "Metadata/schema inspection only. No Actor execution.",
+        "Re-fetch current build and pricing before a paid run; tags and prices can change."
+      ]
+    },
+    {
+      "name": "youtube-channel-email-extractor",
+      "id": "IRx3DJZeQdk6DhAtn",
+      "owner": "khadinakbar",
+      "url": "https://apify.com/khadinakbar/youtube-channel-email-extractor",
+      "public": true,
+      "group": "Social and creator research",
+      "title": "YouTube Channel Email Scraper \u2014 Emails, Phones & Socials",
+      "build": {
+        "id": "ae64IIxg0JUbgobaa",
+        "number": "1.2.4",
+        "status": "SUCCEEDED",
+        "finished_at": "2026-09-28T20:11:59.603Z",
+        "default_tag": "latest",
+        "tagged_builds": {
+          "latest": {
+            "buildId": "ae64IIxg0JUbgobaa",
+            "finishedAt": "2026-09-28T20:11:59.603Z",
+            "buildNumberInt": 10200004,
+            "buildNumber": "1.2.4"
+          },
+          "byok-inquiry-unlock": {
+            "buildId": "e0PktiNEQWFVeN3iv",
+            "finishedAt": "2026-09-25T18:02:06.864Z",
+            "buildNumberInt": 10200002,
+            "buildNumber": "1.2.2"
+          },
+          "unlock-removed-test": {
+            "buildId": "cyyqeFol1ZvWoGIM6",
+            "finishedAt": "2026-09-29T06:18:53.935Z",
+            "buildNumberInt": 10300001,
+            "buildNumber": "1.3.1"
+          },
+          "costguard-20261002": {
+            "buildId": "JzeT80bklgID9FX0R",
+            "finishedAt": "2026-10-02T14:58:57.813Z",
+            "buildNumberInt": 10500001,
+            "buildNumber": "1.5.1"
+          },
+          "phase2-oct02": {
+            "buildId": "pOhhhcXVfgmZUisMc",
+            "finishedAt": "2026-10-02T17:05:55.761Z",
+            "buildNumberInt": 10600001,
+            "buildNumber": "1.6.1"
+          }
+        }
+      },
+      "provenance": {
+        "actor_metadata_endpoint": "https://api.apify.com/v2/acts/IRx3DJZeQdk6DhAtn",
+        "input_schema_endpoint": "https://api.apify.com/v2/acts/IRx3DJZeQdk6DhAtn/builds/ae64IIxg0JUbgobaa",
+        "input_source": "default-build inputSchema",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+      },
+      "retrieved_at": "2026-10-04T19:34:02.835596+00:00",
+      "required_keys": [],
+      "properties": {
+        "channelUrls": {
+          "type": "array"
+        },
+        "searchQueries": {
+          "type": "array"
+        },
+        "maxResults": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 10000
+        },
+        "scrapeWebsite": {
+          "type": "boolean"
+        },
+        "followLinkAggregators": {
+          "type": "boolean"
+        },
+        "proxyConfiguration": {
+          "type": "object"
+        },
+        "unlockBusinessInquiryEmail": {
+          "type": "boolean"
+        },
+        "youtubeSessionCookies": {
+          "type": "string"
+        },
+        "maxInquiryUnlocksPerRun": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 50
+        }
+      },
+      "declared_dataset_fields": [
+        "channel_name",
+        "channel_handle",
+        "channel_url",
+        "subscriber_count",
+        "video_count",
+        "total_views",
+        "country",
+        "description",
+        "email",
+        "all_emails",
+        "phone",
+        "website",
+        "social_instagram",
+        "social_twitter",
+        "social_tiktok",
+        "social_facebook",
+        "social_linkedin",
+        "social_telegram",
+        "social_whatsapp",
+        "email_sources",
+        "source_url",
+        "scraped_at"
+      ],
+      "pricing": {
+        "effective_record": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-07-27T04:30:59.262Z",
+          "isPPEPlatformUsagePaidByUser": true,
+          "minimalMaxTotalChargeUsd": null,
+          "events": {
+            "result-found": {
+              "eventTitle": "Channel Result",
+              "eventPriceUsd": 0.05,
+              "isOneTimeEvent": false,
+              "isPrimaryEvent": true
+            },
+            "apify-actor-start": {
+              "eventTitle": "Actor Start",
+              "eventPriceUsd": 5e-05,
+              "isOneTimeEvent": true
+            }
+          }
+        },
+        "usage_pass_through_last_explicit": true,
+        "effective_pricing_requires_live_recheck": true
+      },
+      "example_input": {
+        "channelUrls": [
+          "https://www.youtube.com/@Apify"
+        ],
+        "maxResults": 1,
+        "scrapeWebsite": false,
+        "unlockBusinessInquiryEmail": false
+      },
+      "example_validation": {
+        "json_schema": "PASS",
+        "semantic_runtime": "UNTESTED",
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+      },
+      "runtime_verified": false,
+      "limitations": [
+        "Metadata/schema inspection only. No Actor execution.",
+        "Re-fetch current build and pricing before a paid run; tags and prices can change."
+      ]
+    },
+    {
+      "name": "reddit-search-scraper",
+      "id": "j1gQL2JlzmGKxrPzJ",
+      "owner": "khadinakbar",
+      "url": "https://apify.com/khadinakbar/reddit-search-scraper",
+      "public": true,
+      "group": "Voice of customer and news",
+      "title": "Reddit Search Scraper",
+      "build": {
+        "id": "kDtqTaEphsfHAwdfH",
+        "number": "1.0.5",
+        "status": "SUCCEEDED",
+        "finished_at": "2026-10-01T12:29:59.471Z",
+        "default_tag": "latest",
+        "tagged_builds": {
+          "latest": {
+            "buildId": "kDtqTaEphsfHAwdfH",
+            "finishedAt": "2026-10-01T12:29:59.471Z",
+            "buildNumberInt": 10000005,
+            "buildNumber": "1.0.5"
+          }
+        }
+      },
+      "provenance": {
+        "actor_metadata_endpoint": "https://api.apify.com/v2/acts/j1gQL2JlzmGKxrPzJ",
+        "input_schema_endpoint": "https://api.apify.com/v2/acts/j1gQL2JlzmGKxrPzJ/builds/kDtqTaEphsfHAwdfH",
+        "input_source": "default-build inputSchema",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+      },
+      "retrieved_at": "2026-10-04T19:34:02.479873+00:00",
+      "required_keys": [
+        "searchQuery"
+      ],
+      "properties": {
+        "searchQuery": {
+          "type": "string"
+        },
+        "withinSubreddit": {
+          "type": "string"
+        },
+        "maxResults": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 10000
+        },
+        "sortBy": {
+          "type": "string",
+          "enum": [
+            "relevance",
+            "new",
+            "top",
+            "comments"
+          ]
+        },
+        "timeFilter": {
+          "type": "string",
+          "enum": [
+            "day",
+            "week",
+            "month",
+            "year",
+            "all"
+          ]
+        },
+        "postDateLimit": {
+          "type": "string"
+        },
+        "includeNsfw": {
+          "type": "boolean"
+        }
+      },
+      "declared_dataset_fields": [
+        "type",
+        "redditId",
+        "title",
+        "body",
+        "author",
+        "subreddit",
+        "score",
+        "upvoteRatio",
+        "commentCount",
+        "url",
+        "externalUrl",
+        "flair",
+        "awardsCount",
+        "postType",
+        "isNsfw",
+        "isSpoiler",
+        "isStickied",
+        "createdAt",
+        "sourceQuery",
+        "withinSubreddit",
+        "sourceUrl",
+        "scrapedAt"
+      ],
+      "pricing": {
+        "effective_record": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-09-25T10:37:55.230Z",
+          "events": {
+            "apify-actor-start": {
+              "eventTitle": "Actor Start",
+              "eventPriceUsd": 5e-05,
+              "isOneTimeEvent": true
+            },
+            "search-result-found": {
+              "eventTitle": "Search result found",
+              "eventPriceUsd": 0.003,
+              "isOneTimeEvent": false,
+              "isPrimaryEvent": true
+            }
+          }
+        },
+        "usage_pass_through_last_explicit": true,
+        "effective_pricing_requires_live_recheck": true
+      },
+      "example_input": {
+        "searchQuery": "project management",
+        "maxResults": 5,
+        "includeNsfw": false
+      },
+      "example_validation": {
+        "json_schema": "PASS",
+        "semantic_runtime": "UNTESTED",
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+      },
+      "runtime_verified": false,
+      "limitations": [
+        "Metadata/schema inspection only. No Actor execution.",
+        "Re-fetch current build and pricing before a paid run; tags and prices can change."
+      ]
+    },
+    {
+      "name": "linkedin-company-posts-scraper",
+      "id": "pcdyX7pdaieYWnLm3",
+      "owner": "khadinakbar",
+      "url": "https://apify.com/khadinakbar/linkedin-company-posts-scraper",
+      "public": true,
+      "group": "Social and creator research",
+      "title": "LinkedIn Company Posts Scraper",
+      "build": {
+        "id": "edHFElgAuXDEYwvpe",
+        "number": "0.1.10",
+        "status": "SUCCEEDED",
+        "finished_at": "2026-10-04T14:38:22.885Z",
+        "default_tag": "latest",
+        "tagged_builds": {
+          "latest": {
+            "buildId": "edHFElgAuXDEYwvpe",
+            "finishedAt": "2026-10-04T14:38:22.885Z",
+            "buildNumberInt": 100010,
+            "buildNumber": "0.1.10"
+          }
+        }
+      },
+      "provenance": {
+        "actor_metadata_endpoint": "https://api.apify.com/v2/acts/pcdyX7pdaieYWnLm3",
+        "input_schema_endpoint": "https://api.apify.com/v2/acts/pcdyX7pdaieYWnLm3/builds/edHFElgAuXDEYwvpe",
+        "input_source": "default-build inputSchema",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+      },
+      "retrieved_at": "2026-10-04T19:34:08.532024+00:00",
+      "required_keys": [
+        "companyUrls"
+      ],
+      "properties": {
+        "companyUrls": {
+          "type": "array"
+        },
+        "maxPosts": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1000
+        },
+        "startPage": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 7
+        },
+        "maxPagesPerCompany": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 7
+        },
+        "includeCompanyProfile": {
+          "type": "boolean"
+        },
+        "enrichPosts": {
+          "type": "boolean"
+        },
+        "includeRawData": {
+          "type": "boolean"
+        }
+      },
+      "declared_dataset_fields": [
+        "companyUrl",
+        "companyId",
+        "companyName",
+        "companyHandle",
+        "companyLinkedInUrl",
+        "companyDescription",
+        "companyFollowers",
+        "companyEmployeeCount",
+        "companyWebsite",
+        "companyIndustry",
+        "companyType",
+        "companyFounded",
+        "companyLogo",
+        "companyLocation",
+        "companySpecialties",
+        "postId",
+        "postUrl",
+        "text",
+        "datePublished",
+        "likeCount",
+        "reactionCount",
+        "commentCount",
+        "engagementCount",
+        "authorName",
+        "authorUrl",
+        "media",
+        "commentsPreview",
+        "source",
+        "sourcePage",
+        "rawPost",
+        "rawDetail",
+        "scrapedAt"
+      ],
+      "pricing": {
+        "effective_record": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-09-10T13:13:20.689Z",
+          "events": {
+            "post-scraped": {
+              "eventTitle": "Post scraped",
+              "eventPriceUsd": 0.005,
+              "isOneTimeEvent": false,
+              "isPrimaryEvent": true
+            },
+            "apify-actor-start": {
+              "eventTitle": "Actor Start",
+              "eventPriceUsd": 5e-05,
+              "isOneTimeEvent": true
+            }
+          }
+        },
+        "usage_pass_through_last_explicit": true,
+        "effective_pricing_requires_live_recheck": true
+      },
+      "example_input": {
+        "companyUrls": [
+          "https://www.linkedin.com/company/apify"
+        ],
+        "maxPosts": 5,
+        "maxPagesPerCompany": 1,
+        "enrichPosts": false,
+        "includeRawData": false
+      },
+      "example_validation": {
+        "json_schema": "PASS",
+        "semantic_runtime": "UNTESTED",
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+      },
+      "runtime_verified": false,
+      "limitations": [
+        "Metadata/schema inspection only. No Actor execution.",
+        "Re-fetch current build and pricing before a paid run; tags and prices can change."
+      ]
+    },
+    {
+      "name": "linkedin-company-by-domain-scraper",
+      "id": "rIx5BxFR9Pxvbe4wX",
+      "owner": "khadinakbar",
+      "url": "https://apify.com/khadinakbar/linkedin-company-by-domain-scraper",
+      "public": true,
+      "group": "Social and creator research",
+      "title": "LinkedIn Company by Domain Scraper",
+      "build": {
+        "id": "xyECdmQCUaa7iCm3Q",
+        "number": "0.1.9",
+        "status": "SUCCEEDED",
+        "finished_at": "2026-10-01T12:47:37.276Z",
+        "default_tag": "latest",
+        "tagged_builds": {
+          "latest": {
+            "buildId": "xyECdmQCUaa7iCm3Q",
+            "finishedAt": "2026-10-01T12:47:37.276Z",
+            "buildNumberInt": 100009,
+            "buildNumber": "0.1.9"
+          },
+          "health-fix": {
+            "buildId": "DdvzMnrA3qqyuhN91",
+            "finishedAt": "2026-10-01T12:41:50.002Z",
+            "buildNumberInt": 100008,
+            "buildNumber": "0.1.8"
+          }
+        }
+      },
+      "provenance": {
+        "actor_metadata_endpoint": "https://api.apify.com/v2/acts/rIx5BxFR9Pxvbe4wX",
+        "input_schema_endpoint": "https://api.apify.com/v2/acts/rIx5BxFR9Pxvbe4wX/builds/xyECdmQCUaa7iCm3Q",
+        "input_source": "default-build inputSchema",
+        "output_source": "default-build actorDefinition.output + actorDefinition.storages; declarative, not runtime verified"
+      },
+      "retrieved_at": "2026-10-04T19:34:09.358910+00:00",
+      "required_keys": [
+        "domains"
+      ],
+      "properties": {
+        "domains": {
+          "type": "array",
+          "minItems": 1
+        },
+        "maxResultsPerDomain": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 5
+        },
+        "includeSerpEvidence": {
+          "type": "boolean"
+        },
+        "minConfidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      },
+      "declared_dataset_fields": [
+        "inputDomain",
+        "normalizedDomain",
+        "linkedinCompanyUrl",
+        "linkedinSlug",
+        "companyName",
+        "source",
+        "confidence",
+        "outcome",
+        "diagnostics",
+        "errors",
+        "serpEvidence"
+      ],
+      "pricing": {
+        "effective_record": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-09-26T04:56:00.447Z",
+          "events": {
+            "company-found": {
+              "eventTitle": "Company found",
+              "eventPriceUsd": 0.008,
+              "isOneTimeEvent": false,
+              "isPrimaryEvent": true
+            },
+            "apify-actor-start": {
+              "eventTitle": "Actor Start",
+              "eventPriceUsd": 5e-05,
+              "isOneTimeEvent": true
+            }
+          }
+        },
+        "usage_pass_through_last_explicit": true,
+        "effective_pricing_requires_live_recheck": true
+      },
+      "example_input": {
+        "domains": [
+          "example.com"
+        ],
+        "maxResultsPerDomain": 1
+      },
+      "example_validation": {
+        "json_schema": "PASS",
+        "semantic_runtime": "UNTESTED",
+        "synthetic_placeholders": "Replace example.com, Example and research topics with the user approved target. Public platform IDs are illustrative and not tested."
+      },
+      "runtime_verified": false,
+      "limitations": [
+        "Metadata/schema inspection only. No Actor execution.",
+        "Re-fetch current build and pricing before a paid run; tags and prices can change."
+      ]
+    }
+  ]
+}
