@@ -1,13 +1,13 @@
 {
-  "name": "ai-cmo",
-  "version": "0.4.1",
+  "name": "khadin-ai-cmo",
+  "version": "0.4.2",
   "description": "Your marketing team for context-aware strategy, reviewed assets, feedback, visual reporting and host-scheduled reviews using your own tools.",
   "author": {
     "name": "Khadin Akbar",
     "url": "https://github.com/khadinakbarlabs"
   },
   "license": "MIT",
-  "displayName": "AI CMO",
+  "displayName": "Khadin AI CMO",
   "icon": "./assets/icon.png",
   "keywords": [
     "marketing",

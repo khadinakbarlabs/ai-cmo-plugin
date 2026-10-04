@@ -1,6 +1,6 @@
 # AI CMO support
 
-AI CMO is maintained by Khadin Akbar. Open a public issue at [the AI CMO issue tracker](https://github.com/khadinakbarlabs/ai-cmo-plugin/issues/new) for instruction defects, missing workflows, reporting problems or packaging bugs. Include version 0.4.1, affected skill, host/CLI version, expected behavior and a minimal redacted reproduction. Search existing issues first.
+AI CMO is maintained by Khadin Akbar. Open a public issue at [the AI CMO issue tracker](https://github.com/khadinakbarlabs/ai-cmo-plugin/issues/new) for instruction defects, missing workflows, reporting problems or packaging bugs. Include version 0.4.2, affected skill, host/CLI version, expected behavior and a minimal redacted reproduction. Search existing issues first.
 
 Do not include tokens, credentials, customer data, raw transcripts, private account IDs or provider logs. Use synthetic examples and aggregate data. There is no private support-data upload endpoint bundled in this plugin, and no response-time guarantee is offered.
 

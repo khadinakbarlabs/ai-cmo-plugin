@@ -5,9 +5,9 @@
   },
   "plugins": [
     {
-      "name": "ai-cmo",
+      "name": "khadin-ai-cmo",
       "source": "./",
-      "version": "0.4.1",
+      "version": "0.4.2",
       "description": "Your marketing team for context-aware strategy, reviewed assets, feedback, visual reporting and host-scheduled reviews using your own tools.",
       "author": {
         "name": "Khadin Akbar",

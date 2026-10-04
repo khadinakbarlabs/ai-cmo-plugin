@@ -1,6 +1,6 @@
 # AI CMO release validation
 
-Current release: 0.4.1. Both isolated archives are locally checked for native metadata, 39 skills, public schema examples, source/reference paths, contained icons, instruction-only boundaries and byte-identical archive extraction. The conservative local limits are 39 skills, 9 agents, 8 commands and 39 combined skills/commands; they are not official directory caps.
+Current release: 0.4.2. Both isolated archives are locally checked for native metadata, 39 skills, public schema examples, source/reference paths, contained icons, instruction-only boundaries and byte-identical archive extraction. The conservative local limits are 39 skills, 9 agents, 8 commands and 39 combined skills/commands; they are not official directory caps.
 
 The preceding 0.4.0 upgrade passed 50 negative scenarios for component limits, handoff/dependency graphs, resume preservation, context isolation, feedback resolution, scheduler readback/authority and truthful ratio/percentage reporting; checks ran in normal and optimized Python. 38 public Actor input examples and 19 required-input negatives passed. Synthetic report layout checks passed at desktop/mobile widths, with no scripting or external requests.
 

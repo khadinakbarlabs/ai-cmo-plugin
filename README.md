@@ -1,4 +1,4 @@
-# AI CMO
+# Khadin AI CMO
 
 ![AI CMO icon](assets/icon.png)
 
@@ -22,14 +22,14 @@ Add the repository marketplace and install the plugin:
 
 ```text
 /plugin marketplace add khadinakbarlabs/ai-cmo-plugin
-/plugin install ai-cmo@ai-cmo-marketplace
+/plugin install khadin-ai-cmo@ai-cmo-marketplace
 ```
 
-Then invoke `/ai-cmo:cmo` and describe the business/outcome. GitHub installation is separate from approval in Anthropic's directory. The [GitHub release](https://github.com/khadinakbarlabs/ai-cmo-plugin/releases/tag/v0.4.1) supplies separate Claude and OpenAI ZIPs plus checksums. Use the OpenAI ZIP in the supported host upload/install surface; actual host permissions and CLI availability still apply.
+Then invoke `/khadin-ai-cmo:cmo` and describe the business/outcome. GitHub installation is separate from approval in Anthropic's directory. The [GitHub release](https://github.com/khadinakbarlabs/ai-cmo-plugin/releases/tag/v0.4.2) supplies separate Claude and OpenAI ZIPs plus checksums. Use the OpenAI ZIP in the supported host upload/install surface; actual host permissions and CLI availability still apply.
 
 ## Anthropic first
 
-This source package targets Claude with `.claude-plugin/plugin.json`. In Claude Code, load the folder with `claude --plugin-dir /path/to/ai-cmo`; invoke `/ai-cmo:cmo` or describe the task. This path is an example, not a hard-coded installation requirement. Test Cowork's actual CLI access before using connected workflows. Chat can use supported instruction/draft/import workflows; installing skills does not expose your computer's CLI.
+This source package targets Claude with `.claude-plugin/plugin.json`. In Claude Code, load the folder with `claude --plugin-dir /path/to/ai-cmo`; invoke `/khadin-ai-cmo:cmo` or describe the task. This path is an example, not a hard-coded installation requirement. Test Cowork's actual CLI access before using connected workflows. Chat can use supported instruction/draft/import workflows; installing skills does not expose your computer's CLI.
 
 ## Business-model adaptation
 
@@ -57,7 +57,7 @@ The component budget is 39 discoverable skills, 6 native Claude agents and 0 sep
 
 ## Context, learning and reporting
 
-AI CMO v0.4.1 includes a [continuous learning loop](skills/cmo/references/learning-loop.md): source-aware business context, explainable next actions, concise session handoffs, optional local feedback and editable visual reports. Ask "What should we do next?", "Continue where we left off", "Show progress" or "Review this every week". Existing skills handle these flows; no extra skill/command inventory is added.
+AI CMO v0.4.2 includes a [continuous learning loop](skills/cmo/references/learning-loop.md): source-aware business context, explainable next actions, concise session handoffs, optional local feedback and editable visual reports. Ask "What should we do next?", "Continue where we left off", "Show progress" or "Review this every week". Existing skills handle these flows; no extra skill/command inventory is added.
 
 Recurring reviews require a verified host scheduler and concrete scope. The package includes recipes and registration checks, not an executor. Feedback remains in your workspace unless you explicitly request a specific external delivery. The report template has no scripts, tracking or external network assets. See [the user experience guide](skills/cmo/references/user-experience.md). These features are instructions/templates; behavioral effectiveness, unattended execution and a 10× improvement are not established by packaging.
 

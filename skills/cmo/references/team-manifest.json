@@ -1,5 +1,5 @@
 {
-  "version": "0.4.1",
+  "version": "0.4.2",
   "coordinator": "cmo",
   "defaults": {
     "max_parallel_specialists": 2,
