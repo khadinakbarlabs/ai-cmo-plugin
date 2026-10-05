@@ -1,11 +1,13 @@
 ---
 name: sales-enablement
-description: Generate and qualify leads, plan outbound and account-based marketing, and create sales enablement. Use for lead generation, prospecting, outreach drafts, ABM, battlecards, case studies or marketing-to-sales handoff.
+description: Import and qualify prospect companies, draft outbound sequences and ABM packs, or create battlecards and sales handoffs. Use supplied CRM/CSV evidence first; contact research is optional and sending needs exact authority.
 ---
 
 # Marketing to Sales Handoff
 
 Apply the [shared operating contract](../cmo/references/operating-contract.md) for evidence, local context and action scope.
+
+For CSV/CRM imports or prospect qualification, start directly with [Lead Generation](references/lead-generation.md) and its [import contract](references/lead-import.md); skip the case-study workflow below. For outreach drafts use [Outbound Marketing](references/outbound-marketing.md); sending remains a separate authorized operation.
 
 ## Workflow
 

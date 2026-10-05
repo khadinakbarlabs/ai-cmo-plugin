@@ -1,0 +1,317 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "plugin_version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "operation_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "business_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "task_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "observed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "local",
+        "import",
+        "live"
+      ]
+    },
+    "effect": {
+      "type": "string",
+      "enum": [
+        "none",
+        "paid-research",
+        "publish",
+        "send",
+        "change-spend",
+        "delete"
+      ]
+    },
+    "state": {
+      "type": "string",
+      "enum": [
+        "planned",
+        "blocked",
+        "running",
+        "partial",
+        "completed",
+        "failed",
+        "unknown"
+      ]
+    },
+    "verification": {
+      "type": "string",
+      "enum": [
+        "none",
+        "local-check",
+        "provider-readback"
+      ]
+    },
+    "input_references": {
+      "type": "array",
+      "maxItems": 30,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "authority_reference": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "limits": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "raw_rows": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100000
+        },
+        "max_pages": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1000
+        },
+        "timeout_seconds": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 86400
+        },
+        "cost_limit_usd": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "exclusiveMinimum": 0
+        }
+      },
+      "required": [
+        "raw_rows",
+        "max_pages",
+        "timeout_seconds",
+        "cost_limit_usd"
+      ]
+    },
+    "provider": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "run_id": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "dataset_id": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "build_id": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "status": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "service": {
+              "type": "string",
+              "minLength": 1
+            },
+            "operation_id": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "account_reference": {
+              "type": "string",
+              "minLength": 1
+            },
+            "target_reference": {
+              "type": "string",
+              "minLength": 1
+            },
+            "attempted_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "request_fingerprint": {
+              "type": "string",
+              "pattern": "^sha256:[a-f0-9]{64}$"
+            },
+            "build_reference": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "run_id",
+            "dataset_id",
+            "build_id",
+            "status",
+            "service",
+            "operation_id",
+            "account_reference",
+            "target_reference",
+            "attempted_at",
+            "request_fingerprint",
+            "build_reference"
+          ]
+        }
+      ]
+    },
+    "counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "raw_rows": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "accepted_rows": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "diagnostic_rows": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "next_offset": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "raw_rows",
+        "accepted_rows",
+        "diagnostic_rows",
+        "next_offset"
+      ]
+    },
+    "artifacts": {
+      "type": "array",
+      "maxItems": 30,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "error": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "code": {
+              "type": "string",
+              "enum": [
+                "RUNTIME_MISSING",
+                "PROJECT_MISSING",
+                "INPUT_INVALID",
+                "ACCESS_DENIED",
+                "AUTH_REQUIRED",
+                "AUTHORITY_REQUIRED",
+                "VERSION_UNSUPPORTED",
+                "STATE_CONFLICT",
+                "COVERAGE_PARTIAL",
+                "PROVIDER_FAILED",
+                "OUTCOME_UNKNOWN"
+              ]
+            },
+            "diagnostic": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 300
+            }
+          },
+          "required": [
+            "code",
+            "diagnostic"
+          ]
+        }
+      ]
+    },
+    "continuation": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "checkpoint": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "next_action": {
+          "type": "string",
+          "minLength": 1
+        },
+        "may_repeat_external_effect": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "checkpoint",
+        "next_action",
+        "may_repeat_external_effect"
+      ]
+    }
+  },
+  "required": [
+    "schema_version",
+    "plugin_version",
+    "operation_id",
+    "business_id",
+    "task_id",
+    "observed_at",
+    "mode",
+    "effect",
+    "state",
+    "verification",
+    "input_references",
+    "authority_reference",
+    "limits",
+    "provider",
+    "counts",
+    "artifacts",
+    "error",
+    "continuation"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "plugin_version": "0.4.4",
+  "operation_id": "fictional-import-01",
+  "business_id": "fictional-pumps",
+  "task_id": "qualify-accounts",
+  "observed_at": "2026-10-05T12:00:00Z",
+  "mode": "import",
+  "effect": "none",
+  "state": "partial",
+  "verification": "local-check",
+  "input_references": [
+    "fictional-prospects.csv"
+  ],
+  "authority_reference": null,
+  "limits": {
+    "raw_rows": 1000,
+    "max_pages": 10,
+    "timeout_seconds": 60,
+    "cost_limit_usd": null
+  },
+  "provider": null,
+  "counts": {
+    "raw_rows": 100,
+    "accepted_rows": 90,
+    "diagnostic_rows": 10,
+    "next_offset": 100
+  },
+  "artifacts": [
+    ".ai-cmo/research/fictional-accounts.csv",
+    ".ai-cmo/research/fictional-field-map.json"
+  ],
+  "error": {
+    "code": "COVERAGE_PARTIAL",
+    "diagnostic": "Ten ambiguous source records remain in the review table."
+  },
+  "continuation": {
+    "checkpoint": ".ai-cmo/operations/fictional-import-01.json",
+    "next_action": "Review the ten ambiguous identities using the original source IDs.",
+    "may_repeat_external_effect": false
+  }
+}

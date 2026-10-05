@@ -1,6 +1,6 @@
 ---
 name: marketing-analytics
-description: Analyze marketing performance, attribution, cohorts and funnel metrics from first-party data or imports. Use for marketing reporting and tracking checks.
+description: Calculate CTR, CPC, CPA, ROAS and funnel or cohort metrics from marketing CSVs and first-party data. Create an editable evidence-linked report; imported data analysis does not need account setup.
 ---
 
 # Marketing Analytics

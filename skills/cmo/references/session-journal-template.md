@@ -10,6 +10,8 @@ Save one concise dated entry under .ai-cmo/sessions/ only when local persistence
 - External effects with receipt IDs and observed state, or none:
 - Feedback offered/received/declined and record ID, or not asked:
 - Metrics known / unknown and reporting window:
+- Active task ID, actual source/plugin version, stale evidence or conflicting state:
+- Operation receipt/checkpoint path and unknown effects requiring reconciliation, or none:
 - Next useful action, owner, prerequisites and review date:
 - Scheduled review ID and registered/unknown/draft state, or none:
 - Persistence: saved with actual path / unsaved inline handoff:

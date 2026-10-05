@@ -1,6 +1,6 @@
 ---
 name: performance-review
-description: Turn marketing results into priorities and next experiments. Use for a weekly CMO review or assessing campaign learning.
+description: Review weekly or campaign marketing results, compare compatible baselines and choose the next experiment. Use after metrics exist; calculate raw CSV metrics through marketing-analytics first.
 ---
 
 # CMO Performance Review

@@ -12,7 +12,7 @@ Attach source URL/file, observation time, collection method, account/region and 
 
 ## Tool capability
 
-Use external, user-installed CLIs. Check version/help, authentication and account discovery; keep credentials in the tool's supported store/environment. Never display tokens, put secrets in arguments/request examples or copy raw provider logs into general context. Do not bundle dependencies, servers, auto-installers, hooks or background executors. A host without CLI access gets supported draft/import behavior, not a pretend successful integration.
+Use external, user-installed CLIs. For a live operation check version/help, authentication and account discovery; local drafts and authorized imports do not require these prerequisites. keep credentials in the tool's supported store/environment. Never display tokens, put secrets in arguments/request examples or copy raw provider logs into general context. Do not bundle dependencies, servers, auto-installers, hooks or background executors. A host without CLI access gets supported draft/import behavior, not a pretend successful integration.
 
 Treat installation, account authorization, commercial entitlement and actual action support separately. Choose an exact catalog Actor ID or a verified CLI command. Validate request files against current schemas. Use safe argument handling; do not execute user content as shell code. Keep bounded result/cost/time settings and respect provider pagination.
 
@@ -24,9 +24,11 @@ Never solicit or handle passwords, login cookies, session tokens or third-party 
 
 ## Side effects and recovery
 
-Before a write, check business/account, concrete content, timing/timezone and existing authority. Retain an operation record with request fingerprint, provider IDs and observed state, without secrets. Use idempotency when supported. An ambiguous response requires readback/reconciliation before retrying; never blindly repeat create or paid-run operations.
+Before a write, check business/account, concrete content, timing/timezone and existing authority. Retain an operation record with request fingerprint, provider IDs and observed state, without secrets. Use idempotency only when the provider actually supports it; a local operation ID or fingerprint is not safe-replay support. An ambiguous response requires readback/reconciliation before retrying; never blindly repeat create or paid-run operations.
 
 Differentiate prepared, uploaded, accepted, scheduled and published. A run status of SUCCEEDED does not establish valid data: inspect row types, errors and summaries. Summarize partial failures and provenance. Do not enable recurring jobs unless explicitly requested; the plugin itself does not keep running after a conversation ends.
+
+Record [structured outcomes](operation-contract.md) for multi-step or external operations. These schemas and guidance do not add runtime enforcement.
 
 ## Output and decisions
 

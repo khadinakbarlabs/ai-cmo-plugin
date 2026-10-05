@@ -25,7 +25,7 @@ Add the repository marketplace and install the plugin:
 /plugin install khadin-ai-cmo@ai-cmo-marketplace
 ```
 
-Then invoke `/khadin-ai-cmo:cmo` and describe the business/outcome. GitHub installation is separate from approval in Anthropic's directory. The [GitHub release](https://github.com/khadinakbarlabs/ai-cmo-plugin/releases/tag/v0.4.3) supplies separate Claude and OpenAI ZIPs plus checksums. Use the OpenAI ZIP in the supported host upload/install surface; actual host permissions and CLI availability still apply.
+Then invoke `/khadin-ai-cmo:cmo` and describe the business/outcome. GitHub installation is separate from approval in Anthropic's directory. The [GitHub release](https://github.com/khadinakbarlabs/ai-cmo-plugin/releases/tag/v0.4.4) supplies separate Claude and OpenAI ZIPs plus checksums. Use the OpenAI ZIP in the supported host upload/install surface; actual host permissions and CLI availability still apply.
 
 ## Anthropic first
 
@@ -57,7 +57,7 @@ The component budget is 39 discoverable skills, 6 native Claude agents and 0 sep
 
 ## Context, learning and reporting
 
-AI CMO v0.4.3 includes a [continuous learning loop](skills/cmo/references/learning-loop.md): source-aware business context, explainable next actions, concise session handoffs, optional local feedback and editable visual reports. Ask "What should we do next?", "Continue where we left off", "Show progress" or "Review this every week". Existing skills handle these flows; no extra skill/command inventory is added.
+AI CMO v0.4.4 includes a [continuous learning loop](skills/cmo/references/learning-loop.md): source-aware business context, explainable next actions, concise session handoffs, optional local feedback and editable visual reports. Ask "What should we do next?", "Continue where we left off", "Show progress" or "Review this every week". Existing skills handle these flows; no extra skill/command inventory is added.
 
 Recurring reviews require a verified host scheduler and concrete scope. The package includes recipes and registration checks, not an executor. Feedback remains in your workspace unless you explicitly request a specific external delivery. The report template has no scripts, tracking or external network assets. See [the user experience guide](skills/cmo/references/user-experience.md). These features are instructions/templates; behavioral effectiveness, unattended execution and a 10× improvement are not established by packaging.
 
@@ -68,3 +68,11 @@ This repository is the public Claude source. The OpenAI release ZIP carries matc
 ## Research access limits
 
 All 38 owned Actor routes remain mapped. Their schemas are supported public-mode projections rather than complete upstream schemas. Sixteen acquisition-unverified routes support authorized imports only; the other 22 require evidence of a provider-permitted access method before launch. Login/session secrets and gated retrieval inputs are excluded. See the Apify research catalog for exact per-route limits.
+
+## Direct tasks and recovery
+
+Focused requests go directly to their specialist through the [task router](skills/cmo/references/task-routing.md). Imported marketing metrics and prospect qualification work locally without account setup. Lead imports preserve reviewed company identities, CRM fields and suppression through a companion mapping; contact research is optional.
+
+Multi-step/external workflows use a [structured outcome receipt](skills/cmo/references/operation-contract.md) with bounded inputs, actual evidence, partial checkpoints and safe errors. Unknown external effects require reconciliation before repeating. Schemas document the contract; this instruction-only package does not add an automatic collector, normalizer or executor.
+
+For local exposure, use the [host installation and verification guide](HOSTS.md). Source availability, installed components, observed behavior and directory approval are distinct checks.

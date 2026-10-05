@@ -4,6 +4,8 @@ Apply the [shared operating contract](../../cmo/references/operating-contract.md
 
 Apply this reference through the owning skill; it is not a separate installed skill.
 
+Start supplied CSV/CRM work with the [company-first import and provenance contract](lead-import.md). Produce useful account qualification before optional contact research; imports do not require login, a paid sample or Apify.
+
 ## Workflow
 
 1. Define ideal account/customer fit, exclusions, buying roles, qualification signals and the next conversion; distinguish contacts, leads, accepted leads and opportunities.

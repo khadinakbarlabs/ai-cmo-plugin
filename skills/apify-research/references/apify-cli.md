@@ -26,3 +26,15 @@ Collect `defaultDatasetId` in bounded pages using `apify datasets get-items <dat
 ## Current run contract
 
 The platform documents `maxTotalChargeUsd` at https://docs.apify.com/api/v2/actors-runs-post . All bundled Actors were observed as pay-per-event. Use a positive cap authorized for the run and supported item/time limits. Minimum Actor charges may reject a small cap; do not silently raise it. Platform termination can lag, so a cap is not a precise fixed-price guarantee. Pricing and usage pass-through can change. Keep catalog examples separate from run query parameters.
+
+## Bounded readback and paging checkpoints
+
+Set an explicit raw-row limit (before filtering/deduplication), page limit, positive timeout and polling deadline before reading. Suggested starting bounds for a small authorized import: 100 raw rows per page, 10 pages, 1,000 raw rows; the actual user scope can be smaller. These are workload bounds, not acquisition or cost authority. Inspect the installed `get-items` help: its default returns all items, so always pass both limit and offset.
+
+Start raw offset at zero or the saved raw offset for the same dataset/run and query settings. Request `min(page_size, remaining_raw_rows)`. Store the successfully received raw page before normalization where authorized. Advance offset by the number of raw returned rows, including diagnostics and duplicates; never by accepted/unique rows. If the page cannot be saved/parsed, do not advance the checkpoint. Resume the same raw offset after bounded read-only recovery; local deduplication prevents duplicated normalized records, not a repeated paid launch.
+
+Stop on an empty page, a verified exhausted dataset, the row/page limit or the deadline. A short page from a running/growing dataset is not proof of final completeness; retain the cursor and run state. Recheck terminal status/item count when available. If an API's default view filters records, retain the view settings and do not compare that offset to a different view. Report partial scope if the budget ends, the dataset changes during collection or coverage cannot be established.
+
+Poll at most six readbacks within a 60-second initial observation window (or smaller user limits), with bounded waits. A continuing run remains running with its ID/checkpoint; reaching the observation deadline does not authorize abort, resurrect or a new start. Transient read-only failures may receive at most two retries within the same deadline. Denials/CAPTCHA/rate restrictions stop collection; no evasion. A failed/aborted/timed-out run can still have useful partial data, but do not label its coverage complete.
+
+A timeout while POSTing a start is OUTCOME_UNKNOWN, even without a returned run ID. Retain the request hash, exact Actor/build, account and attempt window. Inspect supported run-list/readback commands and match those facts before deciding whether a run exists. Multiple matches or unavailable input/build evidence remain ambiguous. Never repeat the POST automatically. Record the result using the [operation contract](../../cmo/references/operation-contract.md).

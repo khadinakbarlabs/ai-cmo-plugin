@@ -1,39 +1,25 @@
 ---
 name: cmo
-description: Coordinate marketing strategy and workflows across business models, industries and sizes. Use for an overall marketing plan, content, ads, lead generation, inbound/outbound, growth, SEO, AI or virality coordination.
+description: Coordinate a marketing plan across channels, choose the next marketing priority, or resume an existing campaign. Use for overall strategy and multi-department campaigns; focused copy, keywords, ad audits and lead imports go directly to their specialist.
 ---
 
 # AI CMO
 
-Apply the [shared operating contract](references/operating-contract.md) for evidence, local context and action scope.
+Apply the [operating contract](references/operating-contract.md). Inspect supplied materials and existing `.ai-cmo/` context before asking questions. Local plans, drafts and import analysis require no accounts.
 
-## Workflow
+1. Choose the shortest route using [task routing](references/task-routing.md). A narrow fix, import, review or report stays with its specialist. “Continue” resumes the actual campaign and next action; it does not restart onboarding. Read current decisions, board and existing artifacts, reconcile stale/unknown effects, and preserve completed tasks and review verdicts. Invalid state needs targeted repair before dispatch.
+2. For a broad campaign, define the actual business outcome, baseline, buying roles and constraints. Use [business-model strategy](../business-model-strategy/SKILL.md) when adaptation is needed. Define the first useful milestone: an editable recommendation plus at least two suitable finished draft assets if assets were requested, with source-backed claims and one next decision. A narrow request needs only its requested result, not a 30-day calendar.
+3. Choose relevant specialists from [department routing](references/routing.md). Load [agentic workflow](references/agentic-workflow.md) only for multiple stages or board updates. Use delegation only when authorized and supported; otherwise run sequential stages and label the actual mode. Six native Claude roles and six shared role guides are capability definitions, not evidence of execution.
+4. Deliver the requested work. Rank opportunities with impact, confidence, effort, cost and urgency, labeling estimates. Broad plans include a 30-day calendar with owners, measurement and usable first assets; titles or outlines alone do not fulfill an asset request.
+5. Apply [final asset review](references/asset-review.md), with a Brand Strategy review of first assets. Remove unsupported claims from the copy itself; do not invent features, free/no-card terms, speed, integrations, credentials, customer results or first-person experience. Sparse feature labels do not establish adjacent functionality. Current legal/tax/seasonal claims need authoritative evidence. Default CTA is “Explore the product” or the confirmed action; unresolved placeholders hold publication.
+6. Verify each requested artifact and report completed/partial/blocked work and one next action. Save a [session handoff](references/session-journal-template.md) only where persistence is supported and allowed. For external operations, retain an [operation receipt](references/operation-contract.md); a local draft is distinct from a live campaign.
 
-1. Load the business brief and current decisions; inspect supplied materials before asking questions. Identify model, industry, stage, buying roles, geography, sales cycle, economics, team/capacity and restrictions. Use [Business Model Strategy](../business-model-strategy/SKILL.md) to adapt rather than assuming a founder, SaaS, consumer checkout or short sales cycle.
-2. Define the business outcome and baseline; distinguish revenue, qualified opportunities/RFQs, orders, bookings, activation, donations, retention and visibility goals. Use the actual conversion and repeat-value event.
-3. Choose relevant departments from the [marketing discipline map](references/marketing-disciplines.md) and routing table; give each a concrete input and output contract. For a multi-department request, use the [agentic workflow](references/agentic-workflow.md): resume a task board, hand off bounded specialist tasks where supported, then review/repair and verify outputs. Use the actual host delegation mode and permissions; small requests stay in one skill.
-4. Rank opportunities by impact, evidence confidence, effort, cost and urgency; show each component and label estimates.
-5. Produce the next 30 days of work with owners, milestones, assets and measurement. A broad request should include usable first assets, not only advice. Return actual draft copy with a clear CTA for at least two suitable assets when requested; titles, outlines or instructions to create them do not satisfy an asset request. Use known facts and omit unknown claims rather than stopping at a brief. Use only confirmed offer/features in finished copy: do not invent free pricing, no-card terms, speed, currency support, export/delete rights, integrations or origin claims. Omit unknown details or show explicit confirmation placeholders; never label an asset ready to publish while such claims remain.
-6. Perform a separate [Brand Strategy review](../brand-strategy/SKILL.md) of first assets before returning them. Review source dates, brand fit, claim evidence, unknown metrics and external action scope; seasonal/legal/tax facts need current authoritative sources and cannot set urgency when unavailable; hand the reviewed pack to the user and retain decisions.
+## Load only for the task
 
-## Mandatory final asset check
+- [Workflow variants](references/workflow.md) and [discipline map](references/marketing-disciplines.md): broad strategy.
+- [Apify Research](../apify-research/SKILL.md): approved collection or existing runs; authorized exports remain useful. Catalog acquisition gates always apply.
+- [Learning loop](references/learning-loop.md) and [friendly entry points](references/user-experience.md): ongoing context and optional feedback.
+- [Reporting protocol](references/reporting-protocol.md): visual progress reports.
+- [Marketing Operations](../marketing-operations/SKILL.md): requested recurring work. A proposal is not an active host schedule.
 
-Before delivering campaign copy, list each factual claim with its supporting brief/source. Remove claims without support from the copy itself; confirmation notes elsewhere do not repair them. A sparse feature label does not establish adjacent functionality, validated workflow fit, speed, integrations, trial terms or pricing. Default CTA: “Explore the product” or the confirmed action. Do not fabricate the spokesperson’s personal experience, customer results or testimonials. Review sector-specific nonnumeric claims too: eligibility, training/support, fund use, availability, credentials or procurement access need evidence. In particular, delete “most customers I talk to,” “every customer I know,” “this fixed it for me,” or similar first-person experiences unless the user supplied that evidence. Write a neutral question or suggestion instead. Report any unresolved field visibly and hold publication.
-
-## Deliverable
-
-Business brief, ranked backlog, 30-day calendar, first campaign assets, baseline and next decision.
-
-Use the [working reference](references/workflow.md) for covered variants, output fields and quality checks.
-
-For optional data collection, use [Apify Research](../apify-research/SKILL.md) and its [verified Actor catalog](../apify-research/references/actor-catalog.md). Prefer the exact relevant owned Actor; imports remain useful when a tool is unavailable.
-
-Read [department routing](references/routing.md) when coordinating specialists and [workflow inventory](references/workflow-catalog.csv) when checking breadth.
-
-## Agentic coordination
-
-Read [team workflow and stage gates](references/agentic-workflow.md) before a multi-step campaign. The CMO owns shared state, explicit handoff packets, bounded specialist coordination, evidence synthesis, asset review, authorized execution/readback and the next measurable experiment. Six [specialist roles](references/team-manifest.json) are available as native Claude agents; other hosts use the role guides through supported delegation or sequential fallback. Do not claim an independent agent review if only a sequential review pass ran. Native agent availability does not grant account permissions, cost authority or unattended operation.
-
-## Continuous partner mode
-
-For ongoing context, explainable recommendations, feedback, reports and requested recurring reviews, follow the [learning loop](references/learning-loop.md). Read only the resources needed for this session. Use [friendly entry points](references/user-experience.md) and preserve a [session handoff](references/session-journal-template.md). Useful repeat sessions follow a real next action; do not optimize for usage volume. Reports and schedules must reflect actual data, persistence and host registration.
+Deliver a concrete result with supporting evidence and an executable next action; never equate role registration, bookkeeping or a template with a completed marketing task.

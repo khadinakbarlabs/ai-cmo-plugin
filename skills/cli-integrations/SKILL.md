@@ -1,6 +1,6 @@
 ---
 name: cli-integrations
-description: Connect an existing external CLI to a marketing workflow without adding a server to the plugin. Use for tool setup or checking supported integrations.
+description: Check whether a user-installed marketing CLI supports a requested action, diagnose missing tools or authentication, and prepare a verified request or local fallback. Does not install tools or connect accounts automatically.
 ---
 
 # CLI Integrations
