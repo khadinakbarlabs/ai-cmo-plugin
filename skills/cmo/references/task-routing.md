@@ -1,6 +1,6 @@
 # Shortest marketing route
 
-Inspect the user's supplied content and current business/campaign first. Do not open every department or create a new brief for a narrow request. These are routes through existing public skill IDs, not new commands or executable dispatch rules.
+Inspect the user's current inline content and business/campaign state first. File-query/import routes below are compatibility handoffs only in this directory edition; request bounded pasted rows instead of opening user files. Do not open every department or create a new brief for a narrow request. These are routes through existing public skill IDs, not new commands or executable dispatch rules.
 
 | Request | Owner / first useful result | Boundary |
 | --- | --- | --- |

@@ -1,21 +1,20 @@
-# Recurring marketing reviews using host scheduling
+# Recurring marketing reviews through the host
 
-A plugin file cannot execute after a session ends. Use an actually available host scheduling facility or a user-owned external scheduler; do not install a daemon, add hooks, create CI jobs or execute background tasks merely because recurrence is suggested. The six specialist wrappers do not expose scheduler tools; the coordinator discovers and registers through actual host capabilities.
+Apply [directory boundaries](directory-boundaries.md). A plugin file cannot wake itself or run after a session ends. Use only an actual supported host scheduler requested by the user; no daemon, hook, installer or implicit recurring activity is included.
 
-## Proposed cadences
+## Prepare and register
 
-Adapt to data freshness, business cycle and capacity. Examples are drafts, never automatic defaults to enable: weekly priorities plus performance review; monthly strategy/experiment review; a launch-specific check after agreed milestones. Daily alerts are useful only when sufficient changing data and a material failure/decision threshold exist. Do not schedule frequent messages just to increase engagement.
+1. Use the business goal, bounded inline job brief and permitted account/data scope supplied for this request. Inspect existing matching jobs through the scheduler's real tool/API, not saved schedule, project or session files.
+2. Establish cadence, timezone, reporting window, exact allowed data sources/effects, destination, run/cost bounds, expiry and notification rules. A reporting job does not authorize collection spending, outreach or campaign changes. Missing enforceable scope blocks activation.
+3. Prepare a complete inline job brief using the bundled [schedule schema](schedule-schema.json) and [review template](scheduled-review-template.md). An optional saved schedule artifact is output only when requested; it is not an active executor or an input file to reload later.
+4. Register using the supported host tool and read back actual job ID, timing, next run and activation. Ambiguous registration remains unknown; reconcile through scheduler readback before creating a duplicate.
 
-## Register a concrete scope
+## Each requested run
 
-1. Read current business, outcome, workspace, account/data availability and existing schedule records. Inspect supported scheduler capabilities and existing matching jobs before creating a duplicate.
-2. Establish cadence, timezone, next occurrence, data sources, concrete report/output destination, allowed effects, run/cost budget, expiration/review date and notification behavior. Preserve standing authorization; ask for missing essentials together. Read-only performance checks do not authorize campaign writes or paid collection. Unknown run costs need an explicit limit before paid actions.
-3. Prepare [schedule.json](schedule-example.json) using [the schema](schedule-schema.json), and [a review brief](scheduled-review-template.md). Bind runtime files to the actual selected workspace; no placeholders or fictional paths may be registered. A proposed recipe remains draft.
-4. Register only when the user requests recurrence and the exact scope is understood. Use the platform's real tool/API rather than raw guessed syntax. Read back job ID, timezone, next_run_at, registered state and expiry; keep a redacted receipt. Failed/ambiguous registration is unknown pending reconciliation, never scheduled.
-5. Each run loads the latest scoped context/board, reads only authorized data, checks existing same-window runs, creates a dated report and updates the session handoff. Include whether CLI credentials, source freshness and approved costs were available at execution. Deduplicate by business/schedule/window; reconcile a running/unknown prior attempt before starting another operation. Only a verified scheduler/executor can provide an actual overlap lock; a local record alone is not such a lock.
-6. If required data is unavailable, return a gap report and manual import path without made-up results. Notify only on agreed review delivery, a meaningful change, material failure or needed decision. Unchanged monitoring stays quiet. Missed periods aggregate into one bounded review; don't replay every missed fire or spend extra without scope.
-7. Keep edit/pause/cancel paths through the same host scheduler; verify applied changes. Removing plugin files does not cancel external schedules. Save a continuation handoff if a session ends, but do not claim it will wake itself.
+Use only the inline job inputs actually registered and permitted live-provider/scheduler readback. Do not load user-generated/uploaded files, prior context/boards, conversation summaries or session journals. If current task state or metric rows are unavailable through an admitted provider, request the bounded missing information inline or return a gap report; do not silently substitute file access.
 
-## Provider availability, checked October 5, 2026
+Check provider freshness, identity, authority and cost controls at execution. Reconcile same-window running/unknown operations before any new effect; a local record is not an overlap lock. Deliver the explicitly scheduled report and one next decision. Create a handoff only if the job scope requests it; never automatically append session history or learn a personal profile.
 
-Claude Code session scheduling runs while its session is available; recurring tasks expire after seven days and missed intervals are not replayed individually. Durable automation uses a separately configured supported host service. See [official Claude scheduling documentation](https://code.claude.com/docs/en/scheduled-tasks). Verify current tool availability and semantics in the actual host. OpenAI packaging does not supply scheduling; use discovered host automation tools when available, otherwise return the draft plus manual review dates. Exact timing and delivery depend on that scheduler, not this plugin.
+Notify only for the agreed report, meaningful change/failure or required decision. Keep unchanged monitoring quiet and avoid replaying missed periods or extra spending without scope. Use the same host's supported edit/pause/cancel tool and verify the result. Removing plugin files does not cancel a registered job.
+
+If no supported scheduler exists, return a complete draft brief and a manual review date. Verify current capabilities in the actual host; compatibility does not establish activation. References: [Claude scheduling](https://code.claude.com/docs/en/scheduled-tasks). No timing, lifetime or delivery guarantee is inferred from this document.

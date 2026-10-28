@@ -12,8 +12,8 @@
       "status": "confirmed",
       "source": {
         "type": "user",
-        "reference": "fictional session S01",
-        "scope": "Supplied brief; not independently verified"
+        "reference": "fictional-brand-brief.md",
+        "scope": "Synthetic project brief explicitly selected for this task; not independently verified"
       },
       "observed_at": "2026-10-05T09:00:00Z",
       "refresh_after": "2026-11-04T09:00:00Z"
@@ -24,7 +24,7 @@
       "id": "P01",
       "key": "voice",
       "value": "Direct and factual",
-      "source": "fictional user preference",
+      "source": "Explicit voice requirement in fictional-brand-brief.md",
       "updated_at": "2026-10-05T09:00:00Z"
     }
   ],

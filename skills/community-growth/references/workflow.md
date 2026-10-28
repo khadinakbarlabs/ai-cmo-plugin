@@ -27,5 +27,5 @@ For missing tools or accounts, produce the useful draft/import-based result and 
 
 Use [Apify Research](../../apify-research/SKILL.md) for schemas, cost scope and execution. Each route is optional and runtime-untested; do not substitute an unverified Actor.
 
-- `khadinakbar/reddit-search-scraper` (`j1gQL2JlzmGKxrPzJ`): required keys `searchQuery`. [Live-inspected schema](../../apify-research/references/public-schemas/reddit-search-scraper.json) and [bounded example](../../apify-research/references/public-inputs/reddit-search-scraper.json).
-- `khadinakbar/youtube-comments-scraper` (`JaLpIf4J9cc3rCa0E`): required keys none declared. [Live-inspected schema](../../apify-research/references/public-schemas/youtube-comments-scraper.json) and [bounded example](../../apify-research/references/public-inputs/youtube-comments-scraper.json).
+- `khadinakbar/reddit-search-scraper` (`j1gQL2JlzmGKxrPzJ`): required keys `searchQuery`. [Bundled public-mode input projection](../../apify-research/references/public-schemas/reddit-search-scraper.json) and [bounded example](../../apify-research/references/public-inputs/reddit-search-scraper.json).
+- `khadinakbar/youtube-comments-scraper` (`JaLpIf4J9cc3rCa0E`): required keys none declared. [Bundled public-mode input projection](../../apify-research/references/public-schemas/youtube-comments-scraper.json) and [bounded example](../../apify-research/references/public-inputs/youtube-comments-scraper.json).

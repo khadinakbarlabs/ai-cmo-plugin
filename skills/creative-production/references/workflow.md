@@ -2,7 +2,7 @@
 
 ## Output contract
 
-Production brief, shot list, creator instructions and verified assets when tools are available.
+Production brief, shot list, creator scripts and permitted design-only visual aids; video/audio generation is unsupported.
 
 Record the business/campaign ID, source dates and input scope. Include the useful artifact plus evidence, unavailable fields, decision and next owner. Treat an estimated outcome as a hypothesis until measured.
 
@@ -25,15 +25,15 @@ Brief: message, audience, aspect ratio, safe areas, duration, script, shot list,
 ## Covered variants
 
 - Static ad design briefs
-- Image asset generation
+- Design-only visual aid production
 - Video ad scripts
-- Video asset generation
+- Video production handoff (no generation)
 - UGC and creator briefs
 
 ## Optional external CLI
 
-Follow the [verified external CLI procedure](../../cli-integrations/references/agent-media-cli.md) when the task needs connected execution. Use existing accounts and the shared authority/cost contract.
+Use the retained [media handoff reference](../../cli-integrations/references/agent-media-cli.md). This release does not launch a media generation CLI.
 
 ## Cross-channel and localized assets
 
-Specify text, static/design, short/long video, audio/podcast, presentations, sales collateral, print/field or other requested format. Adapt accessibility, language, audience/culture, distribution rights and actual destination requirements. Transcreation needs claim/meaning review in each locale. Use only supported generation/export capabilities; a brief or preview must not be reported as a finished verified asset.
+Specify text, static/design, short/long video, audio/podcast, presentations, sales collateral, print/field or other requested format. Adapt accessibility, language, audience/culture, distribution rights and actual destination requirements. Transcreation needs claim/meaning review in each locale. Apply the [directory boundaries](../../cmo/references/directory-boundaries.md): no AI video/audio/voice or general-purpose image generation; a brief or preview must not be reported as a finished verified asset.

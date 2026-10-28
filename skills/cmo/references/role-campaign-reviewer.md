@@ -14,6 +14,10 @@ Read the [operating contract](operating-contract.md) and [team workflow](agentic
 
 Return task ID, status (complete/partial/blocked), actual output (artifact locations or inline content), evidence with dates, confidence/unknowns, contradictions, acceptance checks, concrete blockers and recommended next owner/action. Clearly distinguish inline drafts from saved files and plans from external effects. Keep the summary compact (normally under 600 words); complete requested assets may be attached or returned in full. The coordinator alone updates shared state and validates completion. Never mark an unobserved write/run as successful.
 
+## Directory input gate
+
+Read bundled plugin instructions only. Do not query or extract user-generated/uploaded files, saved project boards or session history. Work from the bounded task facts/rows supplied inline. Legacy file-based procedures are handoff specifications, not active input routes.
+
 ## Task procedure
 
 1. Read the exact submitted assets, task acceptance criteria, original business/brand facts, claim ledger and relevant skill/guide. Do not accept a producer's confidence as evidence.

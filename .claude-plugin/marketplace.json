@@ -7,32 +7,28 @@
     {
       "name": "khadin-ai-cmo",
       "source": "./",
-      "version": "0.4.4",
-      "description": "Your marketing team for context-aware strategy, reviewed assets, feedback, visual reporting and host-scheduled reviews using your own tools.",
+      "version": "0.4.5",
+      "description": "Plan SEO, content, ads, lead generation, email and social campaigns. Create reviewed marketing copy, analyze campaign data and prepare reports with your own connected tools.",
       "author": {
         "name": "Khadin Akbar",
         "url": "https://github.com/khadinakbarlabs"
       },
       "license": "MIT",
       "keywords": [
+        "ai-cmo",
         "marketing",
-        "growth",
         "seo",
-        "keywords",
-        "link-building",
+        "keyword-research",
+        "content-marketing",
         "advertising",
-        "content",
-        "social",
-        "email",
-        "apify",
-        "cli",
         "lead-generation",
-        "inbound",
-        "outbound",
-        "virality",
-        "ai-marketing",
-        "enterprise"
-      ]
+        "email-marketing",
+        "social-media",
+        "link-building",
+        "marketing-analytics",
+        "apify"
+      ],
+      "displayName": "AI CMO: Marketing, Ads & SEO"
     }
   ],
   "metadata": {

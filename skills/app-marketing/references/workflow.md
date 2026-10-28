@@ -31,5 +31,5 @@ Inspect actual store/country rules before finalized metadata; preserve app ident
 
 Use [Apify Research](../../apify-research/SKILL.md) for schemas, cost scope and execution. Each route is optional and runtime-untested; do not substitute an unverified Actor.
 
-- `khadinakbar/appstore-reviews-scraper` (`VqAhRpuDhSHub71ce`): required keys `appIds`. [Live-inspected schema](../../apify-research/references/public-schemas/appstore-reviews-scraper.json) and [bounded example](../../apify-research/references/public-inputs/appstore-reviews-scraper.json).
-- `khadinakbar/scrape-google-serp` (`z0r97dqhtUQk2AXd8`): required keys none declared. [Live-inspected schema](../../apify-research/references/public-schemas/scrape-google-serp.json) and [bounded example](../../apify-research/references/public-inputs/scrape-google-serp.json).
+- `khadinakbar/appstore-reviews-scraper` (`VqAhRpuDhSHub71ce`): required keys `appIds`. [Bundled public-mode input projection](../../apify-research/references/public-schemas/appstore-reviews-scraper.json) and [bounded example](../../apify-research/references/public-inputs/appstore-reviews-scraper.json).
+- `khadinakbar/scrape-google-serp` (`z0r97dqhtUQk2AXd8`): required keys none declared. [Bundled public-mode input projection](../../apify-research/references/public-schemas/scrape-google-serp.json) and [bounded example](../../apify-research/references/public-inputs/scrape-google-serp.json).

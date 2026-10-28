@@ -33,9 +33,9 @@ For each page record the reader's question, unique evidence, related entities, i
 
 Use [Apify Research](../../apify-research/SKILL.md) for schemas, cost scope and execution. Each route is optional and runtime-untested; do not substitute an unverified Actor.
 
-- `khadinakbar/scrape-google-serp` (`z0r97dqhtUQk2AXd8`): required keys none declared. [Live-inspected schema](../../apify-research/references/public-schemas/scrape-google-serp.json) and [bounded example](../../apify-research/references/public-inputs/scrape-google-serp.json).
-- `khadinakbar/website-seo-spider` (`f0PPU2rWRKUBwAfeZ`): required keys `startUrls`. [Live-inspected schema](../../apify-research/references/public-schemas/website-seo-spider.json) and [bounded example](../../apify-research/references/public-inputs/website-seo-spider.json).
-- `khadinakbar/keyword-rank-tracker` (`ufcrXss0mJzYLRgWW`): required keys `targetDomain`, `keywords`. [Live-inspected schema](../../apify-research/references/public-schemas/keyword-rank-tracker.json) and [bounded example](../../apify-research/references/public-inputs/keyword-rank-tracker.json).
+- `khadinakbar/scrape-google-serp` (`z0r97dqhtUQk2AXd8`): required keys none declared. [Bundled public-mode input projection](../../apify-research/references/public-schemas/scrape-google-serp.json) and [bounded example](../../apify-research/references/public-inputs/scrape-google-serp.json).
+- `khadinakbar/website-seo-spider` (`f0PPU2rWRKUBwAfeZ`): required keys `startUrls`. [Bundled public-mode input projection](../../apify-research/references/public-schemas/website-seo-spider.json) and [bounded example](../../apify-research/references/public-inputs/website-seo-spider.json).
+- `khadinakbar/keyword-rank-tracker` (`ufcrXss0mJzYLRgWW`): required keys `targetDomain`, `keywords`. [Bundled public-mode input projection](../../apify-research/references/public-schemas/keyword-rank-tracker.json) and [bounded example](../../apify-research/references/public-inputs/keyword-rank-tracker.json).
 
 ## Optional external CLI
 

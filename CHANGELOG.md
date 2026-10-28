@@ -1,5 +1,9 @@
 # Release history
 
+## 0.4.5
+
+Prepare clearer marketing/SEO display metadata while retaining installation IDs. Refresh listing-only identity evidence for all 38 owned Actors and publish a complete route inventory without claiming live execution. Replace Agent Media generation with a production handoff; restrict design outputs and remove automatic conversation-derived profile/preference persistence. Add service admission, provider privacy links and directory ownership/review notes. No new server, executable, hook, automatic Actor run or account permission is added. Final display name and description are owner-approved; directory publication still requires current provider checks.
+
 ## 0.4.4
 
 Narrow CMO discovery to coordination and campaign resume; route focused edits, imports and audits directly to specialists. Move detailed asset review into a relevant reference while retaining factual claim safeguards. Local analysis starts from supplied files without account prerequisites. Add company-first import/provenance guidance, structured operation outcomes and bounded raw-offset paging/reconciliation. Preserve 39 skill IDs, 140 workflows, six Claude roles, all 38 acquisition gates and the skills-only external-CLI architecture. Schemas do not add runtime enforcement or establish live integration success.

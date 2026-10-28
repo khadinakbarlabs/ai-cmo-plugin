@@ -4,7 +4,7 @@ Apply the [shared operating contract](../../cmo/references/operating-contract.md
 
 Apply this reference through the owning skill; it is not a separate installed skill.
 
-Start supplied CSV/CRM work with the [company-first import and provenance contract](lead-import.md). Produce useful account qualification before optional contact research; imports do not require login, a paid sample or Apify.
+Start inline prospect-row work with the [company-first import and provenance contract](lead-import.md). Produce useful account qualification before optional contact research; pasted-row analysis does not require login, a paid sample or Apify. Opening user files is disabled in this directory edition.
 
 ## Workflow
 

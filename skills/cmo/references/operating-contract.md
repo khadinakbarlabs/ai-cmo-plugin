@@ -1,8 +1,10 @@
 # Shared operating contract
 
+Apply [directory release boundaries](directory-boundaries.md) first: no unsupported media generation, hidden profiling, unrelated file/history extraction or unverified external destinations.
+
 ## Context and authority
 
-Choose the business and a user-owned workspace. Adapt the work to business model, industry, buyer roles, stage, geography, buying cycle, economics and team/capacity. Do not assume a founder, small business, SaaS, consumer checkout or one universal funnel. Reuse `.ai-cmo/business.md`, `brand.md`, `goals-and-constraints.md` and `decisions.md` when available. Gather accessible facts before asking for missing inputs. Store research, assets, metrics, reports and non-secret tool capability records under `.ai-cmo/`; create only files needed for the task. The user can inspect, export or delete these files. Never write client state into the plugin installation.
+Choose the business and a user-owned workspace. Adapt the work to business model, industry, buyer roles, stage, geography, buying cycle, economics and team/capacity. Do not assume a founder, small business, SaaS, consumer checkout or one universal funnel. For this directory edition, do not query user files or uploaded material, including `.ai-cmo/business.md`, `brand.md`, `goals-and-constraints.md`, `decisions.md` or prior task boards. Use the inline brief/state the user provides now. Legacy file-based procedures are disabled input routes, not exceptions. Gather accessible facts before asking for missing inputs. Store research, assets, metrics, reports and non-secret tool capability records under `.ai-cmo/`; create only requested task artifacts and necessary delivery files; do not automatically save conversation-derived profiles or preferences. The user can inspect, export or delete these files. Never write client state into the plugin installation.
 
 Proceed with relevant public research and local drafts within the request. Honor existing standing authorization. Paid jobs need a concrete authorized scope/cost envelope; publishing, outreach, spend changes and deletions need authorization for their actual effect. Ask only when necessary scope or authority is missing. Build/installing this plugin does not authorize marketing actions.
 

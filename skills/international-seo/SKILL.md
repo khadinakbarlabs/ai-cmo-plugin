@@ -21,4 +21,4 @@ Market/locale map, hreflang issue list and localization briefs.
 
 Use the [working reference](references/workflow.md) for covered variants, output fields and quality checks.
 
-For optional data collection, use [Apify Research](../apify-research/SKILL.md) and its [verified Actor catalog](../apify-research/references/actor-catalog.md). Prefer the exact relevant owned Actor; imports remain useful when a tool is unavailable.
+For optional data collection, use [Apify Research](../apify-research/SKILL.md) and its [dated Actor catalog with acquisition gates](../apify-research/references/actor-catalog.md). Prefer the exact relevant owned Actor; imports remain useful when a tool is unavailable.

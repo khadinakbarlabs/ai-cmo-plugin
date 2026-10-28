@@ -1,6 +1,6 @@
 ---
 name: marketing-analytics
-description: Calculate CTR, CPC, CPA, ROAS and funnel or cohort metrics from marketing CSVs and first-party data. Create an editable evidence-linked report; imported data analysis does not need account setup.
+description: Calculate CTR, CPC, CPA, ROAS and funnel or cohort metrics from marketing rows pasted inline. Create an editable evidence-linked report; inline data analysis does not need account setup; do not open user-generated/uploaded files.
 ---
 
 # Marketing Analytics

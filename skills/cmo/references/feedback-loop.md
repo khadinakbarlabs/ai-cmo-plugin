@@ -6,11 +6,11 @@ This package has no telemetry collector, feedback endpoint or global learning se
 
 Offer one short optional check after a usable deliverable: "Useful as-is, needs changes, or off-target?" Let the user reply naturally. Do not repeat it within the same session, interrupt urgent work, require a rating, or ask again after a refusal unless the user reopens feedback. Corrections during normal work count as feedback without another survey.
 
-Use [feedback schema](feedback-schema.json) and [example](feedback-example.json) for a concise local record. Include business/session ID, deliverable reference, timestamp, category, verdict, actionable summary, severity, status and resolution. Prefer paraphrased minimum necessary context; no raw transcript, PII, customer contact lists or secrets. Categories: accuracy, strategy-fit, brand-voice, usability, integration, report, missing-workflow, outcome. Severity: low, medium, high. Verdict: useful, needs-changes, off-target, declined.
+Use [feedback schema](feedback-schema.json) and [example](feedback-example.json) only when the user requests a saved issue/correction record for the marketing artifact. Otherwise apply the correction inline without persistent capture. Include business/session ID, deliverable reference, timestamp, category, verdict, actionable summary, severity, status and resolution. Prefer paraphrased minimum necessary context; no raw transcript, PII, customer contact lists or secrets. Categories: accuracy, strategy-fit, brand-voice, usability, integration, report, missing-workflow, outcome. Severity: low, medium, high. Verdict: useful, needs-changes, off-target, declined.
 
 ## Learn and close the loop
 
-- Explicit style/process preference: propose or apply the precise change in context, show it to the user and allow correction.
+- Explicit artifact style correction: revise that deliverable. Save a revised brand brief only when requested; do not infer or persist a personal preference or a rule for future conversations.
 - Factual error: verify the original evidence, fix all affected assets/recommendations, and record the correction and source.
 - Strategy feedback: revise the hypothesis; measure outcomes before calling it a better strategy.
 - Integration failure: retain redacted operation evidence and reconcile ambiguous effects before retrying.

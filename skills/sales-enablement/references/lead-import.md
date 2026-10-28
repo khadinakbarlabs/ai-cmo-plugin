@@ -1,4 +1,6 @@
-# Company-first lead imports and provenance
+# Company-first lead rows and provenance
+
+**Directory input gate:** do not query or extract user-generated/uploaded files. Ask for only the bounded relevant rows inline. The legacy file-import steps below are a manual handoff specification; they do not authorize opening a CSV or CRM export. Preserve identities, qualification uncertainty and suppression when analyzing pasted rows.
 
 First useful result: inspect the supplied file, define account fit from existing business context, and deliver an editable qualified/unknown/excluded account sheet plus a preservation mapping and one next action. No login, paid sample, contact search or mandatory capture funnel is needed. Do not send messages or treat possession of an email as permission to contact.
 

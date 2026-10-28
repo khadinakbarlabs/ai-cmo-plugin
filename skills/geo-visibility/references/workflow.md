@@ -30,5 +30,5 @@ Record sampled answer, cited URL, accessible supporting content and whether the 
 
 Use [Apify Research](../../apify-research/SKILL.md) for schemas, cost scope and execution. Each route is optional and runtime-untested; do not substitute an unverified Actor.
 
-- `khadinakbar/ai-search-visibility-tracker` (`CFYLF6fOcyvdofuof`): required keys none declared. [Live-inspected schema](../../apify-research/references/public-schemas/ai-search-visibility-tracker.json) and [bounded example](../../apify-research/references/public-inputs/ai-search-visibility-tracker.json).
-- `khadinakbar/google-ai-overviews-scraper` (`SMseG5HJek49LaveS`): required keys `queries`. [Live-inspected schema](../../apify-research/references/public-schemas/google-ai-overviews-scraper.json) and [bounded example](../../apify-research/references/public-inputs/google-ai-overviews-scraper.json).
+- `khadinakbar/ai-search-visibility-tracker` (`CFYLF6fOcyvdofuof`): required keys none declared. [Bundled public-mode input projection](../../apify-research/references/public-schemas/ai-search-visibility-tracker.json) and [bounded example](../../apify-research/references/public-inputs/ai-search-visibility-tracker.json).
+- `khadinakbar/google-ai-overviews-scraper` (`SMseG5HJek49LaveS`): required keys `queries`. [Bundled public-mode input projection](../../apify-research/references/public-schemas/google-ai-overviews-scraper.json) and [bounded example](../../apify-research/references/public-inputs/google-ai-overviews-scraper.json).

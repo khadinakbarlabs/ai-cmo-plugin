@@ -1,6 +1,6 @@
 # Session handoff template
 
-Save one concise dated entry under .ai-cmo/sessions/ only when local persistence is supported. Keep business boundaries and unique session IDs. An entry counts a recorded useful session, not all historical host sessions.
+Only when the user requests a task handoff, save one concise artifact under .ai-cmo/sessions/ where local persistence is supported. Do not automatically create session histories, personal profiles or conversation summaries. Keep business boundaries and unique session IDs. An entry counts a recorded useful session, not all historical host sessions.
 
 - Business ID / campaign ID / session ID / observed_at:
 - Requested outcome and depth mode (quick / campaign / ongoing):

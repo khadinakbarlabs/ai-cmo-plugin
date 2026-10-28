@@ -12,7 +12,7 @@ Apply the [shared operating contract](../cmo/references/operating-contract.md) f
 1. Load offer, audience, brand, claim evidence and desired conversion.
 2. Develop distinct hypotheses: pain/benefit, mechanism, demonstration, objection handling and proof.
 3. Write platform-appropriate copy, CTA and landing-page match; verify current limits before finalizing an upload pack.
-4. Create design briefs, scripts and asset requests; generate finished assets only with an available suitable tool.
+4. Create design briefs, scripts and asset requests; create only permitted design-only visual aids with an available suitable tool. Video/audio requests receive scripts and production handoffs, never AI-generated media through this plugin.
 5. Review claims, readability, brand, rights and format requirements; retain editable variants with hypothesis IDs.
 6. Deliver campaign-ready files and measurement plan. Publishing/spend remains a separate authorized operation.
 

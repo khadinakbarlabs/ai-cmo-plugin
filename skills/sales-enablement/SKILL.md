@@ -1,13 +1,13 @@
 ---
 name: sales-enablement
-description: Import and qualify prospect companies, draft outbound sequences and ABM packs, or create battlecards and sales handoffs. Use supplied CRM/CSV evidence first; contact research is optional and sending needs exact authority.
+description: Qualify prospect company rows pasted inline, draft outbound sequences and ABM packs, or create battlecards and sales handoffs. Use supplied CRM/CSV evidence first; contact research is optional and sending needs exact authority.
 ---
 
 # Marketing to Sales Handoff
 
 Apply the [shared operating contract](../cmo/references/operating-contract.md) for evidence, local context and action scope.
 
-For CSV/CRM imports or prospect qualification, start directly with [Lead Generation](references/lead-generation.md) and its [import contract](references/lead-import.md); skip the case-study workflow below. For outreach drafts use [Outbound Marketing](references/outbound-marketing.md); sending remains a separate authorized operation.
+For prospect qualification, use bounded rows supplied inline and start directly with [Lead Generation](references/lead-generation.md) and its [import contract](references/lead-import.md); skip the case-study workflow below. File-opening import procedures are disabled for this directory edition; retain them as manual handoff formats only. For outreach drafts use [Outbound Marketing](references/outbound-marketing.md); sending remains a separate authorized operation.
 
 ## Workflow
 

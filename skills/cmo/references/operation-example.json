@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "plugin_version": "0.4.4",
+  "plugin_version": "0.4.5",
   "operation_id": "fictional-import-01",
   "business_id": "fictional-pumps",
   "task_id": "qualify-accounts",

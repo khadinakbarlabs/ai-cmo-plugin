@@ -1,24 +1,16 @@
 ---
 name: creative-production
-description: Produce or specify visual, video, UGC and audio marketing assets. Use for creative production, shot lists, creator briefs or asset generation.
+description: Prepare marketing design briefs, ad layouts, storyboards, shot lists and creator scripts. Use for creative production planning and design-only visual aids; video, audio, voice and general image generation are unsupported.
 ---
 
 # Creative Production
 
-Apply the [shared operating contract](../cmo/references/operating-contract.md) for evidence, local context and action scope.
+Apply the [operating contract](../cmo/references/operating-contract.md) and [directory boundaries](../cmo/references/directory-boundaries.md).
 
-## Workflow
+1. Inspect the selected offer, audience, brand assets, claim evidence, format and destination.
+2. Produce complete copy, script, storyboard or design brief with composition, aspect ratio, accessibility, captions and CTA as relevant.
+3. For actual visuals, limit work to design-only visual aids through a permitted available tool. Do not launch AI video/audio/voice/music/avatars/people or general image generation. A video request receives a production-ready script and human/editor handoff.
+4. Review supplied or design-only rendered artifacts for claims, rights, legibility, crop, accessibility and actual format. A brief or template is not a generated finished video.
+5. Deliver editable files or full inline outputs, source/rights notes, exact completion state and one next action. External upload or publishing is separate and requires its own permitted service and effect authority.
 
-1. Confirm the message, required formats, aspect ratios, brand assets and destination.
-2. Write a production specification with composition, shots, voice/script, subtitles, duration and accessibility.
-3. Use an installed authenticated media CLI only after checking its help, model/cost/format and output ownership requirements.
-4. Review rendered assets for legibility, crop, claim accuracy, artifacts and actual duration; references are not finished deliverables.
-5. Keep output paths, generation provenance and editable source where available; distinguish briefs, previews and final media.
-
-## Deliverable
-
-Production brief, shot list, creator instructions and verified assets when tools are available.
-
-Use the [working reference](references/workflow.md) for covered variants, output fields and quality checks.
-
-For account or production tools, use [CLI Integrations](../cli-integrations/SKILL.md) and its [tool capability guide](../cli-integrations/references/tool-capabilities.md). Do not assume an external CLI is installed or supports the intended action.
+Read the [working reference](references/workflow.md) only for relevant production checks and variants.

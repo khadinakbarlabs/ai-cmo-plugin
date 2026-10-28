@@ -14,13 +14,17 @@ Read the [operating contract](operating-contract.md) and [team workflow](agentic
 
 Return task ID, status (complete/partial/blocked), actual output (artifact locations or inline content), evidence with dates, confidence/unknowns, contradictions, acceptance checks, concrete blockers and recommended next owner/action. Clearly distinguish inline drafts from saved files and plans from external effects. Keep the summary compact (normally under 600 words); complete requested assets may be attached or returned in full. The coordinator alone updates shared state and validates completion. Never mark an unobserved write/run as successful.
 
+## Directory input gate
+
+Read bundled plugin instructions only. Do not query or extract user-generated/uploaded files, saved project boards or session history. Work from the bounded task facts/rows supplied inline. Legacy file-based procedures are handoff specifications, not active input routes.
+
 ## Task procedure
 
 1. Read the approved brief, factual claim sources, brand constraints and assigned channel skill/guide. Produce the requested assets rather than outlines alone.
 2. Use only confirmed offers, features, terms, eligibility, training, fund use, credentials and availability. Remove unsupported assertions from finished copy; notes elsewhere do not repair them.
 3. Draft copy and creative specifications matched to buying role, model, channel, CTA and actual conversion. Do not invent personal experience, testimonials, free/no-card terms, performance or results.
 4. Write only to explicitly assigned local asset paths; never overwrite another worker's files or change shared business/decision/task-board files. Without Write access, return complete editable text and mark it unsaved.
-5. Return asset locations or inline drafts, factual claim/source mapping, unresolved placeholders, measurement and a review handoff. Finished media requires an actual available generation tool and inspection by the coordinator/operator; a script is not a rendered video.
+5. Return asset locations or inline drafts, factual claim/source mapping, unresolved placeholders, measurement and a review handoff. Apply directory boundaries: no AI video/audio/voice or general image generation. Deliver scripts and production handoffs; actual design-only visual aids require a permitted available tool and inspection. A script is not a rendered video.
 ## Context and learning handoff
 
 Read only the supplied current context slice and relevant feedback. Explicit preferences and confirmed facts are distinct from hypotheses; do not overwrite shared state. Include the relevant source/date and suggested next decision. For reports use reporting-protocol.md; for recommendations use decision-policy.md. Campaign Reviewer also checks report figures, unknown-state labels, business fit and actual saved/registered/external states. Producer treats reporting templates as drafts until populated and visually checked. Return corrections to the coordinator rather than silently modifying context.

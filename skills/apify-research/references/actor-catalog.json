@@ -151,6 +151,19 @@
         "reason": "Verify provider-permitted acquisition and account/data authority before a paid run; input acceptance alone is insufficient.",
         "launch_authority": "Require recorded access method, provider permission evidence, user scope and enforceable cost envelope.",
         "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      },
+      "listing_readback": {
+        "date": "2026-10-28",
+        "id": "8RW7Ow9S3hRAnX1ye",
+        "name": "dataforseo-keyword-research",
+        "owner": "khadinakbar",
+        "public": true,
+        "latest_build": {
+          "buildId": "c3csOTsXwgMdjJ4MV",
+          "buildNumber": "1.0.14",
+          "finishedAt": "2026-10-13T20:12:19.442Z"
+        },
+        "scope": "Listing metadata only; does not refresh bundled schema, acquisition permission, pricing or runtime evidence."
       }
     },
     {
@@ -306,6 +319,19 @@
         "reason": "Verify provider-permitted acquisition and account/data authority before a paid run; input acceptance alone is insufficient.",
         "launch_authority": "Require recorded access method, provider permission evidence, user scope and enforceable cost envelope.",
         "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      },
+      "listing_readback": {
+        "date": "2026-10-28",
+        "id": "B7Wq9VHcVFdfNqNBI",
+        "name": "keyword-search-volume-api",
+        "owner": "khadinakbar",
+        "public": true,
+        "latest_build": {
+          "buildId": "fyMZTmuoj6iY97zah",
+          "buildNumber": "0.1.11",
+          "finishedAt": "2026-10-16T18:22:27.417Z"
+        },
+        "scope": "Listing metadata only; does not refresh bundled schema, acquisition permission, pricing or runtime evidence."
       }
     },
     {
@@ -496,6 +522,19 @@
         "reason": "Inspected metadata or local source corroboration describes acquisition whose provider permission and permitted deployed mode have not been verified. Proxy use alone does not establish circumvention.",
         "launch_authority": "Import-only cannot be overridden by a user spending approval. A future release requires verified permitted acquisition evidence.",
         "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      },
+      "listing_readback": {
+        "date": "2026-10-28",
+        "id": "z0r97dqhtUQk2AXd8",
+        "name": "scrape-google-serp",
+        "owner": "khadinakbar",
+        "public": true,
+        "latest_build": {
+          "buildId": "h6Lfbg6uFvlbUnqK0",
+          "buildNumber": "1.0.24",
+          "finishedAt": "2026-10-25T06:29:13.887Z"
+        },
+        "scope": "Listing metadata only; does not refresh bundled schema, acquisition permission, pricing or runtime evidence."
       }
     },
     {
@@ -694,6 +733,19 @@
         "reason": "Inspected metadata or local source corroboration describes acquisition whose provider permission and permitted deployed mode have not been verified. Proxy use alone does not establish circumvention.",
         "launch_authority": "Import-only cannot be overridden by a user spending approval. A future release requires verified permitted acquisition evidence.",
         "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      },
+      "listing_readback": {
+        "date": "2026-10-28",
+        "id": "yIPnv2aKGDmRmgoy1",
+        "name": "google-trends-scraper",
+        "owner": "khadinakbar",
+        "public": true,
+        "latest_build": {
+          "buildId": "rZKcKKc0B0KQgq3pG",
+          "buildNumber": "1.6.8",
+          "finishedAt": "2026-10-19T21:46:55.666Z"
+        },
+        "scope": "Listing metadata only; does not refresh bundled schema, acquisition permission, pricing or runtime evidence."
       }
     },
     {
@@ -856,6 +908,19 @@
         "reason": "Verify provider-permitted acquisition and account/data authority before a paid run; input acceptance alone is insufficient.",
         "launch_authority": "Require recorded access method, provider permission evidence, user scope and enforceable cost envelope.",
         "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      },
+      "listing_readback": {
+        "date": "2026-10-28",
+        "id": "ufcrXss0mJzYLRgWW",
+        "name": "keyword-rank-tracker",
+        "owner": "khadinakbar",
+        "public": true,
+        "latest_build": {
+          "buildId": "bwhstWFD71SMBfPSk",
+          "buildNumber": "1.1.8",
+          "finishedAt": "2026-10-19T21:08:05.465Z"
+        },
+        "scope": "Listing metadata only; does not refresh bundled schema, acquisition permission, pricing or runtime evidence."
       }
     },
     {
@@ -1015,6 +1080,19 @@
         "reason": "Verify provider-permitted acquisition and account/data authority before a paid run; input acceptance alone is insufficient.",
         "launch_authority": "Require recorded access method, provider permission evidence, user scope and enforceable cost envelope.",
         "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      },
+      "listing_readback": {
+        "date": "2026-10-28",
+        "id": "7XL6DUjjDCqltKeBg",
+        "name": "seo-domain-keyword-scraper",
+        "owner": "khadinakbar",
+        "public": true,
+        "latest_build": {
+          "buildId": "xIrCUfmLGOdY7DsGp",
+          "buildNumber": "1.0.17",
+          "finishedAt": "2026-10-19T23:14:48.204Z"
+        },
+        "scope": "Listing metadata only; does not refresh bundled schema, acquisition permission, pricing or runtime evidence."
       }
     },
     {
@@ -1241,6 +1319,19 @@
         "reason": "Verify provider-permitted acquisition and account/data authority before a paid run; input acceptance alone is insufficient.",
         "launch_authority": "Require recorded access method, provider permission evidence, user scope and enforceable cost envelope.",
         "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      },
+      "listing_readback": {
+        "date": "2026-10-28",
+        "id": "f0PPU2rWRKUBwAfeZ",
+        "name": "website-seo-spider",
+        "owner": "khadinakbar",
+        "public": true,
+        "latest_build": {
+          "buildId": "VgcoYYZsbn0qxADMx",
+          "buildNumber": "0.2.5",
+          "finishedAt": "2026-10-04T15:52:35.966Z"
+        },
+        "scope": "Listing metadata only; does not refresh bundled schema, acquisition permission, pricing or runtime evidence."
       }
     },
     {
@@ -1392,6 +1483,19 @@
         "reason": "Verify provider-permitted acquisition and account/data authority before a paid run; input acceptance alone is insufficient.",
         "launch_authority": "Require recorded access method, provider permission evidence, user scope and enforceable cost envelope.",
         "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      },
+      "listing_readback": {
+        "date": "2026-10-28",
+        "id": "rCohK9eJbjiovPN6s",
+        "name": "website-backlink-checker",
+        "owner": "khadinakbar",
+        "public": true,
+        "latest_build": {
+          "buildId": "wnDuwfaprrBJR108n",
+          "buildNumber": "0.1.2",
+          "finishedAt": "2026-10-04T16:36:16.662Z"
+        },
+        "scope": "Listing metadata only; does not refresh bundled schema, acquisition permission, pricing or runtime evidence."
       }
     },
     {
@@ -1558,6 +1662,19 @@
         "reason": "Verify provider-permitted acquisition and account/data authority before a paid run; input acceptance alone is insufficient.",
         "launch_authority": "Require recorded access method, provider permission evidence, user scope and enforceable cost envelope.",
         "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      },
+      "listing_readback": {
+        "date": "2026-10-28",
+        "id": "n1uR8aWhzOBYhxLJl",
+        "name": "backlink-opportunity-finder",
+        "owner": "khadinakbar",
+        "public": true,
+        "latest_build": {
+          "buildId": "fqRhTNCIMbyJOWGFd",
+          "buildNumber": "1.0.15",
+          "finishedAt": "2026-10-11T10:05:21.537Z"
+        },
+        "scope": "Listing metadata only; does not refresh bundled schema, acquisition permission, pricing or runtime evidence."
       }
     },
     {
@@ -1758,6 +1875,19 @@
         "reason": "Verify provider-permitted acquisition and account/data authority before a paid run; input acceptance alone is insufficient.",
         "launch_authority": "Require recorded access method, provider permission evidence, user scope and enforceable cost envelope.",
         "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      },
+      "listing_readback": {
+        "date": "2026-10-28",
+        "id": "a2yeVoO8SdJgVEgbK",
+        "name": "broken-link-checker",
+        "owner": "khadinakbar",
+        "public": true,
+        "latest_build": {
+          "buildId": "Ss0nSCH4dq6r5O3gp",
+          "buildNumber": "1.2.9",
+          "finishedAt": "2026-10-27T18:46:59.510Z"
+        },
+        "scope": "Listing metadata only; does not refresh bundled schema, acquisition permission, pricing or runtime evidence."
       }
     },
     {
@@ -2035,6 +2165,19 @@
         "reason": "Inspected metadata or local source corroboration describes acquisition whose provider permission and permitted deployed mode have not been verified. Proxy use alone does not establish circumvention.",
         "launch_authority": "Import-only cannot be overridden by a user spending approval. A future release requires verified permitted acquisition evidence.",
         "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      },
+      "listing_readback": {
+        "date": "2026-10-28",
+        "id": "B4RRM07yZQi5eczJG",
+        "name": "meta-ad-library-scraper",
+        "owner": "khadinakbar",
+        "public": true,
+        "latest_build": {
+          "buildId": "8NaxgoNzJ9wAcgnhK",
+          "buildNumber": "1.3.10",
+          "finishedAt": "2026-10-12T13:41:34.443Z"
+        },
+        "scope": "Listing metadata only; does not refresh bundled schema, acquisition permission, pricing or runtime evidence."
       }
     },
     {
@@ -2204,6 +2347,19 @@
         "reason": "Inspected metadata or local source corroboration describes acquisition whose provider permission and permitted deployed mode have not been verified. Proxy use alone does not establish circumvention.",
         "launch_authority": "Import-only cannot be overridden by a user spending approval. A future release requires verified permitted acquisition evidence.",
         "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      },
+      "listing_readback": {
+        "date": "2026-10-28",
+        "id": "dCA5Hpf4BCQX094ZD",
+        "name": "google-ads-transparency-scraper",
+        "owner": "khadinakbar",
+        "public": true,
+        "latest_build": {
+          "buildId": "yug9WUgnoZVcI5B6C",
+          "buildNumber": "1.6.5",
+          "finishedAt": "2026-10-24T20:06:53.911Z"
+        },
+        "scope": "Listing metadata only; does not refresh bundled schema, acquisition permission, pricing or runtime evidence."
       }
     },
     {
@@ -2415,6 +2571,19 @@
         "reason": "Inspected metadata or local source corroboration describes acquisition whose provider permission and permitted deployed mode have not been verified. Proxy use alone does not establish circumvention.",
         "launch_authority": "Import-only cannot be overridden by a user spending approval. A future release requires verified permitted acquisition evidence.",
         "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      },
+      "listing_readback": {
+        "date": "2026-10-28",
+        "id": "x5x84HE8Hq7EJ9VmS",
+        "name": "tiktok-ads-library-scraper",
+        "owner": "khadinakbar",
+        "public": true,
+        "latest_build": {
+          "buildId": "WVfQFRuKr95yYzE5J",
+          "buildNumber": "1.1.6",
+          "finishedAt": "2026-10-04T16:34:06.143Z"
+        },
+        "scope": "Listing metadata only; does not refresh bundled schema, acquisition permission, pricing or runtime evidence."
       }
     },
     {
@@ -2581,6 +2750,19 @@
         "reason": "Verify provider-permitted acquisition and account/data authority before a paid run; input acceptance alone is insufficient.",
         "launch_authority": "Require recorded access method, provider permission evidence, user scope and enforceable cost envelope.",
         "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      },
+      "listing_readback": {
+        "date": "2026-10-28",
+        "id": "fdwr0hBXBdg5ya6tc",
+        "name": "linkedin-ad-library-search-scraper",
+        "owner": "khadinakbar",
+        "public": true,
+        "latest_build": {
+          "buildId": "oTsgyxOAX7WwfyrFo",
+          "buildNumber": "1.1.4",
+          "finishedAt": "2026-10-12T06:15:09.495Z"
+        },
+        "scope": "Listing metadata only; does not refresh bundled schema, acquisition permission, pricing or runtime evidence."
       }
     },
     {
@@ -2802,6 +2984,19 @@
         "reason": "Inspected metadata or local source corroboration describes acquisition whose provider permission and permitted deployed mode have not been verified. Proxy use alone does not establish circumvention.",
         "launch_authority": "Import-only cannot be overridden by a user spending approval. A future release requires verified permitted acquisition evidence.",
         "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      },
+      "listing_readback": {
+        "date": "2026-10-28",
+        "id": "oKsJ4mO6RAVbvcrnz",
+        "name": "pinterest-ads-library-scraper",
+        "owner": "khadinakbar",
+        "public": true,
+        "latest_build": {
+          "buildId": "4cDVUHEfZN7whC0ko",
+          "buildNumber": "1.0.3",
+          "finishedAt": "2026-10-04T15:43:16.884Z"
+        },
+        "scope": "Listing metadata only; does not refresh bundled schema, acquisition permission, pricing or runtime evidence."
       }
     },
     {
@@ -2990,6 +3185,19 @@
         "reason": "Verify provider-permitted acquisition and account/data authority before a paid run; input acceptance alone is insufficient.",
         "launch_authority": "Require recorded access method, provider permission evidence, user scope and enforceable cost envelope.",
         "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      },
+      "listing_readback": {
+        "date": "2026-10-28",
+        "id": "CFYLF6fOcyvdofuof",
+        "name": "ai-search-visibility-tracker",
+        "owner": "khadinakbar",
+        "public": true,
+        "latest_build": {
+          "buildId": "HdsGVzio6qUt1tFmt",
+          "buildNumber": "1.0.23",
+          "finishedAt": "2026-10-04T14:46:31.789Z"
+        },
+        "scope": "Listing metadata only; does not refresh bundled schema, acquisition permission, pricing or runtime evidence."
       }
     },
     {
@@ -3209,6 +3417,19 @@
         "reason": "Inspected metadata or local source corroboration describes acquisition whose provider permission and permitted deployed mode have not been verified. Proxy use alone does not establish circumvention.",
         "launch_authority": "Import-only cannot be overridden by a user spending approval. A future release requires verified permitted acquisition evidence.",
         "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      },
+      "listing_readback": {
+        "date": "2026-10-28",
+        "id": "SMseG5HJek49LaveS",
+        "name": "google-ai-overviews-scraper",
+        "owner": "khadinakbar",
+        "public": true,
+        "latest_build": {
+          "buildId": "wLbXkaUApb0i243wZ",
+          "buildNumber": "0.1.31",
+          "finishedAt": "2026-10-19T22:02:06.325Z"
+        },
+        "scope": "Listing metadata only; does not refresh bundled schema, acquisition permission, pricing or runtime evidence."
       }
     },
     {
@@ -3366,6 +3587,19 @@
         "reason": "Verify provider-permitted acquisition and account/data authority before a paid run; input acceptance alone is insufficient.",
         "launch_authority": "Require recorded access method, provider permission evidence, user scope and enforceable cost envelope.",
         "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      },
+      "listing_readback": {
+        "date": "2026-10-28",
+        "id": "TwNeQtj5TfaKDkcCK",
+        "name": "bulk-website-contact-extractor",
+        "owner": "khadinakbar",
+        "public": true,
+        "latest_build": {
+          "buildId": "tDl1yzCIaTytblADU",
+          "buildNumber": "1.2.4",
+          "finishedAt": "2026-10-16T18:33:22.084Z"
+        },
+        "scope": "Listing metadata only; does not refresh bundled schema, acquisition permission, pricing or runtime evidence."
       }
     },
     {
@@ -3538,6 +3772,19 @@
         "reason": "Verify provider-permitted acquisition and account/data authority before a paid run; input acceptance alone is insufficient.",
         "launch_authority": "Require recorded access method, provider permission evidence, user scope and enforceable cost envelope.",
         "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      },
+      "listing_readback": {
+        "date": "2026-10-28",
+        "id": "xUTDfDQougiuhikSc",
+        "name": "contact-details-scraper",
+        "owner": "khadinakbar",
+        "public": true,
+        "latest_build": {
+          "buildId": "cro28yKTlCKJbDflX",
+          "buildNumber": "1.2.14",
+          "finishedAt": "2026-10-27T19:14:05.677Z"
+        },
+        "scope": "Listing metadata only; does not refresh bundled schema, acquisition permission, pricing or runtime evidence."
       }
     },
     {
@@ -3804,6 +4051,19 @@
         "reason": "Verify provider-permitted acquisition and account/data authority before a paid run; input acceptance alone is insufficient.",
         "launch_authority": "Require recorded access method, provider permission evidence, user scope and enforceable cost envelope.",
         "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      },
+      "listing_readback": {
+        "date": "2026-10-28",
+        "id": "7vQKF8hrfRaAk7g50",
+        "name": "google-news-scraper",
+        "owner": "khadinakbar",
+        "public": true,
+        "latest_build": {
+          "buildId": "rnQU9dO3lLSt0sc53",
+          "buildNumber": "0.2.3",
+          "finishedAt": "2026-10-16T07:51:12.514Z"
+        },
+        "scope": "Listing metadata only; does not refresh bundled schema, acquisition permission, pricing or runtime evidence."
       }
     },
     {
@@ -3979,6 +4239,19 @@
         "reason": "Verify provider-permitted acquisition and account/data authority before a paid run; input acceptance alone is insufficient.",
         "launch_authority": "Require recorded access method, provider permission evidence, user scope and enforceable cost envelope.",
         "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      },
+      "listing_readback": {
+        "date": "2026-10-28",
+        "id": "AdXgrEqrRSjvp9q6u",
+        "name": "trustpilot-reviews-scraper",
+        "owner": "khadinakbar",
+        "public": true,
+        "latest_build": {
+          "buildId": "gT8oczsXNZB6qzAca",
+          "buildNumber": "1.0.22",
+          "finishedAt": "2026-10-04T15:50:40.927Z"
+        },
+        "scope": "Listing metadata only; does not refresh bundled schema, acquisition permission, pricing or runtime evidence."
       }
     },
     {
@@ -4196,6 +4469,19 @@
         "reason": "Inspected metadata or local source corroboration describes acquisition whose provider permission and permitted deployed mode have not been verified. Proxy use alone does not establish circumvention.",
         "launch_authority": "Import-only cannot be overridden by a user spending approval. A future release requires verified permitted acquisition evidence.",
         "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      },
+      "listing_readback": {
+        "date": "2026-10-28",
+        "id": "AktHAcFexdMKzxCux",
+        "name": "google-maps-reviews-scraper",
+        "owner": "khadinakbar",
+        "public": true,
+        "latest_build": {
+          "buildId": "fiwAdaalNtbYxExuS",
+          "buildNumber": "0.5.3",
+          "finishedAt": "2026-10-09T18:11:04.485Z"
+        },
+        "scope": "Listing metadata only; does not refresh bundled schema, acquisition permission, pricing or runtime evidence."
       }
     },
     {
@@ -4360,6 +4646,19 @@
         "reason": "Inspected metadata or local source corroboration describes acquisition whose provider permission and permitted deployed mode have not been verified. Proxy use alone does not establish circumvention.",
         "launch_authority": "Import-only cannot be overridden by a user spending approval. A future release requires verified permitted acquisition evidence.",
         "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      },
+      "listing_readback": {
+        "date": "2026-10-28",
+        "id": "FwIxRhXDEbykgdeqc",
+        "name": "g2-product-reviews-scraper",
+        "owner": "khadinakbar",
+        "public": true,
+        "latest_build": {
+          "buildId": "BsvaC7eHgGDD3WS11",
+          "buildNumber": "1.2.2",
+          "finishedAt": "2026-10-04T15:30:58.656Z"
+        },
+        "scope": "Listing metadata only; does not refresh bundled schema, acquisition permission, pricing or runtime evidence."
       }
     },
     {
@@ -4524,6 +4823,19 @@
         "reason": "Inspected metadata or local source corroboration describes acquisition whose provider permission and permitted deployed mode have not been verified. Proxy use alone does not establish circumvention.",
         "launch_authority": "Import-only cannot be overridden by a user spending approval. A future release requires verified permitted acquisition evidence.",
         "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      },
+      "listing_readback": {
+        "date": "2026-10-28",
+        "id": "vPxFQ4unR0IzHFm9H",
+        "name": "capterra-reviews-scraper",
+        "owner": "khadinakbar",
+        "public": true,
+        "latest_build": {
+          "buildId": "axM1fQROQpyZTRtHG",
+          "buildNumber": "1.1.9",
+          "finishedAt": "2026-10-04T15:28:16.144Z"
+        },
+        "scope": "Listing metadata only; does not refresh bundled schema, acquisition permission, pricing or runtime evidence."
       }
     },
     {
@@ -4706,6 +5018,19 @@
         "reason": "Verify provider-permitted acquisition and account/data authority before a paid run; input acceptance alone is insufficient.",
         "launch_authority": "Require recorded access method, provider permission evidence, user scope and enforceable cost envelope.",
         "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      },
+      "listing_readback": {
+        "date": "2026-10-28",
+        "id": "VqAhRpuDhSHub71ce",
+        "name": "appstore-reviews-scraper",
+        "owner": "khadinakbar",
+        "public": true,
+        "latest_build": {
+          "buildId": "aR6AvRnuBAHGMya8K",
+          "buildNumber": "1.0.14",
+          "finishedAt": "2026-10-16T14:15:30.604Z"
+        },
+        "scope": "Listing metadata only; does not refresh bundled schema, acquisition permission, pricing or runtime evidence."
       }
     },
     {
@@ -4855,6 +5180,19 @@
         "reason": "Verify provider-permitted acquisition and account/data authority before a paid run; input acceptance alone is insufficient.",
         "launch_authority": "Require recorded access method, provider permission evidence, user scope and enforceable cost envelope.",
         "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      },
+      "listing_readback": {
+        "date": "2026-10-28",
+        "id": "LHCEKswaihgmShn5p",
+        "name": "instagram-niche-influencer-finder",
+        "owner": "khadinakbar",
+        "public": true,
+        "latest_build": {
+          "buildId": "0MgbORh5oveeM0t0Q",
+          "buildNumber": "1.0.8",
+          "finishedAt": "2026-10-16T07:24:16.836Z"
+        },
+        "scope": "Listing metadata only; does not refresh bundled schema, acquisition permission, pricing or runtime evidence."
       }
     },
     {
@@ -4984,6 +5322,19 @@
         "reason": "Inspected metadata or local source corroboration describes acquisition whose provider permission and permitted deployed mode have not been verified. Proxy use alone does not establish circumvention.",
         "launch_authority": "Import-only cannot be overridden by a user spending approval. A future release requires verified permitted acquisition evidence.",
         "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      },
+      "listing_readback": {
+        "date": "2026-10-28",
+        "id": "uPkHmR5T44ixfiyUS",
+        "name": "instagram-profile-scraper",
+        "owner": "khadinakbar",
+        "public": true,
+        "latest_build": {
+          "buildId": "A8wLQ4LDwe9NN7Lo1",
+          "buildNumber": "1.0.14",
+          "finishedAt": "2026-10-18T04:55:24.433Z"
+        },
+        "scope": "Listing metadata only; does not refresh bundled schema, acquisition permission, pricing or runtime evidence."
       }
     },
     {
@@ -5173,6 +5524,19 @@
         "reason": "Inspected metadata or local source corroboration describes acquisition whose provider permission and permitted deployed mode have not been verified. Proxy use alone does not establish circumvention.",
         "launch_authority": "Import-only cannot be overridden by a user spending approval. A future release requires verified permitted acquisition evidence.",
         "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      },
+      "listing_readback": {
+        "date": "2026-10-28",
+        "id": "wjjknRC0QN6jE3WJK",
+        "name": "instagram-posts-scraper",
+        "owner": "khadinakbar",
+        "public": true,
+        "latest_build": {
+          "buildId": "1rLRwzTL2mgu9KiXU",
+          "buildNumber": "1.2.10",
+          "finishedAt": "2026-10-01T11:55:20.679Z"
+        },
+        "scope": "Listing metadata only; does not refresh bundled schema, acquisition permission, pricing or runtime evidence."
       }
     },
     {
@@ -5299,6 +5663,19 @@
         "reason": "Inspected metadata or local source corroboration describes acquisition whose provider permission and permitted deployed mode have not been verified. Proxy use alone does not establish circumvention.",
         "launch_authority": "Import-only cannot be overridden by a user spending approval. A future release requires verified permitted acquisition evidence.",
         "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      },
+      "listing_readback": {
+        "date": "2026-10-28",
+        "id": "N3rc0uhS4SJcNE9fb",
+        "name": "instagram-profile-stats-scraper",
+        "owner": "khadinakbar",
+        "public": true,
+        "latest_build": {
+          "buildId": "N5e7DuSInN8GUvrHE",
+          "buildNumber": "0.0.3",
+          "finishedAt": "2026-10-04T15:36:20.411Z"
+        },
+        "scope": "Listing metadata only; does not refresh bundled schema, acquisition permission, pricing or runtime evidence."
       }
     },
     {
@@ -5481,6 +5858,19 @@
         "reason": "Verify provider-permitted acquisition and account/data authority before a paid run; input acceptance alone is insufficient.",
         "launch_authority": "Require recorded access method, provider permission evidence, user scope and enforceable cost envelope.",
         "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      },
+      "listing_readback": {
+        "date": "2026-10-28",
+        "id": "Vdzi1BTanokjIx4ap",
+        "name": "tiktok-profile-videos-scraper",
+        "owner": "khadinakbar",
+        "public": true,
+        "latest_build": {
+          "buildId": "7HcvzgVa5fztT67bm",
+          "buildNumber": "0.3.6",
+          "finishedAt": "2026-10-12T06:41:40.212Z"
+        },
+        "scope": "Listing metadata only; does not refresh bundled schema, acquisition permission, pricing or runtime evidence."
       }
     },
     {
@@ -5689,6 +6079,19 @@
         "reason": "Inspected metadata or local source corroboration describes acquisition whose provider permission and permitted deployed mode have not been verified. Proxy use alone does not establish circumvention.",
         "launch_authority": "Import-only cannot be overridden by a user spending approval. A future release requires verified permitted acquisition evidence.",
         "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      },
+      "listing_readback": {
+        "date": "2026-10-28",
+        "id": "jlyav7xSOiRz15hlJ",
+        "name": "youtube-search-scraper",
+        "owner": "khadinakbar",
+        "public": true,
+        "latest_build": {
+          "buildId": "HPKDwd24nbb62GwoN",
+          "buildNumber": "0.2.5",
+          "finishedAt": "2026-10-18T04:58:51.285Z"
+        },
+        "scope": "Listing metadata only; does not refresh bundled schema, acquisition permission, pricing or runtime evidence."
       }
     },
     {
@@ -5865,6 +6268,19 @@
         "reason": "Inspected metadata or local source corroboration describes acquisition whose provider permission and permitted deployed mode have not been verified. Proxy use alone does not establish circumvention.",
         "launch_authority": "Import-only cannot be overridden by a user spending approval. A future release requires verified permitted acquisition evidence.",
         "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      },
+      "listing_readback": {
+        "date": "2026-10-28",
+        "id": "HY1l2lAN9rwPg8LsZ",
+        "name": "youtube-transcript-extractor",
+        "owner": "khadinakbar",
+        "public": true,
+        "latest_build": {
+          "buildId": "WpiFF5SCJeaHYCUZt",
+          "buildNumber": "1.0.44",
+          "finishedAt": "2026-10-12T06:58:52.652Z"
+        },
+        "scope": "Listing metadata only; does not refresh bundled schema, acquisition permission, pricing or runtime evidence."
       }
     },
     {
@@ -6011,6 +6427,19 @@
         "reason": "Verify provider-permitted acquisition and account/data authority before a paid run; input acceptance alone is insufficient.",
         "launch_authority": "Require recorded access method, provider permission evidence, user scope and enforceable cost envelope.",
         "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      },
+      "listing_readback": {
+        "date": "2026-10-28",
+        "id": "JaLpIf4J9cc3rCa0E",
+        "name": "youtube-comments-scraper",
+        "owner": "khadinakbar",
+        "public": true,
+        "latest_build": {
+          "buildId": "Ysyv3QJzgFg4GCOig",
+          "buildNumber": "1.2.6",
+          "finishedAt": "2026-10-16T12:21:06.763Z"
+        },
+        "scope": "Listing metadata only; does not refresh bundled schema, acquisition permission, pricing or runtime evidence."
       }
     },
     {
@@ -6193,6 +6622,19 @@
         "reason": "Verify provider-permitted acquisition and account/data authority before a paid run; input acceptance alone is insufficient.",
         "launch_authority": "Require recorded access method, provider permission evidence, user scope and enforceable cost envelope.",
         "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      },
+      "listing_readback": {
+        "date": "2026-10-28",
+        "id": "BGuQRhPiGRWOZzqyr",
+        "name": "youtube-channel-scraper",
+        "owner": "khadinakbar",
+        "public": true,
+        "latest_build": {
+          "buildId": "pdrWksS6bzzbV44mq",
+          "buildNumber": "0.1.10",
+          "finishedAt": "2026-10-12T06:56:33.856Z"
+        },
+        "scope": "Listing metadata only; does not refresh bundled schema, acquisition permission, pricing or runtime evidence."
       }
     },
     {
@@ -6382,6 +6824,19 @@
         "reason": "Inspected metadata or local source corroboration describes acquisition whose provider permission and permitted deployed mode have not been verified. Proxy use alone does not establish circumvention.",
         "launch_authority": "Import-only cannot be overridden by a user spending approval. A future release requires verified permitted acquisition evidence.",
         "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      },
+      "listing_readback": {
+        "date": "2026-10-28",
+        "id": "IRx3DJZeQdk6DhAtn",
+        "name": "youtube-channel-email-extractor",
+        "owner": "khadinakbar",
+        "public": true,
+        "latest_build": {
+          "buildId": "ae64IIxg0JUbgobaa",
+          "buildNumber": "1.2.4",
+          "finishedAt": "2026-09-28T20:11:59.603Z"
+        },
+        "scope": "Listing metadata only; does not refresh bundled schema, acquisition permission, pricing or runtime evidence."
       }
     },
     {
@@ -6530,6 +6985,19 @@
         "reason": "Verify provider-permitted acquisition and account/data authority before a paid run; input acceptance alone is insufficient.",
         "launch_authority": "Require recorded access method, provider permission evidence, user scope and enforceable cost envelope.",
         "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      },
+      "listing_readback": {
+        "date": "2026-10-28",
+        "id": "j1gQL2JlzmGKxrPzJ",
+        "name": "reddit-search-scraper",
+        "owner": "khadinakbar",
+        "public": true,
+        "latest_build": {
+          "buildId": "kDtqTaEphsfHAwdfH",
+          "buildNumber": "1.0.5",
+          "finishedAt": "2026-10-01T12:29:59.471Z"
+        },
+        "scope": "Listing metadata only; does not refresh bundled schema, acquisition permission, pricing or runtime evidence."
       }
     },
     {
@@ -6706,6 +7174,19 @@
         "reason": "Verify provider-permitted acquisition and account/data authority before a paid run; input acceptance alone is insufficient.",
         "launch_authority": "Require recorded access method, provider permission evidence, user scope and enforceable cost envelope.",
         "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      },
+      "listing_readback": {
+        "date": "2026-10-28",
+        "id": "pcdyX7pdaieYWnLm3",
+        "name": "linkedin-company-posts-scraper",
+        "owner": "khadinakbar",
+        "public": true,
+        "latest_build": {
+          "buildId": "X2CxqdumTbkOypbEK",
+          "buildNumber": "0.1.13",
+          "finishedAt": "2026-10-16T14:13:52.181Z"
+        },
+        "scope": "Listing metadata only; does not refresh bundled schema, acquisition permission, pricing or runtime evidence."
       }
     },
     {
@@ -6831,6 +7312,19 @@
         "reason": "Verify provider-permitted acquisition and account/data authority before a paid run; input acceptance alone is insufficient.",
         "launch_authority": "Require recorded access method, provider permission evidence, user scope and enforceable cost envelope.",
         "fallback": "Use user-provided authorized exports or an available official API; do not route to another scraper to evade a block."
+      },
+      "listing_readback": {
+        "date": "2026-10-28",
+        "id": "rIx5BxFR9Pxvbe4wX",
+        "name": "linkedin-company-by-domain-scraper",
+        "owner": "khadinakbar",
+        "public": true,
+        "latest_build": {
+          "buildId": "xyECdmQCUaa7iCm3Q",
+          "buildNumber": "0.1.9",
+          "finishedAt": "2026-10-01T12:47:37.276Z"
+        },
+        "scope": "Listing metadata only; does not refresh bundled schema, acquisition permission, pricing or runtime evidence."
       }
     }
   ]
